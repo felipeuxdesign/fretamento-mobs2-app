@@ -1,0 +1,42 @@
+# Folha 08 · Tabela de contraste · WCAG, medida contra página, cartão, elevado e sobreposto
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F08-contraste.html` e `../png/F08-contraste.png`.
+
+- Cor nova só entra se passar aqui, nos dois temas
+- Texto precisa de 4,5:1 (AA) ou 7:1 (AAA); estado, borda e ícone precisam de 3:1; tinta-desligada e borda não são texto e ficam abaixo de propósito. A palavra ao lado do número diz o veredito, nunca só a cor.
+- Escuro · padrão
+- cor · sobrepáginacartãoelevadosobreposto
+- tinta15,6 · AAA14,0 · AAA12,2 · AAA11,3 · AAA
+- tinta-apagada7,3 · AAA6,5 · AA5,7 · AA5,3 · AA
+- tinta-desligada · não é texto4,0 · estado3,6 · estado3,1 · estado2,9 · reprova
+- vivo13,3 · AAA11,9 · AAA10,4 · AAA9,6 · AAA
+- rota-ida · traço7,6 · AAA6,8 · AA6,0 · AA5,5 · AA
+- atencao9,5 · AAA8,6 · AAA7,5 · AAA6,9 · AA
+- perigo6,1 · AA5,5 · AA4,8 · AA4,4 · só 24px+
+- info · rota-volta7,7 · AAA7,0 · AA6,1 · AA5,6 · AA
+- borda · não é texto1,5 · sutil1,4 · sutil1,2 · sutil1,1 · sutil
+- Sobre os fills
+- vivo-tinta sobre vivo · 13,3 · AAA
+- atencao-tinta sobre atencao · 9,3 · AAA
+- perigo-tinta sobre perigo-forte · 5,0 · AA
+- tinta sobre fundo-destaque · 11,5 · AAA · tinta-apagada 5,4 · AA · vivo 9,8 · AAA
+- avatar-tinta sobre avatar-fundo · 7,9 · AAA (a inicial do avatar)
+- Claro · derivado
+- cor · sobrepáginacartãoelevadosobreposto
+- tinta15,4 · AAA16,6 · AAA14,6 · AAA13,7 · AAA
+- tinta-apagada5,4 · AA5,9 · AA5,1 · AA4,8 · AA
+- tinta-desligada · não é texto2,9 · reprova3,2 · estado2,8 · reprova2,6 · reprova
+- vivo11,9 · AAA12,9 · AAA11,3 · AAA10,6 · AAA
+- rota-ida · traço3,5 · estado3,8 · estado3,3 · estado3,1 · estado
+- atencao · só ícone e borda4,3 · estado4,7 · AA4,1 · estado3,9 · estado
+- perigo4,6 · AA5,0 · AA4,4 · só 24px+4,1 · só 24px+
+- info · rota-volta4,2 · só 24px+4,5 · AA4,0 · só 24px+3,7 · só 24px+
+- borda · não é texto1,5 · sutil1,7 · sutil1,5 · sutil1,4 · sutil
+- Sobre os fills
+- vivo-tinta (branco) sobre vivo · 12,9 · AAA
+- tinta sobre atencao-suave · 14,7 · AAA (o selo de atraso no claro)
+- branco sobre atencao · 4,7 · AA no limite: o selo de atraso continua em atencao-suave com tinta
+- perigo-tinta sobre perigo-forte · 5,0 · AA
+- tinta sobre fundo-destaque · 14,1 · AAA
+- avatar-tinta sobre avatar-fundo · 10,9 · AAA (a inicial do avatar)
+- Leis que saem da tabela: no claro, perigo é texto só sobre página e cartão, e info só sobre o cartão; no escuro, perigo não é texto menor que 24 sobre o fundo-sobreposto; rota-ida no claro é traço de 2 px e nunca texto; âmbar no claro é ícone e borda, nunca texto sobre a página.

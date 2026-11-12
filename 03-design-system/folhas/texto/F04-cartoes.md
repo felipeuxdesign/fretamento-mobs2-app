@@ -1,0 +1,49 @@
+# Folha 04 · Linhas, cartões e avisos
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F04-cartoes.html` e `../png/F04-cartoes.png`.
+
+- O cartão é a unidade da tela; a linha é a unidade do cartão
+- Cartão: fundo-cartao, raio-lg, padding 16, 12 entre cartões. Só três variações mudam a forma: destaque (fundo-destaque, raio-xl), perigo (borda perigo) e interativo (poço + seta). Linha de lista: 56 mínimo, divisoria entre linhas, nunca na última.
+- Cartão · base · raio-lg 16 · padding 16 · gap 12
+- Próximas paradas
+- Conteúdo do cartão em corpo 15. Um cartão tem um assunto só.
+- Cartão · destaque · fundo-destaque · raio-xl 24 · só o herói em chegando e a troca ativa
+- Hoje você embarca em: Mercado de Casa Amarela
+- Seu ponto de sempre continua Av. Abdias de Carvalho, 1200.
+- Voltar ao ponto de sempre
+- Cartão · perigo · borda perigo 1 · só cancelada
+- Viagem cancelada pela transportadora.
+- Cartão · interativo · poço 40 + título + apoio + seta · 64 mínimo · desligado a 55%
+- Ver no mapaÔnibus a 3 pontos do seu
+- Embarcar em outro ponto hojeIndisponível sem internet
+- Nota · check em vivo · nota-info em fundo-elevado com ícone info
+- Você embarcou às 06:43. Seu crachá foi lido no ônibus 1234.
+- Este não é o seu ônibus de sempre. O seu é o das 06:05.
+- Lista · linhas de 56 · divisoria entre, nunca na última · a seta é tinta-apagada
+- AvisosÔnibus chegando: 10 min antes
+- E-maila•••@metalurgicaalfa.com.br
+- Ônibus chegandoAvisar 10 min antes
+- Sair da conta
+- Notificação · disco 36 na cor do estado · não lida em 700 com ponto info · hora relativa
+- Hoje
+- Seu ônibus chega em 10 minAv. Abdias de Carvalho, 1200 · ônibus 1234 (ABC1D23)há 2 min
+- Ônibus atrasado 12 minNova previsão no seu ponto: 06:54.05:58
+- Viagem das 06:05 canceladaToque para ver o aviso da transportadora.ontem
+- Cabeçalho de seção · apoio 13 em tinta-apagada · 4 de margem antes da lista
+- Minhas linhas
+- Linha 210 · IdaSeu ponto de sempre: Av. Abdias de Carvalho, 1200 · 06:05
+- Linha 210 · VoltaSeu ponto de sempre: Fábrica – Portaria 2 · 17:20
+- Estado vazio · ícone 48 em tinta-desligada · título 20 · texto 30ch · ação opcional
+- Sem viagem hoje
+- Sua próxima viagem é amanhã, quarta, às 06:05.
+- Estado de erro · diz o que falhou e o que fazer · ação secundária + ajuda
+- Não conseguimos carregar sua viagem
+- Parece que a internet caiu. Confira o sinal e tente de novo.
+- Tentar de novo
+- Preciso de ajuda
+- Carregando · skeleton em fundo-elevado → sobreposto · com a forma do herói
+- Estado central (tela inteira) · 48 em tinta-apagada · título 24 · ações empilhadas de 320
+- Desbloqueie para ver sua viagem
+- Use a digital ou a senha do celular.
+- Desbloquear
+- Entrar com código

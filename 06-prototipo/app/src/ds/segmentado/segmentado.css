@@ -1,0 +1,63 @@
+/* O segmentado (F06): E-mail ou Celular no Entrar, e a Aparência, com ícone, no Perfil.
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .seg {
+    display: flex;
+    background: var(--fundo-elevado);
+    border-radius: 12px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .seg.icones {
+    gap: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .seg span {
+    flex: 1;
+    height: 44px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--tinta-apagada);
+  }
+  .seg.icones span {
+    height: 38px;
+    gap: 6px;
+  }
+  .seg span.on {
+    background: var(--fundo-cartao);
+    color: var(--tinta);
+  }
+  .seg span svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@layer ds {
+  .seg {
+    position: relative;
+  }
+  .seg span {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    position: relative;
+  }
+  /* a opção com ícone mede 38: o toque cresce 3 para cima e 3 para baixo, até os 44 do trilho */
+  .seg.icones span[role='radio'] {
+    position: relative;
+  }
+  .seg.icones span[role='radio']::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+  }
+}

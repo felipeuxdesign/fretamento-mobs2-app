@@ -1,0 +1,173 @@
+/* O cabeçalho de autenticação e o pé do Entrar (F06, F10).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .lock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 4px 0 16px;
+  }
+  .appic {
+    display: block;
+    width: 72px;
+    height: 72px;
+    flex: none;
+  }
+  .lock + div {
+    text-align: center;
+  }
+  .fret {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: .24em;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--tinta);
+  }
+  .foot {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .by {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--tinta-apagada);
+  }
+  .by img {
+    display: block;
+    width: 48px;
+    height: 10px;
+  }
+  .foot .lnk {
+    margin: 0;
+  }
+  .fret i {
+    width: 22px;
+    height: 2px;
+    background: var(--logo);
+    border-radius: 1px;
+  }
+}
+
+@layer ds {
+  .marca-mobs2 {
+    display: block;
+    width: 48px;
+    height: 10px;
+    flex: none;
+  }
+  /* a assinatura no pé da rolagem do Perfil */
+  .assinatura-do-pe {
+    padding: 4px 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+
+
+/* A marca no Entrar, com o conteúdo de vidro: três arranjos, pelo endereço. As medidas são do arranjo; o material do
+   quadro e a luz de trás moram no vidro.css. O pictograma é sempre em duas cores, pela mesma regra nos dois temas:
+   a figura na tinta, o ônibus na cor de ação (o mesmo token do botão principal). O nome vai na tinta de apoio: é
+   assinatura, e não pode competir com o título */
+@layer ds {
+  .lock.da-marca {
+    position: relative;
+    gap: 12px;
+    margin: 0 0 4px;
+    --marca-figura: var(--tinta);
+    --marca-onibus: var(--vivo);
+    --pictograma: 82px;
+  }
+  .lock.da-marca[data-cor='invertida'] {
+    --marca-figura: var(--vivo);
+    --marca-onibus: var(--tinta);
+  }
+  .pictograma {
+    display: block;
+    flex: none;
+    width: var(--pictograma);
+    height: var(--pictograma);
+  }
+  /* l1 · o quadro de 88, raio 20; o desenho ocupa 62% da largura dele (o desenho tem 2/3 da caixa de 1024) */
+  .tile-marca {
+    position: relative;
+    flex: none;
+    box-sizing: border-box;
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+  }
+  .lock.da-marca .fret {
+    padding-left: 0.22em;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.22em;
+    color: var(--tinta-apagada);
+  }
+  /* l2 · sem o quadro: o desenho com 72 de largura. A caixa do desenho sobra em cima e embaixo, e a margem recolhe */
+  .lock.da-marca[data-marca='l2'] {
+    --pictograma: 108px;
+  }
+  .lock.da-marca[data-marca='l2'] .pictograma {
+    margin: -19px 0;
+  }
+  /* l3 · a linha: o quadro de 40 e o nome ao lado, em caixa normal e na tinta. O título fica 32 abaixo */
+  .lock.da-marca[data-marca='l3'] {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    --pictograma: 37px;
+  }
+  .lock.da-marca[data-marca='l3'] .tile-marca {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .lock.da-marca[data-marca='l3'] .fret {
+    padding-left: 0;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--tinta);
+  }
+  /* com o teclado aberto, a marca encolhe: o quadro vai a 48 e o nome some; na linha, some tudo. O título fica */
+  .ph:has(.kb) .lock.da-marca {
+    --pictograma: 45px;
+  }
+  .ph:has(.kb) .lock.da-marca .tile-marca {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+  .ph:has(.kb) .lock.da-marca .fret,
+  .ph:has(.kb) .lock.da-marca[data-marca='l3'] {
+    display: none;
+  }
+  .ph:has(.kb) .lock.da-marca[data-marca='l2'] {
+    --pictograma: 72px;
+  }
+  .ph:has(.kb) .lock.da-marca[data-marca='l2'] .pictograma {
+    margin: -13px 0;
+  }
+}

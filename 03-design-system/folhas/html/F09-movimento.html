@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Folha 09 · Movimento e háptico</title>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../../../05-recursos/fontes/inter.css">
+<style>
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#EFE9F3}
+a{color:#AAEF00}a:hover{color:#AAEF00}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1100px; box-sizing: border-box; padding: 64px; background: #1A0F20; color: #EFE9F3; display: flex; flex-direction: column; gap: 32px; font-variant-numeric: tabular-nums">
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <p style="margin: 0; font-size: 11px; line-height: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #AF9BBA">Folha 09 · Movimento e háptico</p>
+    <h1 style="margin: 0; font-size: 32px; line-height: 36px; font-weight: 800; letter-spacing: -0.02em">Sete movimentos, e tudo o mais fica parado</h1>
+    <p style="margin: 0; max-width: 960px; font-size: 15px; line-height: 22px; color: #AF9BBA">Todo movimento informa ou guia uma ação; nenhum decora. Não anima: entrada de tela, contagem do zero ao abrir, atualização de previsão (o número troca no lugar), hover. Tudo respeita a redução de movimento do sistema: vira troca instantânea.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 48px; align-items: start">
+
+    <div style="border-radius: 16px; background: #26192E; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><b style="font-size: 15px; line-height: 22px; font-weight: 600">1 · Pulso do ao vivo</b><span style="font-size: 13px; color: #AF9BBA">1,6 s · ease-in-out · loop</span></div>
+      <div style="display: flex; align-items: center; gap: 16px"><span style="display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 8px; border-radius: 8px; background: rgba(170,239,0,.10); font-size: 13px; font-weight: 600; color: #AAEF00"><span style="width: 8px; height: 8px; border-radius: 999px; background: #AAEF00"></span>Ao vivo</span><span style="display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 8px; border-radius: 8px; background: rgba(170,239,0,.10); font-size: 13px; font-weight: 600; color: #AAEF00"><span style="width: 8px; height: 8px; border-radius: 999px; background: #AAEF00; opacity: 0.35"></span>Ao vivo</span><span style="font-size: 13px; color: #AF9BBA">opacidade do ponto 1 → 0,35 → 1 · só o ponto, nunca o texto</span></div>
+      <div style="position: relative; height: 24px; border-radius: 4px; background: #352140"><span style="position: absolute; left: 0; top: 10px; width: 100%; height: 4px; background: #432C50"></span><span style="position: absolute; left: 0; top: 6px; width: 12px; height: 12px; border-radius: 999px; background: #AAEF00"></span><span style="position: absolute; left: calc(50% - 6px); top: 6px; width: 12px; height: 12px; border-radius: 999px; background: #AAEF00; opacity: 0.35"></span><span style="position: absolute; right: 0; top: 6px; width: 12px; height: 12px; border-radius: 999px; background: #AAEF00"></span></div>
+      <p style="margin: 0; font-size: 13px; line-height: 18px; color: #AF9BBA">É a única animação em loop do app, porque é a prova de que o dado está chegando.</p>
+    </div>
+
+    <div style="border-radius: 16px; background: #26192E; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><b style="font-size: 15px; line-height: 22px; font-weight: 600">2 · O ônibus anda</b><span style="font-size: 13px; color: #AF9BBA">900 ms · ease-out cúbico · a cada posição nova</span></div>
+      <div style="position: relative; height: 40px"><span style="position: absolute; left: 11px; right: 11px; top: 19px; height: 2px; background: #CE8BF5"></span><span style="position: absolute; left: 0; top: 9px; width: 22px; height: 22px; border-radius: 999px; background: #AAEF00; opacity: 0.3"></span><span style="position: absolute; left: 30%; top: 9px; width: 22px; height: 22px; border-radius: 999px; background: #AAEF00; opacity: 0.55"></span><span style="position: absolute; left: 55%; top: 9px; width: 22px; height: 22px; border-radius: 999px; background: #AAEF00; opacity: 0.8"></span><span style="position: absolute; right: 0; top: 9px; width: 22px; height: 22px; border-radius: 999px; background: #AAEF00; color: #1A0F20; display: inline-flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6v6"></path><path d="M15 6v6"></path><path d="M2 12h19.6"></path><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"></path><circle cx="7" cy="18" r="2"></circle><path d="M9 18h5"></path><circle cx="16" cy="18" r="2"></circle></svg></span></div>
+      <p style="margin: 0; font-size: 13px; line-height: 18px; color: #AF9BBA">No trilho e no mapa, o disco desliza da posição anterior para a nova; sem sinal, ele para e apaga. A câmera do mapa segue com a mesma curva em 400 ms quando "seguir ônibus" está ligado.</p>
+    </div>
+
+    <div style="border-radius: 16px; background: #26192E; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><b style="font-size: 15px; line-height: 22px; font-weight: 600">3 · O herói troca de estado</b><span style="font-size: 13px; color: #AF9BBA">150 ms · fade cruzado · no lugar</span></div>
+      <div style="display: flex; align-items: center; gap: 16px"><span style="font-size: 32px; line-height: 36px; font-weight: 800; letter-spacing: -0.015em">3 min</span><span style="font-size: 13px; color: #AF9BBA">→</span><span style="font-size: 32px; line-height: 36px; font-weight: 800; letter-spacing: -0.015em; opacity: 0.5">Chegando</span><span style="font-size: 13px; color: #AF9BBA">→</span><span style="font-size: 32px; line-height: 36px; font-weight: 800; letter-spacing: -0.015em">Chegando</span></div>
+      <p style="margin: 0; font-size: 13px; line-height: 18px; color: #AF9BBA">Troca de número (8 → 7 min) não anima: substitui. Troca de estado (número → palavra, cartão → destaque) faz um fade de 150 ms e o fundo do cartão transita em 250 ms. Nunca contar do zero, nunca "rolar" dígitos.</p>
+    </div>
+
+    <div style="border-radius: 16px; background: #26192E; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><b style="font-size: 15px; line-height: 22px; font-weight: 600">4 · Sheet e diálogo</b><span style="font-size: 13px; color: #AF9BBA">sheet 250 ms sobe 40 px + fade · diálogo 150 ms fade · scrim 200 ms</span></div>
+      <div style="position: relative; height: 72px; border-radius: 8px; background: #1A0F20; overflow: hidden"><span style="position: absolute; left: 8px; right: 8px; bottom: -28px; height: 56px; border-radius: 12px 12px 0 0; background: #352140; opacity: 0.4"></span><span style="position: absolute; left: 8px; right: 8px; bottom: -12px; height: 56px; border-radius: 12px 12px 0 0; background: #352140; opacity: 0.7"></span><span style="position: absolute; left: 8px; right: 8px; bottom: 0; height: 56px; border-radius: 12px 12px 0 0; background: #3C2648"></span></div>
+      <p style="margin: 0; font-size: 13px; line-height: 18px; color: #AF9BBA">Fechar é o inverso em 200 ms. O painel do mapa arrasta com o dedo (sem curva) e assenta na posição mais próxima em 250 ms.</p>
+    </div>
+
+    <div style="border-radius: 16px; background: #26192E; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><b style="font-size: 15px; line-height: 22px; font-weight: 600">5 · Anel de chegando no mapa</b><span style="font-size: 13px; color: #AF9BBA">1,6 s · ease-out · loop só em chegando</span></div>
+      <div style="display: flex; align-items: center; gap: 32px; padding: 8px 0"><span style="position: relative; width: 40px; height: 40px; border-radius: 999px; background: #AAEF00; box-shadow: 0 0 0 0 rgba(170,239,0, 0.6)"></span><span style="position: relative; width: 40px; height: 40px; border-radius: 999px; background: #AAEF00; box-shadow: 0 0 0 7px rgba(170,239,0, 0.3)"></span><span style="position: relative; width: 40px; height: 40px; border-radius: 999px; background: #AAEF00; box-shadow: 0 0 0 14px rgba(170,239,0, 0)"></span><span style="font-size: 13px; color: #AF9BBA">anel escala de 0,8 a 1,35 enquanto some</span></div>
+      <p style="margin: 0; font-size: 13px; line-height: 18px; color: #AF9BBA">O único lugar onde o lima se expande: o passageiro precisa achar o ônibus no mapa em um relance.</p>
+    </div>
+
+    <div style="border-radius: 16px; background: #26192E; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><b style="font-size: 15px; line-height: 22px; font-weight: 600">6 · Toast, push e skeleton</b><span style="font-size: 13px; color: #AF9BBA">toast 200 ms sobe 8 px, fica 3,2 s · push 300 ms desce · skeleton 1,2 s linear</span></div>
+      <div style="height: 16px; border-radius: 8px; background: #352140; position: relative; overflow: hidden"><span style="position: absolute; left: 30%; top: 0; width: 25%; height: 100%; background: #3C2648"></span></div>
+      <p style="margin: 0; font-size: 13px; line-height: 18px; color: #AF9BBA">O brilho do skeleton corre da esquerda para a direita uma vez a cada 1,2 s. O toast nunca carrega erro: erro fica parado, no lugar da ação.</p>
+    </div>
+
+    <div style="border-radius: 16px; background: #26192E; padding: 20px; display: flex; flex-direction: column; gap: 12px; grid-column: span 2">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><b style="font-size: 15px; line-height: 22px; font-weight: 600">7 · Háptico</b><span style="font-size: 13px; color: #AF9BBA">leve · quatro momentos · nunca em atualização de previsão</span></div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+        <div style="padding: 12px; border-radius: 12px; background: #352140; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 13px; font-weight: 600">Chegando</b><span style="font-size: 13px; color: #AF9BBA">um toque leve quando o estado vira chegando</span></div>
+        <div style="padding: 12px; border-radius: 12px; background: #352140; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 13px; font-weight: 600">No ponto</b><span style="font-size: 13px; color: #AF9BBA">dois toques leves</span></div>
+        <div style="padding: 12px; border-radius: 12px; background: #352140; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 13px; font-weight: 600">Confirmou</b><span style="font-size: 13px; color: #AF9BBA">troca de ponto e embarque: um toque de sucesso</span></div>
+        <div style="padding: 12px; border-radius: 12px; background: #352140; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 13px; font-weight: 600">Cancelada ou trocado</b><span style="font-size: 13px; color: #AF9BBA">um toque de aviso junto do push</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+
+
+
+</body></html>

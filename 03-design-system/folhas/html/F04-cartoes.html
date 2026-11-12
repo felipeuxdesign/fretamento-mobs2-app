@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Folha 04 · Linhas, cartões e avisos</title>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../../../05-recursos/fontes/inter.css">
+<style>
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#EFE9F3}
+a{color:#AAEF00}a:hover{color:#AAEF00}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1760px; box-sizing: border-box; padding: 64px; background: #1A0F20; color: #EFE9F3; display: flex; flex-direction: column; gap: 40px; font-variant-numeric: tabular-nums">
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <p style="margin: 0; font-size: 11px; line-height: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #AF9BBA">Folha 04 · Linhas, cartões e avisos</p>
+    <h1 style="margin: 0; font-size: 32px; line-height: 36px; font-weight: 800; letter-spacing: -0.02em">O cartão é a unidade da tela; a linha é a unidade do cartão</h1>
+    <p style="margin: 0; max-width: 900px; font-size: 15px; line-height: 22px; color: #AF9BBA">Cartão: fundo-cartao, raio-lg, padding 16, 12 entre cartões. Só três variações mudam a forma: destaque (fundo-destaque, raio-xl), perigo (borda perigo) e interativo (poço + seta). Linha de lista: 56 mínimo, divisoria entre linhas, nunca na última.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 64px; align-items: start">
+
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Cartão · base · raio-lg 16 · padding 16 · gap 12</p>
+        <section style="width: 390px; box-sizing: border-box; border-radius: 16px; background: #26192E; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Próximas paradas</h2>
+          <p style="margin: 0; font-size: 15px; line-height: 22px">Conteúdo do cartão em corpo 15. Um cartão tem um assunto só.</p>
+        </section>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Cartão · destaque · fundo-destaque · raio-xl 24 · só o herói em chegando e a troca ativa</p>
+        <section style="width: 390px; box-sizing: border-box; border-radius: 24px; background: #3C234A; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 15px; line-height: 22px">Hoje você embarca em: <b style="font-weight: 600">Mercado de Casa Amarela</b></p>
+          <p style="margin: 0; font-size: 13px; line-height: 18px; color: #AF9BBA">Seu ponto de sempre continua Av. Abdias de Carvalho, 1200.</p>
+          <button type="button" style="align-self: flex-start; height: 44px; padding: 0 4px; border: 0; background: transparent; color: #AAEF00; font-family: inherit; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px">Voltar ao ponto de sempre</button>
+        </section>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Cartão · perigo · borda perigo 1 · só cancelada</p>
+        <section style="width: 390px; box-sizing: border-box; border-radius: 16px; background: #26192E; border: 1px solid #FF5E45; padding: 16px; display: flex; gap: 8px; align-items: flex-start">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5E45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>
+          <p style="margin: 0; font-size: 15px; line-height: 22px">Viagem cancelada pela transportadora.</p>
+        </section>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Cartão · interativo · poço 40 + título + apoio + seta · 64 mínimo · desligado a 55%</p>
+        <button type="button" style="width: 390px; box-sizing: border-box; min-height: 64px; border-radius: 16px; border: 0; background: #26192E; color: #EFE9F3; padding: 12px 16px; display: flex; align-items: center; gap: 12px; text-align: left; font-family: inherit">
+          <span style="width: 40px; height: 40px; border-radius: 8px; background: #352140; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"></path><path d="M15 5.764v15"></path><path d="M9 3.236v15"></path></svg></span>
+          <span style="flex: 1; display: flex; flex-direction: column"><b style="font-size: 15px; line-height: 22px; font-weight: 600">Ver no mapa</b><small style="font-size: 13px; line-height: 18px; color: #AF9BBA">Ônibus a 3 pontos do seu</small></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AF9BBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+        <button type="button" disabled="" style="width: 390px; box-sizing: border-box; min-height: 64px; border-radius: 16px; border: 0; background: #26192E; color: #EFE9F3; padding: 12px 16px; display: flex; align-items: center; gap: 12px; text-align: left; font-family: inherit; opacity: 0.55">
+          <span style="width: 40px; height: 40px; border-radius: 8px; background: #352140; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"></path><path d="M4 7h16"></path><path d="m16 21 4-4-4-4"></path><path d="M20 17H4"></path></svg></span>
+          <span style="flex: 1; display: flex; flex-direction: column"><b style="font-size: 15px; line-height: 22px; font-weight: 600">Embarcar em outro ponto hoje</b><small style="font-size: 13px; line-height: 18px; color: #AF9BBA">Indisponível sem internet</small></span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AF9BBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+        </button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Nota · check em vivo · nota-info em fundo-elevado com ícone info</p>
+        <div style="width: 390px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px">
+          <p style="margin: 0; display: flex; gap: 8px; align-items: flex-start; font-size: 13px; line-height: 18px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AAEF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg><span>Você embarcou às 06:43. Seu crachá foi lido no ônibus 1234.</span></p>
+          <p style="margin: 0; display: flex; gap: 8px; align-items: flex-start; font-size: 13px; line-height: 18px; padding: 10px 12px; border-radius: 8px; background: #352140"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4FB0EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg><span>Este não é o seu ônibus de sempre. O seu é o das 06:05.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Lista · linhas de 56 · divisoria entre, nunca na última · a seta é tinta-apagada</p>
+        <div style="width: 390px; box-sizing: border-box; border-radius: 16px; background: #26192E; overflow: hidden; display: flex; flex-direction: column">
+          <button type="button" style="min-height: 56px; padding: 8px 16px; border: 0; background: transparent; color: #EFE9F3; display: flex; align-items: center; gap: 12px; text-align: left; font-family: inherit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AF9BBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; line-height: 22px; font-weight: 500">Avisos</b><small style="font-size: 13px; line-height: 18px; color: #AF9BBA">Ônibus chegando: 10 min antes</small></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AF9BBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button>
+          <div style="height: 1px; background: #3B2747; margin: 0 16px"></div>
+          <div style="min-height: 56px; padding: 8px 16px; display: flex; align-items: center; gap: 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AF9BBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><small style="font-size: 13px; line-height: 18px; color: #AF9BBA">E-mail</small><b style="font-size: 15px; line-height: 22px; font-weight: 500">a•••@metalurgicaalfa.com.br</b></span></div>
+          <div style="height: 1px; background: #3B2747; margin: 0 16px"></div>
+          <div style="min-height: 56px; padding: 8px 16px; display: flex; align-items: center; gap: 12px"><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; line-height: 22px; font-weight: 500">Ônibus chegando</b><small style="font-size: 13px; line-height: 18px; color: #AF9BBA">Avisar 10 min antes</small></span><span style="width: 52px; height: 32px; border-radius: 16px; background: #AAEF00; position: relative; flex: none"><span style="position: absolute; top: 3px; left: 23px; width: 26px; height: 26px; border-radius: 999px; background: #1A0F20"></span></span></div>
+          <div style="height: 1px; background: #3B2747; margin: 0 16px"></div>
+          <button type="button" style="min-height: 56px; padding: 8px 16px; border: 0; background: transparent; color: #FF5E45; display: flex; align-items: center; gap: 12px; text-align: left; font-family: inherit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg><b style="flex: 1; font-size: 15px; line-height: 22px; font-weight: 600">Sair da conta</b></button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Notificação · disco 36 na cor do estado · não lida em 700 com ponto info · hora relativa</p>
+        <div style="width: 390px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px">
+          <h2 style="margin: 0 0 0 4px; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Hoje</h2>
+          <div style="border-radius: 16px; background: #26192E; overflow: hidden; display: flex; flex-direction: column">
+            <button type="button" style="min-height: 64px; padding: 12px 16px; border: 0; background: transparent; color: #EFE9F3; display: flex; align-items: flex-start; gap: 12px; text-align: left; font-family: inherit"><span style="width: 36px; height: 36px; border-radius: 999px; background: rgba(170,239,0,.10); color: #AAEF00; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path><path d="M4 2C2.8 3.7 2 5.7 2 8"></path><path d="M22 8c0-2.3-.8-4.3-2-6"></path></svg></span><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; line-height: 20px; font-weight: 700">Seu ônibus chega em 10 min</b><span style="font-size: 13px; line-height: 18px; color: #AF9BBA">Av. Abdias de Carvalho, 1200 · ônibus 1234 (ABC1D23)</span></span><span style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px; font-size: 11px; line-height: 14px; color: #AF9BBA; white-space: nowrap">há 2 min<span style="width: 8px; height: 8px; border-radius: 999px; background: #4FB0EE"></span></span></button>
+            <div style="height: 1px; background: #3B2747; margin: 0 16px"></div>
+            <button type="button" style="min-height: 64px; padding: 12px 16px; border: 0; background: transparent; color: #EFE9F3; display: flex; align-items: flex-start; gap: 12px; text-align: left; font-family: inherit"><span style="width: 36px; height: 36px; border-radius: 999px; background: rgba(239,174,67, 0.15); color: #EFAE43; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"></path><path d="M16 21.16a10 10 0 1 1 5-13.516"></path><path d="M20 11.5v6"></path><path d="M20 21.5h.01"></path></svg></span><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; line-height: 20px; font-weight: 500">Ônibus atrasado 12 min</b><span style="font-size: 13px; line-height: 18px; color: #AF9BBA">Nova previsão no seu ponto: 06:54.</span></span><span style="font-size: 11px; line-height: 14px; color: #AF9BBA; white-space: nowrap">05:58</span></button>
+            <div style="height: 1px; background: #3B2747; margin: 0 16px"></div>
+            <button type="button" style="min-height: 64px; padding: 12px 16px; border: 0; background: transparent; color: #EFE9F3; display: flex; align-items: flex-start; gap: 12px; text-align: left; font-family: inherit"><span style="width: 36px; height: 36px; border-radius: 999px; background: rgba(255,94,69, 0.15); color: #FF5E45; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg></span><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; line-height: 20px; font-weight: 500">Viagem das 06:05 cancelada</b><span style="font-size: 13px; line-height: 18px; color: #AF9BBA">Toque para ver o aviso da transportadora.</span></span><span style="font-size: 11px; line-height: 14px; color: #AF9BBA; white-space: nowrap">ontem</span></button>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Cabeçalho de seção · apoio 13 em tinta-apagada · 4 de margem antes da lista</p>
+        <div style="width: 390px; display: flex; flex-direction: column; gap: 8px">
+          <h2 style="margin: 0 0 0 4px; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Minhas linhas</h2>
+          <div style="border-radius: 16px; background: #26192E; overflow: hidden; display: flex; flex-direction: column">
+            <div style="min-height: 56px; padding: 8px 16px; display: flex; align-items: center; gap: 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AF9BBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; line-height: 22px; font-weight: 500">Linha 210 · Ida</b><small style="font-size: 13px; line-height: 18px; color: #AF9BBA">Seu ponto de sempre: Av. Abdias de Carvalho, 1200 · 06:05</small></span></div>
+            <div style="height: 1px; background: #3B2747; margin: 0 16px"></div>
+            <div style="min-height: 56px; padding: 8px 16px; display: flex; align-items: center; gap: 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AF9BBA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; line-height: 22px; font-weight: 500">Linha 210 · Volta</b><small style="font-size: 13px; line-height: 18px; color: #AF9BBA">Seu ponto de sempre: Fábrica – Portaria 2 · 17:20</small></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Estado vazio · ícone 48 em tinta-desligada · título 20 · texto 30ch · ação opcional</p>
+        <div style="width: 390px; box-sizing: border-box; padding: 40px 12px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#836C91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path><path d="m14 14-4 4"></path><path d="m10 14 4 4"></path></svg>
+          <h2 style="margin: 0; font-size: 20px; line-height: 26px; font-weight: 600; text-wrap: balance">Sem viagem hoje</h2>
+          <p style="margin: 0; max-width: 30ch; font-size: 15px; line-height: 22px; color: #AF9BBA">Sua próxima viagem é amanhã, quarta, às 06:05.</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Estado de erro · diz o que falhou e o que fazer · ação secundária + ajuda</p>
+        <div style="width: 390px; box-sizing: border-box; padding: 40px 12px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#836C91" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+          <h2 style="margin: 0; font-size: 20px; line-height: 26px; font-weight: 600; text-wrap: balance">Não conseguimos carregar sua viagem</h2>
+          <p style="margin: 0; max-width: 30ch; font-size: 15px; line-height: 22px; color: #AF9BBA">Parece que a internet caiu. Confira o sinal e tente de novo.</p>
+          <button type="button" style="width: 280px; height: 48px; margin-top: 8px; border-radius: 12px; border: 1px solid #432C50; background: #352140; color: #EFE9F3; font-family: inherit; font-size: 15px; font-weight: 600">Tentar de novo</button>
+          <button type="button" style="height: 44px; padding: 0 4px; border: 0; background: transparent; color: #AAEF00; font-family: inherit; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px">Preciso de ajuda</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Carregando · skeleton em fundo-elevado → sobreposto · com a forma do herói</p>
+        <div style="width: 390px; box-sizing: border-box; padding: 0 16px; display: flex; flex-direction: column; gap: 12px">
+          <div style="border-radius: 16px; background: #26192E; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+            <div style="height: 20px; width: 70%; border-radius: 8px; background: #352140"></div>
+            <div style="height: 14px; width: 45%; border-radius: 8px; background: #352140"></div>
+            <div style="height: 56px; width: 55%; border-radius: 8px; background: #3C2648; margin-top: 8px"></div>
+            <div style="height: 14px; width: 60%; border-radius: 8px; background: #352140"></div>
+          </div>
+          <div style="border-radius: 16px; background: #26192E; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+            <div style="height: 16px; border-radius: 8px; background: #352140"></div>
+            <div style="height: 16px; border-radius: 8px; background: #352140"></div>
+            <div style="height: 16px; width: 80%; border-radius: 8px; background: #352140"></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Estado central (tela inteira) · 48 em tinta-apagada · título 24 · ações empilhadas de 320</p>
+        <div style="width: 390px; box-sizing: border-box; border-radius: 16px; background: #1A0F20; border: 1px dashed #432C50; padding: 48px 16px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#AF9BBA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <h2 style="margin: 0; font-size: 24px; line-height: 28px; font-weight: 700; text-wrap: balance">Desbloqueie para ver sua viagem</h2>
+          <p style="margin: 0; max-width: 32ch; font-size: 15px; line-height: 22px; color: #AF9BBA">Use a digital ou a senha do celular.</p>
+          <div style="display: flex; flex-direction: column; gap: 4px; width: 100%; max-width: 320px; margin-top: 12px">
+            <button type="button" style="height: 48px; border-radius: 12px; border: 0; background: #AAEF00; color: #1A0F20; font-family: inherit; font-size: 15px; font-weight: 600">Desbloquear</button>
+            <button type="button" style="height: 44px; border: 0; background: transparent; color: #AAEF00; font-family: inherit; font-size: 15px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px">Entrar com código</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+
+
+
+</body></html>

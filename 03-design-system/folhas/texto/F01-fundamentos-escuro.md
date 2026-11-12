@@ -1,0 +1,78 @@
+# Folha 01 · Fundamentos · tema escuro (padrão)
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F01-fundamentos-escuro.html` e `../png/F01-fundamentos-escuro.png`.
+
+- App Passageiro Fretamento
+- Um placar de chegada no escuro. Meia-noite arroxeada, texto quase branco, e o lima só quando algo está vivo: o ônibus andando, a previsão ao vivo, o botão que age. Os números leem como placar: tabulares, grandes, com o horário ao lado.
+- Superfícies e tintas
+- fundo-pagina
+- #1A0F20 · o chão
+- fundo-cartao
+- #26192E · cartões, listas
+- fundo-elevado
+- #352140 · chips, campos
+- fundo-sobreposto
+- #3C2648 · pressionado, skeleton
+- fundo-destaque
+- #3C234A · só o herói em chegando
+- borda
+- #432C50 · campo, chip
+- divisoria
+- #3B2747 · entre itens
+- AaAaAa
+- tinta · apagada · desligada
+- 14,0 · 6,5 · 3,6 : 1 sobre o cartão
+- Vivo, atenção, perigo e info
+- vivo
+- #AAEF00 · 11,9:1 · vivo-suave 10%
+- Lima significa vivo: botão primário, pulso do dado ao vivo, ônibus, link. Um acento por tela.
+- atencao
+- ≈
+- #EFAE43 · 8,6:1 · atencao-suave 15%
+- Aproximado, atrasado além de 3 min, banner de aviso. Só depois da forma e da palavra.
+- perigo-forte
+- ✕
+- perigo #FF5E45 · 5,2:1 · forte #D32F2B
+- Cancelada, erro de campo, Sair e Excluir. Nunca como único sinal.
+- info · rota-volta
+- #4FB0EE · 7,0:1 · rota-ida #CE8BF5
+- Adiantado e aviso neutro; o trilho da volta. A ida usa o roxo, e o ônibus, em lima, é o único ponto brilhante da rota.
+- Tipo · Inter, hierarquia por tamanho
+- 8 minheroi · 56/60 · 800
+- 06:42heroi-compacto · 32/36 · 800
+- 1234 · ABC1D23placa · 20/24 · 700 · tracking 4%
+- Acompanhe seu ônibustitulo · 24/28 · 700
+- Linha 210 · Macaxeira – Fábricasecao · 17/22 · 600
+- A previsão ao vivo começa quando a viagem começar.corpo · 15/22 · 400
+- Embarcar neste pontocorpo-forte · 15/22 · 600
+- Seu ponto · Av. Abdias de Carvalho, 1200apoio · 13/18 · 500
+- Seu pontolegenda · 11/14 · 600 · caixa alta
+- Todo número é tabular. Corpo em 15 e não 14: passageiro de 40+ e sol no ponto. Tudo escala com a fonte do sistema até 200% sem cortar o herói.
+- Espaço · grid de 4
+- espaco-1 · 4
+- espaco-2 · 8
+- espaco-3 · 12
+- entre cartões
+- espaco-4 · 16
+- calha e padding de cartão
+- espaco-6 · 24
+- entre seções
+- espaco-8 · 32
+- espaco-12 · 48
+- Raio e medida
+- sm 8 · selo
+- md 12 · botão
+- lg 16 · cartão
+- xl 24 · diálogo
+- pill · disco
+- Botão primário · 48
+- Botão secundário · 48
+- Item de lista · 56 · toque mínimo 44
+- Lima é vivo
+- Um acento por tela
+- Estado tem forma antes de cor
+- O número é tabular
+- Superfície sólida atrás de texto
+- Elevação por superfície, sem sombra
+- Erro fica no lugar da ação
+- Hora relativa primeiro

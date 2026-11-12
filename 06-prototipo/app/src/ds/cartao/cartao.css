@@ -1,0 +1,316 @@
+/* O cartão é a unidade da tela (F04): cartão, destaque, perigo, interativo com poço e seta, e os cartões de contato.
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .poco {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: var(--fundo-elevado);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+  .poco svg {
+    width: 20px;
+    height: 20px;
+  }
+  svg.ic {
+    width: 20px;
+    height: 20px;
+    flex: none;
+  }
+  .ccard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 16px;
+    background: var(--fundo-cartao);
+    text-align: left;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    box-shadow: var(--sombra-cartao);
+  }
+  .ccard .tx {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .ccard .tx b {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .ccard .tx small {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .opt {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    background: var(--fundo-cartao);
+    box-shadow: var(--sombra-cartao);
+  }
+  .opt .tx {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .opt .tx b {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .opt .tx small {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .opt .tx small svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin-top: 1px;
+  }
+  .opt .tx small.w {
+    color: var(--tinta);
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  .opt .tx small.w svg {
+    color: var(--atencao);
+  }
+  .opt .tx small.e {
+    color: var(--tinta);
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  .opt .tx small.e svg {
+    color: var(--perigo);
+  }
+  .card {
+    background: var(--fundo-cartao);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: none;
+    box-shadow: var(--sombra-cartao);
+  }
+  .hline {
+    height: 1px;
+    background: var(--divisoria);
+  }
+  .list .hline {
+    margin: 0 16px;
+  }
+  .cint {
+    min-height: 64px;
+    border-radius: 16px;
+    border: 0;
+    background: var(--fundo-cartao);
+    color: var(--tinta);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    font: inherit;
+    width: 100%;
+    flex: none;
+    box-sizing: border-box;
+    box-shadow: var(--sombra-cartao);
+  }
+  .acts2 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ct {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .ct b {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .ct small {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .chev {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    color: var(--tinta-apagada);
+  }
+  .card.hl {
+    background: var(--fundo-destaque);
+    border-radius: 24px;
+  }
+  .placa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--fundo-cartao);
+  }
+  .placa .d {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: var(--onibus);
+    color: var(--vivo-tinta);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+  .placa .d svg {
+    width: 22px;
+    height: 22px;
+  }
+  .cint.dis {
+    opacity: .55;
+  }
+  .card.dg {
+    border: 1px solid var(--perigo);
+  }
+  .hcard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 16px;
+    background: var(--fundo-cartao);
+    box-shadow: var(--sombra-cartao);
+  }
+  .hcard .hh {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hcard .hh b {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+    display: block;
+  }
+  .hcard .hh small {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+    display: block;
+  }
+  .hcard .ln2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .hcard .ln2 svg {
+    width: 20px;
+    height: 20px;
+    color: var(--tinta-apagada);
+    flex: none;
+  }
+  .hcard .ln2 small {
+    font-size: 13px;
+    color: var(--tinta-apagada);
+  }
+}
+
+@layer ds {
+  .card.e8 {
+    gap: 8px;
+  }
+  .card.r-lista {
+    padding: 8px 16px;
+  }
+  .cint {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cint.compacto {
+    padding: 12px;
+  }
+  .cint:active {
+    background: var(--fundo-elevado);
+  }
+  .cint.dis:active {
+    background: var(--fundo-cartao);
+  }
+  /* a cor do ícone no poço diz o sentido: a volta em rota-volta, a ida de sempre em vivo */
+  .poco.cor-volta {
+    color: var(--rota-volta);
+  }
+  .poco.cor-vivo {
+    color: var(--vivo);
+  }
+  .poco.cor-tinta {
+    color: var(--tinta);
+  }
+  .poco.cor-ida {
+    color: var(--rota-ida);
+  }
+  .pilha2 {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .placa .legenda {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--tinta-apagada);
+  }
+  .placa .placa-n {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  /* a cabeça de um cartão de lista: o rótulo à esquerda e o link à direita */
+  .cab-do-cartao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  /* o título de um bloco solto na rolagem ("Outras viagens de hoje") */
+  .lbl.titulo-de-bloco {
+    margin: 4px 0 -4px 4px;
+  }
+  .dois-ossos {
+    display: flex;
+    gap: 12px;
+  }
+  .card.e4 {
+    gap: 4px;
+  }
+  .ccard.com-respiro {
+    margin-top: 8px;
+  }
+}

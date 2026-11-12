@@ -1,0 +1,35 @@
+Copyright (c) 2026 MOBS2 COMERCIO E SERVICOS LTDA - EPP
+Todos os direitos reservados.
+
+
+PROPRIEDADE
+
+Este repositório e tudo o que ele contém são propriedade da
+MOBS2 COMERCIO E SERVICOS LTDA - EPP: o produto, o design das telas, o
+design system, os textos, as referências desenhadas, os dados de exemplo e o
+código do protótipo.
+
+
+O QUE É PERMITIDO
+
+Abrir, ler e navegar pelo conteúdo e pelo protótipo publicado, para consulta.
+
+
+O QUE DEPENDE DE AUTORIZAÇÃO DA EMPRESA
+
+- copiar ou reproduzir qualquer parte, no todo ou em parte;
+- usar o conteúdo em outro produto, projeto ou trabalho;
+- modificar, publicar, distribuir ou repassar a terceiros.
+
+
+O QUE É DE TERCEIROS
+
+Os itens abaixo não são da empresa e seguem a licença de cada um:
+
+- a fonte Inter: SIL Open Font License 1.1 (05-recursos/fontes/);
+- os desenhos dos ícones, da família Lucide: licença ISC;
+- os componentes de vidro da GlassyUI (https://glassyui.com/), copiados para
+  06-prototipo/app/src/components/glassyui/: licença MIT;
+- as bibliotecas do protótipo (React, Vite, Tailwind CSS, Radix, Playwright e
+  as demais de 06-prototipo/app/package.json): a licença de cada uma;
+- a marca do WhatsApp, usada como ícone de contato, é da Meta.

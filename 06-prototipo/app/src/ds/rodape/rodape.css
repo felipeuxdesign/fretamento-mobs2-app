@@ -1,0 +1,40 @@
+/* O rodapé fixo com o botão (F02).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .ft {
+    flex: none;
+    padding: 12px 16px 34px;
+    background: var(--fundo-cartao);
+    border-top: 1px solid var(--divisoria);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@layer ds {
+  .ft {
+    padding-bottom: var(--pe-seguro);
+    position: relative;
+    z-index: 2;
+  }
+  .ft .ao-centro {
+    text-align: center;
+  }
+  /* em duas referências (T03 e T08) o indicador de início está desenhado dentro do rodapé, 12 abaixo do botão */
+  .hb-dentro {
+    height: 5px;
+    width: 134px;
+    border-radius: 3px;
+    background: var(--sis-tinta);
+    align-self: center;
+    margin-top: 12px;
+  }
+  .ph.do-celular .hb-dentro {
+    display: none;
+  }
+  /* quando o rodapé traz o indicador de início dentro dele, o da tela sai */
+  .ph:has(.hb-dentro) > .hb {
+    display: none;
+  }
+}

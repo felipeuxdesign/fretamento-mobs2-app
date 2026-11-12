@@ -1,0 +1,139 @@
+/* Os campos (F06): texto de 48, código de 6 dígitos, área de texto.
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .field label {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--tinta-apagada);
+  }
+  .inp {
+    height: 48px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid var(--borda);
+    background: var(--fundo-elevado);
+    color: var(--tinta);
+    padding: 0 14px;
+    font: inherit;
+    font-size: 15px;
+    width: 100%;
+  }
+  .inp::placeholder {
+    color: var(--tinta-desligada);
+    opacity: 1;
+  }
+  .inp.focus {
+    border-color: var(--vivo);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--vivo) 40%, transparent);
+  }
+  .caret {
+    display: inline-block;
+    width: 2px;
+    height: 22px;
+    border-radius: 1px;
+    background: var(--vivo);
+    margin-left: 1px;
+    vertical-align: middle;
+  }
+  .otp .caret {
+    height: 26px;
+    margin-left: -9px;
+  }
+  .inp.err {
+    border-color: var(--perigo);
+  }
+  .otp {
+    height: 56px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid var(--borda);
+    background: var(--fundo-elevado);
+    color: var(--tinta);
+    padding: 0 14px;
+    font: inherit;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: .5em;
+    text-align: center;
+    width: 100%;
+  }
+  .otp.dis {
+    opacity: .5;
+  }
+  .otp.focus {
+    border-color: var(--vivo);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--vivo) 40%, transparent);
+  }
+  .otp.err {
+    border-color: var(--perigo);
+  }
+  .ta.err {
+    border-color: var(--perigo);
+  }
+  .ta {
+    min-height: 112px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid var(--borda);
+    background: var(--fundo-elevado);
+    color: var(--tinta);
+    padding: 12px 14px;
+    font: inherit;
+    font-size: 15px;
+    line-height: 22px;
+    width: 100%;
+    display: block;
+  }
+  .ta.plc {
+    color: var(--tinta-desligada);
+  }
+  .ta.focus {
+    border-color: var(--vivo);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--vivo) 40%, transparent);
+  }
+}
+
+@layer ds {
+  /* a foto do campo com foco: o texto e o cursor desenhados, como nas referências */
+  .inp.foto {
+    display: flex;
+    align-items: center;
+  }
+  .otp.foto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* o campo de verdade, com foco: a mesma borda e o mesmo brilho da foto. O cursor é vivo */
+  .inp,
+  .otp,
+  .ta {
+    caret-color: var(--vivo);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  .ph input.inp:focus,
+  .ph input.otp:focus,
+  .ph textarea.ta:focus {
+    border-color: var(--vivo);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--vivo) 40%, transparent);
+    outline: none;
+  }
+  .otp::placeholder,
+  .ta::placeholder {
+    color: var(--tinta-desligada);
+    opacity: 1;
+  }
+  textarea.ta {
+    resize: none;
+    font-family: inherit;
+  }
+}

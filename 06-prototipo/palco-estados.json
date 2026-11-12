@@ -1,0 +1,898 @@
+{
+ "_": "O palco em dados. A coluna \"Estados desta tela\", tela por tela, e o dia. T05, T07 e T01 são as desenhadas na folha F11; as outras seguem a mesma regra: a tela, os momentos e os estados, na ordem da história.",
+ "abreEm": {
+  "tela": "T01",
+  "segue": "T05",
+  "hora": "06:24"
+ },
+ "dia": {
+  "_": "O dia é um só para as três telas. O tocador só aparece nelas.",
+  "telas": [
+   "T05",
+   "T06",
+   "T07"
+  ],
+  "velocidades": [
+   "0,5×",
+   "1×",
+   "2×"
+  ],
+  "velocidadePadrao": "1×",
+  "passos": [
+   {
+    "nome": "em rota",
+    "hora": "06:24",
+    "duracaoSeg": 8,
+    "aSeguir": "A seguir: chegando no seu ponto",
+    "quadros": {
+     "T05": "T05-00",
+     "T06": "T06-00",
+     "T07": "T07-00"
+    },
+    "batidasNasParadas": [
+     "T06-00",
+     "T06-01",
+     "T06-02"
+    ]
+   },
+   {
+    "nome": "chegando",
+    "hora": "06:41",
+    "duracaoSeg": 6,
+    "aSeguir": "A seguir: no seu ponto",
+    "quadros": {
+     "T05": "T05-01",
+     "T06": "T06-03",
+     "T07": "T07-01"
+    }
+   },
+   {
+    "nome": "no ponto",
+    "hora": "06:42",
+    "duracaoSeg": null,
+    "espera": "o Embarquei, no Início, ou o avançar",
+    "aSeguir": "Esperando o Embarquei",
+    "aSeguirForaDoInicio": "Esperando o Embarquei, no Início",
+    "quadros": {
+     "T05": "T05-02",
+     "T06": "T06-04",
+     "T07": "T07-02"
+    }
+   },
+   {
+    "nome": "a bordo",
+    "hora": "06:44",
+    "duracaoSeg": 6,
+    "aSeguir": "A seguir: chegou na fábrica",
+    "quadros": {
+     "T05": "T05-03",
+     "T06": "T06-05",
+     "T07": "T07-03"
+    }
+   },
+   {
+    "nome": "chegou",
+    "hora": "07:16",
+    "duracaoSeg": null,
+    "fim": true,
+    "aSeguir": "O dia terminou",
+    "quadros": {
+     "T05": "T05-04",
+     "T06": "T06-06",
+     "T07": "T07-04"
+    }
+   }
+  ]
+ },
+ "telas": [
+  {
+   "codigo": "T01",
+   "nome": "Entrar",
+   "tocadorDoDia": false,
+   "itens": 7,
+   "grupos": [
+    {
+     "grupo": null,
+     "itens": [
+      {
+       "ref": "T01-00",
+       "nome": "e-mail, campo vazio"
+      },
+      {
+       "ref": "T01-01",
+       "nome": "celular"
+      },
+      {
+       "ref": "T01-02",
+       "nome": "digitando"
+      },
+      {
+       "ref": "T01-03",
+       "nome": "enviando o código"
+      },
+      {
+       "ref": "T01-04",
+       "nome": "e-mail incompleto"
+      },
+      {
+       "ref": "T01-05",
+       "nome": "sem internet"
+      },
+      {
+       "ref": "T01-06",
+       "nome": "sem convite"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T02",
+   "nome": "Digite o código",
+   "tocadorDoDia": false,
+   "itens": 8,
+   "grupos": [
+    {
+     "grupo": null,
+     "itens": [
+      {
+       "ref": "T02-00",
+       "nome": "código enviado"
+      },
+      {
+       "ref": "T02-01",
+       "nome": "digitando"
+      },
+      {
+       "ref": "T02-02",
+       "nome": "60 s depois, nada chegou"
+      },
+      {
+       "ref": "T02-03",
+       "nome": "código incorreto"
+      },
+      {
+       "ref": "T02-04",
+       "nome": "código expirado"
+      },
+      {
+       "ref": "T02-05",
+       "nome": "bloqueado por 15 min"
+      },
+      {
+       "ref": "T02-06",
+       "nome": "validando"
+      },
+      {
+       "ref": "T02-07",
+       "nome": "acesso não liberado"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T03",
+   "nome": "Preparar o app",
+   "tocadorDoDia": false,
+   "itens": 6,
+   "grupos": [
+    {
+     "grupo": null,
+     "itens": [
+      {
+       "ref": "T03-00",
+       "nome": "primeiro acesso, nada decidido"
+      },
+      {
+       "ref": "T03-01",
+       "nome": "\"Começar\" com os avisos ligados: o celular pergunta"
+      },
+      {
+       "ref": "T03-02",
+       "nome": "ligar a proteção: o celular pede o Face ID"
+      },
+      {
+       "ref": "T03-03",
+       "nome": "celular sem bloqueio de tela"
+      },
+      {
+       "ref": "T03-04",
+       "nome": "não reconhecido"
+      },
+      {
+       "ref": "T03-05",
+       "nome": "avisos negados no celular"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T04",
+   "nome": "Bloqueado",
+   "tocadorDoDia": false,
+   "itens": 7,
+   "grupos": [
+    {
+     "grupo": null,
+     "itens": [
+      {
+       "ref": "T04-00",
+       "nome": "reabertura"
+      },
+      {
+       "ref": "T04-01",
+       "nome": "o celular pede o Face ID"
+      },
+      {
+       "ref": "T04-02",
+       "nome": "não reconhecido"
+      },
+      {
+       "ref": "T04-03",
+       "nome": "Face ID travado pelo celular"
+      },
+      {
+       "ref": "T04-04",
+       "nome": "o Face ID do celular mudou"
+      },
+      {
+       "ref": "T04-05",
+       "nome": "sessão expirada"
+      },
+      {
+       "ref": "T04-06",
+       "nome": "acesso encerrado pela empresa"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T05",
+   "nome": "Início",
+   "tocadorDoDia": true,
+   "itens": 32,
+   "grupos": [
+    {
+     "grupo": "O dia, na ordem",
+     "itens": [
+      {
+       "ref": "T05-00",
+       "nome": "em rota"
+      },
+      {
+       "ref": "T05-01",
+       "nome": "chegando"
+      },
+      {
+       "ref": "T05-02",
+       "nome": "no ponto"
+      },
+      {
+       "ref": "T05-03",
+       "nome": "Embarquei"
+      },
+      {
+       "ref": "T05-04",
+       "nome": "chegou na fábrica"
+      }
+     ]
+    },
+    {
+     "grupo": "Tocando no app",
+     "itens": [
+      {
+       "ref": "T05-05",
+       "nome": "rolada até o fim"
+      },
+      {
+       "ref": "T05-06",
+       "nome": "outra viagem do dia"
+      },
+      {
+       "ref": "T05-07",
+       "nome": "troca ativa"
+      },
+      {
+       "ref": "T05-08",
+       "nome": "voltar ao ponto de sempre"
+      }
+     ]
+    },
+    {
+     "grupo": "Antes da viagem",
+     "itens": [
+      {
+       "ref": "T05-09",
+       "nome": "antes da janela"
+      },
+      {
+       "ref": "T05-10",
+       "nome": "sem ônibus vinculado"
+      },
+      {
+       "ref": "T05-11",
+       "nome": "carregando"
+      }
+     ]
+    },
+    {
+     "grupo": "Ao vivo",
+     "itens": [
+      {
+       "ref": "T05-12",
+       "nome": "atrasado"
+      },
+      {
+       "ref": "T05-13",
+       "nome": "adiantado"
+      },
+      {
+       "ref": "T05-14",
+       "nome": "passou do ponto"
+      },
+      {
+       "ref": "T05-15",
+       "nome": "crachá lido"
+      },
+      {
+       "ref": "T05-16",
+       "nome": "Não fui eu"
+      },
+      {
+       "ref": "T05-17",
+       "nome": "a volta no embarque"
+      }
+     ]
+    },
+    {
+     "grupo": "Falhas e honestidade",
+     "itens": [
+      {
+       "ref": "T05-18",
+       "nome": "dado antigo"
+      },
+      {
+       "ref": "T05-19",
+       "nome": "fora do trajeto"
+      },
+      {
+       "ref": "T05-20",
+       "nome": "sem sinal"
+      },
+      {
+       "ref": "T05-21",
+       "nome": "sem internet"
+      },
+      {
+       "ref": "T05-22",
+       "nome": "erro ao abrir"
+      }
+     ]
+    },
+    {
+     "grupo": "Operação",
+     "itens": [
+      {
+       "ref": "T05-23",
+       "nome": "ônibus trocado"
+      },
+      {
+       "ref": "T05-24",
+       "nome": "crachá em outro ônibus"
+      },
+      {
+       "ref": "T05-25",
+       "nome": "Fui eu"
+      },
+      {
+       "ref": "T05-26",
+       "nome": "cancelada"
+      },
+      {
+       "ref": "T05-27",
+       "nome": "recuo para o programado"
+      }
+     ]
+    },
+    {
+     "grupo": "Conta e celular",
+     "itens": [
+      {
+       "ref": "T05-28",
+       "nome": "avisos desligados"
+      },
+      {
+       "ref": "T05-29",
+       "nome": "sem bloqueio"
+      },
+      {
+       "ref": "T05-30",
+       "nome": "a segurança mudou"
+      },
+      {
+       "ref": "T05-31",
+       "nome": "sem viagem hoje"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T06",
+   "nome": "Paradas da viagem",
+   "tocadorDoDia": true,
+   "itens": 15,
+   "grupos": [
+    {
+     "grupo": "O dia, na ordem",
+     "itens": [
+      {
+       "ref": "T06-00",
+       "nome": "em rota"
+      },
+      {
+       "ref": "T06-01",
+       "nome": "chegando na Av. Norte"
+      },
+      {
+       "ref": "T06-02",
+       "nome": "na Av. Norte"
+      },
+      {
+       "ref": "T06-03",
+       "nome": "chegando no seu ponto"
+      },
+      {
+       "ref": "T06-04",
+       "nome": "no seu ponto"
+      },
+      {
+       "ref": "T06-05",
+       "nome": "a bordo"
+      },
+      {
+       "ref": "T06-06",
+       "nome": "chegou na fábrica"
+      }
+     ]
+    },
+    {
+     "grupo": "Tocando no app",
+     "itens": [
+      {
+       "ref": "T06-07",
+       "nome": "tocar numa parada"
+      },
+      {
+       "ref": "T06-08",
+       "nome": "depois da troca de ponto"
+      }
+     ]
+    },
+    {
+     "grupo": "O que o mundo decide",
+     "itens": [
+      {
+       "ref": "T06-09",
+       "nome": "antes da janela"
+      },
+      {
+       "ref": "T06-10",
+       "nome": "dado antigo"
+      },
+      {
+       "ref": "T06-11",
+       "nome": "sem sinal"
+      },
+      {
+       "ref": "T06-12",
+       "nome": "sem internet"
+      },
+      {
+       "ref": "T06-13",
+       "nome": "cancelada"
+      },
+      {
+       "ref": "T06-14",
+       "nome": "fora do trajeto"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T07",
+   "nome": "Mapa",
+   "tocadorDoDia": true,
+   "itens": 19,
+   "grupos": [
+    {
+     "grupo": "O dia, na ordem",
+     "itens": [
+      {
+       "ref": "T07-00",
+       "nome": "em rota"
+      },
+      {
+       "ref": "T07-01",
+       "nome": "chegando"
+      },
+      {
+       "ref": "T07-02",
+       "nome": "no ponto"
+      },
+      {
+       "ref": "T07-03",
+       "nome": "a bordo"
+      },
+      {
+       "ref": "T07-04",
+       "nome": "chegou na fábrica"
+      }
+     ]
+    },
+    {
+     "grupo": "Tocando no app",
+     "itens": [
+      {
+       "ref": "T07-05",
+       "nome": "painel no meio"
+      },
+      {
+       "ref": "T07-06",
+       "nome": "painel inteiro"
+      },
+      {
+       "ref": "T07-07",
+       "nome": "tocar numa parada"
+      },
+      {
+       "ref": "T07-08",
+       "nome": "seguir o ônibus"
+      },
+      {
+       "ref": "T07-09",
+       "nome": "minha localização"
+      },
+      {
+       "ref": "T07-10",
+       "nome": "tocar no ônibus"
+      },
+      {
+       "ref": "T07-11",
+       "nome": "a linha inteira"
+      }
+     ]
+    },
+    {
+     "grupo": "O que o mundo decide",
+     "itens": [
+      {
+       "ref": "T07-12",
+       "nome": "antes da janela"
+      },
+      {
+       "ref": "T07-13",
+       "nome": "dado antigo"
+      },
+      {
+       "ref": "T07-14",
+       "nome": "sem sinal"
+      },
+      {
+       "ref": "T07-15",
+       "nome": "localização negada"
+      },
+      {
+       "ref": "T07-16",
+       "nome": "cancelada"
+      },
+      {
+       "ref": "T07-17",
+       "nome": "sem internet"
+      },
+      {
+       "ref": "T07-18",
+       "nome": "fora do trajeto"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T08",
+   "nome": "Outro ponto hoje",
+   "tocadorDoDia": false,
+   "itens": 10,
+   "grupos": [
+    {
+     "grupo": "A tela e os momentos",
+     "itens": [
+      {
+       "ref": "T08-00",
+       "nome": "nada escolhido"
+      },
+      {
+       "ref": "T08-01",
+       "nome": "Av. Norte escolhido"
+      },
+      {
+       "ref": "T08-02",
+       "nome": "\"Perto de mim\" sem permissão"
+      },
+      {
+       "ref": "T08-03",
+       "nome": "\"Perto de mim\" ligado"
+      },
+      {
+       "ref": "T08-04",
+       "nome": "\"já passou\" aberto"
+      },
+      {
+       "ref": "T08-05",
+       "nome": "confirmar a troca"
+      }
+     ]
+    },
+    {
+     "grupo": "O que o mundo decide",
+     "itens": [
+      {
+       "ref": "T08-06",
+       "nome": "nenhum ponto disponível"
+      },
+      {
+       "ref": "T08-07",
+       "nome": "sem internet"
+      },
+      {
+       "ref": "T08-08",
+       "nome": "o ônibus passou durante a confirmação"
+      },
+      {
+       "ref": "T08-09",
+       "nome": "a confirmação falhou"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T09",
+   "nome": "Notificações",
+   "tocadorDoDia": false,
+   "itens": 8,
+   "grupos": [
+    {
+     "grupo": null,
+     "itens": [
+      {
+       "ref": "T09-00",
+       "nome": "2 não lidas"
+      },
+      {
+       "ref": "T09-01",
+       "nome": "\"Marcar todas como lidas\""
+      },
+      {
+       "ref": "T09-02",
+       "nome": "tocar num aviso da transportadora"
+      },
+      {
+       "ref": "T09-03",
+       "nome": "vazio"
+      },
+      {
+       "ref": "T09-04",
+       "nome": "avisos desligados no celular"
+      },
+      {
+       "ref": "T09-05",
+       "nome": "sem internet"
+      },
+      {
+       "ref": "T09-06",
+       "nome": "push com o celular bloqueado"
+      },
+      {
+       "ref": "T09-07",
+       "nome": "push com o celular em uso"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T10",
+   "nome": "Perfil",
+   "tocadorDoDia": false,
+   "itens": 6,
+   "grupos": [
+    {
+     "grupo": null,
+     "itens": [
+      {
+       "ref": "T10-00",
+       "nome": "o perfil da Ana"
+      },
+      {
+       "ref": "T10-01",
+       "nome": "Preciso de ajuda: RH e transportadora"
+      },
+      {
+       "ref": "T10-02",
+       "nome": "\"Sair da conta\""
+      },
+      {
+       "ref": "T10-03",
+       "nome": "rolada até o fim: Aparência, ajuda, Sair e Excluir"
+      },
+      {
+       "ref": "T10-04",
+       "nome": "sem internet"
+      },
+      {
+       "ref": "T10-05",
+       "nome": "Preciso de ajuda sem transportadora no cadastro"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T11",
+   "nome": "Avisos",
+   "tocadorDoDia": false,
+   "itens": 4,
+   "grupos": [
+    {
+     "grupo": null,
+     "itens": [
+      {
+       "ref": "T11-00",
+       "nome": "avisos ligados · 10 min"
+      },
+      {
+       "ref": "T11-01",
+       "nome": "desligar \"Ônibus chegando\""
+      },
+      {
+       "ref": "T11-02",
+       "nome": "avisos desligados no celular"
+      },
+      {
+       "ref": "T11-03",
+       "nome": "sem internet"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T12",
+   "nome": "Privacidade",
+   "tocadorDoDia": false,
+   "itens": 17,
+   "grupos": [
+    {
+     "grupo": "A tela e os momentos",
+     "itens": [
+      {
+       "ref": "T12-00",
+       "nome": "desbloqueio ligado"
+      },
+      {
+       "ref": "T12-01",
+       "nome": "desligar o desbloqueio"
+      },
+      {
+       "ref": "T12-02",
+       "nome": "ligar o desbloqueio"
+      },
+      {
+       "ref": "T12-03",
+       "nome": "aviso de privacidade, por seções"
+      },
+      {
+       "ref": "T12-04",
+       "nome": "termos de uso, em cinco frases"
+      },
+      {
+       "ref": "T12-05",
+       "nome": "meus dados: o caminho do pedido"
+      },
+      {
+       "ref": "T12-06",
+       "nome": "fazer um pedido: tipo \"ver os dados\""
+      },
+      {
+       "ref": "T12-07",
+       "nome": "pedido: digitando"
+      },
+      {
+       "ref": "T12-08",
+       "nome": "pedido: escolher \"Apagar meu cadastro\""
+      },
+      {
+       "ref": "T12-09",
+       "nome": "pedido registrado: o protocolo"
+      }
+     ]
+    },
+    {
+     "grupo": "O que o mundo decide",
+     "itens": [
+      {
+       "ref": "T12-10",
+       "nome": "celular sem bloqueio de tela"
+      },
+      {
+       "ref": "T12-11",
+       "nome": "localização desligada"
+      },
+      {
+       "ref": "T12-12",
+       "nome": "meus dados: pedido em andamento"
+      },
+      {
+       "ref": "T12-13",
+       "nome": "meus dados: sem internet"
+      },
+      {
+       "ref": "T12-14",
+       "nome": "pedido: enviando"
+      },
+      {
+       "ref": "T12-15",
+       "nome": "pedido: falha de rede"
+      },
+      {
+       "ref": "T12-16",
+       "nome": "pedido: sem internet"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "codigo": "T13",
+   "nome": "Excluir conta",
+   "tocadorDoDia": false,
+   "itens": 6,
+   "grupos": [
+    {
+     "grupo": null,
+     "itens": [
+      {
+       "ref": "T13-00",
+       "nome": "o que some e o que fica"
+      },
+      {
+       "ref": "T13-01",
+       "nome": "\"Excluir conta\""
+      },
+      {
+       "ref": "T13-02",
+       "nome": "conta excluída"
+      },
+      {
+       "ref": "T13-03",
+       "nome": "excluindo"
+      },
+      {
+       "ref": "T13-04",
+       "nome": "falha de rede"
+      },
+      {
+       "ref": "T13-05",
+       "nome": "sem internet"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

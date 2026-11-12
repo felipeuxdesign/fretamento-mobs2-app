@@ -1,0 +1,75 @@
+# Folha 01 · Fundamentos · tema claro (derivado dos tokens)
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F01-fundamentos-claro.html` e `../png/F01-fundamentos-claro.png`.
+
+- App Passageiro Fretamento
+- O claro é pensado como claro, nunca o escuro invertido: neutro frio com um fio de violeta, cartões brancos com sombra suave, e o lima do escuro vira o roxo da marca, com texto branco no botão. É o tema do ponto de ônibus às 7h, no sol.
+- Superfícies e tintas
+- fundo-pagina
+- #F7F5F8 · o chão
+- fundo-cartao
+- #FFFFFF + sombra-cartao
+- fundo-elevado
+- #F2EFF4 · chips, campos
+- fundo-sobreposto
+- #ECE7EF · pressionado, skeleton
+- fundo-destaque
+- #F3E9F8 · só o herói em chegando
+- borda
+- #CEC5D3 · campo, chip
+- divisoria
+- #EEE9F1 · entre itens
+- AaAaAa
+- tinta · apagada · desligada
+- 16,6 · 5,9 · 3,2 : 1 sobre o cartão
+- Vivo, atenção, perigo e info
+- vivo
+- #4F007D · 12,9:1 · vivo-suave #F3E9F8
+- O lima do escuro vira o roxo da marca no claro. Botão com texto branco.
+- atencao-suave
+- suave #FAF0DC + tinta · 14,7:1 · ícone em #A36605
+- No claro o âmbar é só ícone e borda: o selo de atraso vai em atencao-suave com tinta, porque sobre a página #A36605 dá 4,3:1 e reprova.
+- perigo
+- ✕
+- #D32F2B · 5,0:1 · perigo-suave #FBE7E6
+- O mesmo vermelho serve de texto e de fundo no claro.
+- info · rota-volta
+- #0E7BC4 · 4,5:1 · rota-ida #A46BD0
+- A rota da ida é um roxo mais claro que o vivo: o ônibus continua o ponto mais escuro e saturado.
+- Tipo · Inter, hierarquia por tamanho
+- 8 minheroi · 56/60 · 800
+- 06:42heroi-compacto · 32/36 · 800
+- 1234 · ABC1D23placa · 20/24 · 700 · tracking 4%
+- Acompanhe seu ônibustitulo · 24/28 · 700
+- Linha 210 · Macaxeira – Fábricasecao · 17/22 · 600
+- A previsão ao vivo começa quando a viagem começar.corpo · 15/22 · 400
+- Embarcar neste pontocorpo-forte · 15/22 · 600
+- Seu ponto · Av. Abdias de Carvalho, 1200apoio · 13/18 · 500
+- Seu pontolegenda · 11/14 · 600 · caixa alta
+- A mesma escala do escuro. Nada muda de tamanho entre temas; só os tokens de cor.
+- Espaço · grid de 4
+- espaco-1 · 4
+- espaco-2 · 8
+- espaco-3 · 12
+- entre cartões
+- espaco-4 · 16
+- calha e padding de cartão
+- espaco-6 · 24
+- entre seções
+- espaco-8 · 32
+- espaco-12 · 48
+- Raio e medida
+- sm 8 · selo
+- md 12 · botão
+- lg 16 · cartão
+- xl 24 · diálogo
+- pill · disco
+- Botão primário · 48
+- Botão secundário · 48
+- Item de lista · 56 · toque mínimo 44
+- O claro nunca é inversão
+- Sombra volta no claro
+- Âmbar nunca é texto sobre a página
+- Secundário tem fill e borda próprios
+- Transparências sobem de opacidade só aqui
+- Testar no sol, não só no canvas

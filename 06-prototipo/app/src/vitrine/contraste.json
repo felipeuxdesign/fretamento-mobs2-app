@@ -1,0 +1,67 @@
+{
+ "barra": {
+  "escuro": 10.1,
+  "claro": 14.9,
+  "onde": "pior no escuro: \"A\" sobre o Início rolado; no claro: \"Bom dia, Ana\" sobre o Início rolado"
+ },
+ "barraDoMapa": {
+  "escuro": 6.9,
+  "claro": 8.6,
+  "onde": "pior no escuro: \"Linha 210 · Ida de sempre\" sobre o mapa; no claro: \"Linha 210 · Ida de sempre\" sobre o mapa"
+ },
+ "balaoDoOnibus": {
+  "escuro": 5.5,
+  "claro": 4.8,
+  "onde": "pior no escuro: \"Ao vivo · posição há 12 s\" sobre o pior caso; no claro: \"Ao vivo · posição há 12 s\" sobre o pior caso"
+ },
+ "painelDoMapa": {
+  "escuro": 6.1,
+  "claro": 4.7,
+  "onde": "pior no escuro: \"às\" sobre o mapa; no claro: \"às\" sobre o mapa"
+ },
+ "sheet": {
+  "escuro": 10,
+  "claro": 12.5,
+  "onde": "pior no escuro: \"Cancelar\" sobre o Início rolado; no claro: \"Confirmar\" sobre o pior caso"
+ },
+ "banner": {
+  "escuro": 10.4,
+  "claro": 12.6,
+  "onde": "pior no escuro: \"O ônibus saiu do trajeto previ\" sobre o Início rolado; no claro: \"O ônibus saiu do trajeto previ\" sobre o mapa"
+ },
+ "rodape": {
+  "escuro": 6.8,
+  "claro": 5,
+  "onde": "pior no escuro: \"Av. Norte, 2800 · passa às 06:\" sobre o Início rolado; no claro: \"Av. Norte, 2800 · passa às 06:\" sobre o Início rolado"
+ },
+ "toast": {
+  "escuro": 11.7,
+  "claro": 13.5,
+  "onde": "pior no escuro: \"Pronto. Hoje você embarca na\" sobre o pior caso; no claro: \"Pronto. Hoje você embarca na\" sobre o mapa"
+ },
+ "sistema": {
+  "escuro": 13.8,
+  "claro": 13.9,
+  "onde": "pior no escuro: \"“Mobs2 Fretamento” Deseja Envi\" sobre o Início rolado; no claro: \"As notificações podem incluir \" sobre o Início rolado"
+ },
+ "segmentado": {
+  "escuro": 5.6,
+  "claro": 4.5,
+  "onde": "pior no escuro: \"Sistema\" sobre a página lisa; no claro: \"Celular\" sobre a página lisa"
+ },
+ "botoes": {
+  "escuro": 4.7,
+  "claro": 4.9,
+  "onde": "pior no escuro: \"Excluir\" sobre o Início rolado; no claro: \"Excluir\" sobre o mapa"
+ },
+ "conteudo": {
+  "escuro": 5.9,
+  "claro": 5.7,
+  "onde": "pior no escuro: \"Passa no seu ponto · Av. Abdia\" sobre a página lisa; no claro: \"Passa no seu ponto · Av. Abdia\" sobre a página lisa"
+ },
+ "selos": {
+  "escuro": 5.1,
+  "claro": 10.9,
+  "onde": "pior no escuro: \"Ao vivo\" sobre o Início rolado; no claro: \"Ao vivo\" sobre o mapa"
+ }
+}

@@ -1,0 +1,236 @@
+/* O trilho de paradas, com o ônibus cortando o trilho (F05).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .row {
+    display: flex;
+    gap: 12px;
+    min-height: 52px;
+  }
+  .row.bus {
+    min-height: 40px;
+  }
+  .row.grp {
+    min-height: 36px;
+  }
+  .rail {
+    flex: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+  }
+  .ln {
+    position: absolute;
+    left: 13px;
+    width: 2px;
+  }
+  .lnd {
+    position: absolute;
+    left: 13px;
+    width: 2px;
+    top: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(to bottom,var(--borda) 0 3px,transparent 3px 6px);
+  }
+  .mini {
+    border-radius: 999px;
+    background: var(--fundo-cartao);
+    border: 2px solid var(--rota-ida);
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: none;
+    width: 24px;
+    height: 24px;
+    color: var(--tinta);
+    border-width: 2px;
+  }
+  .mini svg {
+    width: 14px;
+    height: 14px;
+    display: block;
+  }
+  .mini.me {
+    border-color: var(--vivo);
+    color: var(--vivo);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--vivo) 18%, transparent);
+  }
+  .mini.term {
+    background: var(--tinta);
+    border-color: var(--tinta);
+    color: var(--fundo-pagina);
+  }
+  .mini.pass {
+    border-color: var(--tinta-desligada);
+    color: var(--tinta-desligada);
+  }
+  .mini.pass.term {
+    background: var(--tinta-apagada);
+    border-color: var(--tinta-apagada);
+  }
+  .mini.bus {
+    background: var(--onibus);
+    border: 0;
+    color: var(--vivo-tinta);
+    width: 24px;
+    height: 24px;
+  }
+  .mini.bus svg {
+    width: 14px;
+    height: 14px;
+  }
+  .mini.d10 {
+    width: 10px;
+    height: 10px;
+    border-color: var(--tinta-desligada);
+    box-shadow: none;
+  }
+  .rb {
+    flex: 1;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+  }
+  .rn {
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    align-items: center;
+  }
+  .rn.muted {
+    color: var(--tinta-apagada);
+  }
+  .rn.b {
+    font-weight: 600;
+  }
+  .rs {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .rt {
+    padding: 8px 4px 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .rt.muted {
+    color: var(--tinta-apagada);
+    font-weight: 500;
+  }
+  .rt.b {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .rt small {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 500;
+    color: var(--tinta-apagada);
+  }
+  .busl {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--vivo);
+  }
+  .grpl {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .mini.me svg {
+    width: 14px;
+    height: 14px;
+  }
+  .mini.term.pass {
+    background: var(--tinta-desligada);
+    border-color: var(--tinta-desligada);
+    color: var(--fundo-pagina);
+  }
+  .rt.b small {
+    color: var(--tinta-apagada);
+  }
+  .mini.bus.off {
+    background: var(--tinta-desligada);
+    opacity: .75;
+  }
+  .busl.off {
+    color: var(--tinta-apagada);
+  }
+  .mini.dis {
+    border-color: var(--tinta-desligada);
+    color: var(--tinta-desligada);
+  }
+  .mini.term.dis {
+    background: var(--tinta-desligada);
+    border-color: var(--tinta-desligada);
+    color: var(--fundo-pagina);
+  }
+}
+
+@layer ds {
+  .trilho {
+    display: flex;
+    flex-direction: column;
+  }
+  /* os trechos do trilho: meia altura acima e meia abaixo do marcador. A cor diz se já passou */
+  .ln.de-cima {
+    top: 0;
+    height: 50%;
+  }
+  .ln.de-baixo {
+    bottom: 0;
+    height: 50%;
+  }
+  .ln.passado {
+    background: var(--borda);
+  }
+  .ln.ida {
+    background: var(--rota-ida);
+  }
+  .ln.volta {
+    background: var(--rota-volta);
+  }
+  .row.toca {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* o seu ponto, depois que o ônibus passou por ele e você não embarcou: o disco segue em vivo, o nome apaga */
+  .mini.me.pass {
+    border-color: var(--vivo);
+    color: var(--vivo);
+    background: var(--fundo-cartao);
+  }
+  /* o ônibus anda (movimento 2): o deslize é feito no componente, da posição anterior para a nova */
+  .row.bus .mini,
+  .row.bus .rb {
+    z-index: 2;
+  }
+  .row.bus .rb {
+    position: relative;
+  }
+  /* a origem da viagem numa lista de pontos que já passaram: o disco cheio, apagado */
+  .mini.term.apagado {
+    background: var(--tinta-apagada);
+    border-color: var(--tinta-apagada);
+  }
+}

@@ -1,0 +1,287 @@
+/* As peças do mapa (F05): o mapa, os rótulos, o grupo de controles, o balão e o painel de três alturas.
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .map {
+    position: absolute;
+    inset: 0;
+    background: var(--mapa-terreno);
+    overflow: hidden;
+  }
+  .map svg.bg {
+    position: absolute;
+    inset: 0;
+  }
+  .mkl {
+    position: absolute;
+    transform: translate(-50%,0);
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: linear-gradient(var(--vivo-suave),var(--vivo-suave)),var(--mapa-terreno);
+    color: var(--vivo);
+    white-space: nowrap;
+  }
+  .msheet {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--fundo-cartao);
+    border-radius: 16px 16px 0 0;
+    box-shadow: var(--sombra-sheet);
+    padding: 8px 16px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 4;
+    box-sizing: border-box;
+  }
+  .msheet .hd {
+    width: 32px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--borda);
+    align-self: center;
+    margin-bottom: 4px;
+  }
+  .mhero {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mhero .big {
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+  }
+  .mgrp {
+    position: absolute;
+    right: 16px;
+    width: 48px;
+    display: flex;
+    flex-direction: column;
+    background: var(--fundo-cartao);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 3;
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--scrim) 73%, transparent);
+  }
+  .mgrp .mg {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    background: transparent;
+    color: var(--tinta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .mgrp .mg svg {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+  .mgrp .mg-div {
+    display: block;
+    height: 1px;
+    background: var(--divisoria);
+    margin: 0 10px;
+  }
+  .msheet h3 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+  }
+  .mgrp .mg.on {
+    color: var(--vivo);
+  }
+  .mgrp .mg.on::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--vivo) 12%, transparent);
+  }
+  .callout {
+    position: absolute;
+    transform: translate(-50%,-100%);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: var(--fundo-cartao);
+    border: 1px solid var(--borda);
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .callout b {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+  }
+  .callout small {
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--tinta-apagada);
+  }
+  .mgrp .mg.dis {
+    color: var(--tinta-desligada);
+  }
+  .mkl.m {
+    background: var(--fundo-elevado);
+    color: var(--tinta-apagada);
+  }
+  .mhero .big.muted {
+    color: var(--tinta-apagada);
+  }
+}
+
+@layer ds {
+  /* o mapa se move por transform, numa camada só, para o desfoque de cima não repintar tudo a cada quadro */
+  .mapa-camada {
+    transform-origin: 0 0;
+    will-change: transform;
+  }
+  .mapa-camada.desliza {
+    transition: transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  /* o que fica por cima do mapa preso a um ponto dele (o rótulo do seu ponto, o do ônibus, o balão) desliza no mesmo
+     tempo e na mesma curva: sem isso, o rótulo chegava antes do marcador */
+  .map.desliza > .mkl,
+  .map.desliza > .callout {
+    transition: left 400ms cubic-bezier(0.215, 0.61, 0.355, 1), top 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  /* o que se toca no mapa: as paradas e o ônibus */
+  .mapa-toca {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline-offset: 2px;
+  }
+  /* o anel de chegando (movimento 5): 1,6 s, ease-out, em loop só em chegando. O anel escala de 0,8 a 1,35 enquanto some */
+  .anel-de-chegando {
+    animation: anel-de-chegando 1.6s ease-out infinite;
+  }
+  .ph.parado .anel-de-chegando {
+    animation: none;
+  }
+  @keyframes anel-de-chegando {
+    from {
+      transform: scale(0.8);
+      fill-opacity: 0.22;
+    }
+    to {
+      transform: scale(1.35);
+      fill-opacity: 0;
+    }
+  }
+  /* a barra flutuante do mapa: a barra de status, a barra e os avisos, por cima do mapa */
+  .topo.sobre-o-mapa {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 3;
+  }
+  .map {
+    touch-action: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mapa-camada.desliza {
+      transition: none;
+    }
+    .map.desliza > .mkl,
+    .map.desliza > .callout {
+      transition: none;
+    }
+    .anel-de-chegando {
+      animation: none;
+    }
+  }
+}
+
+@layer ds {
+  .mgrp .mg-linha {
+    display: contents;
+  }
+  .mgrp .mg {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mgrp .mg.dis {
+    cursor: default;
+  }
+  /* o painel arrasta com o dedo e assenta na altura mais próxima em 250 ms (movimento 4) */
+  .msheet {
+    transition: height 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    overflow: hidden;
+  }
+  .ph.parado .msheet {
+    transition: none;
+  }
+  /* o painel inteiro arrasta: o dedo não rola nem seleciona o texto dele */
+  .msheet {
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  /* a alça: a área de toque tem 44 de altura, crescendo para cima e para baixo sem mexer no que se vê */
+  .msheet .hd-toque {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    height: 44px;
+    margin: -8px 0 -28px;
+    padding: 8px 0 0;
+    box-sizing: border-box;
+    touch-action: none;
+    cursor: grab;
+  }
+  .msheet .hd-toque .hd {
+    align-self: flex-start;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .msheet {
+      transition: none;
+    }
+  }
+  /* dentro do painel: o número do herói compacto, o cabeçalho do detalhe de uma parada, a linha sob o título */
+  .mhero-numero {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .cab-do-painel {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .cab-do-painel > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .mnote.sob-o-titulo {
+    margin-top: -8px;
+  }
+  .card.do-painel {
+    padding: 12px;
+    gap: 4px;
+  }
+  /* sobre o mapa, o aviso de atenção é opaco: a cor suave por cima do fundo da página */
+  .topo.sobre-o-mapa .bf.w {
+    background: linear-gradient(var(--atencao-suave), var(--atencao-suave)), var(--fundo-pagina);
+  }
+}

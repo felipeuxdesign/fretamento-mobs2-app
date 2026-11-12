@@ -1,0 +1,125 @@
+/* Os selos de confiança e de pontualidade, e o chip de papel da parada (F05).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .cp {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: var(--vivo-suave);
+    color: var(--vivo);
+    white-space: nowrap;
+  }
+  .selos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .selo {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 8px;
+    background: var(--fundo-elevado);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--tinta);
+    white-space: nowrap;
+  }
+  .selo svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+  }
+  .selo.vivo {
+    background: var(--vivo-suave);
+    color: var(--vivo);
+    font-weight: 600;
+    gap: 6px;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--vivo);
+    flex: none;
+  }
+  .cp.m {
+    background: var(--fundo-elevado);
+    color: var(--tinta-apagada);
+  }
+  .selo.at {
+    background: var(--atencao);
+    color: var(--atencao-tinta);
+    font-weight: 600;
+  }
+  .selo.ats {
+    background: var(--atencao-suave);
+    color: var(--atencao);
+    font-weight: 600;
+  }
+  .selo.ad svg {
+    color: var(--info);
+  }
+  .selo.mu {
+    color: var(--tinta-apagada);
+  }
+  .selo.ss {
+    border: 1px dashed var(--tinta-desligada);
+    font-weight: 600;
+  }
+  .selo.pg {
+    background: var(--perigo-suave);
+    color: var(--perigo);
+    font-weight: 600;
+  }
+}
+
+@layer ds {
+  /* o pulso do ao vivo (movimento 1): só o ponto, 1,6 s, de 1 a 0,35 e volta. É a única animação em loop do app */
+  .selo .dot {
+    animation: pulso-do-ao-vivo 1.6s ease-in-out infinite;
+  }
+  @keyframes pulso-do-ao-vivo {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .selo .dot {
+      animation: none;
+    }
+  }
+  /* lei do claro: o âmbar nunca é fundo cheio com texto; o selo de atraso vai em atencao-suave com atencao-tinta */
+  [data-tema='claro'] .selo.at {
+    background: var(--atencao-suave);
+    color: var(--atencao-tinta);
+  }
+  [data-tema='claro'] .selo.at svg {
+    color: var(--atencao);
+  }
+  /* as mesmas leis nos selos de fundo suave: no claro, o âmbar e o vermelho são o ícone, e a palavra vai em tinta
+     (âmbar nunca é texto; perigo só é texto sobre a página e o cartão) */
+  [data-tema='claro'] .selo.ats {
+    color: var(--atencao-tinta);
+  }
+  [data-tema='claro'] .selo.ats svg {
+    color: var(--atencao);
+  }
+  [data-tema='claro'] .selo.pg {
+    color: var(--tinta);
+  }
+  [data-tema='claro'] .selo.pg svg {
+    color: var(--perigo);
+  }
+}

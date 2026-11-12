@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>T04-01 · momento · o celular pede a digital</title>
+<link rel="stylesheet" href="../../../../05-recursos/fontes/inter.css">
+<style>
+
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#EFE9F3;background:#1A0F20}
+a{color:#AAEF00}a:hover{color:#AAEF00}
+.ph{width:390px;height:844px;box-sizing:border-box;background:#1A0F20;border-radius:32px;outline:1px solid #432C50;overflow:hidden;display:flex;flex-direction:column;position:relative;font-variant-numeric:tabular-nums;font-size:15px;line-height:22px;color:#EFE9F3;flex:none}
+.sa{height:47px;flex:none;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:12px 26px 0 30px;color:#FFFFFF}
+.sa .st-t{font-size:17px;line-height:22px;font-weight:600;letter-spacing:-.3px;font-variant-numeric:tabular-nums}
+.sa .st-i{display:inline-flex;align-items:center;gap:7px}
+.sa svg{display:block;fill:currentColor}
+.app{position:absolute;left:0;right:0;top:63px;margin:0;display:flex;flex-direction:column;align-items:center;gap:8px}
+.app .wm{display:block;width:96px;height:20px;color:#AAEF00}
+.app .fret{display:flex;align-items:center;gap:8px;font-size:10px;line-height:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#AF9BBA}
+.app .fret i{width:16px;height:2px;background:#AAEF00;border-radius:1px}
+.cp{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;padding:24px 16px 25px}
+.cp svg.big{width:48px;height:48px;color:#AF9BBA}
+.cp svg.big.warn{color:#EFAE43}
+.cp h2{margin:0;font-size:24px;line-height:28px;font-weight:700;text-wrap:balance}
+.cp p{margin:0;max-width:34ch;font-size:15px;line-height:22px;color:#AF9BBA}
+.acts{display:flex;flex-direction:column;gap:4px;width:100%;max-width:320px;margin-top:12px}
+.btn{height:48px;border-radius:12px;border:0;background:#AAEF00;color:#1A0F20;font:inherit;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;flex:none;padding:0}
+.lnk{min-height:44px;padding:0 4px;border:0;background:transparent;color:#AAEF00;font:inherit;font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:3px;align-self:center;flex:none}
+.t13{margin:0;font-size:13px;line-height:18px;color:#AF9BBA;max-width:34ch}
+.ferr{margin:0;display:flex;gap:6px;align-items:flex-start;font-size:13px;line-height:18px;text-align:left;padding:10px 12px;border-radius:8px;background:rgba(255,94,69,.15);box-sizing:border-box;color:#EFE9F3}
+.ferr svg{width:16px;height:16px;flex:none;margin-top:1px;color:#FF5E45}
+.fwarn{margin:0;display:flex;gap:6px;align-items:flex-start;font-size:13px;line-height:18px;text-align:left;padding:10px 12px;border-radius:8px;background:rgba(239,174,67,.15);box-sizing:border-box;color:#EFE9F3}
+.fwarn svg{width:16px;height:16px;flex:none;margin-top:1px;color:#EFAE43}
+.cp .ferr,.cp .fwarn,.cpane .ferr,.cpane .fwarn{width:100%;max-width:320px}
+.scrim{position:absolute;inset:0;background:rgba(10,5,14,.62)}
+.sysb{position:absolute;left:12px;right:12px;bottom:24px;border-radius:24px;background:rgba(37,37,38,.88);-webkit-backdrop-filter:blur(30px) saturate(180%);backdrop-filter:blur(30px) saturate(180%);color:#FFFFFF;overflow:hidden;display:flex;flex-direction:column}
+.sysb .tag{margin:0;padding:10px 12px 0;font-size:11px;line-height:14px;font-weight:600;text-align:center;color:rgba(235,235,245,.6)}
+.sysb .b{padding:22px 18px 16px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.sysb .b svg{width:40px;height:40px;color:#0A84FF}
+.sysb h3{margin:0;font-size:17px;line-height:22px;font-weight:600}
+.sysb .b p{margin:0;font-size:13px;line-height:18px;color:#FFFFFF}
+.sysb .a{display:flex;flex-direction:column;border-top:1px solid rgba(84,84,88,.65)}
+.sysb .a button{height:44px;border:0;background:transparent;color:#0A84FF;font:inherit;font-size:17px;font-weight:400}
+.sysb .a button+button{border-top:1px solid rgba(84,84,88,.65)}
+.hb{position:absolute;bottom:8px;left:50%;width:134px;height:5px;border-radius:3px;background:#FFFFFF;transform:translateX(-50%);z-index:9}
+.lbl{font-size:13px;line-height:18px;font-weight:600;color:#AF9BBA;margin:0}
+.fich{border-radius:16px;background:#26192E;padding:16px;display:flex;flex-direction:column;gap:6px;font-size:13px;line-height:18px}
+.fich b{font-size:11px;line-height:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AF9BBA}
+.trow{display:grid;grid-template-columns:90px 90px 1.4fr 1.2fr;gap:12px;padding:8px 16px;font-size:13px;line-height:18px}
+.hl2{height:1px;background:#3B2747}
+.gh{grid-column:1 / -1;display:flex;flex-direction:column;gap:4px;padding-top:16px}
+.gh h2{margin:0;font-size:24px;line-height:28px;font-weight:700}
+.gh p{margin:0;font-size:15px;line-height:22px;color:#AF9BBA}
+.app .appic{display:block;width:32px;height:32px;flex:none}.app .fret{padding-left:.24em}
+
+
+/* ── a section e a ficha, como no Configurador e no Hub ── */
+.sx{box-sizing:border-box;padding:64px;display:flex;flex-direction:column;gap:48px;background:#1A0F20;color:#EFE9F3;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-variant-numeric:tabular-nums}
+.sx-grid{display:grid;column-gap:64px;row-gap:56px;align-items:start}
+.sx-cell{display:flex;flex-direction:column;gap:14px}
+.sx-lab{display:flex;flex-direction:column;gap:4px;height:62px}
+.sx-lab .l1{display:flex;align-items:baseline;gap:10px}
+.sx-lab b{font-variant-numeric:tabular-nums;font-size:16px;line-height:20px;font-weight:700;color:#EFE9F3;white-space:nowrap}
+.sx-lab i{font-style:normal;font-size:11px;line-height:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#AF9BBA;white-space:nowrap}
+.sx-lab>span{font-size:14px;line-height:19px;color:#AF9BBA}
+.sx-dev{width:390px;height:844px;border-radius:32px;overflow:hidden;box-shadow:0 0 0 1px #432C50,0 24px 48px rgba(0,0,0,.35);flex:0 0 auto;position:relative}
+.sx-dev>.ph{border-radius:0;outline:0}
+.sx-info{display:flex;flex-direction:column;gap:16px;min-width:0}
+.sx-hdr{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding-bottom:24px;border-bottom:1px solid #3B2747}
+.sx-ttl{display:flex;flex-direction:column;gap:8px}
+.sx-eb{font-size:11px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AF9BBA}
+.sx-h1{margin:0;font-size:28px;line-height:36px;font-weight:800;letter-spacing:-0.02em;color:#EFE9F3}
+.sx-intro{margin:0;font-size:15px;line-height:24px;color:#AF9BBA;max-width:1180px}
+.sx-fqs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sx-fq{display:flex;flex-direction:column;gap:8px;padding:18px 20px;background:#26192E;border-radius:16px}
+.sx-fq>span{font-size:11px;line-height:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AF9BBA}
+.sx-fq p{margin:0;font-size:14px;line-height:21px;color:#EFE9F3}
+.sx-info-t{font-size:16px;line-height:24px;font-weight:600;color:#EFE9F3;margin-top:8px}
+.sx-info-t.e{margin-top:40px;padding-top:32px;border-top:1px solid #3B2747}
+.sx-tw{border-radius:16px;background:#26192E;overflow:hidden}
+.sx-tbl{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:13px;line-height:20px;color:#D8CFE0}
+.sx-tbl th{text-align:left;font-size:12px;line-height:16px;font-weight:600;color:#AF9BBA;padding:10px 12px;border-bottom:1px solid #3B2747;white-space:nowrap}
+.sx-tbl td{padding:9px 12px 10px;border-bottom:1px solid #3B2747;vertical-align:top}
+.sx-tbl tr:last-child td{border-bottom:0}
+.sx-tbl td.c{white-space:nowrap;font-weight:700;color:#EFE9F3}
+.sx-tbl td.k{white-space:nowrap;color:#AF9BBA}
+.sx-tbl td.m{color:#AF9BBA}
+
+html,body{margin:0;padding:0;background:#1A0F20}body{width:390px;height:844px;overflow:hidden}.ph{border-radius:0!important;outline:0!important;box-shadow:none!important}
+</style>
+</head>
+<body>
+<div class="ph" data-ref="T04-01"><div class="sa"><span class="st-t">9:41</span><span class="st-i"><svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect></svg><svg width="17" height="12" viewBox="0 0 17 12" aria-hidden="true"><circle cx="8.5" cy="10.3" r="1.6"></circle><path d="M5.1 7.6a4.9 4.9 0 0 1 6.8 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path><path d="M1.8 4.4a9.6 9.6 0 0 1 13.4 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg><svg width="27" height="13" viewBox="0 0 27 13" aria-hidden="true"><rect x="0.5" y="0.5" width="23" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-opacity=".4"></rect><rect x="2" y="2" width="20" height="9" rx="2"></rect><path d="M25 4.3v4.4a2.2 2.2 0 0 0 0-4.4Z" fill-opacity=".4"></path></svg></span></div>
+        <div class="cp">
+          <svg class="big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path><circle cx="12" cy="16.5" r="1"></circle></svg>
+          <h2>Confirme que é você</h2>
+          <p>Use a digital, o rosto ou a senha do celular para abrir o app.</p>
+          <div class="acts"><button type="button" class="btn">Desbloquear</button><button type="button" class="lnk">Entrar com código</button></div>
+        </div>
+        <div class="scrim"></div>
+        <div class="sysb">
+          <div class="b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"></path><path d="M14 13.12c0 2.38 0 6.38-1 8.88"></path><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"></path><path d="M2 12a10 10 0 0 1 18-6"></path><path d="M2 16h.01"></path><path d="M21.8 16c.2-2 .131-5.354 0-6"></path><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"></path><path d="M8.65 22c.21-.66.45-1.32.57-2"></path><path d="M9 6.8a6 6 0 0 1 9 5.2v2"></path></svg><h3>Confirme que é você</h3><p>Toque no sensor de digital ou olhe para a câmera.</p></div>
+          <div class="a"><button type="button">Usar a senha do celular</button><button type="button">Cancelar</button></div>
+        </div>
+        <div class="hb"></div>
+      </div>
+</body>
+</html>

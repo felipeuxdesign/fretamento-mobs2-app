@@ -1,0 +1,203 @@
+/* A tela do aparelho: 390 × 844, reta por dentro. É a raiz do app: o tema mora aqui (data-tema). */
+@layer ds {
+  .ph {
+    --topo-seguro: 47px;
+    --pe-seguro: 34px;
+    width: 390px;
+    height: 844px;
+    box-sizing: border-box;
+    background: var(--fundo-pagina);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-family: var(--fonte);
+    font-variant-numeric: tabular-nums;
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--tinta);
+    flex: none;
+    isolation: isolate;
+  }
+  /* no celular de verdade o app ocupa a tela, e as margens seguras do sistema entram no lugar dos 47 e dos 34 */
+  .ph.do-celular {
+    --topo-seguro: env(safe-area-inset-top, 0px);
+    --pe-seguro: max(env(safe-area-inset-bottom, 0px), 16px);
+    width: 100%;
+    height: 100dvh;
+  }
+  /* tudo o que abre por cima abre aqui dentro: sheet, toast, alerta, teclado */
+  .ph > .por-cima {
+    position: absolute;
+    inset: 0;
+    z-index: 8;
+    pointer-events: none;
+  }
+  .ph > .por-cima > * {
+    pointer-events: auto;
+  }
+  /* parado, o app é uma foto: não responde a toque nem a teclado, só rola */
+  .ph.parado .congela {
+    pointer-events: none;
+  }
+  /* a tela que ainda é só o nome dela */
+  .so-o-nome {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    color: var(--tinta-apagada);
+  }
+  .so-o-nome b {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--tinta);
+  }
+
+  /* a área que rola, e os arranjos de botões e de links das telas */
+  .auth.entrar {
+    padding-top: 28px;
+  }
+  .auth {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden auto;
+    padding: 8px 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .auth .seg {
+    margin-top: 12px;
+  }
+  .acts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    max-width: 320px;
+    margin-top: 12px;
+  }
+  .sc.justa {
+    padding: 14px 16px 16px;
+    gap: 14px;
+  }
+  .sc {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden auto;
+    padding: 16px 16px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sc>* {
+    flex-shrink: 0;
+  }
+  .lnks {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .sec2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .sc.end {
+    justify-content: flex-end;
+  }
+}
+
+@layer ds {
+  /* o topo: a barra de status, a barra e os banners, parados no lugar */
+  .topo {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+  }
+  .sc,
+  .auth {
+    scrollbar-width: none;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  .sc::-webkit-scrollbar,
+  .auth::-webkit-scrollbar {
+    display: none;
+  }
+  /* o indicador de rolagem do iOS: fino, na borda direita, aparece enquanto rola e some sozinho */
+  .rolagem {
+    position: absolute;
+    right: 3px;
+    width: 3px;
+    border-radius: 2px;
+    background: color-mix(in srgb, var(--tinta) 45%, transparent);
+    opacity: 0;
+    transition: opacity 300ms;
+    pointer-events: none;
+    z-index: 4;
+  }
+  .rolagem.a-vista {
+    opacity: 1;
+    transition-duration: 80ms;
+  }
+  /* de vidro, a barra e o rodapé ficam por cima da rolagem: o conteúdo começa no mesmo lugar de antes
+     (ganha o espaço da barra em cima e o do rodapé embaixo) e passa por baixo deles ao rolar */
+  .sc.sob-o-topo {
+    padding-top: calc(16px + var(--topo-h));
+  }
+  .sc.justa.sob-o-topo {
+    padding-top: calc(14px + var(--topo-h));
+  }
+  .auth.sob-o-topo {
+    padding-top: calc(8px + var(--topo-h));
+  }
+  .sc.sobre-o-rodape {
+    padding-bottom: calc(48px + var(--rodape-h));
+  }
+  .sc.justa.sobre-o-rodape {
+    padding-bottom: calc(16px + var(--rodape-h));
+  }
+  .lugar-do-rodape {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+  }
+  .lugar-do-rodape.flutua {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+  }
+  /* o miolo das telas de um pedido só, no centro (Bloqueado, acesso encerrado, conta excluída) */
+  .so-centro {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  /* um agrupador que só existe para o código (a chave de uma lista, o grupo de rádios): não muda o arranjo */
+  .so-conteudo {
+    display: contents;
+  }
+  .lnks.de-16 {
+    gap: 16px;
+  }
+  /* a tela de texto corrido: os parágrafos trazem o próprio espaço */
+  .sc.sem-vao {
+    gap: 0;
+  }
+}

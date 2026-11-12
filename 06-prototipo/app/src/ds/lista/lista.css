@@ -1,0 +1,267 @@
+/* As listas (F04, F06): linha de lista, item selecionável, linha de notificação, grupo recolhido.
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  /* o grupo recolhido da T08 mora dentro da lista; a classe .grp também nomeia a linha agrupada do trilho (.row.grp) */
+  .list > .grp {
+    min-height: 52px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--tinta-apagada);
+  }
+  .list > .grp svg {
+    width: 20px;
+    height: 20px;
+  }
+  .list {
+    background: var(--fundo-cartao);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    box-shadow: var(--sombra-cartao);
+  }
+  .isel {
+    min-height: 56px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+  }
+  .isel.dis .nm {
+    color: var(--tinta-apagada);
+  }
+  .isel .tx {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .nm {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .sb {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .isel.on {
+    background: var(--fundo-destaque);
+  }
+  /* a linha escolhida é uma faixa de ponta a ponta: a borda da faixa já separa, e as divisórias coladas nela,
+     a de cima e a de baixo, saem. O lugar delas fica, para a lista não mudar de altura */
+  .list :has(> .isel.on) > .hline,
+  .list :has(> .isel.on) + * > .hline,
+  .list .hline:has(+ .isel.on),
+  .list .isel.on + .hline {
+    visibility: hidden;
+  }
+  .sh {
+    margin: 12px 4px -4px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--tinta-apagada);
+  }
+  .nrow {
+    min-height: 72px;
+    padding: 12px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    border: 0;
+    background: transparent;
+    color: var(--tinta);
+    font: inherit;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .nrow+.nrow {
+    border-top: 1px solid var(--divisoria);
+  }
+  .nic {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: var(--fundo-elevado);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    color: var(--tinta-apagada);
+  }
+  .nic svg {
+    width: 20px;
+    height: 20px;
+  }
+  .nic.ok {
+    color: var(--vivo);
+    background: var(--vivo-suave);
+  }
+  .nic.in {
+    color: var(--info);
+    background: color-mix(in srgb, var(--info) 16%, transparent);
+  }
+  .nic.wa {
+    color: var(--atencao);
+    background: var(--atencao-suave);
+  }
+  .nic.dg {
+    color: var(--perigo);
+    background: var(--perigo-suave);
+  }
+  .nt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .nt b {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .nt span {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .nti {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 600;
+    color: var(--tinta-apagada);
+    padding-top: 4px;
+  }
+  .udot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--vivo);
+  }
+  .nrow.unread .nt b {
+    color: var(--tinta);
+  }
+  .nrow.read .nt b {
+    font-weight: 500;
+  }
+  .li {
+    min-height: 56px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    border: 0;
+    background: transparent;
+    color: var(--tinta);
+    font: inherit;
+    text-align: left;
+    width: 100%;
+  }
+  .li+.li {
+    border-top: 1px solid var(--divisoria);
+  }
+  .li>svg.ic {
+    color: var(--tinta-apagada);
+  }
+  .li .tx {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .li .tx b {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .li .tx small {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .li.dg {
+    color: var(--perigo);
+  }
+  .li.dg>svg.ic {
+    color: var(--perigo);
+  }
+  .li.dg .tx b {
+    color: var(--perigo);
+  }
+  .lnote {
+    margin: 0;
+    padding: 10px 16px 14px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .lnote svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin-top: 1px;
+  }
+  .li.dis {
+    opacity: .5;
+  }
+}
+
+@layer ds {
+  .li.col-inicio {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 4px;
+  }
+  .li.col-esticada {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  button.li,
+  .nrow,
+  .isel[role='radio'],
+  .grp[role='button'] {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .isel.dis[role='radio'] {
+    cursor: default;
+  }
+  button.li:active,
+  .nrow:active {
+    background: var(--fundo-elevado);
+  }
+  .grp svg.gira {
+    transform: rotate(180deg);
+  }
+  /* o grupo aberto: o título acende */
+  .list > .grp[aria-expanded='true'] {
+    color: var(--tinta);
+  }
+}

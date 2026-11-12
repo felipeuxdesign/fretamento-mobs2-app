@@ -1,0 +1,46 @@
+# Folha 02 · Chrome: o que envolve a tela
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F02-chrome.html` e `../png/F02-chrome.png`.
+
+- Barras, rodapé, folhas, diálogos, toast e push
+- Tudo aqui é fundo-cartao sobre fundo-pagina, com divisoria onde encosta no conteúdo. Nenhuma sombra no escuro: o chrome se separa por ser um degrau mais claro. Sem barra de status falsa: o aparelho desenha a dele.
+- Barra superior · home · 56 · fundo-cartao + divisoria
+- Bom dia, Ana
+- 2
+- A
+- Barra superior · interna · seta em 16 + título
+- Paradas da viagem
+- Marcar lidas
+- Barra superior · sobre o mapa · flutua, sem divisoria
+- Linha 210 · Ida
+- Rodapé fixo · só em tela com ação fixa · divisoria em cima
+- Ao continuar, você aceita os Termos de uso.
+- Continuar
+- Sheet de confirmação · raio-lg em cima · scrim atrás · sombra-sheet
+- Embarcar no Mercado de Casa Amarela hoje?
+- Previsão do ônibus neste ponto: 06:38, 4 min antes do seu ponto de sempre. A transportadora vai saber que você embarca aqui.
+- Cancelar
+- Confirmar
+- Sheet com erro no lugar da ação · perigo-suave + perigo
+- Embarcar no Mercado de Casa Amarela hoje?
+- Não conseguimos confirmar: sem internet. Tente de novo quando a conexão voltar.
+- Cancelar
+- Tentar de novo
+- Diálogo do sistema · desenhado como o do iOS, nas cores do sistema e não nas do app · no app real é o próprio celular
+- “Mobs2 Fretamento” Deseja Enviar Notificações
+- As notificações podem incluir alertas, sons e indicadores no ícone. Elas podem ser configuradas em Ajustes.
+- Não Permitir
+- Permitir
+- Banner fixo · três níveis · empilha até dois, por prioridade, e nunca esconde o segundo
+- Sem internet. Mostrando dados de 06:24.
+- Seu crachá foi lido às 06:24 no ônibus 1250.
+- Fui euNão fui eu
+- Ônibus trocado. Hoje é o 1250 · DEF2G34.
+- Toast · só confirmação leve · tinta sobre fundo invertido · 3 s
+- Pronto. Hoje você embarca no Mercado de Casa Amarela.
+- Push · como o do iOS: o celular desenha o cartão, com o ícone do app; o app só manda o título e o texto
+- Seu ônibus chega em 10 minagora
+- Av. Abdias de Carvalho, 1200 · ônibus 1234 (ABC1D23)
+- Live Activity / Live Update · compacto e expandido · fase 2 do produto
+- Chega em 8 min06:42
+- Av. Abdias de Carvalho, 1200 · ônibus 12348 min às 06:42

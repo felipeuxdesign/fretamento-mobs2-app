@@ -1,0 +1,49 @@
+/* O avatar, 32 na barra e 72 no Perfil, e o cabeçalho de perfil (F03, F06).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .av {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: var(--avatar-fundo);
+    color: var(--avatar-tinta);
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pfh {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    padding: 8px 0 4px;
+  }
+  .av72 {
+    width: 72px;
+    height: 72px;
+    border-radius: 999px;
+    background: var(--avatar-fundo);
+    color: var(--avatar-tinta);
+    font-size: 28px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+  .pfh h2 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+  }
+  .pfh p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+}

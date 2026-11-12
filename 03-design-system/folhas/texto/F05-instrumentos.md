@@ -1,0 +1,43 @@
+# Folha 05 · Instrumentos: selos de confiança, trilho de paradas e mapa
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F05-instrumentos.html` e `../png/F05-instrumentos.png`.
+
+- O que diz se o número é real, e onde o ônibus está
+- Três níveis de confiança, sempre com forma + ícone + palavra: ao vivo (pulso em vivo), aproximado (âmbar, idade do dado) e programado (neutro, sem pulso). Sem sinal e sem internet são variantes do programado com a causa escrita. Pontualidade não tem cor própria: só o atraso além de 3 min ganha âmbar.
+- Selos de confiança · 24 · raio-sm · ícone 16
+- Ao vivovivo-suave + vivo · o ponto pulsa 1,6 s
+- Aproximado · há 3 minatencao-suave + atencao
+- Programadofundo-elevado + tinta · sem pulso
+- Sem sinal há 9 minprogramado + borda tracejada
+- Sem internet · dados de 06:24idem, causa no celular
+- Selos de situação · pontualidade sem cor própria
+- No horárioneutro: não é vivo, é normal
+- Atrasado 8 minatencao cheio · só além de 3 min
+- Adiantado 4 minícone info · "chegue antes"
+- Viagem canceladaperigo-suave + perigo
+- Embarque registradovivo: você está a bordo
+- Passou às 06:44apagado: já foi
+- Chips de viagem · 44 · raio-md · selecionado em vivo-suave
+- Ida 06:05 · de sempre
+- Ida 07:05
+- Volta 17:20
+- Trilho de paradas · completo · ícone do tipo em cada ponto (14 no disco de 24) · trilho 2 em rota-ida, passado em borda, anônimas em tracejado
+- Terminal da Macaxeira
+- 06:06passou
+- Mercado de Casa Amarela
+- 06:13passou
+- Indo para a Av. Norte, 2800
+- 3 outras paradas
+- Av. Abdias de Carvalho, 1200Seu ponto4 pessoas embarcam aqui
+- 06:428 min
+- Terminal do Barro3 pessoas embarcam aqui
+- 06:5824 min
+- Fábrica – Portaria 2Destino
+- 07:1541 min
+- Regras: cada ponto leva o ícone do tipo (landmark, factory, store, map-pin, user · Lucide, traço 2,4, 14 no disco de 24; o glifo bus usa viewBox "0 1 24 24"); passada = tinta-apagada, sem contagem, e trilho em borda; o ônibus corta o trilho onde está, com um texto só, que traz o estado do dado (GTFS-realtime) e aponta a próxima parada: "Indo para a Av. Norte, 2800" = IN_TRANSIT_TO, "Chegando na Av. Norte, 2800" = INCOMING_AT, "Na Av. Norte, 2800" = STOPPED_AT (a parada mostra "agora" junto da hora e, ao sair, vira passada); quando a próxima é a do passageiro, o nome vira "no seu ponto"; as anomalias ocupam o mesmo texto: "Fora do trajeto previsto", "Último sinal às 06:21"; os que vêm mostram os minutos sob o horário; a contagem é de previstos e só aparece nos que vêm, "N pessoas embarcam aqui", e abaixo de 2 vira "Até 1 pessoa embarca aqui", para ninguém ser identificado; "N outras paradas" agrupa as sem nome com trilho tracejado; o meu ponto tem halo e horário em 700; o programado ganha "prog." e não tem minutos. O destino é sempre bola cheia, como os terminais: o trilho morre nele e o chip diz "Destino"; o glifo continua sendo o do lugar, e a bandeira fica só no mapa, como marcador de destino. Um lugar nunca repete o glifo de outro tipo: a fábrica usa factory, nunca o landmark do terminal; e quando o seu ponto é um lugar com tipo, o tipo vence o boneco, porque o halo e o "Seu ponto" já dizem que é seu.
+- Mapa · Recife em três níveis de rua · só o ônibus e a rota têm cor · painel com alça
+- Seu ponto
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 8 minàs 06:42
+- Ao vivoÔnibus a 2 pontos do seu
+- mapa-terreno, mapa-quadra, mapa-rua (3,4 e local 1,7), mapa-via (5,2, casing em terreno a 55%), mapa-agua (rio com margens em mapa-parque), bairros e marcos rotulados em tinta-apagada com halo. Rota: percorrida em rota a 35%, à frente a 100% (4,5), trecho atual com brilho de rota a 22% × 12 e traço 5,5; setas do sentido em mapa-terreno a cada 110; paradas sem nome como ponto de 9 na rota. Marcadores: parada 24, passada 22 (tinta-desligada), seu ponto 26 com halos 38/54, selecionado 34, destino 26, ônibus 32 com seta do sentido (cinza quando o dado é velho). O rótulo do seu ponto tem fundo opaco, o vivo a 10% sobre mapa-terreno, pra rota e as ruas não passarem por dentro. Escala 56 = 400 m e bússola no mapa; zoom afastado = cena a 50% com rota × 1,8 e marcadores a 72% (T07-11). Painel: alça de 44 que arrasta de verdade (recolhido, meio, inteiro, e inteiro cola na status bar sem a barra do mapa). Controles: barra única de 48, raio 16, divisória sempre; ligado = glifo vivo em quadrado vivo a 12%, inset 6, raio 10. Tokens propostos: mapa-agua-tinta #8A93C6 (rótulo sobre a água), rota-passada = rota 35%, rota-atual = rota 22%.

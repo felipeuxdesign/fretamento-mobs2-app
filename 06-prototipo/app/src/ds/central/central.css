@@ -1,0 +1,142 @@
+/* O estado central: ícone de 48, título, frase e um botão; o vazio e o skeleton (F04).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .cpane {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    padding: 0 24px 49px;
+  }
+  .cpane svg.big {
+    width: 48px;
+    height: 48px;
+    color: var(--tinta-apagada);
+  }
+  .cpane h2 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  .cpane p {
+    margin: 0;
+    max-width: 34ch;
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--tinta-apagada);
+  }
+  .central {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    padding: 24px 16px 25px;
+  }
+  .central svg.big {
+    width: 48px;
+    height: 48px;
+    color: var(--tinta-apagada);
+  }
+  .central h2 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  .central p {
+    margin: 0;
+    max-width: 34ch;
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--tinta-apagada);
+  }
+  .central .ferr {
+    width: 100%;
+    max-width: 320px;
+  }
+  .central .fwarn {
+    width: 100%;
+    max-width: 320px;
+  }
+  .central svg.big.warn {
+    color: var(--atencao);
+  }
+  .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 40px 12px;
+  }
+  .empty svg {
+    width: 48px;
+    height: 48px;
+    color: var(--tinta-desligada);
+  }
+  .empty h3 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .empty p {
+    margin: 0;
+    max-width: 30ch;
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--tinta-apagada);
+  }
+  .sk {
+    border-radius: 8px;
+    background: var(--fundo-elevado);
+  }
+  .cpane svg.big.ok {
+    color: var(--vivo);
+  }
+}
+
+@layer ds {
+  .sk.forte {
+    background: var(--fundo-sobreposto);
+  }
+  .sk {
+    position: relative;
+    overflow: hidden;
+  }
+  .ph:not(.parado) .sk::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--tinta) 8%, transparent), transparent);
+    transform: translateX(-100%);
+    animation: brilho-do-skeleton 1.2s linear infinite;
+  }
+  @keyframes brilho-do-skeleton {
+    to {
+      transform: translateX(100%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ph .sk::after {
+      animation: none;
+      content: none;
+    }
+  }
+  /* o botão do vazio: 320 de largura, 8 abaixo da frase */
+  .empty .btn.do-vazio {
+    width: 320px;
+    margin-top: 8px;
+  }
+}

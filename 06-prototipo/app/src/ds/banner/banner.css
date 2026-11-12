@@ -1,0 +1,84 @@
+/* O banner fixo de aviso, com a pilha de até dois (F02, F04).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .bf.largo {
+    padding-right: 16px;
+  }
+  .bf {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px 8px 10px 12px;
+    background: var(--fundo-elevado);
+    border-left: 4px solid var(--info);
+    font-size: 13px;
+    line-height: 18px;
+    flex: none;
+  }
+  .bf svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    color: var(--info);
+  }
+  .bf svg.ic {
+    color: var(--info);
+  }
+  .bf.w {
+    background: var(--atencao-suave);
+    border-left-color: var(--atencao);
+  }
+  .bf.w svg.ic {
+    color: var(--atencao);
+  }
+  .bf .bt {
+    flex: 1;
+    padding-top: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .bf .ba {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .bf .bb {
+    min-height: 44px;
+    padding: 0 8px 0 0;
+    border: 0;
+    background: transparent;
+    color: var(--vivo);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+@layer ds {
+  .bf .cresce {
+    flex: 1;
+  }
+  .bf .ib.fecha {
+    margin: -10px 0;
+  }
+  .bf .bb {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bf .bb:active {
+    opacity: 0.7;
+  }
+  /* o tom de atenção é uma transparência com nome: sólido, o banner compõe sobre o chão da página, como no quadro */
+  .bf.w:not(.vidro) {
+    background: linear-gradient(var(--atencao-suave), var(--atencao-suave)), var(--fundo-pagina);
+  }
+  .topo.vidro .bf.w:not(.mantem) {
+    background: color-mix(in srgb, var(--atencao) 14%, transparent);
+  }
+  .topo.vidro .bf.mantem {
+    background: var(--fundo-elevado);
+  }
+}

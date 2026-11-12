@@ -1,0 +1,253 @@
+{
+ "_": "O exemplo que atravessa todas as telas. Nenhum número é digitado numa tela: tudo sai daqui ou do caso do estado.",
+ "relogio": {
+  "dia": "2026-10-27",
+  "diaDaSemana": "terça",
+  "hora": "06:24",
+  "barraDeStatus": "9:41",
+  "nota": "O relógio é fixo. Nada no protótipo lê a hora de verdade nem sorteia valor. Cada estado tem a sua hora, escrita no caso."
+ },
+ "pessoa": {
+  "nome": "Ana Souza",
+  "saudacao": "Ana",
+  "inicial": "A",
+  "email": "ana@metalurgicaalfa.com.br",
+  "emailMascarado": "a•••@metalurgicaalfa.com.br",
+  "celular": "(81) 91234-5678",
+  "celularMascarado": "(81) 9••••-5678",
+  "desbloqueio": "biometria",
+  "avisoDeChegadaMin": 10,
+  "avisoDeSaida": true,
+  "aparencia": "sistema"
+ },
+ "empresa": {
+  "nome": "Metalúrgica Alfa",
+  "rh": {
+   "nome": "RH da Metalúrgica Alfa",
+   "resolve": "Libera o acesso e cuida do seu cadastro, das linhas e do ponto de sempre",
+   "canal": "WhatsApp",
+   "numero": "(81) 3555-0142",
+   "horario": "seg a sex, 7h às 17h"
+  }
+ },
+ "transportadora": {
+  "nome": "Rota Sul Transportes",
+  "nomeCurto": "Rota Sul",
+  "resolve": "Opera o ônibus: atrasos, trocas, cancelamentos e o que acontece na viagem",
+  "canal": "Central",
+  "numero": "(81) 3333-1234",
+  "horario": "todos os dias, 5h às 22h"
+ },
+ "contrato": {
+  "contagem": true,
+  "trocaDePonto": true,
+  "cracha": true
+ },
+ "linha": {
+  "numero": "210",
+  "nome": "Macaxeira – Fábrica",
+  "rotulo": "Linha 210 · Macaxeira – Fábrica"
+ },
+ "onibus": {
+  "prefixo": "1234",
+  "placa": "ABC1D23"
+ },
+ "onibusTrocado": {
+  "prefixo": "1250",
+  "placa": "DEF2G34"
+ },
+ "paradasDaIda": [
+  {
+   "id": "macaxeira",
+   "nome": "Terminal da Macaxeira",
+   "tipo": "terminal",
+   "programado": "06:05",
+   "previstos": null
+  },
+  {
+   "id": "casa-amarela",
+   "nome": "Mercado de Casa Amarela",
+   "tipo": "comercio",
+   "programado": "06:13",
+   "previstos": 3
+  },
+  {
+   "id": "av-norte",
+   "nome": "Av. Norte, 2800",
+   "tipo": "ponto",
+   "programado": "06:31",
+   "previstos": 2
+  },
+  {
+   "id": "sem-nome-1",
+   "nome": null,
+   "tipo": "ponto",
+   "agrupada": true
+  },
+  {
+   "id": "sem-nome-2",
+   "nome": null,
+   "tipo": "ponto",
+   "agrupada": true
+  },
+  {
+   "id": "abdias",
+   "nome": "Av. Abdias de Carvalho, 1200",
+   "tipo": "ponto",
+   "programado": "06:42",
+   "previstos": 4,
+   "pontoDeSempre": true
+  },
+  {
+   "id": "av-recife",
+   "nome": "Av. Recife, 4300",
+   "tipo": "ponto",
+   "programado": "06:50",
+   "previstos": 1
+  },
+  {
+   "id": "barro",
+   "nome": "Terminal do Barro",
+   "tipo": "terminal",
+   "programado": "06:58",
+   "previstos": 3
+  },
+  {
+   "id": "fabrica",
+   "nome": "Fábrica – Portaria 2",
+   "tipo": "fabrica",
+   "programado": "07:15",
+   "destino": true
+  }
+ ],
+ "viagens": [
+  {
+   "id": "ida-0605",
+   "sentido": "ida",
+   "rotulo": "Ida de sempre",
+   "sai": "06:05",
+   "passaNoSeuPonto": "06:42",
+   "chega": "07:15",
+   "habitual": true
+  },
+  {
+   "id": "ida-0705",
+   "sentido": "ida",
+   "rotulo": "Outra ida hoje",
+   "sai": "07:05",
+   "passaNoSeuPonto": "07:42",
+   "habitual": false
+  },
+  {
+   "id": "volta-1720",
+   "sentido": "volta",
+   "rotulo": "Volta de sempre",
+   "sai": "17:20",
+   "embarque": "Fábrica – Portaria 2",
+   "descida": "Av. Abdias de Carvalho, 1200",
+   "chegaNaDescida": "17:54",
+   "habitual": true
+  }
+ ],
+ "sementeDoCaminhoFeliz": {
+  "ref": "T05-00",
+  "hora": "06:24",
+  "onibusEntre": [
+   "casa-amarela",
+   "av-norte"
+  ],
+  "minutosAteOSeuPonto": 18,
+  "selo": "ao-vivo",
+  "pontualidade": "no-horario",
+  "avisosNaoLidos": 2
+ },
+ "regras": {
+  "toleranciaMin": 3,
+  "chegandoMin": 2,
+  "minutosAte": 30,
+  "margemDaTrocaMin": 3,
+  "dadoAntigoMin": 1.5,
+  "semSinalMin": 3,
+  "janelaAoVivoAntesMin": 30,
+  "janelaAoVivoDepoisMin": 10,
+  "reenvioDoCodigoSeg": 60,
+  "errosDoCodigo": 5,
+  "bloqueioDoCodigoMin": 15,
+  "sessaoDias": 30,
+  "desbloqueioForaDoAppMin": 5,
+  "prazoDoPedidoDias": 15,
+  "crachaProvisorioMin": 15,
+  "esperaDoBotaoMs": 700,
+  "esqueletoMs": 650,
+  "biometriaAbreSozinhaMs": 300
+ },
+ "loginDeTeste": {
+  "entra": "123456",
+  "expirado": "000000",
+  "qualquerOutro": "entra"
+ },
+ "notificacoes": [
+  {
+   "dia": "Hoje",
+   "tipo": "saiu",
+   "titulo": "Seu ônibus saiu",
+   "texto": "Previsão no seu ponto: 06:42.",
+   "hora": "06:07",
+   "lida": false
+  },
+  {
+   "dia": "Hoje",
+   "tipo": "comunicado",
+   "titulo": "Comunicado da transportadora",
+   "texto": "Amanhã a ida de sempre sai às 06:10, por obra na Av. Norte.",
+   "hora": "05:40",
+   "lida": false
+  },
+  {
+   "dia": "Ontem",
+   "tipo": "chegando",
+   "titulo": "Seu ônibus chega em 10 min",
+   "texto": "Av. Abdias de Carvalho, 1200 · ônibus 1234 · ABC1D23",
+   "hora": "06:32",
+   "lida": true
+  },
+  {
+   "dia": "Ontem",
+   "tipo": "saiu",
+   "titulo": "Seu ônibus saiu",
+   "texto": "Previsão no seu ponto: 06:42.",
+   "hora": "05:58",
+   "lida": true
+  },
+  {
+   "dia": "Anteriores",
+   "tipo": "atraso",
+   "titulo": "Ônibus atrasado 12 min",
+   "texto": "Nova previsão no seu ponto: 06:54.",
+   "hora": "sex, 23/10",
+   "lida": true
+  },
+  {
+   "dia": "Anteriores",
+   "tipo": "cadastro",
+   "titulo": "Alteração no seu cadastro",
+   "texto": "Seu ponto de sempre na volta agora é Fábrica – Portaria 2.",
+   "hora": "qui, 22/10",
+   "lida": true
+  },
+  {
+   "dia": "Anteriores",
+   "tipo": "cancelada",
+   "titulo": "Viagem das 17:20 cancelada",
+   "texto": "Toque para ver o aviso da transportadora.",
+   "hora": "qua, 21/10",
+   "lida": true
+  }
+ ],
+ "coresDosAvisos": "A cor não mora no dado. O tipo do aviso escolhe o token no design system: chegando = vivo, saiu e trocado = info, atraso e outro embarque = atencao, cancelada = perigo, cadastro e comunicado = neutro.",
+ "pedidoDeDados": {
+  "protocolo": "2026-1027-0042",
+  "tipo": "ver os dados",
+  "texto": "os dados de embarque dos últimos 3 meses"
+ }
+}

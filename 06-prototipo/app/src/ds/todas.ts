@@ -1,0 +1,23 @@
+// Todas as folhas de estilo das peças, numa ordem só. Cada peça também importa a sua; aqui a ordem fica firme.
+import './tela/tela.css';
+import './texto/texto.css';
+import './barra/barra.css';
+import './avatar/avatar.css';
+import './botao/botao.css';
+import './campo/campo.css';
+import './segmentado/segmentado.css';
+import './switch/switch.css';
+import './escolha/escolha.css';
+import './cartao/cartao.css';
+import './lista/lista.css';
+import './nota/nota.css';
+import './selo/selo.css';
+import './trilho/trilho.css';
+import './banner/banner.css';
+import './sheet/sheet.css';
+import './rodape/rodape.css';
+import './central/central.css';
+import './mapa/mapa.css';
+import './cabecalho/cabecalho.css';
+import './heroi/heroi.css';
+import './toast/toast.css';

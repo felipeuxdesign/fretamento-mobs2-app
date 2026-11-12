@@ -1,0 +1,35 @@
+/* A ordem das camadas: os tokens e os utilitários do Tailwind; as peças do design system ficam na camada "ds",
+   acima dos componentes copiados e abaixo dos utilitários. O app não usa o reset do Tailwind:
+   as peças são medidas contra as referências, que partem do padrão do navegador. */
+@layer theme, base, components, ds, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+@import './tokens/tailwind.css';
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--fundo-pagina);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: var(--fonte);
+    color: var(--tinta);
+  }
+  #raiz {
+    height: 100%;
+  }
+}
+
+@layer base {
+  /* só o aparelho, sem palco: a tela no meio, sobre o chão do palco (sempre escuro) */
+  .so-app {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

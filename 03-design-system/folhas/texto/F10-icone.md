@@ -1,0 +1,69 @@
+# Folha 10 · Ícone do app
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F10-icone.html` e `../png/F10-icone.png`.
+
+- O trabalhador esperando, e o ônibus chegando
+- O ícone do Fretamento é um desenho só: o trabalhador com a maleta, no ponto, e o ônibus chegando atrás dele. A mesma regra vale em todo tamanho, e cada lugar recebe o seu arquivo, que fica nesta folha.
+- Na tela inicial60 pt, entre outros apps
+- 9:41
+- Agenda
+- Fotos
+- Câmera
+- Clima
+- Relógio
+- Fretamento
+- Notas
+- Lembretes
+- Banco
+- Música
+- Livros
+- Podcasts
+- Arquivos
+- Saúde
+- Carteira
+- Contatos
+- Tradutor
+- Gravador
+- Calculadora
+- Bússola
+- Buscar
+- No meio dos outros apps, ele se acha pelo lima e pela silhueta: a pessoa e o ônibus continuam claros em 60.
+- O íconeicone-app.svg
+- Dentro do app, só o Entrar mostra o ícone, em 72 e com o nome Fretamento embaixo: o mesmo arquivo nos dois temas.
+- No iPhone120, 60, 40 e 29
+- Na tela inicial em 60 pt (180 px), no Spotlight em 40 e nos Ajustes em 29. O Xcode gera todos a partir do de 1024.
+- Como ele é feitograde de 1024
+- As cores são as da marca, com o lima: o fundo chapado #3C234A (o fundo-destaque, o único roxo de evidência do DS), o ônibus no vivo #AAEF00, como o botão e o ônibus no mapa, e o trabalhador em tinta #EFE9F3. Janelas e vãos são o fundo aparecendo. Um ícone só, nos dois temas.
+- Um vão de 18, na grade de 1024, separa tudo o que está um na frente do outro: ele do ônibus, a maleta da perna, os braços do tronco.
+- Todo vão termina em meia-lua, e mãos e pés são redondos.
+- A mão fica por trás da alça, e o vão acompanha a curva dela.
+- A luz é desenhada como forma: os faróis e o letreiro acesos sobre o fundo chapado. Brilho, sombra e desfoque não são pintados; no iPhone, o sistema põe a luz dele.
+- Numa tela, o ícone aparece sem sombra em volta: o DS pede elevação por superfície.
+- Fundo#3C234A · chapado, o fundo-destaque
+- Ônibus#AAEF00 · o vivo
+- Trabalhador#EFE9F3 · a tinta
+- Nas lojasicone-loja.svg
+- o arquivo, quadradoApp Store, 1024
+- Google Play, 512
+- Quadrado, sem canto e sem transparência: as duas lojas arredondam sozinhas.
+- No Androidícone adaptativo, temático e de notificação
+- As camadas · 108 dp
+- fundo
+- frente, com os vãos vazados
+- Cada aparelho recorta
+- círculo
+- squircle
+- quadrado
+- Temático
+- o Android pinta
+- Notificação · 24 dp
+- 9:41
+- Cada camada tem 108 dp; o que aparece é o centro, de 72 dp, e o desenho fica dentro do círculo de 66 dp, que nenhum recorte alcança. O temático é o mesmo desenho numa cor só, com o para-brisa, o letreiro e os faróis vazados. A notificação é o mesmo desenho, em branco: na barra de status, o ônibus é o que se lê primeiro.
+- Os arquivosno projeto, prontos para exportar
+- | arquivo | onde vai | como é
+- | icone-app.svg | no app, no Entrar dos dois temas, em 72 | fundo-destaque #3C234A, ônibus lima, com o canto do sistema
+- | icone-loja.svg | App Store em 1024 e Google Play em 512 | quadrado, sem canto e sem transparência
+- | icone-android-fundo.svg | ícone adaptativo do Android, a camada de trás | 108 dp, só o roxo chapado
+- | icone-android-frente.svg | ícone adaptativo do Android, a camada da frente | 108 dp, com os vãos vazados
+- | icone-monocromatico.svg | ícone temático, do Android 13 em diante | 108 dp, uma cor só
+- | icone-app-notificacao.svg | barra de status e notificação do Android | 24 dp, branco sobre transparente

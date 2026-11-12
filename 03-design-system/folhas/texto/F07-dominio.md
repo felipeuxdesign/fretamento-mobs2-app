@@ -1,0 +1,127 @@
+# Folha 07 · Peças do domínio: o cartão do herói em todos os estados
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F07-dominio.html` e `../png/F07-dominio.png`.
+
+- O elemento-assinatura do app, 358 de largura, um estado por quadro
+- O estado muda o conteúdo (o número, o selo, a linha de ajuda, a ação); a forma do cartão muda só em chegando e no ponto (fundo-destaque, raio-xl) e em cancelada (borda perigo). O alvo diz sempre de quem é o horário: "Passa no seu ponto" antes, "Chega na fábrica" depois de passar.
+- 01 · programado · antes de a viagem começar
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 06:42horário programado
+- Programado
+- A previsão ao vivo começa quando o ônibus sair, às 06:05.
+- Chega na fábricaFábrica – Portaria 2
+- 07:15programado
+- 02 · em rota · no horário · ao vivo
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 8 minàs 06:42
+- Ao vivoNo horário
+- Chega na fábricaFábrica – Portaria 2
+- 07:15
+- 03 · em rota · atrasado além de 3 min
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 14 minàs 06:50
+- Ao vivoAtrasado 8 min
+- Chega na fábricaFábrica – Portaria 2
+- 07:23
+- 04 · em rota · adiantado · pede antecedência
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 4 minàs 06:38
+- Ao vivoAdiantado 4 min
+- O ônibus está na frente do horário. Vá para o ponto agora.
+- Chega na fábricaFábrica – Portaria 2
+- 07:11
+- 05 · aproximado · dado antigo (1,5 a 3 min) ou em desvio
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- cerca de9 minàs 06:43
+- Aproximado · há 3 min
+- O ônibus saiu do trajeto de sempre. A previsão pode mudar; saia com folga.
+- Chega na fábricaFábrica – Portaria 2
+- 07:16
+- 06 · chegando · menos de 2 min · fundo-destaque · placa em destaque
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- Chegando
+- Ao vivomenos de 2 min
+- Confira o ônibusABC1D23 · 1234
+- Embarquei
+- Toque quando subir: a transportadora sabe que você está a bordo.
+- 07 · no ponto · agora · fundo-destaque
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre
+- No seu ponto · Av. Abdias de Carvalho, 1200
+- No ponto
+- Ao vivoo ônibus está parado no seu ponto
+- Confira o ônibusABC1D23 · 1234
+- Embarquei
+- 08 · passou · o alvo vira a chegada · caminho para quem perdeu
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Chega na fábrica · Fábrica – Portaria 2
+- 28 minàs 07:15
+- Ao vivoPassou no seu ponto às 06:44
+- Embarquei
+- Perdeu o ônibus? Ver pontos à frente
+- 09 · embarcou · a bordo · desfazer sempre visível
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Chega na fábrica · Fábrica – Portaria 2
+- 28 minàs 07:15
+- Embarque registradoAo vivo
+- Você embarcou às 06:43. Seu crachá foi lido no ônibus 1234.
+- Não fui eu
+- 10 · concluída · chegou · o estado que o Citymapper não tem
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Fábrica – Portaria 2
+- Chegouàs 07:16
+- Viagem concluída
+- Sua volta hojeFábrica – Portaria 2 → Av. Abdias de Carvalho, 1200
+- 17:20
+- 11 · sem sinal do ônibus · programado com a causa
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 06:42horário programado
+- Sem sinal há 9 min
+- Não recebemos a posição do ônibus. No último sinal ele estava 4 min atrasado. Saia com folga.
+- Chega na fábricaFábrica – Portaria 2
+- 07:15programado
+- 12 · sem internet no celular · o dado congela com a hora
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 06:45previsão feita às 06:24
+- Sem internet
+- Seu celular está sem internet. Quando voltar, a previsão atualiza sozinha.
+- Chega na fábricaFábrica – Portaria 2
+- 07:18
+- 13 · cancelada · borda perigo · atalho para a viagem mantida
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 06:42
+- Viagem cancelada
+- Aviso da Rota Sul: “Manutenção do ônibus. A viagem das 07:05 está mantida.”
+- Ver a viagem das 07:05
+- 14 · ônibus a definir · a viagem abriu, o veículo não
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus a definir
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 06:42horário programado
+- Programado
+- A transportadora ainda não definiu o ônibus desta viagem. Avisamos quando ele sair.
+- 15 · cartão de viagem secundária · substitui as abas de ida e volta
+- Sua volta hoje · 17:20Sai da Fábrica – Portaria 2 · programado
+- Outra ida hoje · 07:05Não é a sua de sempre; passa no seu ponto às 07:42
+- A home mostra uma viagem só no herói. As outras do dia aparecem como cartões interativos abaixo, com o poço em rota-volta quando é a volta.

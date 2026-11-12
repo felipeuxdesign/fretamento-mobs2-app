@@ -1,0 +1,56 @@
+# Folha 06 · Entrada, escolha e cabeçalho
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F06-entrada.html` e `../png/F06-entrada.png`.
+
+- Botões, campos, escolhas e os cabeçalhos de autenticação e perfil
+- Um botão primário por tela, em vivo. O secundário se separa por fill (fundo-elevado) e borda próprios, nos dois temas. O destrutivo é perigo-forte com texto branco e só aparece depois de uma confirmação. Campo de 48 com rótulo em cima e erro embaixo, no lugar, até ser resolvido. Nada de hover: só pressionado e desligado.
+- Botões · 48 · raio-md · corpo-forte
+- Primário · vivo + vivo-tinta
+- Primário pressionado · vivo-pressionado
+- Secundário · fundo-elevado + borda
+- Secundário pressionado · fundo-sobreposto
+- Destrutivo · perigo-forte
+- Desligado · fundo-elevado + tinta-apagada
+- Carregando
+- Cancelar
+- Confirmar
+- Botão-link · vivo
+- Não fui eu · perigo
+- Pressionado · o único retorno de toque: fill um degrau mais fundo por 120 ms, sem hover
+- Primário
+- Secundário
+- Destrutivo
+- Segmentado · 44 · fundo-elevado com a opção ativa em fundo-cartao
+- E-mailCelular
+- ClaroEscuroSistema
+- Switch · 64 × 28, botão em cápsula 38 × 24 · ligado em vivo com botão vivo-tinta · desligado em fundo-sobreposto
+- ligado · desligado · indisponível
+- Campo · 48 · fundo-elevado + borda · rótulo apoio em cima · erro no lugar
+- E-mail
+- Celular · com foco
+- E-mail · com erro
+- Falta o final do e-mail, como .com.br
+- Código · 6 dígitos · tabular, tracking 0,5em
+- Conte o que você precisa
+- Item selecionável (rádio) · 56 · selecionado em vivo-suave · desligado em tinta-apagada com a razão
+- Mercado de Casa AmarelaPrevisão 06:38 · 3 pessoas embarcam aqui · 5 min a pé
+- Av. Abdias de Carvalho, 1200Ponto de semprePrevisão 06:42 · 4 pessoas embarcam aqui
+- Esquina R. Ipê com R. CedroPassa em 2 min: não dá tempo de avisar a transportadora
+- Grupo recolhido · 52 · seta gira quando abre
+- Pontos que o ônibus já passou (2)
+- Cabeçalho de autenticação · o ícone em 72, na versão escura (Folha 10) e "Fretamento" em legenda, centralizados e sem sombra + título 24 + lead · 36 entre o nome e o título · o pé do Entrar, com "por mobs2" · o ícone só aparece no Entrar
+- Fretamento
+- Acompanhe seu ônibus
+- Use o e-mail ou o celular que sua empresa cadastrou.
+- Não recebi convitepor
+- Bloco de explicação · ícone 20 em rota-ida + corpo · para a tela de privacidade
+- O que ninguém vê: outros passageiros não veem seu nome nem seu ponto. Você também não vê o deles.
+- Sua localização: só quando você pedir, com o app aberto, e não fica guardada.
+- Cabeçalho de perfil · avatar 72 · nome 20 · empresa e transportadora em apoio
+- A
+- Ana Souza
+- Metalúrgica Alfa · Transporte: Rota Sul Transportes
+- Ajuda com contato humano · só depois do login: antes, a ajuda é genérica, sem nome nem contato · o gap mais citado nas avaliações dos concorrentes · no código, o WhatsApp leva o ícone oficial do kit de marca da Meta; aqui fica o balão
+- Precisa de ajuda?O RH da Metalúrgica Alfa cuida do seu cadastro; a Rota Sul, do ônibus.
+- RH · WhatsApp(81) 3555-0142 · seg a sex, 7h às 17h
+- Rota Sul · central0800 591 2210 · 24 h

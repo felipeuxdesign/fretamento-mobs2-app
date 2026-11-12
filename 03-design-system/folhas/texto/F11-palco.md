@@ -1,0 +1,360 @@
+# Folha 11 · Design do palco do protótipo navegável
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F11-palco.html` e `../png/F11-palco.png`.
+
+- O app no meio, os estados do lado, as telas atrás do canto
+- A moldura que apresenta o protótipo no computador, a mesma do Logistics: o iPhone 14 dos quadros no meio, em 100%; do lado, os estados desta tela e o tocador do dia, que só aparece no Início, nas Paradas e no Mapa; as telas e o tema atrás do botão do canto. O app abre no caminho feliz e funciona como no celular; qualquer estado também se vê parado, pela coluna. O palco é sempre escuro, nos tokens do escuro do app, e o app abre no Sistema, que segue o celular. É o desenho que o código segue: nenhuma peça do palco se inventa no código.
+- Peças
+- As peças do palco
+- cada uma com os estados dela · nos tokens do escuro do app, sempre: o palco é moldura, não produto
+- fechado
+- mouse em cima
+- foco do teclado
+- Botão do canto44 × 44, a 16 do canto de cima. Abre o painel; é a única coisa do palco fora da coluna
+- Protótipo
+- App Passageiro
+- fechar
+- mouse em cima
+- Cabeça do painelo nome do protótipo e o fechar, de 36. O painel fecha no x, no Esc, no botão do canto ou clicando fora
+- T04Bloqueadouma telaT05Iníciomouse em cimaT05Inícioa tela em que o app está
+- Linha de telade 34, com o código: as 13, na ordem do inventário. Tocar numa leva o app pra ela, no fluxo, e daí tudo funciona tocando no app
+- O dia, na ordem
+- o grupo, na ordem da história02chegandonormal03no pontomouse em cima18sem sinalescolhido: o app parado ali
+- Linha de estadode 32, com o número da referência, em grupos. Tocar numa linha para o app nela, montado com o caso; o endereço ganha o ?ref=
+- Voltar ao fluxodevolve o percursoVoltar ao fluxomouse em cimaVoltar ao fluxotocaram no app parado: o palco pede a volta
+- Um estado é só pra ver. Pra tocar no app, volte ao fluxo.
+- a frase, embaixo dele
+- Um estado é só pra ver. Pra tocar no app, volte ao fluxo.
+- acesa, com o pedido
+- Voltar ao fluxoentra no lugar da dica com um estado parado. Parado, o app é uma foto: não responde a toque nem a teclado, só rola
+- Modo escuro
+- Atualizado em 10/11/2026
+- desligado: o Claro
+- Modo escuro
+- Atualizado em 10/11/2026
+- ligado: o Sistema, com o celular escuro
+- Modo escuro e o pé do paineltroca só o aparelho; é a mesma chave da Aparência do Perfil (T10): vem ligada, porque o app abre no Sistema e o celular do protótipo prefere o escuro; desligar escolhe o Claro, e ligar volta ao Sistema
+- O aparelhoo iPhone 14 dos quadros, em 100%: a tela de 390 × 844 com canto de 47,33, a borda preta de 15, o aro de 6 e os botões do lado; sem o entalhe, pra nada cobrir a tela
+- a aba, na borda do app
+- TelaT05 · Início
+- uma escolha, de 48
+- Gaveta do celularcom ?palco=1 no celular de verdade: a aba de 6 × 44, no meio da altura, abre a gaveta (o toque pega 24 × 64); nela, a tela é uma escolha de 48, e os estados viram linhas de 44
+- O diaem rota · 1 de 5
+- A seguir: chegando no seu ponto
+- 1×
+- andando: o passo enche no tempo dele
+- O diachegando · 2 de 5
+- A seguir: no seu ponto
+- 0,5×
+- pausado, em 0,5×, com o mouse no avançar
+- O diano ponto · 3 de 5
+- Esperando o Embarquei
+- 1×
+- no ponto: o dia espera o Embarquei
+- O diachegou · 5 de 5
+- O dia terminou
+- 1×
+- chegou: o play vira o recomeçar
+- O diaem rota · 1 de 5
+- A seguir: chegando no seu ponto
+- 1×
+- apagado: um estado parado
+- O diaum tocador, como o de um vídeo: voltar um passo, play ou pausa, avançar um passo e a velocidade (0,5×, 1× ou 2×, um toque troca). Em cima, a trilha dos cinco passos, com o passo de agora enchendo no tempo dele, e a frase do que vem. Só aparece nas telas em que o dia muda o que se vê: Início, Paradas e Mapa. Nelas fica preso no pé da coluna, sempre à vista; quem rola é a lista
+- O palco
+- O palco inteiro
+- 1440 × 1024, com o aparelho em 100% · o app abre no Sistema, que segue o celular (no protótipo, escuro); o palco é escuro em volta
+- P1palco
+- o caminho feliz, no T05 (06:24), com o ônibus em rota
+- 9:41
+- Bom dia, Ana
+- 2
+- A
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 18 min
+- às 06:42
+- Ao vivo
+- No horário
+- Chega na fábricaFábrica – Portaria 2
+- 07:15
+- Próximas paradas
+- Ver todas
+- Mercado de Casa Amarela06:13passou
+- Indo para a Av. Norte, 2800
+- Av. Norte, 28002 pessoas embarcam aqui06:317 min
+- 2 outras paradas
+- Av. Abdias de Carvalho, 1200Seu ponto4 pessoas embarcam aqui06:4218 min
+- Fábrica – Portaria 2Destino07:1551 min
+- Ver no mapaÔnibus a 2 pontos do seu
+- Outro ponto hojeSó hoje
+- Outras viagens de hoje
+- Sua volta hoje · 17:20Sai da Fábrica – Portaria 2 · programado
+- Outra ida hoje · 07:05Passa no seu ponto às 07:42
+- Estados desta tela
+- T05 · Início
+- no fluxo · toque num estado pra ver parado
+- O dia, na ordem
+- 00em rota01rolada até o fim02chegando03no ponto04Embarquei05chegou na fábrica
+- Tocando no app
+- 06outra viagem do dia07troca ativa08voltar ao ponto de sempre
+- Antes da viagem
+- 09antes da janela21sem ônibus vinculado31carregando
+- Ao vivo
+- 10atrasado11adiantado14passou do ponto15crachá lido16Não fui eu17a volta no embarque
+- Falhas e honestidade
+- 12dado antigo13fora do trajeto18sem sinal19sem internet30erro ao abrir
+- Operação
+- 23ônibus trocado24crachá em outro ônibus25Fui eu20cancelada22recuo pro programado
+- Conta e celular
+- 26avisos desligados27sem bloqueio28a segurança mudou29sem viagem hoje
+- O diaem rota · 1 de 5
+- A seguir: chegando no seu ponto
+- 1×
+- O aparelho no meio do palco, em 100%: o iPhone 14, o dos quadros, na proporção dele. Em tela mais baixa, encolhe por inteiro; nunca corta.
+- Do lado a 40 do aparelho, a coluna de 300, na altura dele, com os estados desta tela. Sempre à vista, sem abrir nada.
+- Os estados a tela, os momentos e os estados, em grupos e na ordem da história, não na do número do quadro. A lista só rola quando não cabe na altura do palco: na T05 são 32, então ela rola por dentro e se apaga na borda, e o título e o tocador ficam. O nome vem sem a hora.
+- O dia anda o ônibus anda sozinho: em rota, chegando e no ponto, onde o dia para e espera o Embarquei; depois, a bordo e a chegada na fábrica. Cada passo também abre parado, pela lista: quem está no chegando pode ver o em rota de novo.
+- O tocador fica preso no pé da coluna e nunca some: voltar um passo, play ou pausa, avançar um passo e a velocidade. Em janela baixa, o aparelho encolhe e só a lista rola; em janela alta, cabe tudo e nada rola.
+- No canto só o botão que abre o painel. O resto do palco fica vazio: nada compete com o app.
+- O fundo o fundo-pagina do escuro, liso. Não muda com o tema do aparelho.
+- P2palco
+- o painel aberto com a T01 escolhida: o app vai pro Entrar e segue dali tocando, como no celular
+- 9:41
+- Fretamento
+- Acompanhe seu ônibus
+- Use o e-mail ou o celular que sua empresa cadastrou.
+- E-mailCelular
+- E-mail
+- Receber código
+- Não recebi convitepor
+- Estados desta tela
+- T01 · Entrar
+- no fluxo · toque num estado pra ver parado
+- 00e-mail, campo vazio01celular02digitando06enviando o código04e-mail incompleto05sem internet03sem convite
+- Protótipo
+- App Passageiro
+- As telas
+- T01EntrarT02Digite o códigoT03Preparar o appT04BloqueadoT05InícioT06Paradas da viagemT07MapaT08Outro ponto hojeT09NotificaçõesT10PerfilT11AvisosT12PrivacidadeT13Excluir conta
+- Modo escuro
+- Atualizado em 10/11/2026
+- O painel abre da esquerda, por cima, com 280: o aparelho não se mexe. Fecha no x, no Esc, no botão do canto ou clicando fora.
+- As telas as 13, na ordem do inventário. Tocar numa leva o app pra ela, no fluxo, e daí tudo funciona como no celular: o código certo segue pro Preparar o app, e o Sair da conta volta ao Entrar. A tela em que o app está fica marcada.
+- Os estados dela trocam junto, na coluna: qualquer um abre parado, só pra ver.
+- Sem o dia o tocador só entra no Início, nas Paradas e no Mapa. No Entrar não tem ônibus pra andar, então a coluna fica só com os estados. Saindo de uma dessas três telas, o dia pausa e guarda o passo; voltando, continua de onde parou.
+- Modo escuro troca só o aparelho: o palco e a moldura ficam iguais.
+- P3palco
+- um estado parado: T05-20, sem sinal, com o app tocado
+- 9:41
+- Bom dia, Ana
+- 2
+- A
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 06:42
+- horário programado
+- Sem sinal há 9 min
+- Não recebemos a posição do ônibus. No último sinal ele estava 4 min atrasado. Saia com folga.
+- Chega na fábricaFábrica – Portaria 2
+- 07:15programado
+- Paradas · horários programados
+- Ver todas
+- Mercado de Casa Amarela06:13passou
+- Último sinal às 06:21
+- Av. Norte, 28002 pessoas embarcam aqui06:31prog.
+- 2 outras paradas
+- Av. Abdias de Carvalho, 1200Seu ponto4 pessoas embarcam aqui06:42prog.
+- Fábrica – Portaria 2Destino07:15prog.
+- Ver no mapaÚltima posição às 06:21
+- Outro ponto hojeSó hoje
+- Outras viagens de hoje
+- Sua volta hoje · 17:20Sai da Fábrica – Portaria 2 · programado
+- Outra ida hoje · 07:05Passa no seu ponto às 07:42
+- Estados desta tela
+- T05 · Início
+- Voltar ao fluxo
+- Um estado é só pra ver. Pra tocar no app, volte ao fluxo.
+- O dia, na ordem
+- 00em rota01rolada até o fim02chegando03no ponto04Embarquei05chegou na fábrica
+- Tocando no app
+- 06outra viagem do dia07troca ativa08voltar ao ponto de sempre
+- Antes da viagem
+- 09antes da janela21sem ônibus vinculado31carregando
+- Ao vivo
+- 10atrasado11adiantado14passou do ponto15crachá lido16Não fui eu17a volta no embarque
+- Falhas e honestidade
+- 12dado antigo13fora do trajeto18sem sinal19sem internet30erro ao abrir
+- Operação
+- 23ônibus trocado24crachá em outro ônibus25Fui eu20cancelada22recuo pro programado
+- Conta e celular
+- 26avisos desligados27sem bloqueio28a segurança mudou29sem viagem hoje
+- O diaem rota · 1 de 5
+- A seguir: chegando no seu ponto
+- 1×
+- Tocar num estado para o app nele, montado com o caso: o quadrado enche e a linha fica em negrito. O endereço ganha o ?ref=T05-20, e a lista rola até ele.
+- O app é uma foto parado, ele não responde a toque nem a teclado, só rola. Tocar nele faz o palco pedir a volta: o Voltar ao fluxo ganha o anel e a frase acende.
+- Voltar ao fluxo devolve o percurso guardado: o app volta pra tela do caminho em que estava.
+- P4palco
+- o mesmo dia no Mapa: chegando, com o ônibus perto do seu ponto
+- Seu ponto
+- 9:41
+- Linha 210 · Ida de sempre
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- Chegandomenos de 2 min
+- Ao vivoABC1D23 · 1234
+- Estados desta tela
+- T07 · Mapa
+- no fluxo · toque num estado pra ver parado
+- O dia, na ordem
+- 00em rota01chegando02no ponto03a bordo04chegou na fábrica
+- Tocando no app
+- 05painel no meio06painel inteiro07tocar numa parada08seguir o ônibus09minha localização10tocar no ônibus11a linha inteira
+- O que o mundo decide
+- 12antes da janela13dado antigo14sem sinal15localização negada16cancelada17sem internet18fora do trajeto
+- O diachegando · 2 de 5
+- A seguir: no seu ponto
+- 1×
+- O dia é um só o passo vale pras três telas. Quem está no chegando e abre o mapa vê o ônibus quase no ponto; nas Paradas, o ônibus cortando o trilho logo antes do seu ponto.
+- O ônibus desliza de um passo pro outro ele anda pela rota, sem pular, e o trecho percorrido apaga atrás dele. O painel de baixo troca o número junto.
+- O mesmo tocador igual ao do Início, no mesmo lugar. No ponto, o dia espera: o Embarquei mora no Início, então aqui o avançar acende e faz esse papel.
+- Os quadros de cada passo em rota T05-00, T06-00 e T07-00 · chegando T05-01, T06-03 e T07-01 · no ponto T05-02, T06-04 e T07-02 · a bordo T05-03, T06-05 e T07-03 · chegou T05-04, T06-06 e T07-04.
+- No celular
+- No celular de verdade
+- com ?palco=1 no endereço, o palco abre numa gaveta de baixo · os quadros mostram a T05 no caminho feliz
+- P5celular
+- fechada: só a aba
+- 9:41
+- Bom dia, Ana
+- 2
+- A
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 18 min
+- às 06:42
+- Ao vivo
+- No horário
+- Chega na fábricaFábrica – Portaria 2
+- 07:15
+- Próximas paradas
+- Ver todas
+- Mercado de Casa Amarela06:13passou
+- Indo para a Av. Norte, 2800
+- Av. Norte, 28002 pessoas embarcam aqui06:317 min
+- 2 outras paradas
+- Av. Abdias de Carvalho, 1200Seu ponto4 pessoas embarcam aqui06:4218 min
+- Fábrica – Portaria 2Destino07:1551 min
+- Ver no mapaÔnibus a 2 pontos do seu
+- Outro ponto hojeSó hoje
+- Outras viagens de hoje
+- Sua volta hoje · 17:20Sai da Fábrica – Portaria 2 · programado
+- Outra ida hoje · 07:05Passa no seu ponto às 07:42
+- P6celular
+- aberta, no topo da lista
+- 9:41
+- Bom dia, Ana
+- 2
+- A
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 18 min
+- às 06:42
+- Ao vivo
+- No horário
+- Chega na fábricaFábrica – Portaria 2
+- 07:15
+- Próximas paradas
+- Ver todas
+- Mercado de Casa Amarela06:13passou
+- Indo para a Av. Norte, 2800
+- Av. Norte, 28002 pessoas embarcam aqui06:317 min
+- 2 outras paradas
+- Av. Abdias de Carvalho, 1200Seu ponto4 pessoas embarcam aqui06:4218 min
+- Fábrica – Portaria 2Destino07:1551 min
+- Ver no mapaÔnibus a 2 pontos do seu
+- Outro ponto hojeSó hoje
+- Outras viagens de hoje
+- Sua volta hoje · 17:20Sai da Fábrica – Portaria 2 · programado
+- Outra ida hoje · 07:05Passa no seu ponto às 07:42
+- Protótipo
+- App Passageiro
+- TelaT05 · Início
+- Estados desta tela
+- O dia, na ordem
+- 00em rota01rolada até o fim02chegando03no ponto04Embarquei05chegou na fábrica
+- Tocando no app
+- 06outra viagem do dia07troca ativa08voltar ao ponto de sempre
+- Antes da viagem
+- 09antes da janela21sem ônibus vinculado31carregando
+- Ao vivo
+- 10atrasado11adiantado14passou do ponto15crachá lido16Não fui eu17a volta no embarque
+- Falhas e honestidade
+- 12dado antigo13fora do trajeto18sem sinal19sem internet30erro ao abrir
+- Operação
+- 23ônibus trocado24crachá em outro ônibus25Fui eu20cancelada22recuo pro programado
+- Conta e celular
+- 26avisos desligados27sem bloqueio28a segurança mudou29sem viagem hoje
+- P7celular
+- aberta, rolada até o fim
+- 9:41
+- Bom dia, Ana
+- 2
+- A
+- Linha 210 · Macaxeira – Fábrica
+- Ida de sempre · ônibus 1234 · ABC1D23
+- Passa no seu ponto · Av. Abdias de Carvalho, 1200
+- 18 min
+- às 06:42
+- Ao vivo
+- No horário
+- Chega na fábricaFábrica – Portaria 2
+- 07:15
+- Próximas paradas
+- Ver todas
+- Mercado de Casa Amarela06:13passou
+- Indo para a Av. Norte, 2800
+- Av. Norte, 28002 pessoas embarcam aqui06:317 min
+- 2 outras paradas
+- Av. Abdias de Carvalho, 1200Seu ponto4 pessoas embarcam aqui06:4218 min
+- Fábrica – Portaria 2Destino07:1551 min
+- Ver no mapaÔnibus a 2 pontos do seu
+- Outro ponto hojeSó hoje
+- Outras viagens de hoje
+- Sua volta hoje · 17:20Sai da Fábrica – Portaria 2 · programado
+- Outra ida hoje · 07:05Passa no seu ponto às 07:42
+- Protótipo
+- App Passageiro
+- Falhas e honestidade
+- 12dado antigo13fora do trajeto18sem sinal19sem internet30erro ao abrir
+- Operação
+- 23ônibus trocado24crachá em outro ônibus25Fui eu20cancelada22recuo pro programado
+- Conta e celular
+- 26avisos desligados27sem bloqueio28a segurança mudou29sem viagem hoje
+- O diaem rota · 1 de 5
+- A seguir: chegando no seu ponto
+- 1×
+- Modo escuro
+- Atualizado em 10/11/2026
+- Abaixo de 600 de largura o app ocupa a tela inteira e o palco some.
+- Com ?palco=1 fica a aba na borda esquerda. Tocar nela, ou puxar da borda, abre a gaveta por cima do app, com véu. É assim que se testa com gente: quem conduz o teste escolhe a tela e para nos estados pela gaveta.
+- A gaveta os mesmos grupos do palco, na mesma ordem: a tela (uma escolha), os estados desta tela, o tocador do dia (só no Início, nas Paradas e no Mapa) e o Modo escuro. Linhas de 44 e 48, pro dedo.
+- Rola por dentro a cabeça fica; a lista rola e se apaga na borda. Fecha no x, puxando pra baixo ou tocando no véu.
+- A barra de status e o indicador de início são os do celular: o app usa as margens seguras do sistema no lugar dos 47 e dos 34.
+- Regras
+- O que vale no palco
+- pro desenho e pro código
+- Moldura, não produto o palco é sempre escuro, nos tokens do escuro do app, e o aparelho fica no tema dele. O app abre no Sistema, que segue o celular: no protótipo, o celular prefere o escuro, e ?celular=claro faz o Sistema cair no claro.
+- Um lugar pra cada coisa o que se olha o tempo todo fica do lado do aparelho (os estados desta tela); o que se escolhe de vez em quando fica atrás do botão do canto (as telas e o Modo escuro).
+- O app funciona ele abre no caminho feliz (no T04, a Ana desbloqueia e chega ao T05 às 06:24) e funciona como no celular: todo toque leva aonde levaria no app. O Embarcar em outro ponto hoje abre a T08, o Sair da conta volta ao Entrar, o código certo segue pro Preparar o app.
+- Tudo também se vê parado qualquer quadro, momento ou estado da tela abre parado pela coluna da direita, inclusive os passos do dia que já passaram, e qualquer tela abre pelo painel. O parado é só pra ver; o Voltar ao fluxo devolve o percurso.
+- O dia é um só vale pro Início, pras Paradas e pro Mapa, e só nessas três telas o tocador aparece. No play, o ônibus avança sozinho: 8 s em rota e 6 s chegando em 1×, o dobro em 0,5× e a metade em 2×. No ponto, o dia para e espera o Embarquei (ou o avançar); a bordo, mais 6 s até a chegada, e aí o play vira o recomeçar, que volta pro em rota das 06:24. O número não conta de um em um: troca com o passo, com o movimento da F09; no Mapa o ônibus desliza pela rota. Em outra tela o dia pausa e guarda o passo, e num estado parado o tocador apaga. A barra de status fica em 9:41, como nos quadros.
+- Voltar e avançar andam um passo por toque e funcionam com o dia pausado ou andando; depois do toque, o passo novo começa do zero. No teclado, com o foco fora do app: espaço é play ou pausa, e as setas esquerda e direita são voltar e avançar.
+- O app rola toda tela maior que o aparelho rola por dentro dele, com a roda do mouse, arrastando ou com o dedo; a barra de cima e o rodapé fixo ficam no lugar. Enquanto rola, aparece o indicador de rolagem do iOS, fino, na borda direita, e ele some sozinho. Um estado parado também rola: rolar é olhar, não tocar.
+- O mundo não entra no app nenhum controle do palco entra no aparelho, e nada do app vaza pro palco. O que o celular desenha (o pedido de notificação, a digital, o push) segue o iOS, dentro do aparelho.
+- Os endereços ?ref=T05-20 abre o app na referência, ?tema=claro ou ?tema=escuro fixa o tema do app, ?celular=claro testa o Sistema num celular claro, ?palco=1 abre a gaveta no celular e ?so-app=1 deixa só o aparelho.
+- Teclado e leitor de tela tudo no palco tem nome acessível e anda no Tab, com o anel de foco do app (vivo, 2 px, deslocado 2 px); Enter escolhe e Esc fecha o painel. A coluna é uma região com nome, Estados desta tela.
+- O teclado do app no computador, tocar num campo sobe o teclado desenhado, o dos quadros (T01-02, T02-01 e T12-07), e a tela se ajeita como neles: o campo e o botão ficam à vista. Dá pra digitar pelo teclado do computador ou clicando nas teclas desenhadas; tocar fora do campo fecha. No celular de verdade não existe teclado desenhado: o campo é campo de verdade e sobe o teclado do celular, no tipo certo (e-mail, telefone, ou numérico com o código de uso único).
+- O Liquid Glass fica no app o vidro entra nas peças do app que pedem vidro; o palco e a moldura nunca são vidro.
+- Igual ao Logistics, com o dia no lugar da perna o mesmo palco da casa: o botão do canto, o painel por cima, os estados do lado, o tema no pé e o iPhone 14 dos quadros. O avançar e o play com velocidade vêm de lá; aqui eles movem o dia, e ganham o voltar, a trilha dos passos e o recomeçar no fim. O painel tem as 13 telas. As telas dentro dos palcos desta folha são cópias marcadas da T05-00, T05-20, T01-00 e T07-01: quando elas mudam, o palco muda junto.

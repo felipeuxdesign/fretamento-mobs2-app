@@ -1,0 +1,112 @@
+# Folha 03 · Glifos, ícones e o poço
+
+O texto da folha, linha a linha, para busca. O desenho está em `../html/F03-glifos.html` e `../png/F03-glifos.png`.
+
+- Ícones de traço 2, em 16 · 20 · 24 · 48
+- Família de traço (estilo Lucide), cantos redondos, sempre em currentColor: o ícone herda a tinta do texto ao lado e só ganha cor própria quando é o estado (vivo, atencao, perigo, info). Nunca emoji. O poço é o quadrado de fundo-elevado que segura um ícone num cartão interativo. Os ícones são os da Lucide, sem redesenho, e só em 16, 20, 24 e 48 na interface: abaixo de 16 o traço vira borrão. A exceção são os marcadores do trilho e do mapa: o glifo do tipo da parada entra menor, de 12 a 18, sempre dentro de um disco e com o traço mais grosso (2,4 no trilho, 2,2 no mapa).
+- O conjunto · os 64 glifos que as telas desenham, em 20 no poço de 40
+- onibus
+- ponto
+- terminal
+- comercio
+- fabrica
+- destino
+- meu-ponto
+- linha
+- mapa
+- trocar-ponto
+- minha-posicao
+- localizacao
+- transportadora
+- empresa
+- ao-vivo
+- aproximado
+- sem-sinal
+- sem-internet
+- programado
+- horario
+- atrasado
+- adiantado
+- no-horario
+- cancelada
+- onibus-trocado
+- desvio
+- embarquei
+- cracha
+- confirmado
+- sem-viagem
+- sem-ponto
+- aviso
+- aviso-tocando
+- avisos-desligados
+- preferencias
+- info
+- erro
+- biometria
+- bloqueio
+- desbloquear
+- sem-bloqueio
+- privacidade
+- seguranca-mudou
+- pessoa
+- cadastro
+- sem-acesso
+- email
+- celular
+- documento
+- oculto
+- sem-localizacao
+- ajuda
+- ligar
+- whatsapp
+- marca-whatsapp
+- voltar
+- seguir-adiante
+- abrir
+- fechar
+- sair
+- excluir
+- claro
+- escuro
+- sistema
+- Tamanhos
+- 16selo
+- 20padrão
+- 24barra
+- 48estado central
+- traço 1,5
+- O poço e a cor do estado
+- poço 40 · raio-sm · fundo-elevado · ícone 20 em tinta. É o mesmo poço do cartão interativo e da linha de perfil.
+- disco de notificação 36 · a cor é o estado
+- Avatar, badge e chips de papel
+- A
+- A
+- avatar 32 na barra · 72 no perfil · inicial em avatar-tinta sobre avatar-fundo
+- 2
+- 99+
+- badge de não lidas · perigo-forte · 18
+- Seu ponto
+- Seu ponto hoje
+- Destino
+- Ponto de sempre
+- Sua descida
+- chip de papel · legenda · vivo-suave quando é o papel do passageiro hoje, fundo-elevado quando é referência (o ponto de sempre numa troca)
+- Marcadores do trilho e do mapa
+- No trilho · disco de 24, glifo do tipo em 14, traço 2,4
+- ponto · anel rota-ida, glifo do tipo em tinta
+- lugar com tipo · o glifo do lugar (landmark no terminal do meio, store no mercado), nunca o de outro tipo
+- destino e terminal da ponta · disco cheio em tinta, glifo em fundo-pagina
+- o seu ponto · anel e boneco em vivo, halo de 4 a 18%; um lugar com tipo vence o boneco
+- passada · anel e glifo em tinta-desligada; o terminal passado fica cheio
+- parada anônima agrupada · anel de 10 em tinta-desligada, sem glifo
+- o ônibus · disco vivo, glifo bus em 14 (viewBox 0 1 24 24)
+- sem sinal · o mesmo disco em tinta-desligada a 75%
+- No mapa · os mesmos glifos sobre mapa-terreno, traço 2,2
+- parada24 · glifo 14
+- passada22 · tinta-desligada
+- seu ponto26 · halos de 38 e 54
+- selecionado34 em tinta · halo de 48
+- destino26 · disco cheio, bandeira
+- ônibus32 · seta do sentido · halos de 50 e 66
+- dado velhocinza, sem halo
+- você16 em info · halo de 44

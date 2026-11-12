@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>T00 · Inventário das telas</title>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../../05-recursos/fontes/inter.css">
+<style>
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#EFE9F3;background:#1A0F20}
+a{color:#AAEF00}a:hover{color:#AAEF00}
+/* a T00 como painel de leitura, como no Configurador e no Hub: largo, em cartões, com o esquema de uma linha do canvas */
+.painel{box-sizing:border-box;width:3200px;padding:120px;display:flex;flex-direction:column;gap:56px;color:#EFE9F3;background:#1A0F20;font-variant-numeric:tabular-nums}
+.painel .pn-cab{display:flex;align-items:flex-end;justify-content:space-between;gap:64px}
+.painel .pn-cab .pn-eb{display:block;font-size:14px;line-height:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AF9BBA}
+.painel .pn-cab h1{margin:16px 0 0;font-size:72px;line-height:80px;font-weight:800;letter-spacing:-.02em;color:#EFE9F3}
+.painel .pn-cab .pn-lead{margin:20px 0 0;max-width:1400px;font-size:26px;line-height:38px;color:#AF9BBA}
+.painel .pn-nums{display:flex;gap:16px;flex:0 0 auto}
+.painel .pn-num{box-sizing:border-box;display:flex;flex-direction:column;gap:4px;min-width:220px;padding:24px 28px;border-radius:16px;background:#26192E}
+.painel .pn-num b{font-size:48px;line-height:56px;font-weight:800;color:#EFE9F3}
+.painel .pn-num span{font-size:16px;line-height:24px;color:#AF9BBA}
+.painel .pn-grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;align-items:start}
+.painel .pn-col{display:flex;flex-direction:column;gap:48px;min-width:0}
+.painel .pn-cartao{box-sizing:border-box;padding:40px;border-radius:16px;background:#26192E;min-width:0}
+.painel .pn-cartao h2{margin:0 0 24px;font-size:28px;line-height:36px;font-weight:700;color:#EFE9F3}
+.painel .pn-cartao p{margin:0 0 16px;font-size:20px;line-height:32px;color:#AF9BBA}
+.painel .pn-cartao p:last-child{margin-bottom:0}
+.painel .pn-cartao b{color:#EFE9F3;font-weight:600}
+.painel ol.pn-passos{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px}
+.painel ol.pn-passos li{display:flex;gap:16px;align-items:flex-start;font-size:20px;line-height:32px;color:#AF9BBA}
+.painel .pn-chip{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;height:32px;min-width:64px;padding:0 10px;border-radius:8px;background:#352140;border:1px solid #432C50;color:#EFE9F3;font-size:16px;line-height:20px;font-weight:700}
+.painel table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:18px;line-height:28px}
+.painel th{text-align:left;padding:0 12px 12px;font-size:14px;line-height:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#AF9BBA;border-bottom:1px solid #432C50}
+.painel td{padding:16px 12px;border-bottom:1px solid #3B2747;vertical-align:top;color:#AF9BBA;overflow-wrap:anywhere}
+.painel td.c{color:#EFE9F3;font-weight:700;white-space:nowrap}
+.painel td.t b{display:block;color:#EFE9F3;font-weight:600}
+.painel td.t span{display:block;font-size:15px;line-height:22px;color:#836C91}
+.painel td.n,.painel th.n{text-align:right;white-space:nowrap}
+.painel td.n i{font-style:normal;color:#836C91}
+.painel td.t span em{font-style:normal;color:#AAEF00}
+.painel tr.heroi td{background:rgba(206,139,245,.08)}
+.painel tr.tot td{border-bottom:0;color:#EFE9F3;font-weight:700}
+.painel dl{margin:0;display:grid;grid-template-columns:230px 1fr;column-gap:24px;font-size:18px;line-height:28px}
+.painel dt{padding:12px 0;border-bottom:1px solid #3B2747;color:#EFE9F3;font-weight:600}
+.painel dd{margin:0;padding:12px 0;border-bottom:1px solid #3B2747;color:#AF9BBA}
+.painel dl > :nth-last-child(-n+2){border-bottom:0}
+.painel .pn-esq{display:flex;align-items:stretch;gap:10px}
+.painel .pn-esq .pn-cx{box-sizing:border-box;display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:12px;border:1px solid #432C50;background:#1A0F20}
+.painel .pn-esq .pn-cx b{font-size:18px;line-height:24px;color:#EFE9F3}
+.painel .pn-esq .pn-cx span{font-size:15px;line-height:22px;color:#AF9BBA}
+.painel .pn-esq .pn-cx.pn-f{flex:0 0 190px;border-color:#AAEF00}
+.painel .pn-esq .pn-cx.pn-q,.painel .pn-esq .pn-cx.pn-e{flex:1}
+.painel .pn-esq .pn-mq{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:auto;padding-top:8px}
+.painel .pn-esq .pn-mq i{display:block;height:44px;border-radius:6px;background:#352140;border:1px solid #432C50}
+.painel .pn-esq .pn-seta{align-self:center;color:#AF9BBA;font-size:22px;line-height:24px}
+.painel .pn-tipos{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.painel .pn-tipos div{display:flex;gap:16px;align-items:baseline;font-size:18px;line-height:28px;color:#AF9BBA}
+.painel .pn-tipos i{flex:0 0 110px;font-style:normal;font-size:14px;line-height:20px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#EFE9F3}
+.painel .pn-rot{display:flex;flex-direction:column;gap:4px;margin-top:28px;padding:16px 20px;border-radius:12px;background:#1A0F20;border:1px dashed #432C50}
+.painel .pn-rot .pn-l1{display:flex;gap:10px;align-items:baseline}
+.painel .pn-rot b{font-size:18px;line-height:24px;color:#EFE9F3}
+.painel .pn-rot i{font-style:normal;font-size:13px;line-height:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#AF9BBA}
+.painel .pn-rot span{font-size:16px;line-height:22px;color:#AF9BBA}
+.painel .pn-nota{margin:16px 0 0;font-size:16px;line-height:24px;color:#836C91}
+.painel .pn-cartao p.pn-mais{margin:28px 0 0;font-size:18px;line-height:28px}
+.painel ul.pn-cen{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.painel ul.pn-cen li{display:flex;gap:16px;align-items:flex-start;font-size:20px;line-height:32px;color:#AF9BBA}
+</style>
+</helmet>
+<div class="painel" style="height:3536px">
+  <div class="pn-cab">
+    <div>
+      <span class="pn-eb">Telas do app · T00 · Inventário</span>
+      <h1>App Passageiro Fretamento</h1>
+      <p class="pn-lead">O app de quem vai de fretamento para o trabalho: diz quando o ônibus passa no seu ponto, em qual ônibus entrar e se dá para confiar nesse número. 13 telas em 390 × 844.</p>
+    </div>
+    <div class="pn-nums">
+      <div class="pn-num"><b>13</b><span>telas · todas desenhadas</span></div>
+      <div class="pn-num"><b>70</b><span>quadros desenhados</span></div>
+      <div class="pn-num"><b>75</b><span>estados desenhados</span></div>
+    </div>
+  </div><div class="pn-grade">
+    <div class="pn-col">
+      <div class="pn-cartao">
+        <h2>O que é</h2>
+        <p>As empresas contratam uma <b>transportadora</b> para levar e trazer quem trabalha nelas: o fretamento. Cada pessoa tem a sua <b>linha</b>, o seu <b>ponto de sempre</b> e os horários de ida e de volta. O ônibus manda a posição pelo módulo de rastreamento da Mobs2.</p>
+        <p>O <b>App Passageiro Fretamento</b> pega essa posição e responde, num relance, as três perguntas de quem está no ponto: <b>quando</b> o ônibus passa, <b>qual</b> é o ônibus e <b>se dá para confiar</b> no número. Avisa antes de o ônibus chegar, quando ele atrasa, troca ou a viagem é cancelada, e deixa a pessoa embarcar em outro ponto num dia diferente.</p>
+        <p>É um app simples, para quem não é técnica: uma tela central, o Início, e tudo o mais a um toque. Na tela ele se chama <b>Fretamento</b>, por enquanto: o ícone é o trabalhador com a maleta esperando o ônibus, com o nome embaixo, e a Mobs2 assina discreta no pé do Entrar, em "por mobs2"; "App Passageiro Fretamento" é o nome do projeto, como o PM escreveu no wireframe.</p>
+      </div>
+      <div class="pn-cartao">
+        <h2>Como funciona</h2>
+        <ol class="pn-passos">
+          <li><span class="pn-chip">T01–T02</span><span>A pessoa <b>entra</b> com o e-mail ou o celular que a empresa cadastrou e confirma com o <b>código</b> de 6 números. Não há senha, e isso ela repete sempre que a sessão acabar.</span></li>
+          <li><span class="pn-chip">T03</span><span>Só no primeiro acesso, <b>prepara o app</b> numa tela: lê em quatro frases o que o app faz com os dados, decide se quer <b>avisos</b> e se quer <b>proteger o app</b> com a digital ou o rosto, e toca em Começar.</span></li>
+          <li><span class="pn-chip">T05</span><span>O <b>Início</b> mostra o herói: o número grande de quando o ônibus passa no ponto, com o selo de confiança colado, e a lista de paradas embaixo.</span></li>
+          <li><span class="pn-chip">T06–T07</span><span>As <b>paradas</b> e o <b>mapa</b> são consulta: o trilho completo e o ônibus como o único ponto brilhante.</span></li>
+          <li><span class="pn-chip">T08</span><span>Quem precisa embarcar em <b>outro ponto hoje</b> escolhe na lista, com a razão de cada ponto estar ou não disponível, e confirma.</span></li>
+          <li><span class="pn-chip">T04</span><span>Ao reabrir com o desbloqueio ligado, o app pede a confirmação e diz, numa frase, por que está <b>bloqueado</b> quando algo mudou.</span></li>
+          <li><span class="pn-chip">T09–T13</span><span>As <b>notificações</b> abrem pelo sino e o <b>perfil</b> pelo avatar do Início. Do perfil saem os avisos, a privacidade (com os textos legais, Meus dados e o pedido) e a exclusão da conta; o <b>Preciso de ajuda</b> mora no perfil e abre também pelo Início e pela viagem cancelada; antes do login, a ajuda é genérica, sem contato.</span></li>
+        </ol>
+      </div>
+      <div class="pn-cartao">
+        <h2>Jornadas fora do caminho</h2>
+        <ul class="pn-cen">
+          <li><span class="pn-chip">1</span><span>Primeiro acesso: T01 → T02 → T03 → T05.</span></li>
+          <li><span class="pn-chip">2</span><span>Trocar de ponto hoje: T05 → T08 → confirmação → T05 com a troca ativa.</span></li>
+          <li><span class="pn-chip">3</span><span>O dado falhou: T05 em rota → dado antigo → sem sinal → recuo para programado.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pn-col">
+      <div class="pn-cartao">
+        <h2>As telas</h2>
+        <p>São 13 telas, na ordem do inventário. O caminho feliz é o dia de quem já entrou, T04 → T05 às 06:24, e é onde o palco abre; T01 a T03 são o primeiro acesso, e as demais, consulta ou desvio. Cada tela tem os seus quadros (a tela e os momentos) e os seus estados (o que muda com o mundo: o ônibus, a rede, o servidor, o dado).</p>
+        <table>
+          <thead><tr><th style="width:80px">Código</th><th style="width:220px">Tela</th><th>Elemento-assinatura</th><th class="n" style="width:96px">Quadros</th><th class="n" style="width:96px">Estados</th></tr></thead>
+          <tbody><tr><td class="c">T01</td><td class="t"><b>Entrar</b><span>Autenticação · desvio</span></td><td>Um campo, um botão e a escolha e-mail / celular</td><td class="n">4</td><td class="n">3</td></tr><tr><td class="c">T02</td><td class="t"><b>Digite o código</b><span>Autenticação · desvio</span></td><td>O campo de 6 dígitos tabular com o contador de reenvio</td><td class="n">3</td><td class="n">5</td></tr><tr><td class="c">T03</td><td class="t"><b>Preparar o app</b><span>Primeiro acesso · desvio</span></td><td>Os dados, os avisos e a proteção numa tela só: quatro frases, dois switches e um botão</td><td class="n">3</td><td class="n">3</td></tr><tr><td class="c">T04</td><td class="t"><b>Bloqueado</b><span>Reabertura · <em>caminho</em></span></td><td>Estado central com o cadeado e a mensagem da variante</td><td class="n">2</td><td class="n">5</td></tr><tr class="heroi"><td class="c">T05</td><td class="t"><b>Início</b><span>Viagem · <em>caminho · herói</em></span></td><td>O cartão do herói: número grande com o selo de confiança colado</td><td class="n">9</td><td class="n">23</td></tr><tr><td class="c">T06</td><td class="t"><b>Paradas da viagem</b><span>Viagem · consulta</span></td><td>O trilho completo, com o ônibus cortando o trilho</td><td class="n">9</td><td class="n">6</td></tr><tr><td class="c">T07</td><td class="t"><b>Mapa</b><span>Viagem · consulta</span></td><td>O ônibus como único ponto brilhante sobre o mapa dessaturado</td><td class="n">12</td><td class="n">7</td></tr><tr><td class="c">T08</td><td class="t"><b>Outro ponto hoje</b><span>Viagem · desvio</span></td><td>A lista de pontos à frente com a razão de cada um estar ou não disponível</td><td class="n">6</td><td class="n">4</td></tr><tr><td class="c">T09</td><td class="t"><b>Notificações</b><span>Avisos · consulta</span></td><td>Lista por dia com o disco na cor do estado</td><td class="n">3</td><td class="n">5</td></tr><tr><td class="c">T10</td><td class="t"><b>Perfil</b><span>Conta · consulta</span></td><td>Cabeçalho com avatar 72 e as listas Minha conta, Minhas linhas, Ajustes; o Preciso de ajuda com o RH e a transportadora</td><td class="n">4</td><td class="n">2</td></tr><tr><td class="c">T11</td><td class="t"><b>Avisos (preferências)</b><span>Avisos · consulta</span></td><td>Dois switches e os chips de 5 / 10 / 15 min</td><td class="n">2</td><td class="n">2</td></tr><tr><td class="c">T12</td><td class="t"><b>Privacidade</b><span>Conta · consulta</span></td><td>O switch do desbloqueio com o método escrito; os textos legais, Meus dados e o pedido até o protocolo</td><td class="n">10</td><td class="n">7</td></tr><tr><td class="c">T13</td><td class="t"><b>Excluir conta</b><span>Conta · desvio</span></td><td>Botão destrutivo depois do sheet de confirmação, até a conta excluída</td><td class="n">3</td><td class="n">3</td></tr><tr class="tot"><td></td><td>Total desenhado</td><td>13 telas, da T01 à T13</td><td class="n">70</td><td class="n">75</td></tr></tbody>
+        </table>
+        <p class="pn-nota">As contagens são as das sections, como estão no canvas: cada tela tem a sua linha, na ordem do inventário, com a ficha, os quadros e os estados. Tela de um quadro só entra como momento da tela de onde se chega, e o que o servidor decide entra como estado: o aviso de privacidade, os termos, Meus dados e o pedido moram na T12; o Preciso de ajuda, na T10; a conta excluída, na T13; o acesso não liberado, na T02; e o acesso encerrado, na T04.</p>
+      </div>
+      <div class="pn-cartao">
+        <h2>Como ler o canvas</h2>
+        <p>Uma linha por tela, de cima para baixo, na ordem do inventário. Em cada linha, da esquerda para a direita:</p>
+        <div class="pn-esq">
+          <div class="pn-cx pn-f"><b>Ficha</b><span>o que a tela resolve, como ela é feita, o exemplo e as tabelas dos quadros e dos estados</span></div>
+          <span class="pn-seta">→</span>
+          <div class="pn-cx pn-q"><b>Quadros</b><span>a tela e os momentos</span><div class="pn-mq"><i></i><i></i><i></i><i></i></div></div>
+          <span class="pn-seta">→</span>
+          <div class="pn-cx pn-e"><b>Estados</b><span>o que depende do mundo</span><div class="pn-mq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        </div>
+        <div class="pn-tipos">
+          <div><i>Tela</i>como ela abre, com a semente: é onde o protótipo abre (o quadro 00)</div>
+          <div><i>Momento</i>aonde se chega tocando ou com o dia andando, no caminho feliz; também fica do lado</div>
+          <div><i>Estado</i>o que depende do mundo (do ônibus, da rede, do servidor, do dado); no palco, se vê parado pela coluna</div>
+          <div><i>Consulta</i>a tela fora do caminho feliz, aberta por um toque a partir do Início, como as paradas e o mapa</div><div><i>Descarte</i>o que saiu de uma tela, guardado no fim da página até ser apagado</div>
+        </div>
+        <div class="pn-rot"><div class="pn-l1"><b>T05-09</b><i>estado</i></div><span>o rótulo em cima de cada quadro: a referência, o tipo e o que ele mostra</span></div>
+        <p class="pn-mais"><b>A moldura</b>: o canto de 32, o contorno e a sombra são só da apresentação; a tela é reta, em 390 × 844. <b>A fonte</b> de todo texto e número é o exemplo ao lado; nada é digitado na tela, e o que é de cada empresa (nomes, contatos do RH e da transportadora) vem do cadastro. As peças, os tokens, as leis e o palco estão na página <b>Design System</b>, da F01 à F11.</p>
+      </div>
+    </div>
+
+    <div class="pn-col">
+      <div class="pn-cartao">
+        <h2>O exemplo</h2>
+        <p>A mesma pessoa e o mesmo dia atravessam todas as telas, para que os números batam de uma tela para outra. Cada estado tem a sua hora, escrita no rótulo do quadro.</p>
+        <dl>
+          <dt>O dia e a hora</dt><dd>Terça, 27/10, 06:24 (a semente).</dd>
+          <dt>A heroína</dt><dd>Ana Souza, Metalúrgica Alfa. Transportadora Rota Sul Transportes. E-mail a•••@metalurgicaalfa.com.br, celular (81) 9••••-5678.</dd>
+          <dt>A operação</dt><dd>Linha 210 · Macaxeira – Fábrica. Ida de sempre 06:05, outra ida 07:05, volta 17:20. Ônibus 1234 · ABC1D23 (trocado: 1250 · DEF2G34).</dd>
+          <dt>Os pontos</dt><dd>Terminal da Macaxeira 06:05 · Mercado de Casa Amarela 06:13 (3 pessoas) · Av. Norte, 2800 06:31 (2) · 2 paradas sem nome · <b>Av. Abdias de Carvalho, 1200 06:42 (4, o ponto de sempre)</b> · Av. Recife, 4300 06:50 · Terminal do Barro 06:58 (3) · Fábrica – Portaria 2 07:15 (destino).</dd>
+          <dt>As regras</dt><dd>Tolerância de 3 min; chegando a menos de 2 min; dado antigo a partir de 1,5 min, sem sinal a partir de 3; janela ao vivo abre 30 min antes da saída; troca de ponto só com 3 min de margem.</dd>
+          <dt>Login de teste</dt><dd>Código 123456 entra; 000000 expirou; qualquer outro é incorreto; 5 erros bloqueiam por 15 min.</dd>
+        </dl>
+      </div>
+      <div class="pn-cartao">
+        <h2>Os nomes que aparecem em todo lugar</h2>
+        <dl>
+          <dt>Fretamento</dt><dd>o transporte que a empresa contrata para levar e trazer quem trabalha nela, numa linha com pontos e horários fixos</dd>
+          <dt>Linha</dt><dd>o trajeto com os seus pontos e horários. Ex.: Linha 210 · Macaxeira – Fábrica</dd>
+          <dt>Ponto de sempre</dt><dd>o ponto em que a pessoa embarca todo dia, cadastrado pela empresa. Ex.: Av. Abdias de Carvalho, 1200, 06:42</dd>
+          <dt>Outro ponto hoje</dt><dd>a troca de ponto só para hoje, escolhida na T08; amanhã o ponto de sempre volta</dd>
+          <dt>Ida e volta</dt><dd>as viagens do dia: a ida de sempre 06:05, a outra ida 07:05 e a volta 17:20</dd>
+          <dt>Herói</dt><dd>o cartão do Início com o número grande: quando o ônibus passa no ponto, depois quando chega na fábrica</dd>
+          <dt>Selo de confiança</dt><dd>o que diz de onde vem o número: ao vivo, aproximado, programado, sem sinal</dd>
+          <dt>Ao vivo</dt><dd>a previsão calculada com a posição do ônibus; a janela abre 30 min antes da saída</dd>
+          <dt>Aproximado</dt><dd>o dado antigo: a posição parou de chegar há mais de 1,5 min; depois de 3 min, sem sinal, e o app recua para o programado</dd>
+          <dt>Chegando</dt><dd>o ônibus a menos de 2 min do ponto: o herói muda de forma</dd>
+          <dt>Ônibus trocado</dt><dd>a transportadora trocou o veículo da viagem; o app avisa e mostra a placa nova</dd>
+          <dt>Crachá</dt><dd>a leitura do cartão da pessoa no ônibus, que confirma o embarque</dd>
+          <dt>Código</dt><dd>os 6 números que chegam por e-mail ou SMS para entrar; pode ser reenviado depois de 60 s, e 5 erros bloqueiam por 15 min</dd>
+          <dt>RH e transportadora</dt><dd>os dois contatos humanos do app, em Preciso de ajuda: quem libera o acesso e quem opera o ônibus</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+</x-dc>
+
+
+
+</body></html>

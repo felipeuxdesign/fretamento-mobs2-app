@@ -1,0 +1,70 @@
+/* O que o celular desenha: barra de status, indicador de início, teclado, alerta, folha da biometria, push.
+   Aqui valem as cores do sistema, e não as do app (leis de cor). */
+@layer ds {
+  .ph {
+    --sis-tinta: #ffffff;
+    --sis-tinta-fraca: rgb(255 255 255 / 0.4);
+  }
+  [data-tema='claro'].ph,
+  [data-tema='claro'] .ph {
+    --sis-tinta: #000000;
+    --sis-tinta-fraca: rgb(0 0 0 / 0.4);
+  }
+
+  /* barra de status: 47 de altura, 9:41 */
+  .sa {
+    height: var(--topo-seguro);
+    flex: none;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 26px 0 30px;
+    color: var(--sis-tinta);
+    position: relative;
+    z-index: 3;
+  }
+  .sa .st-t {
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    font-variant-numeric: tabular-nums;
+  }
+  .sa .st-i {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .sa svg {
+    display: block;
+    fill: currentColor;
+  }
+  .sa.cartao {
+    background: var(--fundo-cartao);
+  }
+  /* no celular de verdade a barra é a do sistema: sobra só a margem segura */
+  .ph.do-celular .sa > * {
+    display: none;
+  }
+  .ph.do-celular .sa {
+    padding: 0;
+  }
+
+  /* indicador de início: 134 × 5, a 8 do fundo */
+  .hb {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 134px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--sis-tinta);
+    transform: translateX(-50%);
+    z-index: 9;
+    pointer-events: none;
+  }
+  .ph.do-celular .hb {
+    display: none;
+  }
+}

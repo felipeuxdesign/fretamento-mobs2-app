@@ -1,0 +1,124 @@
+/* A nota, o erro no lugar e o aviso no lugar (F04).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .ferr {
+    margin: 0;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--perigo-suave);
+    box-sizing: border-box;
+    color: var(--tinta);
+  }
+  .ferr.liso {
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    text-align: inherit;
+  }
+  .ferr svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin-top: 1px;
+    color: var(--perigo);
+  }
+  .ninfo {
+    margin: 0;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--fundo-elevado);
+  }
+  .ninfo svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin-top: 1px;
+    color: var(--info);
+  }
+  .fwarn {
+    margin: 0;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--atencao-suave);
+    box-sizing: border-box;
+    color: var(--tinta);
+  }
+  .fwarn svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin-top: 1px;
+    color: var(--atencao);
+  }
+  .nota {
+    margin: 0;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .nota svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    color: var(--vivo);
+  }
+  .sherr {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--perigo-suave);
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .sherr svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin-top: 2px;
+    color: var(--perigo);
+  }
+  .note {
+    margin: 0;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+  .note svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin-top: 1px;
+  }
+  .note.warn {
+    background: var(--atencao-suave);
+  }
+  .note.warn svg {
+    color: var(--atencao);
+  }
+}

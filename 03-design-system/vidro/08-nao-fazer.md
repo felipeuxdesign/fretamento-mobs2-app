@@ -1,0 +1,33 @@
+# O que não fazer
+
+- **Vidro no mapa em si, no trilho (as linhas e os marcadores) e no palco.**
+- **Conteúdo de vidro com o vidro claro de fábrica.** O painel do conteúdo leva o tom firme do cartão: com o branco a 8 % da biblioteca, o texto de apoio cai para 3:1 no escuro.
+- **Conteúdo de vidro sobre o mapa, sobre outro conteúdo ou dentro de uma peça que flutua.** Ele mora sobre o fundo de luz. Dentro do painel do mapa, o cartão fica sólido.
+- **Fundo de luz tímido, ou com lima.** Com pouca cor atrás, o desfoque vira só escurecimento. São o roxo da marca, um magenta e um índigo, com o brilho limitado pelo texto de apoio. O lima fica para o que está vivo.
+- **Fazer o claro invertendo o escuro.** O claro tem regras próprias: página quase branca, vidro que aparece pela borda e pela sombra, roxo cheio só no botão principal e no que está ao vivo.
+- **Sombra colorida e larga nos cartões do claro.** Ela vira névoa.
+- **Traço em cor sólida sobre o vidro.** A divisória e a borda de dentro de uma peça de vidro são a tinta translúcida.
+- **A lente da borda no conteúdo.** Nem no herói: ela custa caro na rolagem e, desligada só enquanto rola, faz o vidro mudar de cor.
+- **Fundo de luz liso, ou com faixa.** São três pontos de luz de borda macia, em diagonal.
+- **A marca do Entrar com o quadrado do arquivo.** No quadro de vidro entra o pictograma vazado, sem o fundo roxo do `icone-app.svg` (`04-pecas.md`, peça 17).
+- **Pintar por cima do vidro da biblioteca** para "ajeitar" uma peça. A exceção é o botão principal, que perde o brilho de gel (`04-pecas.md`, peça 14); a cor dele continua vindo das variáveis dela.
+- **Pintar as superfícies de vidro com as cores do app.** O preenchimento, a borda, o trilho e a bolinha dos controles (abas, campos, switch, o X da folha) ficam com os valores da biblioteca. Do app entram a tinta e as cores com significado: `vivo`, `perigo-forte`, o roxo do avatar, a cor de cada selo.
+- **Pôr o segmentado sobre conteúdo que rola ou sobre o mapa.** O trilho dele é vidro claro: ele só mora na página lisa e dentro de cartão.
+- **O acento fora dos quatro lugares.** Com o vidro ligado, lima (ou roxo, no claro) só no botão principal, no ponto "ao vivo", no nó do ônibus e na posição atual no mapa; o interruptor ligado e a escolha são as exceções.
+- **Desfoque com número solto.** Todo desfoque sai dos tokens por papel, com o par `-webkit-`.
+- **Avatar em roxo cheio ou em degradê.** Ele é a mesma esfera de vidro do sino, com as iniciais na `tinta`: cheio, ele disputa com o botão principal.
+- **Mudar a cor do botão principal.** O vidro tingido tem que dar a cor do token `vivo`, medida na tela.
+- **O azul da biblioteca** em qualquer lugar do app. O azul só existe nas peças que o celular desenha (`sistema-azul`).
+- **Texto branco sobre o lima.**
+- **Deformar o componente da biblioteca.** Ele vem com a forma arredondada dele; aqui se ajusta o tamanho, o respiro e a cor.
+- **Vidro que flutua dentro de vidro que flutua.** Os controles (botão, campo, segmentado, switch, selo) moram dentro do conteúdo de vidro, e os botões, dentro da folha e do painel do mapa. Fora isso, uma superfície que desfoca não mora dentro de outra.
+- **Um cartão sólido dentro de uma peça de vidro só para segurar o texto.** Se o contraste falta, firme o vidro.
+- **Sheet, toast ou diálogo montado fora da tela do aparelho.**
+- **Deixar a biblioteca lembrar do tema sozinha**, ou ter dois estados de tema.
+- **Variável `--lg-*` fora do `vidro.css`**, ou cor fora dos tokens para "ajeitar" um vidro numa tela.
+- **Vidro leitoso, cinza ou opaco.** Se não dá para ver o que está atrás, não é vidro.
+- **Contar com a lente.** Ela não existe no iPhone. O vidro tem que estar bonito sem ela.
+- **Vidro no palco ou na moldura do aparelho.**
+- **Desenhar a mesma peça duas vezes** (um componente de vidro e outro sólido). É um componente só, com os dois materiais.
+- **Uma peça de vidro sem volta.** Toda peça desliga numa linha, e o app inteiro desliga com `?vidro=0`.
+- **Empurrar uma peça que não ficou boa.** Sólida e certa vale mais que de vidro e feia.

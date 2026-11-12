@@ -1,0 +1,700 @@
+/* O palco: a moldura que apresenta o protótipo no computador. O app no meio, os estados do lado, as telas atrás
+   do botão do canto. É sempre escuro, nos tokens do escuro do app, e não muda com o tema do aparelho. Nunca é vidro.
+   As medidas são as da folha F11. O palco é de computador: aqui existe hover. */
+/* O mundo não entra no app: estas regras valem só para as peças do palco (a "pele"), nunca para a tela do aparelho,
+   que mora aqui dentro. */
+.pl-pele,
+.pl-pele * {
+  box-sizing: border-box;
+}
+.pl-pele {
+  font-family: var(--fonte);
+  font-variant-numeric: tabular-nums;
+  color: var(--tinta);
+}
+button.pl-pele,
+.pl-pele button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+.pl-pele button:disabled {
+  cursor: default;
+}
+/* o anel de foco do app: vivo, 2 px, deslocado 2 px */
+.pl-pele:focus,
+.pl-pele :focus {
+  outline: none;
+}
+.pl-pele:focus-visible,
+.pl-pele :focus-visible {
+  outline: 2px solid var(--foco);
+  outline-offset: 2px;
+}
+
+.pl-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--fundo-pagina);
+}
+/* o aparelho, no meio: em janela mais baixa, encolhe por inteiro; nunca corta */
+.pl-lugar {
+  position: absolute;
+  transform-origin: 0 0;
+}
+/* o botão do canto: 44 × 44, raio 10, a 16 do canto de cima */
+.pl-cnr {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  z-index: 6;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fundo-cartao);
+  color: var(--tinta-apagada);
+  box-shadow: inset 0 0 0 1px var(--borda);
+}
+.pl button.pl-cnr {
+  background: var(--fundo-cartao);
+  color: var(--tinta-apagada);
+}
+.pl button.pl-cnr:hover {
+  background: var(--fundo-elevado);
+  color: var(--tinta);
+  box-shadow: inset 0 0 0 1px var(--tinta-desligada);
+}
+
+/* a coluna "Estados desta tela": 300 de largura, a 40 do aparelho, na altura dele. Quando a lista é curta, o bloco
+   inteiro (o título, a dica, a lista e o tocador) fica no meio da altura do aparelho; quando a lista não cabe, ela
+   ocupa a coluna toda e rola por dentro, com o título em cima e o tocador no pé */
+.pl-col {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+}
+.pl-eb {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tinta-apagada);
+}
+.pl-ttl {
+  margin-top: 2px;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pl-hint {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--tinta-apagada);
+}
+.pl-hint.pede {
+  color: var(--tinta);
+}
+/* a lista só rola quando não cabe. Quando rola, rola por dentro e mostra a barra de rolagem: o palco é ferramenta de
+   computador, e a barra diz com todas as letras que há mais estados abaixo. Antes a lista só se apagava na borda */
+.pl-ls {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow: hidden auto;
+  scrollbar-width: none;
+  position: relative;
+  margin: 12px -8px 0;
+  padding: 0 8px;
+}
+/* a barra fica sempre à vista, e não só enquanto rola: no Chromium e no Safari ela é desenhada aqui; no Firefox, é a
+   barra fina do navegador */
+.pl-ls.rola {
+  scrollbar-width: auto;
+  padding-right: 6px;
+}
+.pl-ls.rola::-webkit-scrollbar {
+  width: 6px;
+}
+.pl-ls.rola::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--tinta) 8%, transparent);
+}
+.pl-ls.rola::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--tinta) 40%, transparent);
+}
+@supports not selector(::-webkit-scrollbar) {
+  .pl-ls.rola {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--tinta) 40%, transparent) color-mix(in srgb, var(--tinta) 8%, transparent);
+  }
+}
+.pl-lsi {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+.pl-gr {
+  display: flex;
+  align-items: flex-end;
+  flex: none;
+  height: 28px;
+  padding-bottom: 4px;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tinta-desligada);
+}
+.pl-lsi > .pl-gr:first-child {
+  height: 20px;
+}
+.pl button.pl-st {
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: 10px;
+  height: 32px;
+  margin: 0 -8px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--tinta-apagada);
+  white-space: nowrap;
+  width: calc(100% + 16px);
+}
+.pl-st i {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  border-radius: 4px;
+  background: var(--fundo-pagina);
+  box-shadow: inset 0 0 0 1.5px var(--tinta-desligada);
+}
+.pl-st .n {
+  width: 20px;
+  flex: 0 0 20px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  color: var(--tinta-apagada);
+}
+/* o nome que não cabe na linha encurta com reticências; inteiro, ele fica no title da linha */
+.pl-st .t {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.pl button.pl-st:hover {
+  background: var(--fundo-cartao);
+  color: var(--tinta);
+}
+.pl button.pl-st.on {
+  color: var(--tinta);
+  font-weight: 600;
+}
+.pl-st.on i {
+  background: var(--vivo);
+  box-shadow: none;
+}
+.pl-st.on .n {
+  color: var(--vivo);
+}
+/* "Voltar ao fluxo": entra no lugar da dica, com um estado parado */
+.pl button.pl-back {
+  margin-top: 12px;
+  align-self: flex-start;
+  height: 34px;
+  padding: 0 12px 0 10px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--fundo-cartao);
+  box-shadow: inset 0 0 0 1px var(--tinta-desligada);
+  color: var(--tinta);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pl-back svg {
+  color: var(--tinta-apagada);
+}
+.pl button.pl-back:hover {
+  background: var(--fundo-elevado);
+}
+.pl button.pl-back.pede {
+  box-shadow: inset 0 0 0 2px var(--vivo), 0 0 0 4px var(--vivo-suave);
+}
+.pl-back.pede svg {
+  color: var(--vivo);
+}
+
+/* o painel: abre da esquerda, por cima, com 280. O aparelho não se mexe */
+.pl-side {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  background: var(--fundo-pagina);
+  box-shadow: inset -1px 0 0 var(--borda), 12px 0 32px color-mix(in srgb, var(--scrim) 56%, transparent);
+  z-index: 7;
+}
+.pl-fora {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+}
+.pl-sh {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px 16px 8px 20px;
+}
+.pl-sh h3 {
+  margin: 2px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.pl button.pl-x {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tinta-apagada);
+  background: var(--fundo-cartao);
+  box-shadow: inset 0 0 0 1px var(--borda);
+}
+.pl button.pl-x:hover {
+  color: var(--tinta);
+  background: var(--fundo-elevado);
+  box-shadow: inset 0 0 0 1px var(--tinta-desligada);
+}
+.pl-sb {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden auto;
+  scrollbar-width: none;
+}
+.pl-sl {
+  padding: 14px 20px 6px;
+}
+.pl button.pl-nv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 34px;
+  padding: 7px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+.pl-nv .c {
+  width: 30px;
+  flex: 0 0 30px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  color: var(--tinta-apagada);
+}
+.pl-nv .nm {
+  flex: 1;
+  min-width: 0;
+  /* o nome do estado quebra a linha: nunca é cortado */
+  overflow-wrap: anywhere;
+}
+.pl button.pl-nv:hover {
+  background: var(--fundo-cartao);
+}
+.pl button.pl-nv.on {
+  background: var(--fundo-destaque);
+  font-weight: 600;
+  box-shadow: inset 2px 0 0 var(--tinta);
+}
+.pl-nv.on .c {
+  color: var(--tinta);
+}
+.pl-sf {
+  box-shadow: inset 0 1px 0 var(--borda);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pl-mode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.pl-mode svg {
+  color: var(--tinta-apagada);
+}
+.pl button.pl-sw {
+  margin-left: auto;
+  position: relative;
+  width: 64px;
+  height: 28px;
+  flex: 0 0 64px;
+  border-radius: 14px;
+  background: var(--fundo-sobreposto);
+  box-shadow: inset 0 0 0 1px var(--borda);
+}
+.pl-sw i {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 38px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--tinta-apagada);
+  transition: left 180ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.pl button.pl-sw.on {
+  background: var(--vivo);
+  box-shadow: none;
+}
+.pl-sw.on i {
+  left: 24px;
+  background: var(--vivo-tinta);
+}
+.pl-upd {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--tinta-apagada);
+}
+
+/* o tocador do dia: preso no pé da coluna, sempre à vista. Só no Início, nas Paradas e no Mapa */
+.pl-dia {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--borda);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: none;
+}
+.pl-dia.off {
+  opacity: 0.4;
+}
+.pl-dh {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.pl-dh > span:last-child {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--tinta-apagada);
+}
+.pl-trk {
+  display: flex;
+  gap: 4px;
+}
+.pl-trk i {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--fundo-sobreposto);
+  overflow: hidden;
+  display: block;
+}
+.pl-trk i.ok {
+  background: var(--tinta-desligada);
+}
+.pl-trk i.on b {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--vivo);
+}
+.pl-px {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--tinta-apagada);
+  white-space: nowrap;
+}
+.pl-px.esp {
+  color: var(--tinta);
+  font-weight: 600;
+}
+/* a dica do dia: no tom da dica da coluna, colada na frase do que vem */
+.pl-dd {
+  margin-top: -6px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--tinta-apagada);
+  white-space: nowrap;
+}
+.pl-ctl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+}
+.pl button.pl-sk {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tinta);
+  background: var(--fundo-cartao);
+  box-shadow: inset 0 0 0 1px var(--borda);
+}
+.pl-sk svg {
+  fill: currentColor;
+}
+.pl button.pl-sk:hover:not(:disabled) {
+  background: var(--fundo-elevado);
+  box-shadow: inset 0 0 0 1px var(--tinta-desligada);
+}
+.pl button.pl-sk.off {
+  color: var(--tinta-desligada);
+  background: none;
+}
+.pl button.pl-sk.pede {
+  color: var(--vivo);
+  box-shadow: inset 0 0 0 2px var(--vivo), 0 0 0 4px var(--vivo-suave);
+}
+.pl button.pl-pp {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 22px;
+  background: var(--vivo);
+  color: var(--fundo-pagina);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.pl button.pl-pp:hover:not(:disabled) {
+  background: var(--vivo-pressionado);
+}
+.pl-pp > svg {
+  width: 18px;
+  height: 18px;
+}
+.pl button.pl-pp.pede {
+  box-shadow: 0 0 0 4px var(--vivo-suave);
+}
+.pl button.pl-vel {
+  margin-left: auto;
+  height: 36px;
+  min-width: 52px;
+  padding: 0 12px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  color: var(--tinta);
+  background: var(--fundo-cartao);
+  box-shadow: inset 0 0 0 1px var(--borda);
+}
+.pl button.pl-vel:hover:not(:disabled) {
+  background: var(--fundo-elevado);
+}
+
+/* a gaveta do celular: com ?palco=1, a aba de 6 × 44 na borda esquerda abre a gaveta, de baixo, por cima do app */
+.pl button.pl-tab {
+  position: fixed;
+  left: 0;
+  top: calc(50% - 22px);
+  z-index: 36;
+  width: 6px;
+  height: 44px;
+  border-radius: 0 6px 6px 0;
+  background: var(--vivo);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--scrim) 48%, transparent);
+}
+/* o toque da aba pega 24 × 64 */
+.pl-tab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  width: 24px;
+  height: 64px;
+}
+.pl-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 34;
+  background: var(--scrim);
+}
+.pl-dr {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 116px;
+  z-index: 35;
+  background: var(--fundo-cartao);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -12px 40px color-mix(in srgb, var(--scrim) 73%, transparent);
+  display: flex;
+  flex-direction: column;
+}
+.pl-grip {
+  width: 32px;
+  height: 4px;
+  flex: 0 0 4px;
+  border-radius: 2px;
+  background: var(--borda);
+  margin: 8px auto 4px;
+}
+.pl-dr .pl-sh {
+  padding: 4px 12px 8px 20px;
+  align-items: center;
+  touch-action: none;
+}
+.pl-dr button.pl-x {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 999px;
+  background: var(--fundo-elevado);
+  box-shadow: none;
+}
+.pl-dsb {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden auto;
+  position: relative;
+  scrollbar-width: none;
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 34px);
+}
+.pl-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 16px 0 20px;
+  box-shadow: inset 0 1px 0 var(--divisoria), inset 0 -1px 0 var(--divisoria);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  position: relative;
+}
+.pl-row svg {
+  color: var(--tinta-apagada);
+}
+.pl-row .r {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400;
+  color: var(--tinta-apagada);
+}
+/* a tela é uma escolha, de 48: o seletor do próprio celular, por cima da linha */
+.pl-row select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 16px;
+}
+.pl-tch {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+.pl-tch button.pl-st {
+  height: 44px;
+  font-size: 15px;
+}
+.pl-tch .pl-st i {
+  width: 20px;
+  height: 20px;
+  flex-basis: 20px;
+  border-radius: 5px;
+}
+.pl-tch .pl-gr {
+  height: 36px;
+}
+.pl-dsl {
+  padding: 16px 20px 0;
+}
+.pl-dft {
+  margin-top: 20px;
+  box-shadow: inset 0 1px 0 var(--divisoria);
+  padding: 12px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pl-dft .pl-mode {
+  height: 48px;
+}
+.pl-dft .pl-dia {
+  margin: 0 0 12px;
+  padding: 0 0 14px;
+  border-top: 0;
+  border-bottom: 1px solid var(--borda);
+}
+.pl-dr button.pl-back {
+  margin: 12px 20px 0;
+}
+.pl-dr .pl-hint {
+  margin: 8px 20px 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pl-dr {
+    animation: gaveta-sobe 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .pl-side {
+    animation: painel-entra 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
+@keyframes gaveta-sobe {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+@keyframes painel-entra {
+  from {
+    transform: translateX(-24px);
+    opacity: 0;
+  }
+}

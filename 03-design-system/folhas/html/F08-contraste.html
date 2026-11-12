@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Folha 08 · Tabela de contraste nos dois temas</title>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../../../05-recursos/fontes/inter.css">
+<style>
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#EFE9F3}
+a{color:#AAEF00}a:hover{color:#AAEF00}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1100px; box-sizing: border-box; padding: 64px; background: #1A0F20; color: #EFE9F3; display: flex; flex-direction: column; gap: 32px; font-variant-numeric: tabular-nums">
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <p style="margin: 0; font-size: 11px; line-height: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #AF9BBA">Folha 08 · Tabela de contraste · WCAG, medida contra página, cartão, elevado e sobreposto</p>
+    <h1 style="margin: 0; font-size: 32px; line-height: 36px; font-weight: 800; letter-spacing: -0.02em">Cor nova só entra se passar aqui, nos dois temas</h1>
+    <p style="margin: 0; max-width: 960px; font-size: 15px; line-height: 22px; color: #AF9BBA">Texto precisa de 4,5:1 (AA) ou 7:1 (AAA); estado, borda e ícone precisam de 3:1; tinta-desligada e borda não são texto e ficam abaixo de propósito. A palavra ao lado do número diz o veredito, nunca só a cor.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: start">
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 17px; line-height: 22px; font-weight: 600">Escuro · padrão</h2>
+      <div style="border-radius: 16px; background: #26192E; overflow: hidden; display: flex; flex-direction: column; font-size: 13px; line-height: 18px">
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; color: #AF9BBA; font-weight: 600"><span>cor · sobre</span><span>página</span><span>cartão</span><span>elevado</span><span>sobreposto</span></div>
+        <div style="height: 1px; background: #3B2747"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #EFE9F3"></span>tinta</span><span>15,6 · AAA</span><span>14,0 · AAA</span><span>12,2 · AAA</span><span>11,3 · AAA</span></div>
+        <div style="height: 1px; background: #3B2747"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #AF9BBA"></span>tinta-apagada</span><span>7,3 · AAA</span><span>6,5 · AA</span><span>5,7 · AA</span><span>5,3 · AA</span></div>
+        <div style="height: 1px; background: #3B2747"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center; color: #AF9BBA"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #836C91"></span>tinta-desligada · não é texto</span><span>4,0 · estado</span><span>3,6 · estado</span><span>3,1 · estado</span><span>2,9 · reprova</span></div>
+        <div style="height: 1px; background: #3B2747"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #AAEF00"></span>vivo</span><span>13,3 · AAA</span><span>11,9 · AAA</span><span>10,4 · AAA</span><span>9,6 · AAA</span></div>
+        <div style="height: 1px; background: #3B2747"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #CE8BF5"></span>rota-ida · traço</span><span>7,6 · AAA</span><span>6,8 · AA</span><span>6,0 · AA</span><span>5,5 · AA</span></div>
+        <div style="height: 1px; background: #3B2747"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #EFAE43"></span>atencao</span><span>9,5 · AAA</span><span>8,6 · AAA</span><span>7,5 · AAA</span><span>6,9 · AA</span></div>
+        <div style="height: 1px; background: #3B2747"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #FF5E45"></span>perigo</span><span>6,1 · AA</span><span>5,5 · AA</span><span>4,8 · AA</span><span>4,4 · só 24px+</span></div>
+        <div style="height: 1px; background: #3B2747"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #4FB0EE"></span>info · rota-volta</span><span>7,7 · AAA</span><span>7,0 · AA</span><span>6,1 · AA</span><span>5,6 · AA</span></div>
+        <div style="height: 1px; background: #3B2747"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center; color: #AF9BBA"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #432C50"></span>borda · não é texto</span><span>1,5 · sutil</span><span>1,4 · sutil</span><span>1,2 · sutil</span><span>1,1 · sutil</span></div>
+      </div>
+      <div style="border-radius: 16px; background: #26192E; padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 18px">
+        <span style="font-weight: 600; color: #AF9BBA">Sobre os fills</span>
+        <span>vivo-tinta sobre vivo · 13,3 · AAA</span>
+        <span>atencao-tinta sobre atencao · 9,3 · AAA</span>
+        <span>perigo-tinta sobre perigo-forte · 5,0 · AA</span>
+        <span>tinta sobre fundo-destaque · 11,5 · AAA · tinta-apagada 5,4 · AA · vivo 9,8 · AAA</span>
+        <span>avatar-tinta sobre avatar-fundo · 7,9 · AAA (a inicial do avatar)</span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 17px; line-height: 22px; font-weight: 600">Claro · derivado</h2>
+      <div style="border-radius: 16px; background: #FFFFFF; color: #251A2B; overflow: hidden; display: flex; flex-direction: column; font-size: 13px; line-height: 18px">
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; color: #6F5F78; font-weight: 600"><span>cor · sobre</span><span>página</span><span>cartão</span><span>elevado</span><span>sobreposto</span></div>
+        <div style="height: 1px; background: #EEE9F1"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #251A2B"></span>tinta</span><span>15,4 · AAA</span><span>16,6 · AAA</span><span>14,6 · AAA</span><span>13,7 · AAA</span></div>
+        <div style="height: 1px; background: #EEE9F1"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #6F5F78"></span>tinta-apagada</span><span>5,4 · AA</span><span>5,9 · AA</span><span>5,1 · AA</span><span>4,8 · AA</span></div>
+        <div style="height: 1px; background: #EEE9F1"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center; color: #6F5F78"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #9A8BA3"></span>tinta-desligada · não é texto</span><span>2,9 · reprova</span><span>3,2 · estado</span><span>2,8 · reprova</span><span>2,6 · reprova</span></div>
+        <div style="height: 1px; background: #EEE9F1"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #4F007D"></span>vivo</span><span>11,9 · AAA</span><span>12,9 · AAA</span><span>11,3 · AAA</span><span>10,6 · AAA</span></div>
+        <div style="height: 1px; background: #EEE9F1"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #A46BD0"></span>rota-ida · traço</span><span>3,5 · estado</span><span>3,8 · estado</span><span>3,3 · estado</span><span>3,1 · estado</span></div>
+        <div style="height: 1px; background: #EEE9F1"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #A36605"></span>atencao · só ícone e borda</span><span>4,3 · estado</span><span>4,7 · AA</span><span>4,1 · estado</span><span>3,9 · estado</span></div>
+        <div style="height: 1px; background: #EEE9F1"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #D32F2B"></span>perigo</span><span>4,6 · AA</span><span>5,0 · AA</span><span>4,4 · só 24px+</span><span>4,1 · só 24px+</span></div>
+        <div style="height: 1px; background: #EEE9F1"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #0E7BC4"></span>info · rota-volta</span><span>4,2 · só 24px+</span><span>4,5 · AA</span><span>4,0 · só 24px+</span><span>3,7 · só 24px+</span></div>
+        <div style="height: 1px; background: #EEE9F1"></div>
+        <div style="display: grid; grid-template-columns: 1.6fr repeat(4, minmax(0, 1fr)); gap: 8px; padding: 10px 16px; align-items: center; color: #6F5F78"><span style="display: flex; align-items: center; gap: 8px"><span style="flex: none; width: 16px; height: 16px; border-radius: 4px; background: #CEC5D3"></span>borda · não é texto</span><span>1,5 · sutil</span><span>1,7 · sutil</span><span>1,5 · sutil</span><span>1,4 · sutil</span></div>
+      </div>
+      <div style="border-radius: 16px; background: #FFFFFF; color: #251A2B; padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; line-height: 18px">
+        <span style="font-weight: 600; color: #6F5F78">Sobre os fills</span>
+        <span>vivo-tinta (branco) sobre vivo · 12,9 · AAA</span>
+        <span>tinta sobre atencao-suave · 14,7 · AAA (o selo de atraso no claro)</span>
+        <span>branco sobre atencao · 4,7 · AA no limite: o selo de atraso continua em atencao-suave com tinta</span>
+        <span>perigo-tinta sobre perigo-forte · 5,0 · AA</span>
+        <span>tinta sobre fundo-destaque · 14,1 · AAA</span>
+        <span>avatar-tinta sobre avatar-fundo · 10,9 · AAA (a inicial do avatar)</span>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin: 0; font-size: 13px; line-height: 18px; color: #AF9BBA; max-width: 1100px">Leis que saem da tabela: no claro, perigo é texto só sobre página e cartão, e info só sobre o cartão; no escuro, perigo não é texto menor que 24 sobre o fundo-sobreposto; rota-ida no claro é traço de 2 px e nunca texto; âmbar no claro é ícone e borda, nunca texto sobre a página.</p>
+</div>
+</x-dc>
+
+
+
+</body></html>

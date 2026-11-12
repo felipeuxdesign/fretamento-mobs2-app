@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Folha 02 · Chrome</title>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../../../05-recursos/fontes/inter.css">
+<style>
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#EFE9F3}
+a{color:#AAEF00}a:hover{color:#AAEF00}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1640px; box-sizing: border-box; padding: 64px; background: #1A0F20; color: #EFE9F3; display: flex; flex-direction: column; gap: 40px; font-variant-numeric: tabular-nums">
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <p style="margin: 0; font-size: 11px; line-height: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #AF9BBA">Folha 02 · Chrome: o que envolve a tela</p>
+    <h1 style="margin: 0; font-size: 32px; line-height: 36px; font-weight: 800; letter-spacing: -0.02em">Barras, rodapé, folhas, diálogos, toast e push</h1>
+    <p style="margin: 0; max-width: 900px; font-size: 15px; line-height: 22px; color: #AF9BBA">Tudo aqui é fundo-cartao sobre fundo-pagina, com divisoria onde encosta no conteúdo. Nenhuma sombra no escuro: o chrome se separa por ser um degrau mais claro. Sem barra de status falsa: o aparelho desenha a dele.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 64px; align-items: start">
+
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Barra superior · home · 56 · fundo-cartao + divisoria</p>
+        <div style="width: 390px; height: 56px; box-sizing: border-box; background: #26192E; box-shadow: inset 0 -1px 0 #3B2747; display: flex; align-items: center; gap: 4px; padding: 0 10px 0 16px">
+          <h2 style="margin: 0; flex: 1; font-size: 17px; line-height: 22px; font-weight: 600">Bom dia, Ana</h2>
+          <button type="button" aria-label="Notificações, 2 não lidas" style="position: relative; width: 44px; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #EFE9F3; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span style="position: absolute; top: 6px; right: 5px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #D32F2B; color: #FFFFFF; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box">2</span></button>
+          <button type="button" aria-label="Perfil" style="width: 44px; height: 44px; border: 0; border-radius: 999px; background: transparent; display: inline-flex; align-items: center; justify-content: center"><span style="width: 32px; height: 32px; border-radius: 999px; background: #3C234A; color: #E0B4FA; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center">A</span></button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Barra superior · interna · seta em 16 + título</p>
+        <div style="width: 390px; height: 56px; box-sizing: border-box; background: #26192E; box-shadow: inset 0 -1px 0 #3B2747; display: flex; align-items: center; gap: 4px; padding: 0 8px 0 16px">
+          <button type="button" aria-label="Voltar" style="width: 44px; height: 44px; margin-left: -16px; padding: 0 0 0 8px; box-sizing: border-box; border: 0; border-radius: 999px; background: transparent; color: #EFE9F3; display: inline-flex; align-items: center; justify-content: flex-start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+          <h2 style="margin: 0; flex: 1; font-size: 17px; line-height: 22px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Paradas da viagem</h2>
+          <button type="button" style="height: 44px; padding: 0 8px; border: 0; background: transparent; color: #AAEF00; font-family: inherit; font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px">Marcar lidas</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Barra superior · sobre o mapa · flutua, sem divisoria</p>
+        <div style="width: 390px; height: 96px; box-sizing: border-box; background: #1D1124; padding: 0; display: flex; align-items: flex-start">
+          <div style="width: 390px; height: 56px; box-sizing: border-box; background: #26192E; display: flex; align-items: center; gap: 4px; padding: 0 8px 0 16px">
+            <button type="button" aria-label="Voltar" style="width: 44px; height: 44px; margin-left: -16px; padding: 0 0 0 8px; box-sizing: border-box; border: 0; border-radius: 999px; background: transparent; color: #EFE9F3; display: inline-flex; align-items: center; justify-content: flex-start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+            <h2 style="margin: 0; flex: 1; font-size: 17px; line-height: 22px; font-weight: 600">Linha 210 · Ida</h2>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Rodapé fixo · só em tela com ação fixa · divisoria em cima</p>
+        <div style="width: 390px; box-sizing: border-box; background: #26192E; border-top: 1px solid #3B2747; padding: 12px 16px 34px; display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 13px; line-height: 18px; color: #AF9BBA">Ao continuar, você aceita os Termos de uso.</p>
+          <button type="button" style="height: 48px; border-radius: 12px; border: 0; background: #AAEF00; color: #1A0F20; font-family: inherit; font-size: 15px; font-weight: 600">Continuar</button>
+          <div style="height: 5px; width: 134px; border-radius: 3px; background: #EFE9F3; opacity: 0.55; align-self: center; margin-top: 12px"></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Sheet de confirmação · raio-lg em cima · scrim atrás · sombra-sheet</p>
+        <div style="width: 390px; height: 420px; box-sizing: border-box; background: #1A0F20; position: relative; overflow: hidden">
+          <div style="position: absolute; inset: 0; background: rgba(10,5,14,.62)"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; background: #26192E; border-radius: 16px 16px 0 0; box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.45); padding: 8px 16px 34px; display: flex; flex-direction: column; gap: 12px">
+            <div style="width: 32px; height: 4px; border-radius: 2px; background: #432C50; align-self: center; margin-bottom: 8px"></div>
+            <h2 style="margin: 0; font-size: 20px; line-height: 26px; font-weight: 600; text-wrap: balance">Embarcar no Mercado de Casa Amarela hoje?</h2>
+            <p style="margin: 0; font-size: 15px; line-height: 22px">Previsão do ônibus neste ponto: <b style="font-weight: 600">06:38</b>, 4 min antes do seu ponto de sempre. A transportadora vai saber que você embarca aqui.</p>
+            <div style="display: flex; gap: 8px; margin-top: 4px">
+              <button type="button" style="flex: 1; height: 48px; border-radius: 12px; border: 1px solid #432C50; background: #352140; color: #EFE9F3; font-family: inherit; font-size: 15px; font-weight: 600">Cancelar</button>
+              <button type="button" style="flex: 1; height: 48px; border-radius: 12px; border: 0; background: #AAEF00; color: #1A0F20; font-family: inherit; font-size: 15px; font-weight: 600">Confirmar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Sheet com erro no lugar da ação · perigo-suave + perigo</p>
+        <div style="width: 390px; box-sizing: border-box; background: #26192E; border-radius: 16px 16px 0 0; padding: 8px 16px 34px; display: flex; flex-direction: column; gap: 12px">
+          <div style="width: 32px; height: 4px; border-radius: 2px; background: #432C50; align-self: center; margin-bottom: 8px"></div>
+          <h2 style="margin: 0; font-size: 20px; line-height: 26px; font-weight: 600">Embarcar no Mercado de Casa Amarela hoje?</h2>
+          <div style="display: flex; gap: 8px; align-items: flex-start; padding: 10px 12px; border-radius: 8px; background: rgba(255,94,69, 0.15)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5E45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg><span style="font-size: 13px; line-height: 18px">Não conseguimos confirmar: sem internet. Tente de novo quando a conexão voltar.</span></div>
+          <div style="display: flex; gap: 8px; margin-top: 4px">
+            <button type="button" style="flex: 1; height: 48px; border-radius: 12px; border: 1px solid #432C50; background: #352140; color: #EFE9F3; font-family: inherit; font-size: 15px; font-weight: 600">Cancelar</button>
+            <button type="button" style="flex: 1; height: 48px; border-radius: 12px; border: 0; background: #AAEF00; color: #1A0F20; font-family: inherit; font-size: 15px; font-weight: 600">Tentar de novo</button>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Diálogo do sistema · desenhado como o do iOS, nas cores do sistema e não nas do app · no app real é o próprio celular</p>
+        <div style="width: 390px; box-sizing: border-box; display: flex; justify-content: center; padding: 16px 0">
+          <div style="width: 270px; border-radius: 14px; background: rgba(37,37,38,.88); color: #FFFFFF; overflow: hidden; display: flex; flex-direction: column">
+            <div style="padding: 20px 16px 18px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center">
+              <h3 style="margin: 0; font-size: 17px; line-height: 22px; font-weight: 600">“Mobs2 Fretamento” Deseja Enviar Notificações</h3>
+              <p style="margin: 0; font-size: 13px; line-height: 18px; color: #FFFFFF">As notificações podem incluir alertas, sons e indicadores no ícone. Elas podem ser configuradas em Ajustes.</p>
+            </div>
+            <div style="display: flex; border-top: 1px solid rgba(84,84,88,.65)">
+              <button type="button" style="flex: 1; height: 44px; border: 0; background: transparent; color: #0A84FF; font-family: inherit; font-size: 17px; font-weight: 400">Não Permitir</button>
+              <button type="button" style="flex: 1; height: 44px; border: 0; border-left: 1px solid rgba(84,84,88,.65); background: transparent; color: #0A84FF; font-family: inherit; font-size: 17px; font-weight: 600">Permitir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Banner fixo · três níveis · empilha até dois, por prioridade, e nunca esconde o segundo</p>
+        <div style="width: 390px; display: flex; flex-direction: column; gap: 1px; background: #1A0F20">
+          <div style="display: flex; gap: 10px; align-items: flex-start; padding: 10px 16px 10px 12px; background: #352140; border-left: 4px solid #4FB0EE; font-size: 13px; line-height: 18px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4FB0EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="m2 2 20 20"></path><path d="M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193"></path><path d="M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07"></path></svg><span style="flex: 1">Sem internet. Mostrando dados de 06:24.</span></div>
+          <div style="display: flex; gap: 10px; align-items: flex-start; padding: 10px 16px 10px 12px; background: rgba(239,174,67, 0.15); border-left: 4px solid #EFAE43; font-size: 13px; line-height: 18px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EFAE43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M16 10h2"></path><path d="M16 14h2"></path><path d="M6.17 15a3 3 0 0 1 5.66 0"></path><circle cx="9" cy="11" r="2"></circle><rect x="2" y="5" width="20" height="14" rx="2"></rect></svg><div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span>Seu crachá foi lido às 06:24 no ônibus 1250.</span><div style="display: flex; gap: 4px"><button type="button" style="height: 44px; padding: 0 8px 0 0; border: 0; background: transparent; color: #AAEF00; font-family: inherit; font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px">Fui eu</button><button type="button" style="height: 44px; padding: 0 8px 0 0; border: 0; background: transparent; color: #AAEF00; font-family: inherit; font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px">Não fui eu</button></div></div></div>
+          <div style="display: flex; gap: 10px; align-items: center; padding: 10px 8px 10px 12px; background: rgba(255,94,69, 0.15); border-left: 4px solid #FF5E45; font-size: 13px; line-height: 18px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF5E45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg><span style="flex: 1">Ônibus trocado. Hoje é o <b style="font-weight: 600">1250 · DEF2G34</b>.</span><button type="button" aria-label="Fechar aviso" style="width: 44px; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #EFE9F3; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button></div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Toast · só confirmação leve · tinta sobre fundo invertido · 3 s</p>
+        <div style="width: 390px; box-sizing: border-box; padding: 0 16px">
+          <div style="display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-radius: 12px; background: #EFE9F3; color: #1A0F20; font-size: 13px; line-height: 18px; font-weight: 500"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F007D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Pronto. Hoje você embarca no Mercado de Casa Amarela.</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Push · como o do iOS: o celular desenha o cartão, com o ícone do app; o app só manda o título e o texto</p>
+        <div style="width: 390px; box-sizing: border-box; padding: 0 10px">
+          <div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 22px; background: rgba(34,38,46,.95); box-shadow: inset 0 0 0 .5px rgba(255,255,255,.14); color: #FFFFFF">
+            <img src="../../../05-recursos/marca/icone-app-notificacao.svg" width="38" height="38" alt="" style="display: block; width: 38px; height: 38px; flex: none">
+            <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px"><div style="display: flex; align-items: baseline; gap: 8px"><b style="flex: 1; font-size: 15px; line-height: 20px; font-weight: 600">Seu ônibus chega em 10 min</b><span style="font-size: 13px; line-height: 18px; color: rgba(255,255,255,.62)">agora</span></div><p style="margin: 0; font-size: 15px; line-height: 20px; color: rgba(255,255,255,.92)">Av. Abdias de Carvalho, 1200 · ônibus 1234 (ABC1D23)</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: #AF9BBA">Live Activity / Live Update · compacto e expandido · fase 2 do produto</p>
+        <div style="width: 390px; box-sizing: border-box; padding: 0 10px; display: flex; flex-direction: column; gap: 8px">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 999px; background: #000000; color: #EFE9F3; width: fit-content"><span style="width: 8px; height: 8px; border-radius: 999px; background: #AAEF00"></span><span style="font-size: 13px; font-weight: 600">Chega em 8 min</span><span style="font-size: 13px; color: #AF9BBA">06:42</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 20px; background: #000000; color: #EFE9F3"><span style="width: 40px; height: 40px; border-radius: 999px; background: #AAEF00; color: #1A0F20; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6v6"></path><path d="M15 6v6"></path><path d="M2 12h19.6"></path><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"></path><circle cx="7" cy="18" r="2"></circle><path d="M9 18h5"></path><circle cx="16" cy="18" r="2"></circle></svg></span><div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; line-height: 18px; color: #AF9BBA">Av. Abdias de Carvalho, 1200 · ônibus 1234</span><span style="font-size: 24px; line-height: 28px; font-weight: 800; letter-spacing: -0.015em">8 min <span style="font-size: 15px; font-weight: 500; color: #AF9BBA">às 06:42</span></span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+
+
+
+</body></html>

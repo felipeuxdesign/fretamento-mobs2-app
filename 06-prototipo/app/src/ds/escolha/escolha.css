@@ -1,0 +1,73 @@
+/* O chip e o rádio (F06).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 44px;
+    padding: 0 14px;
+    border-radius: 12px;
+    background: var(--fundo-elevado);
+    border: 1px solid var(--borda);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--tinta);
+    align-self: flex-start;
+  }
+  .chip svg {
+    width: 16px;
+    height: 16px;
+  }
+  .rad {
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    border: 2px solid var(--borda);
+    box-sizing: border-box;
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rad.dis {
+    opacity: .5;
+  }
+  .chip.dis {
+    opacity: .5;
+  }
+  .chip.on {
+    background: var(--vivo-suave);
+    color: var(--vivo);
+    border-color: transparent;
+  }
+  .rad.on {
+    border-color: var(--vivo);
+  }
+  .rad.on span {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--vivo);
+  }
+  .chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+}
+
+@layer ds {
+  .chip {
+    font-family: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* o chip solto é um botão de 44; os chips de escolha única (5, 10, 15 min) medem 46 com a borda, como nas referências */
+  button.chip {
+    box-sizing: border-box;
+  }
+  .chip.dis {
+    cursor: default;
+  }
+}

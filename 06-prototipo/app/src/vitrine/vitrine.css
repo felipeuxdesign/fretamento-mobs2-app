@@ -1,0 +1,375 @@
+/* As vitrines: páginas do próprio protótipo, fora do palco, que mostram cada peça isolada, nos dois temas. */
+  .vitrine {
+    min-height: 100%;
+    box-sizing: border-box;
+    padding: 48px;
+    background: var(--fundo-pagina);
+    color: var(--tinta);
+    font-family: var(--fonte);
+    font-variant-numeric: tabular-nums;
+  }
+  .vitrine * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .vitrine > header h1 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .vitrine > header p,
+  .vitrine .folha > header p {
+    margin: 8px 0 0;
+    max-width: 900px;
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--tinta-apagada);
+  }
+  .vitrine .folha {
+    margin-top: 56px;
+  }
+  .vitrine .folha > header h2 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+  }
+  .vitrine .grade {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 48px;
+    align-items: flex-start;
+  }
+  .vitrine .peca > h3 {
+    margin: 0 0 4px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--tinta-apagada);
+  }
+  .vitrine .peca > p {
+    margin: 0 0 8px;
+    max-width: 796px;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-desligada);
+  }
+  .vitrine .lado-a-lado {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  /* o quadro: um pedaço da tela do aparelho, com a altura da peça */
+  .vitrine .ph.quadro {
+    height: auto;
+    min-height: 0;
+    border-radius: 12px;
+    outline: 1px solid var(--borda);
+  }
+  .vitrine .ph.quadro.soltos {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .vitrine .fila {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .vitrine .glifos {
+    display: grid;
+    grid-template-columns: repeat(12, 20px);
+    gap: 10px;
+  }
+  .vitrine .assinado {
+    display: flex;
+    justify-content: center;
+  }
+
+/* a vitrine do vidro */
+.vitrine-do-vidro .controles {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: center;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--tinta);
+}
+.vitrine-do-vidro .controles label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.vitrine-do-vidro .controles button,
+.vitrine-do-vidro .controles select {
+  font: inherit;
+  color: var(--tinta);
+  background: var(--fundo-elevado);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+.vitrine-do-vidro .medida {
+  color: var(--tinta);
+  font-variant-numeric: tabular-nums;
+}
+.vitrine-do-vidro .linha-de-quadros {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.vitrine-do-vidro .celula {
+  margin: 0;
+  flex: none;
+}
+.vitrine-do-vidro .celula figcaption {
+  margin-top: 6px;
+  max-width: 390px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--tinta-apagada);
+}
+.vitrine-do-vidro .ph.quadro {
+  border-radius: 0;
+}
+/* os fundos: ficam atrás da peça, dentro do quadro */
+.vitrine .fundo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.vitrine .fundo-inicio .rola {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.vitrine .fundo-inicio.para-cima .rola {
+  top: -196px;
+}
+.vitrine .fundo-inicio.para-baixo .rola {
+  bottom: -150px;
+}
+.vitrine .fundo-inicio.para-meio .rola {
+  top: -120px;
+}
+.vitrine .fundo.mexe .rola {
+  animation: vitrine-rola 6s ease-in-out infinite alternate;
+}
+.vitrine .fundo.mexe .mapa-camada {
+  animation: vitrine-mapa 7s ease-in-out infinite alternate;
+}
+@keyframes vitrine-rola {
+  to {
+    translate: 0 -150px;
+  }
+}
+@keyframes vitrine-mapa {
+  to {
+    translate: -30px -170px;
+  }
+}
+.vitrine .pilha-da-vitrine {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.vitrine .fila-da-vitrine {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.vitrine-do-vidro .mhero .h-linha {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+/* na vitrine, o fundo "Início rolado" é um quadro parado já rolado: a borda de rolagem de cima fica à vista */
+.vitrine .topo.flutua > .borda-de-rolagem {
+  opacity: 1;
+}
+
+/* a prova de tamanhos da marca */
+.vitrine-da-marca .ph.quadro.prova-da-marca {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 640px;
+  height: 300px;
+  margin: 0 0 16px;
+  border-radius: 16px;
+  display: block;
+}
+.vitrine-da-marca .nome-da-prova {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  margin: 0;
+}
+.vitrine-da-marca .fila-da-prova {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 22px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.vitrine-da-marca .fila-da-prova .lock.da-marca {
+  margin: 0;
+  gap: 10px;
+}
+.vitrine-da-marca figcaption {
+  color: var(--tinta-apagada);
+}
+
+/* a folha de fundamentos, tirada dos tokens */
+.vitrine.vitrine-de-tokens {
+  position: relative;
+  isolation: isolate;
+  width: 1664px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 40px 48px 56px;
+  color: var(--tinta);
+  background: var(--fundo-pagina);
+  font-family: var(--fonte);
+}
+.vitrine-de-tokens h2 {
+  margin: 0 0 14px;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 700;
+}
+.vitrine-de-tokens .bloco-de-tokens {
+  margin: 32px 0 0;
+}
+.vitrine-de-tokens .rotulo-de-token {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--tinta-apagada);
+}
+.vitrine-de-tokens .grade-de-cores {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 14px 12px;
+}
+.vitrine-de-tokens .cor {
+  margin: 0;
+}
+.vitrine-de-tokens .cor .amostra {
+  display: block;
+  height: 56px;
+  border-radius: 10px;
+  outline: 1px solid color-mix(in srgb, var(--tinta) 16%, transparent);
+  outline-offset: -1px;
+}
+.vitrine-de-tokens .cor figcaption {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 0 0;
+  font-size: 12px;
+  line-height: 16px;
+}
+.vitrine-de-tokens .cor figcaption span {
+  color: var(--tinta-apagada);
+  font-variant-numeric: tabular-nums;
+}
+.vitrine-de-tokens .grupo-de-texto {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 24px;
+  margin: 0 0 22px;
+  align-items: end;
+}
+.vitrine-de-tokens .estilo-de-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.vitrine-de-tokens .tres-colunas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.vitrine-de-tokens .linha-de-token {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 10px;
+}
+.vitrine-de-tokens .barra-de-espaco {
+  height: 16px;
+  border-radius: 3px;
+  background: var(--vivo);
+  flex: none;
+}
+.vitrine-de-tokens .caixa-de-raio,
+.vitrine-de-tokens .caixa-de-sombra {
+  width: 56px;
+  height: 40px;
+  flex: none;
+  background: var(--fundo-cartao);
+  outline: 1px solid color-mix(in srgb, var(--tinta) 22%, transparent);
+  outline-offset: -1px;
+}
+.vitrine-de-tokens .caixa-de-sombra {
+  border-radius: 12px;
+  outline: 0;
+}
+.vitrine-de-tokens .barra-de-medida {
+  width: 16px;
+  border-radius: 3px;
+  background: var(--tinta-apagada);
+  flex: none;
+}
+.vitrine-de-tokens .fundos-de-luz,
+.vitrine-de-tokens .niveis-de-vidro {
+  display: flex;
+  gap: 24px;
+  margin: 14px 0 0;
+}
+.vitrine-de-tokens figure {
+  margin: 0;
+}
+.vitrine-de-tokens .ph.quadro.amostra-de-fundo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 300px;
+  height: 420px;
+  border-radius: 24px;
+  margin: 0 0 8px;
+  display: block;
+}
+.vitrine-de-tokens .ph.quadro.amostra-de-nivel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 390px;
+  height: 260px;
+  box-sizing: border-box;
+  padding: 24px 16px;
+  border-radius: 24px;
+  margin: 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.vitrine-de-tokens .solto-no-fundo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

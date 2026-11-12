@@ -1,0 +1,206 @@
+/* Os estilos de texto usados soltos nas telas (F01): título, lead, seção, corpo, apoio, o herói e os blocos de texto.
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .h1 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  .auth.entrar .lead {
+    text-wrap: pretty;
+  }
+  .lead {
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--tinta-apagada);
+  }
+  .lead b {
+    color: var(--tinta);
+    font-weight: 600;
+  }
+  .t13 {
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .t13.estreito {
+    max-width: 34ch;
+  }
+  .grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .grupo h3 {
+    margin: 0 0 2px;
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--tinta-apagada);
+  }
+  .blk {
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta);
+  }
+  .blk svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin-top: 1px;
+    color: var(--rota-ida);
+  }
+  .blk b {
+    font-weight: 600;
+    color: var(--tinta);
+  }
+  .t17 {
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .t13b {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--tinta-apagada);
+    margin: 0;
+  }
+  .hero {
+    font-size: 56px;
+    line-height: 60px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .hero.muted {
+    color: var(--tinta-apagada);
+  }
+  .comp {
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 500;
+    color: var(--tinta-apagada);
+  }
+  .lbl {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--tinta-apagada);
+    margin: 0;
+  }
+  .t15 {
+    font-size: 15px;
+    line-height: 22px;
+    margin: 0;
+  }
+  .pre {
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .hero.strike {
+    text-decoration: line-through;
+  }
+  .meta {
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .mnote {
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+  .prose {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .prose h3 {
+    margin: 8px 0 0;
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .prose p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .prose p.mu {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--tinta-apagada);
+  }
+
+  /* ajudas de arranjo que as telas usam: pilha de 8 e de 2, o trecho em destaque dentro de um texto */
+  .pilha8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .forte {
+    font-weight: 600;
+  }
+  .t17.muted {
+    color: var(--tinta-apagada);
+  }
+  /* a linha de cima de uma lista (a linha, o sentido, de onde vem o horário) e o texto solto entre cartões */
+  .meta.da-lista {
+    margin: -4px 4px 0;
+  }
+  .t13.solto {
+    padding: 0 4px;
+  }
+  /* um texto com a marca dele na frente: o ícone alinhado à primeira linha */
+  .t15.com-icone {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .marca {
+    display: inline-flex;
+    margin-top: 1px;
+    flex: none;
+  }
+  .marca.perigo {
+    color: var(--perigo);
+  }
+  .muito-forte {
+    font-weight: 700;
+  }
+  /* um grupo com título, numa tela de opções (Preparar o app): o título em caixa alta e os blocos em pilha de 8 */
+  section.grp {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  section.grp > h3 {
+    margin: 0 0 2px;
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tinta-apagada);
+  }
+  .forte.tinta {
+    color: var(--tinta);
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}

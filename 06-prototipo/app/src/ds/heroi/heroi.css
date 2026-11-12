@@ -1,0 +1,76 @@
+/* O cartão do herói (F07): 358 de largura, um estado por quadro. As medidas foram lidas das referências da T05. */
+@layer ds {
+  .h-cab {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .h-num {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .h-linha {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  /* com "cerca de" na frente, o número encolhe um degrau e a linha não quebra: "cerca de 12 min às 06:42" cabe inteira */
+  .h-linha:has(.pre) {
+    flex-wrap: nowrap;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .h-linha:has(.pre) .hero {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .h-lugar {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+  }
+  .h-hora {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .h-hora .t17.muted {
+    color: var(--tinta-apagada);
+  }
+  .h-sob {
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--tinta-apagada);
+  }
+  /* o herói troca de estado (movimento 3): o fundo do cartão transita em 250 ms */
+  .card.heroi {
+    transition: background-color 250ms, border-radius 250ms;
+  }
+  .ph.parado .card.heroi {
+    transition: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card.heroi {
+      transition: none;
+    }
+  }
+  .h-hora .h-chega {
+    font-weight: 600;
+  }
+  /* o herói troca de estado (movimento 3): fade cruzado de 150 ms. O número não rola nem conta */
+  .ph:not(.parado) .h-num[data-troca] {
+    animation: heroi-troca 150ms ease-out;
+  }
+  @keyframes heroi-troca {
+    from {
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ph .h-num[data-troca] {
+      animation: none;
+    }
+  }
+}

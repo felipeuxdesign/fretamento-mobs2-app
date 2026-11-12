@@ -1,0 +1,1407 @@
+/* O vidro (Liquid Glass). Este é o único arquivo que define as variáveis --lg-* da GlassyUI e os números da ótica
+   (desfoque, saturação, brilho, fios de luz), por tamanho e por tema. Nenhuma tela ajusta o vidro por conta própria:
+   se uma peça precisa de um valor diferente, ela ganha um nome aqui.
+   A forma de cada peça (altura, raio, respiro, posição) continua vindo da folha da peça; aqui só entra o material. */
+@layer ds {
+  /* ── 1. As variáveis da biblioteca ─────────────────────────────────────────────────────────────────────────
+     Valem dentro da tela do aparelho (e dos quadros da vitrine), no tema dela. A superfície do vidro é a da
+     biblioteca, à risca: o preenchimento, a borda, o trilho e a bolinha dos controles ficam com os valores dela.
+     Aqui só entram a tinta do app, a cor de destaque (o azul dela vira o vivo, com vivo-tinta por cima), o foco
+     e o erro. */
+  .ph {
+    --lg-foreground: var(--tinta);
+    --lg-muted-foreground: var(--tinta-apagada);
+    --lg-accent: var(--vivo);
+    --lg-accent-foreground: var(--vivo-tinta);
+    --lg-prominent-fill: var(--vivo);
+    /* o vidro tingido da biblioteca (o botão principal) é azul de fábrica: aqui ele é o vivo. O tom pinta o que passa
+       atrás do botão, e a receita foi medida na tela até dar a cor do token (170 239 0 no escuro, 79 0 125 no claro);
+       o brilho e a sombra são da mesma cor, um claro e um escuro */
+    --lg-prominent-tint: grayscale(1) contrast(0.34) brightness(1.62) sepia(1) hue-rotate(31deg) saturate(6.5);
+    --lg-prominent-glow: 240 255 190;
+    --lg-prominent-shade: 52 80 0;
+    /* o desfoque, por papel: o cartão, o controle e a borda de rolagem. Todo desfoque do app sai daqui */
+    --vd-desfoque-cartao: 14px;
+    --vd-desfoque-controle: 10px;
+    --vd-desfoque-borda: 18px;
+    --lg-focus-ring: var(--foco);
+    --lg-invalid: var(--perigo);
+    --lg-switch-on: var(--vivo);
+
+    /* a ótica, por tamanho. Escuro: o fundo é escurecido pelo filtro e a cor volta pela saturação (a conta do kit),
+       para o texto passar mesmo com o botão lima ou o disco do ônibus exatamente atrás. */
+    --vd-pequeno-filtro: blur(9px) saturate(1.9) brightness(0.5) saturate(1.5);
+    --vd-medio-filtro: blur(14px) saturate(2) brightness(0.4) saturate(2.2) contrast(0.92);
+    /* o balão do ônibus tem a segunda linha em tinta-apagada, e os rótulos do mapa passam atrás: escurece um pouco mais */
+    --vd-balao-filtro: blur(12px) saturate(2) brightness(0.3) saturate(2.4) contrast(0.92);
+    --vd-grande-filtro: blur(22px) saturate(2) brightness(0.27) saturate(2.4) contrast(0.92);
+    /* o rodapé tem a legenda em tinta-apagada, e o botão lima da tela passa bem atrás dela: o filtro dele escurece mais */
+    --vd-rodape-filtro: blur(var(--vd-desfoque-borda)) saturate(2) brightness(0.165) saturate(3) contrast(0.92);
+    /* o preenchimento do grande: um pouco mais firme, para segurar bastante texto */
+    --vd-grande-fundo: color-mix(in srgb, var(--fundo-cartao) 30%, transparent);
+    --vd-medio-fundo: color-mix(in srgb, var(--fundo-cartao) 22%, transparent);
+    --vd-pequeno-fundo: var(--vidro-pequeno);
+    /* o fio de luz e o brilho do topo */
+    --vd-fio-topo: rgb(255 255 255 / 0.24);
+    --vd-fio-baixo: rgb(255 255 255 / 0.08);
+    --vd-fio-fora: rgb(0 0 0 / 0);
+    --vd-brilho-do-topo: linear-gradient(180deg, rgb(255 255 255 / 0.08), rgb(255 255 255 / 0) 34%);
+    --vd-sombra-pequena: 0 8px 32px color-mix(in srgb, var(--scrim) 73%, transparent);
+    /* o véu atrás do sheet de vidro: mais leve que o scrim, para a tela de trás aparecer */
+    --vd-veu: color-mix(in srgb, var(--scrim) 55%, transparent);
+  }
+  [data-tema='claro'].ph,
+  [data-tema='claro'] .ph {
+    --lg-prominent-tint: grayscale(1) contrast(0.3) brightness(0.2) sepia(1) hue-rotate(232deg) saturate(15);
+    --lg-prominent-glow: 214 180 255;
+    --lg-prominent-shade: 36 0 60;
+    /* claro: o fundo é clareado pelo filtro; quem segura a peça sobre o branco é a sombra e o fio escuro */
+    --vd-pequeno-filtro: blur(9px) saturate(1.5) brightness(1.5) contrast(0.8);
+    --vd-medio-filtro: blur(14px) saturate(2.2) brightness(1.25) contrast(0.85);
+    --vd-balao-filtro: blur(12px) saturate(1.6) brightness(1.6) contrast(0.72);
+    --vd-grande-filtro: blur(22px) saturate(1.7) brightness(1.9) contrast(0.62);
+    --vd-rodape-filtro: blur(var(--vd-desfoque-borda)) saturate(1.7) brightness(1.9) contrast(0.62);
+    /* o grande, no claro, segura texto de apoio: o preenchimento do token e mais um pouco de branco */
+    --vd-grande-fundo: color-mix(in srgb, var(--fundo-cartao) 30%, var(--vidro-medio));
+    --vd-medio-fundo: var(--vidro-medio);
+    --vd-pequeno-fundo: var(--vidro-pequeno);
+    --vd-fio-topo: rgb(255 255 255 / 0.8);
+    --vd-fio-baixo: rgb(0 0 0 / 0.06);
+    --vd-fio-fora: rgb(0 0 0 / 0.08);
+    --vd-brilho-do-topo: linear-gradient(180deg, rgb(255 255 255 / 0.6), rgb(255 255 255 / 0) 34%);
+    --vd-sombra-pequena: 0 6px 24px rgb(37 26 43 / 0.16), 0 1px 3px rgb(37 26 43 / 0.1);
+    --vd-veu: color-mix(in srgb, var(--scrim) 55%, transparent);
+  }
+
+  /* ── 2. A peça de vidro: sai o material sólido, fica a forma ──────────────────────────────────────────────── */
+  .lg-glass-surface.vidro {
+    background: transparent;
+    border-color: transparent;
+    color: var(--tinta);
+    /* a GlassSurface vem com raio e sombra dela; a peça manda no raio, e a sombra de fora é a nossa */
+    --lg-panel-elevation-shadow: none;
+    transition: none;
+  }
+  /* a camada fosca: o preenchimento é o nosso token, a ótica é a do tamanho */
+  .vidro::before {
+    background-image: var(--vd-brilho-do-topo);
+    box-shadow:
+      inset 0 1px 0 0 var(--vd-fio-topo),
+      inset 0 -1px 0 0 var(--vd-fio-baixo),
+      inset 1px 0 0 0 color-mix(in srgb, var(--vd-fio-topo) 45%, transparent),
+      inset -1px 0 0 0 color-mix(in srgb, var(--vd-fio-topo) 45%, transparent);
+  }
+  .vidro-pequeno::before {
+    background-color: var(--vd-pequeno-fundo);
+    -webkit-backdrop-filter: var(--vd-pequeno-filtro);
+    backdrop-filter: var(--vd-pequeno-filtro);
+  }
+  .vidro-medio::before {
+    background-color: var(--vd-medio-fundo);
+    -webkit-backdrop-filter: var(--vd-medio-filtro);
+    backdrop-filter: var(--vd-medio-filtro);
+  }
+  .vidro-grande::before {
+    background-color: var(--vd-grande-fundo);
+    -webkit-backdrop-filter: var(--vd-grande-filtro);
+    backdrop-filter: var(--vd-grande-filtro);
+  }
+  /* a lente da borda (só no Chromium) lê estes números */
+  .vidro-pequeno {
+    --lg-lens-blur: 5;
+    --lg-lens-saturation: 1.6;
+    --lg-lens-depth: 1;
+    --lg-lens-body-brightness: 0.94;
+    --lg-lens-rim-brightness: 1.1;
+  }
+  [data-tema='claro'] .vidro-pequeno,
+  [data-tema='claro'].ph .vidro-pequeno {
+    --lg-lens-saturation: 1.4;
+    --lg-lens-body-brightness: 1.03;
+    --lg-lens-rim-brightness: 1;
+  }
+  /* no claro, o fio escuro de fora segura a peça sobre o branco */
+  .vidro {
+    outline: 0.5px solid var(--vd-fio-fora);
+    outline-offset: -0.5px;
+  }
+
+  /* ── 3. Peça por peça ─────────────────────────────────────────────────────────────────────────────────────── */
+
+  /* 1 e 3 · a barra do topo e a do mapa: de vidro, a barra não é uma faixa. O conteúdo rola por baixo dela, e quem
+     é vidro são os botões, em esfera, e, sobre o mapa, o título em cápsula. A divisória sai */
+  .topo.flutua {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    isolation: isolate;
+    pointer-events: none;
+  }
+  .topo.flutua > * {
+    pointer-events: auto;
+  }
+  .topo.flutua .sa,
+  .topo.flutua .sa.cartao,
+  .topo.flutua .tb {
+    background: transparent;
+    box-shadow: none;
+  }
+  /* o respiro da barra com as esferas de 44: 16 dos lados, 8 entre as peças */
+  .topo.flutua .tb,
+  .topo.flutua .tb.home,
+  .topo.flutua .tb.nua,
+  .topo.flutua .tb.so-titulo {
+    padding: 0 16px;
+    gap: 8px;
+  }
+  .topo.flutua .tb h2 {
+    padding: 0 4px;
+  }
+  /* na home e no Preparar o app, que não têm voltar, o título cresce: sem a faixa, ele é o título da tela */
+  .topo.flutua .tb.home h2,
+  .topo.flutua .tb.so-titulo h2 {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  /* a borda de rolagem: o que passa por baixo da barra desfoca e some na cor da página, sem linha e sem véu
+     escuro. É o que segura o relógio e o título quando o conteúdo rola */
+  .borda-de-rolagem {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: -18px;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--fundo-pagina) 96%, transparent) 0, color-mix(in srgb, var(--fundo-pagina) 96%, transparent) calc(100% - 26px), color-mix(in srgb, var(--fundo-pagina) 0%, transparent) 100%);
+    -webkit-backdrop-filter: blur(var(--vd-desfoque-borda));
+    backdrop-filter: blur(var(--vd-desfoque-borda));
+    -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 22px), transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 22px), transparent 100%);
+  }
+  /* a borda de cima só existe quando há conteúdo rolado por baixo da barra: no topo da rolagem, a barra fica limpa */
+  .topo.flutua > .borda-de-rolagem {
+    opacity: 0;
+    transition: opacity 160ms ease-out;
+  }
+  .ph:has(main[data-rolou]) .topo.flutua > .borda-de-rolagem {
+    opacity: 1;
+  }
+  .borda-de-rolagem.de-baixo {
+    top: -22px;
+    bottom: 0;
+    background: linear-gradient(to top, color-mix(in srgb, var(--fundo-pagina) 96%, transparent) 0, color-mix(in srgb, var(--fundo-pagina) 96%, transparent) calc(100% - 30px), color-mix(in srgb, var(--fundo-pagina) 0%, transparent) 100%);
+    -webkit-mask-image: linear-gradient(to top, #000 0, #000 calc(100% - 26px), transparent 100%);
+    mask-image: linear-gradient(to top, #000 0, #000 calc(100% - 26px), transparent 100%);
+  }
+
+  /* nas telas sem rodapé, a mesma borda no pé da tela, enquanto ainda há conteúdo abaixo: ele desfoca e some na cor
+     da página antes de chegar ao indicador de início. No fim da rolagem, a borda sai */
+  .borda-de-rolagem.do-pe {
+    top: auto;
+    bottom: 0;
+    height: 84px;
+    z-index: 4;
+    background: linear-gradient(to top, var(--fundo-pagina) 0, color-mix(in srgb, var(--fundo-pagina) 94%, transparent) 26px, color-mix(in srgb, var(--fundo-pagina) 0%, transparent) 100%);
+    -webkit-mask-image: linear-gradient(to top, #000 0, #000 34px, transparent 100%);
+    mask-image: linear-gradient(to top, #000 0, #000 34px, transparent 100%);
+  }
+
+  /* 2 · os botões da barra: a esfera de vidro da biblioteca, de 44, com o glifo em cima. O contador do sino
+     fica por fora da esfera, para não ser cortado por ela */
+  .esfera-da-barra {
+    position: relative;
+    flex: none;
+    display: inline-flex;
+  }
+  .lg-button.esfera {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    flex: none;
+    font-family: inherit;
+    color: var(--tinta);
+    --lg-ink: var(--tinta);
+  }
+  .lg-button.esfera svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+  .lg-button.esfera .lg-button__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .esfera-da-barra .badge {
+    top: -3px;
+    right: -5px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  /* o avatar: o GlassAvatar da biblioteca, como ela desenha (a inicial sobre o disco, com o fio de luz).
+     Na barra, mede os 44 das esferas; no Perfil, os 72 da folha */
+  .lg-avatar.avatar-de-vidro {
+    --lg-avatar-size: 44px;
+    font-family: inherit;
+  }
+  /* a mesma sombra das esferas da barra (a da biblioteca), para o avatar e o sino lerem como o mesmo vidro */
+  .lg-avatar.avatar-de-vidro {
+    border-radius: 9999px;
+    box-shadow: var(--lg-shadow);
+  }
+  .lg-avatar.avatar-de-vidro.grande {
+    --lg-avatar-size: 72px;
+    margin-bottom: 8px;
+  }
+  /* o avatar não é o destaque da tela: sem degradê. O disco é o vidro claro da biblioteca com um tom leve do roxo do
+     avatar, e a inicial vai no roxo dele. O fio de luz da borda é o dela */
+  .lg-avatar.avatar-de-vidro .lg-avatar-face {
+    color: var(--avatar-tinta);
+  }
+  .lg-avatar.avatar-de-vidro .lg-avatar-fallback {
+    background: color-mix(in srgb, var(--avatar-tinta) 14%, transparent);
+    text-shadow: none;
+  }
+  .ib.do-perfil {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* o título sobre o mapa: o painel em pílula da biblioteca, como ela desenha (o desfoque, a lente da borda, o fio
+     de luz), da altura das esferas. No escuro, o vidro escurece um pouco o mapa que passa atrás, pela variável de
+     brilho dela, para o nome da linha ler */
+  .lg-glass-surface.titulo-em-capsula {
+    height: 44px;
+    box-sizing: border-box;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 1 auto;
+    min-width: 0;
+    --lg-glass-brightness: 0.5;
+  }
+  /* a cápsula leva texto, e o disco lima do ônibus pode passar exatamente atrás dele: o tom do cartão entra na camada
+     fosca (é onde a biblioteca manda recolorir), o bastante para o nome da linha ler. Com o vidro claro de fábrica,
+     media 2,0:1 no escuro */
+  .lg-glass-surface.titulo-em-capsula::before {
+    background-color: color-mix(in srgb, var(--fundo-cartao) 64%, transparent);
+  }
+  [data-tema='claro'] .lg-glass-surface.titulo-em-capsula {
+    --lg-glass-brightness: 1.1;
+  }
+  [data-tema='claro'] .lg-glass-surface.titulo-em-capsula::before {
+    background-color: color-mix(in srgb, var(--fundo-cartao) 56%, transparent);
+  }
+  .lg-glass-surface.titulo-em-capsula h2 {
+    padding: 0;
+    flex: none;
+    max-width: 100%;
+  }
+
+  /* 14 · os botões: o GlassButton da biblioteca, na cápsula que ela propõe, com as nossas medidas (48 de altura,
+     texto de 15 em peso 600). O primário é vidro tingido de vivo; o destrutivo, de perigo; o secundário, vidro claro */
+  .lg-button.btn-de-vidro {
+    height: 48px;
+    width: 100%;
+    padding: 0 20px;
+    flex: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .lg-button.btn-de-vidro .lg-button__label,
+  .lg-button.chip-de-vidro .lg-button__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .lg-button.btn-de-vidro svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+  }
+  .lg-button.btn-de-vidro.lg-button--primary {
+    --lg-ink: var(--tinta);
+  }
+  /* o botão principal é o vidro tingido da biblioteca, do jeito que ela desenha (a lente, a borda que acende, a luz
+     que anda com o toque). Aqui só entram as variáveis dela com a nossa cor: nada é pintado por cima */
+  .lg-button.btn-de-vidro.dgr {
+    --lg-prominent-fill: var(--perigo-forte);
+    --lg-ink: var(--perigo-tinta);
+    /* medido na tela até dar o perigo-forte (211 47 43), como o vivo */
+    --lg-prominent-tint: grayscale(1) contrast(0.3) brightness(0.7) sepia(1) hue-rotate(-47deg) saturate(6.6);
+    --lg-prominent-glow: 255 196 186;
+    --lg-prominent-shade: 84 12 10;
+  }
+  [data-tema='claro'] .lg-button.btn-de-vidro.dgr,
+  [data-tema='claro'].ph .lg-button.btn-de-vidro.dgr {
+    --lg-prominent-tint: grayscale(1) contrast(0.3) brightness(0.54) sepia(1) hue-rotate(-47deg) saturate(6.6);
+  }
+  /* um botão principal só, o do Início. Dentro de uma folha ou do painel do mapa, a placa de vidro separa o botão da
+     página, e a luz que ele deixaria passar some: ele sairia mais escuro. Ali, a luz debaixo dele (a camada que a
+     biblioteca já desenha) fica cheia, da cor que a página daria, e o botão sai igual ao do Início */
+  .lg-sheet-content .lg-button--prominent > .lg-button__layers > .lg-button__light {
+    background: color-mix(in srgb, rgb(var(--lg-prominent-shade)) 60%, var(--fundo-pagina));
+  }
+  /* a lente da folha escurece o que passa por ela, e o botão de dentro herdaria esses números: ele fica com os dele */
+  .lg-sheet-content .lg-button {
+    --lg-lens-blur: 6;
+    --lg-lens-body-brightness: 1;
+    --lg-lens-rim-brightness: 1;
+  }
+  /* carregando: o botão da biblioteca fica como está, parado, com o anel de espera dela na cor do texto */
+  .lg-button.btn-de-vidro.carregando {
+    pointer-events: none;
+  }
+  .lg-button.btn-de-vidro .lg-spinner {
+    --lg-spinner-size: 18px;
+    color: currentColor;
+  }
+  .lg-button.btn-de-vidro.dis {
+    --lg-ink: var(--tinta-apagada);
+  }
+  .acts2x .lg-button.btn-de-vidro {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    padding: 0 12px;
+  }
+  .btn.capsula {
+    border-radius: 999px;
+  }
+  /* o chip solto ("Perto de mim"): o mesmo botão, pequeno */
+  .lg-button.chip-de-vidro {
+    height: 44px;
+    padding: 0 16px;
+    align-self: flex-start;
+    flex: none;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    --lg-ink: var(--tinta);
+  }
+  .lg-button.chip-de-vidro svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+  }
+  /* o chip escolhido: o vidro tingido de vivo, com o contorno em vivo. Com o vivo-suave (10 %), sobre o vidro, o
+     preenchimento quase não aparecia e só a letra dizia a escolha */
+  .lg-button.chip-de-vidro.on {
+    --lg-ink: var(--vivo);
+    --lg-button-fill: color-mix(in srgb, var(--vivo) 20%, transparent);
+    --lg-button-fill-hover: color-mix(in srgb, var(--vivo) 20%, transparent);
+    outline: 1.5px solid var(--vivo);
+    outline-offset: -1.5px;
+  }
+
+  /* 8 · o banner: de vidro, flutua logo abaixo da barra, solto das bordas, com o canto redondo. O ícone e o tom
+     continuam dizendo o nível; a faixa da esquerda sai */
+  .bf.vidro {
+    margin: 0 12px 8px;
+    border-radius: 18px;
+    border-left-width: 0;
+    padding: 10px 10px 10px 14px;
+    box-shadow: var(--vd-sombra-pequena);
+  }
+  .bf.vidro.largo {
+    padding-right: 14px;
+  }
+  .bf.vidro::after {
+    content: none;
+  }
+  /* o nível de atenção entra como um tom leve sobre o vidro, não como bloco opaco */
+  .bf.vidro.w::before {
+    background-color: color-mix(in srgb, var(--atencao) 14%, var(--vd-medio-fundo));
+  }
+
+  /* 9 · o rodapé fixo: de vidro, não é uma faixa. O botão flutua sobre o fim da rolagem, e a borda de rolagem
+     segura a legenda */
+  .ft.flutuante {
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+    border-top-color: transparent;
+    padding-top: 10px;
+  }
+
+  /* 7 · o sheet: a GlassSheet da biblioteca, como ela é (a folha solta das bordas, com o canto de 40, a lente na
+     borda, a alça com mola e o X), só encaixada na tela do aparelho. Aqui entram a posição dentro da tela e a
+     nossa letra. O véu fica mais leve */
+  .ph .lg-sheet-content.folha-de-vidro {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    max-width: none;
+    max-height: calc(100% - 72px);
+    margin: 0;
+    gap: 12px;
+    color: var(--tinta);
+    font-family: var(--fonte);
+    /* a folha abre por cima de telas com o botão principal no rodapé, bem atrás dos botões dela: o desfoque é o que a
+       biblioteca usa quando não há lente (14), para o botão de trás virar uma mancha de cor, e não uma faixa com letra */
+    --lg-slab-blur: 14;
+    /* e a placa é mais firme que a da biblioteca: no escuro, o lima do botão de trás atravessava a folha e
+       competia com o texto de apoio e com os botões dela. Com o tom do cartão por cima, sobra só um resto de cor */
+    --lg-slab-tint: color-mix(in srgb, var(--fundo-cartao) 80%, transparent);
+  }
+  [data-tema='claro'] .lg-sheet-content.folha-de-vidro,
+  [data-tema='claro'].ph .lg-sheet-content.folha-de-vidro {
+    --lg-slab-tint: rgb(255 255 255 / 0.93);
+  }
+  .folha-de-vidro h3 {
+    margin: 0;
+    padding-right: 44px;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .folha-de-vidro p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  /* o X da folha é o da biblioteca, como ela desenha. Aqui só a área de toque cresce para os 44 */
+  .folha-de-vidro > button[aria-label='Fechar']::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+  }
+  .ph.parado .lg-sheet-content.folha-de-vidro {
+    animation: none;
+  }
+  .scrim.leve {
+    background: var(--vd-veu);
+  }
+
+  /* 6 · o painel do mapa: a mesma placa de vidro da folha da biblioteca (o canto de 40, a lente na borda, a alça dela),
+     solta das bordas e acima do indicador de início. O topo dele fica onde sempre esteve; o que é nosso são as três
+     alturas, e ele não fecha */
+  .ph .lg-sheet-content.msheet.flutua {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 21px;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0 20px 23px;
+    background: revert-layer;
+    border-radius: revert-layer;
+    box-shadow: revert-layer;
+    overflow: hidden;
+    color: var(--tinta);
+    font-family: var(--fonte);
+    /* sem véu atrás e com o mapa passando por baixo, a placa do painel é mais firme e mais fosca que a da folha:
+       o texto de apoio tem que passar com a rota e o disco do ônibus exatamente atrás */
+    --lg-slab-tint: color-mix(in srgb, var(--fundo-cartao) 40%, transparent);
+    --lg-slab-brightness: 0.44;
+    --lg-slab-rim-brightness: 0.55;
+    --lg-slab-blur: 10;
+  }
+  [data-tema='claro'] .lg-sheet-content.msheet.flutua,
+  [data-tema='claro'].ph .lg-sheet-content.msheet.flutua {
+    --lg-slab-tint: color-mix(in srgb, var(--fundo-cartao) 70%, transparent);
+    --lg-slab-brightness: 1;
+    --lg-slab-rim-brightness: 1;
+  }
+  .msheet.flutua .lg-sheet-handle {
+    position: relative;
+    z-index: 1;
+    margin: 0 -20px -11px;
+  }
+  .msheet.flutua .lg-sheet-handle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 44px;
+  }
+  /* o fechar do detalhe da parada: o mesmo disco do X da folha, de 36, dentro dos 44 de toque */
+  .msheet.flutua .cab-do-painel .ib {
+    margin: -4px -8px -4px 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .msheet.flutua .cab-do-painel .ib::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 999px;
+    border: 1px solid var(--lg-border);
+    background: var(--lg-control-surface);
+  }
+  .msheet.flutua .cab-do-painel .ib svg {
+    position: relative;
+    width: 18px;
+    height: 18px;
+  }
+  /* com o painel inteiro, a faixa do relógio deixa o mapa aparecer acima da folha */
+  .ph:has(.msheet.flutua) .topo.sobre-o-mapa .sa.cartao {
+    background: transparent;
+  }
+
+  /* 4 · o grupo de controles do mapa: um vidro só para o grupo; as divisórias viram vidro-separador; a borda sai */
+  .mgrp.vidro {
+    border: 0;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: var(--vd-sombra-pequena);
+    width: 48px;
+  }
+  .mgrp.vidro .mg-div {
+    background: var(--vidro-separador);
+  }
+
+  /* 5 · o balão do ônibus: vidro pequeno, sem a borda de 1 px */
+  .callout.vidro::before {
+    -webkit-backdrop-filter: var(--vd-balao-filtro);
+    backdrop-filter: var(--vd-balao-filtro);
+    background-color: var(--vd-medio-fundo);
+  }
+  .callout.vidro {
+    border: 0;
+    border-radius: 12px;
+    padding: 8px 12px;
+    box-shadow: var(--vd-sombra-pequena);
+    overflow: visible;
+  }
+
+  /* 10 · o toast: vidro médio em pílula, com a tinta do tema */
+  .toast.vidro {
+    border-radius: 999px;
+    color: var(--tinta);
+    box-shadow: var(--vd-sombra-pequena);
+    padding: 12px 18px;
+  }
+  .toast.vidro svg {
+    color: var(--vivo);
+  }
+
+  /* 11 · o que o celular desenha: vidro grande, nas cores do sistema. Nenhum lima, nenhum roxo */
+  .sys.vidro,
+  .sysb.vidro {
+    color: var(--sis-alerta-tinta);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: 0 12px 40px rgb(0 0 0 / 0.35);
+  }
+  .sys.vidro {
+    border-radius: 14px;
+  }
+  .sysb.vidro {
+    border-radius: 24px;
+  }
+  .sys.vidro::before,
+  .sysb.vidro::before {
+    background-color: var(--sis-alerta-vidro);
+  }
+
+  /* 15 · os campos: o GlassInput e o GlassTextarea da biblioteca, com o canto e as cores que ela propõe, nas nossas medidas
+     (48 de altura, texto de 15; o código em 24, peso 700, com o espaço entre os dígitos) */
+  .lg-input.campo-de-vidro {
+    height: 48px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 22px;
+    caret-color: var(--vivo);
+  }
+  /* o quadro parado desenha o exemplo como texto: fica na cor do exemplo da biblioteca */
+  .lg-input.campo-de-vidro.plc {
+    color: color-mix(in srgb, var(--lg-muted-foreground) 72%, transparent);
+  }
+  .lg-input.campo-de-vidro.do-codigo {
+    height: 56px;
+    text-align: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+  }
+  .lg-input.campo-de-vidro.da-area {
+    height: auto;
+    min-height: 112px;
+    padding: 12px 16px;
+    display: block;
+    resize: none;
+  }
+  .lg-input.campo-de-vidro.foto {
+    display: flex;
+    align-items: center;
+  }
+  .field.de-vidro label {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  /* 16 · os selos: o GlassBadge da biblioteca, em pílula, com o fio de luz na borda. A cor de cada estado é a nossa */
+  .lg-badge.selo {
+    border-radius: 9999px;
+    padding: 0 10px;
+    font-family: inherit;
+    /* o selo mora no conteúdo (o cartão, o painel): não desfoca nada, para não virar vidro dentro de vidro */
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  /* 12 · o switch: o GlassSwitch da biblioteca, como ela desenha, nas nossas medidas (64 × 28). Ligado, o trilho é
+     o vivo, que é a cor de destaque */
+  .lg-switch.sw-de-vidro {
+    --lg-switch-width: 64px;
+    --lg-switch-height: 28px;
+    --lg-switch-thumb-width: 38px;
+    --lg-switch-thumb-height: 24px;
+    --lg-switch-inset: 2px;
+    position: relative;
+    flex: none;
+  }
+  .lg-switch.sw-de-vidro[data-disabled] {
+    cursor: default;
+  }
+  .lg-switch.sw-de-vidro::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -8px;
+    bottom: -8px;
+  }
+
+  /* 13 · o segmentado: o GlassSegmentedControl da biblioteca, como ela desenha (o trilho de vidro em cápsula e a
+     gota que desliza), com as cores dela. Aqui só entram a altura de cada opção e a letra */
+  .lg-segmented.seg-de-vidro {
+    font-size: 13px;
+    line-height: 22px;
+    box-sizing: border-box;
+  }
+  .seg-de-vidro .lg-segmented-item {
+    height: 44px;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    gap: 6px;
+  }
+  .seg-de-vidro.icones .lg-segmented-item {
+    height: 38px;
+    position: relative;
+  }
+  /* a opção de 38 da Aparência: a área de toque cresce 3 para cima e 3 para baixo, até os 44 */
+  .seg-de-vidro.icones .lg-segmented-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -3px;
+    bottom: -3px;
+  }
+  .seg-de-vidro .lg-segmented-item svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* 17 · o conteúdo: cartões, listas e cartões que se tocam são o painel de vidro da biblioteca, sobre o fundo de luz.
+     O fundo de luz é o que o vidro deixa ver: manchas de cor da família do app, paradas atrás de tudo, com pouco
+     contraste entre si. As cores dele são ótica do vidro, e por isso moram aqui: o roxo da marca, um magenta e
+     um índigo, sobre uma base funda. O lima não entra no fundo: ele só aparece quando algo está vivo. No escuro, a opacidade
+     de cada ponto fica abaixo da luminância em que o texto de apoio ainda lê; no claro, lavanda, rosa e azul lavanda,
+     muito claros */
+  /* o fundo de luz em tokens: de cada ponto, a cor (os três canais, para a opacidade entrar sem misturar cor), a opacidade, o lugar, o raio e o miolo (até onde a cor é cheia);
+     mais o lavado, que une os três, e a base. Um conjunto de fundo troca só estes valores, e mais nada.
+     Este é o conjunto padrão, no escuro; o do claro está na seção 4. A base (a cor da página) e o conjunto anterior,
+     guardado atrás de ?fundo=anterior, estão no fim do arquivo, fora da camada */
+  .ph[data-conteudo='vidro'] {
+    isolation: isolate;
+    --blob-base: var(--fundo-pagina);
+    --blob-lavado: transparent;
+    --blob-1: 107 43 217; /* #6b2bd9, o roxo da marca */
+    --blob-1-opacidade: 0.7;
+    --blob-1-onde: 12% 18%;
+    --blob-1-raio: 170px;
+    --blob-1-miolo: 42%;
+    --blob-2: 163 38 143; /* #a3268f, magenta */
+    --blob-2-opacidade: 0.45;
+    --blob-2-onde: 100% 50%;
+    --blob-2-raio: 190px;
+    --blob-2-miolo: 36%;
+    --blob-3: 55 48 163; /* #3730a3, índigo */
+    --blob-3-opacidade: 0.55;
+    --blob-3-onde: 20% 92%;
+    --blob-3-raio: 180px;
+    --blob-3-miolo: 34%;
+  }
+  /* as formas: pontos de luz de borda macia, e não um degradê liso nem uma faixa. Vidro só mostra que é vidro quando
+     há uma forma passando atrás dele: ao rolar, o ponto de luz aparece desfocado dentro do cartão e entorta na borda.
+     São três, em diagonal: um atrás da saudação e do herói, um à direita, no meio, e um embaixo, à esquerda.
+     Um quarto, em cima à direita, foi testado e sobrou */
+  .ambiente {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    --luz-1: rgb(var(--blob-1) / var(--blob-1-opacidade));
+    --luz-2: rgb(var(--blob-2) / var(--blob-2-opacidade));
+    --luz-3: rgb(var(--blob-3) / var(--blob-3-opacidade));
+    background:
+      radial-gradient(circle var(--blob-1-raio) at var(--blob-1-onde), var(--luz-1) 0, var(--luz-1) var(--blob-1-miolo), transparent 100%),
+      radial-gradient(circle var(--blob-2-raio) at var(--blob-2-onde), var(--luz-2) 0, var(--luz-2) var(--blob-2-miolo), transparent 100%),
+      radial-gradient(circle var(--blob-3-raio) at var(--blob-3-onde), var(--luz-3) 0, var(--luz-3) var(--blob-3-miolo), transparent 100%),
+      radial-gradient(120% 70% at 60% 60%, var(--blob-lavado) 0, transparent 72%),
+      var(--blob-base);
+  }
+  /* o grão: um ruído fino por cima da luz, para o desfoque do vidro ter textura e o degradê não fazer faixas */
+  .ambiente::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.11;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E");
+  }
+  /* nas telas sem barra, a faixa do relógio não tem fundo: o fundo de luz vai até a ponta da tela */
+  .ph[data-conteudo='vidro'] .topo:not(.flutua):not(.sobre-o-mapa),
+  .ph[data-conteudo='vidro'] .topo:not(.flutua):not(.sobre-o-mapa) .sa {
+    background: transparent;
+    box-shadow: none;
+  }
+  /* o painel da biblioteca, com a nossa forma (o raio, o respiro e o espaço são os do cartão). O tom do vidro entra
+     onde ela manda: na cor da camada fosca. No escuro, o roxo do cartão, firme, para o texto de apoio ler; no claro,
+     o branco do cartão */
+  .lg-glass-surface.conteudo-de-vidro {
+    background: transparent;
+    --lg-panel-elevation-shadow: 0 0 0 1px rgb(255 255 255 / 0.13), 0 1px 2px rgb(0 0 0 / 0.16), 0 10px 28px -12px rgb(0 0 0 / 0.4);
+  }
+  .lg-glass-surface.conteudo-de-vidro::before {
+    background-color: color-mix(in srgb, var(--fundo-cartao) 60%, transparent);
+  }
+  /* no claro o vidro não é o escuro invertido: é um vidro branco, bem cheio, com um fio de luz nítido e uma sombra
+     macia puxada para o roxo, que é o que separa o cartão do fundo de luz claro */
+  [data-tema='claro'] .lg-glass-surface.conteudo-de-vidro {
+    --lg-panel-elevation-shadow: 0 0 0 1px rgb(79 0 125 / 0.14), 0 1px 2px rgb(52 20 80 / 0.06), 0 14px 32px -14px rgb(79 0 125 / 0.26);
+  }
+  [data-tema='claro'] .lg-glass-surface.conteudo-de-vidro::before {
+    background-color: color-mix(in srgb, var(--fundo-cartao) 64%, transparent);
+  }
+  /* o herói é o mesmo vidro em todos os estados: o mesmo raio, o mesmo tom, a mesma borda. Em chegando e no ponto
+     ele não fica mais redondo nem muda de cor, e na viagem cancelada não ganha contorno vermelho: quem diz o estado
+     é o que está dentro (a palavra grande, o selo, a placa, o botão) */
+  .lg-glass-surface.conteudo-de-vidro.card.hl {
+    border-radius: 16px;
+  }
+  .lg-glass-surface.conteudo-de-vidro.card.heroi.dg {
+    border: 0;
+  }
+  /* o cartão que se toca: o painel é o cartão, e o botão de dentro fica sem fundo */
+  .lg-glass-surface.cint-de-vidro {
+    padding: 0;
+    border-radius: 16px;
+    flex: none;
+    display: flex;
+  }
+  .lg-glass-surface.cint-de-vidro > .cint {
+    background: transparent;
+    width: 100%;
+  }
+  /* um agrupador sem caixa entre o painel e as linhas: as linhas ficam acima da camada fosca, como os filhos diretos */
+  .lg-glass-surface.conteudo-de-vidro .so-conteudo > :not(.so-conteudo) {
+    position: relative;
+    z-index: 2;
+  }
+  /* o que era sólido dentro do cartão vira um poço translúcido, sem desfoque: a placa do ônibus e os poços de ícone */
+  .conteudo-de-vidro .placa {
+    background: color-mix(in srgb, var(--fundo-pagina) 46%, transparent);
+  }
+  [data-tema='claro'] .conteudo-de-vidro .placa {
+    background: color-mix(in srgb, var(--fundo-cartao) 72%, transparent);
+  }
+  /* o poço do ícone é um vidro pequeno dentro do cartão: o preenchimento e a borda de controle da biblioteca, mais
+     claros que o cartão, com um fio de luz em cima. Sem desfoque */
+  .conteudo-de-vidro .poco,
+  .conteudo-de-vidro .nic {
+    background: var(--lg-control-surface);
+    box-shadow: inset 0 0 0 1px var(--lg-border), inset 0 1px 0 rgb(255 255 255 / 0.14);
+  }
+  /* o aviso e o erro no lugar, soltos sobre o fundo de luz: o tom suave deles ganha a base da página por baixo */
+  .ph[data-conteudo='vidro'] .ferr:not(.liso) {
+    background: linear-gradient(var(--perigo-suave), var(--perigo-suave)), var(--fundo-pagina);
+  }
+  .ph[data-conteudo='vidro'] .fwarn {
+    background: linear-gradient(var(--atencao-suave), var(--atencao-suave)), var(--fundo-pagina);
+  }
+  /* o selo de perigo, dentro de um cartão de vidro, ganha a base do cartão por baixo do tom suave: sem ela, o
+     vermelho do texto media 4,3:1 */
+  .conteudo-de-vidro .selo.pg {
+    background: linear-gradient(var(--perigo-suave), var(--perigo-suave)), var(--fundo-cartao);
+  }
+  /* o chip de escolha única, de vidro: o mesmo botão da biblioteca; o escolhido leva o vivo */
+  .lg-button.chip-de-vidro.de-escolha {
+    align-self: auto;
+    min-width: 64px;
+  }
+  /* o glifo do poço vai na tinta: o azul da volta e o roxo da ida brigavam com a composição, que é de uma família só.
+     Quem diz se é ida ou volta é o texto do cartão. O vivo (o ônibus ao vivo) continua vivo */
+  .conteudo-de-vidro .poco.cor-volta,
+  .conteudo-de-vidro .poco.cor-ida {
+    color: var(--tinta);
+  }
+  /* com o conteúdo de vidro, a borda de rolagem deixa o fundo de luz continuar até a ponta da tela: menos cor da
+     página, o mesmo desfoque */
+  .ph[data-conteudo='vidro'] .borda-de-rolagem {
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--fundo-pagina) 52%, transparent) 0, color-mix(in srgb, var(--fundo-pagina) 52%, transparent) calc(100% - 30px), color-mix(in srgb, var(--fundo-pagina) 0%, transparent) 100%);
+  }
+  /* a de cima, quando há conteúdo rolado por baixo da barra: firme atrás do relógio e do título, como a de baixo é
+     atrás do botão, e com a saída mais longa, para o que passa pela linha da barra sumir aos poucos, sem corte.
+     O desfoque é o da borda (18): com o do que flutua, a letra grande atravessava a borda inteira */
+  .ph[data-conteudo='vidro'] .topo.flutua > .borda-de-rolagem {
+    bottom: -40px;
+    background: linear-gradient(to bottom, color-mix(in srgb, color-mix(in srgb, var(--fundo-pagina) 88%, rgb(var(--blob-1))) 92%, transparent) 0, color-mix(in srgb, color-mix(in srgb, var(--fundo-pagina) 88%, rgb(var(--blob-1))) 86%, transparent) calc(100% - 60px), color-mix(in srgb, var(--fundo-pagina) 0%, transparent) 100%);
+    -webkit-backdrop-filter: blur(var(--vd-desfoque-borda));
+    backdrop-filter: blur(var(--vd-desfoque-borda));
+    -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 48px), transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 48px), transparent 100%);
+  }
+  .ph[data-conteudo='vidro'] .borda-de-rolagem.de-baixo,
+  .ph[data-conteudo='vidro'] .borda-de-rolagem.do-pe {
+    background: linear-gradient(to top, color-mix(in srgb, var(--fundo-pagina) 88%, rgb(var(--blob-1))) 0, color-mix(in srgb, color-mix(in srgb, var(--fundo-pagina) 88%, rgb(var(--blob-1))) 86%, transparent) 26px, color-mix(in srgb, var(--fundo-pagina) 0%, transparent) 100%);
+  }
+  /* os outros cartões (o contato, a opção com switch, quem resolve): o mesmo painel, com a forma de cada um */
+  .lg-glass-surface.conteudo-de-vidro.ccard,
+  .lg-glass-surface.conteudo-de-vidro.opt,
+  .lg-glass-surface.conteudo-de-vidro.hcard {
+    border-radius: 16px;
+  }
+  /* a nota, o chip de escolha e o esqueleto, dentro de um cartão de vidro ou soltos na página: poços translúcidos */
+  .ph[data-conteudo='vidro'] .ninfo,
+  .ph[data-conteudo='vidro'] .chip:not(.lg-button),
+  .ph[data-conteudo='vidro'] .sk {
+    background-color: color-mix(in srgb, var(--fundo-elevado) 62%, transparent);
+  }
+  /* o botão de dentro de um cartão de vidro: como na folha, a placa separa o botão da página. A luz debaixo dele fica
+     cheia e a lente é a dele, para o botão principal ser um só */
+  .conteudo-de-vidro .lg-button--prominent > .lg-button__layers > .lg-button__light {
+    background: color-mix(in srgb, rgb(var(--lg-prominent-shade)) 60%, var(--fundo-pagina));
+  }
+  /* sobre o fundo de luz, o trilho do segmentado ganha um tom firme na camada fosca, para o texto da opção não
+     escolhida ler: a página lisa não existe mais atrás dele */
+  .ph[data-conteudo='vidro'] .lg-segmented.seg-de-vidro::before {
+    background-color: color-mix(in srgb, var(--fundo-elevado) 62%, transparent);
+  }
+  /* a marca do Entrar, com o conteúdo de vidro. O quadro é vidro de fundo: desfoque de verdade, o preenchimento
+     translúcido, a borda de 1 px, o fio de luz em cima e um reflexo no canto de cima à esquerda, que é de onde vem
+     a luz. O que dá cor a ele é o ponto de luz que fica atrás da marca, só no Entrar: roxo da marca no escuro,
+     lavanda no claro, 20 px para cima e para a esquerda do centro do quadro, do lado do reflexo */
+  .ph {
+    --vd-quadro-fundo: rgb(255 255 255 / 0.07);
+    --vd-quadro-borda: rgb(255 255 255 / 0.16);
+    --vd-quadro-brilho: rgb(255 255 255 / 0.34);
+    --vd-quadro-sombra: 0 10px 28px -12px rgb(0 0 0 / 0.5);
+    --vd-luz-da-marca: rgb(107 43 217 / 0.55);
+  }
+  [data-tema='claro'].ph,
+  [data-tema='claro'] .ph {
+    --vd-quadro-fundo: rgb(255 255 255 / 0.5);
+    --vd-quadro-borda: rgb(37 26 43 / 0.08);
+    --vd-quadro-brilho: rgb(255 255 255 / 0.95);
+    --vd-quadro-sombra: 0 8px 18px -10px rgb(37 26 43 / 0.22);
+    --vd-luz-da-marca: rgb(196 181 253 / 0.6);
+  }
+  .tile-marca {
+    background:
+      linear-gradient(135deg, rgb(255 255 255 / 0.14) 0%, rgb(255 255 255 / 0) 45%),
+      var(--vd-quadro-fundo);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid var(--vd-quadro-borda);
+    box-shadow:
+      inset 0 1px 0 var(--vd-quadro-brilho),
+      inset 0 -8px 16px rgb(0 0 0 / 0.1),
+      var(--vd-quadro-sombra);
+  }
+  .luz-da-marca {
+    position: absolute;
+    z-index: -1;
+    left: calc(50% - 100px);
+    top: -56px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: var(--vd-luz-da-marca);
+    filter: blur(36px);
+    pointer-events: none;
+  }
+  .lock.da-marca[data-marca='l2'] .luz-da-marca {
+    top: -65px;
+  }
+  .lock.da-marca[data-marca='l3'] .luz-da-marca {
+    left: calc(50% - 152px);
+    top: -80px;
+  }
+  .ph:has(.kb) .luz-da-marca {
+    top: -76px;
+  }
+  /* o Entrar e o Código, com o conteúdo de vidro: o bloco fica no meio da tela. Quando o teclado sobe, o bloco sobe
+     junto e se centraliza no espaço que sobra acima dele, em 240 ms: o campo e o botão nunca ficam atrás do teclado */
+  .ph[data-conteudo='vidro'] .auth {
+    justify-content: safe center;
+    transition: padding-bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  /* o Entrar: do título ao subtítulo, 8; do subtítulo ao cartão, 24; da marca ao título, 28 (32 na linha). O bloco
+     inteiro fica no meio da altura útil, entre o relógio e o "Não recebi convite", com o centro 4% acima do meio:
+     o pé reserva 96, e os 68 a mais sobem o centro até lá (medido: 28 acima do meio) */
+  .ph[data-conteudo='vidro'] .auth.entrar {
+    padding-top: 8px;
+    padding-bottom: 164px;
+    gap: 24px;
+  }
+  .ph[data-conteudo='vidro']:has(.kb) .auth {
+    padding-bottom: 303px;
+  }
+  /* no Entrar, a área que rola começa no topo da tela, por baixo da faixa do relógio (que não tem fundo), e o respiro
+     de cima devolve os 47 dela. Começando abaixo do relógio, ela recortava a luz de trás da marca numa linha reta, e a
+     faixa do relógio ficava com cara de véu escuro. Só vale com o relógio desenhado e sem aviso entre os dois */
+  .ph[data-conteudo='vidro'] .topo:has(.sa) + main.auth.entrar {
+    margin-top: -47px;
+    padding-top: 55px;
+  }
+  /* capa centraliza, tarefa alinha em cima e à esquerda: o Código é tarefa. O título fica logo abaixo do voltar, na
+     altura do título do Preparar o app, com ou sem o teclado */
+  .ph[data-conteudo='vidro'] .auth.tarefa {
+    justify-content: flex-start;
+  }
+  .ph.parado[data-conteudo='vidro'] .auth {
+    transition: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ph[data-conteudo='vidro'] .auth {
+      transition: none;
+    }
+  }
+  /* o perfil na barra, com o conteúdo de vidro: a mesma esfera de vidro do sino, com a inicial no lugar do glifo */
+  .lg-button.esfera .inicial-do-perfil {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  /* o avatar, com o conteúdo de vidro: vidro neutro, igual ao do sino, com a inicial na tinta. O roxo já está no
+     fundo de luz da tela inteira, e o avatar roxo disputava com ele e com o botão principal */
+  .ph[data-conteudo='vidro'] .lg-avatar.avatar-de-vidro .lg-avatar-face {
+    color: var(--tinta);
+  }
+  .ph[data-conteudo='vidro'] .lg-avatar.avatar-de-vidro .lg-avatar-fallback {
+    background: transparent;
+  }
+  /* o mapa, com o conteúdo de vidro: as cores dele entram na família do app. Os tokens do mapa não mudam (as
+     referências foram desenhadas com eles, e com o vidro desligado o mapa é o de sempre); só nesta versão, o
+     terreno e as ruas ganham um pouco mais de roxo, e a água sai do azul para um violeta fundo, que continua lendo
+     como água porque é o tom mais frio e mais claro do terreno. As cores estão no fim deste arquivo, fora da camada */
+  /* os vidros que flutuam sobre o mapa e levam texto ou glifo (a cápsula do nome da linha, o grupo de controles, o
+     balão do ônibus) são o mesmo vidro: o tom do cartão na camada fosca e o desfoque da biblioteca */
+  .ph[data-conteudo='vidro'] .mgrp.vidro::before,
+  .ph[data-conteudo='vidro'] .callout.vidro::before {
+    background-color: color-mix(in srgb, var(--fundo-cartao) 64%, transparent);
+    background-image: none;
+    -webkit-backdrop-filter: blur(var(--vd-desfoque-controle)) brightness(0.5) saturate(1.8);
+    backdrop-filter: blur(var(--vd-desfoque-controle)) brightness(0.5) saturate(1.8);
+  }
+  [data-tema='claro'] .ph[data-conteudo='vidro'] .mgrp.vidro::before,
+  [data-tema='claro'].ph[data-conteudo='vidro'] .mgrp.vidro::before,
+  [data-tema='claro'] .ph[data-conteudo='vidro'] .callout.vidro::before,
+  [data-tema='claro'].ph[data-conteudo='vidro'] .callout.vidro::before {
+    background-color: color-mix(in srgb, var(--fundo-cartao) 56%, transparent);
+    -webkit-backdrop-filter: blur(var(--vd-desfoque-controle)) brightness(1.1) saturate(1.6);
+    backdrop-filter: blur(var(--vd-desfoque-controle)) brightness(1.1) saturate(1.6);
+  }
+  /* a linha escolhida numa lista de vidro: um véu do vivo cobrindo a linha inteira (lima no escuro, roxo no claro),
+     no lugar do roxo do fundo-destaque, que sobre o vidro roxo quase não aparecia */
+  .conteudo-de-vidro .isel.on {
+    background: color-mix(in srgb, var(--vivo) 14%, transparent);
+  }
+  /* sobre o véu, o texto de apoio da linha escolhida vai na tinta: em tinta-apagada ele media 4,0:1 */
+  .conteudo-de-vidro .isel.on .sb {
+    color: var(--tinta);
+  }
+  /* os traços sobre o vidro: o contorno do cartão, as divisórias e o contorno dos controles (o rádio, o chip).
+     As cores sólidas de traço foram feitas para o cartão sólido; sobre o vidro translúcido elas sumiam. Dentro de
+     uma peça de vidro, a divisória e a borda passam a ser a tinta, translúcida, que se lê sobre qualquer fundo */
+  .conteudo-de-vidro,
+  .lg-sheet-content.folha-de-vidro,
+  .lg-sheet-content.msheet.flutua {
+    --divisoria: color-mix(in srgb, var(--tinta) 16%, transparent);
+    --borda: color-mix(in srgb, var(--tinta) 36%, transparent);
+  }
+  [data-tema='claro'] .conteudo-de-vidro,
+  [data-tema='claro'] .lg-sheet-content.folha-de-vidro,
+  [data-tema='claro'] .lg-sheet-content.msheet.flutua {
+    --divisoria: color-mix(in srgb, var(--tinta) 12%, transparent);
+    --borda: color-mix(in srgb, var(--tinta) 32%, transparent);
+  }
+  /* o cartão do formulário, no Entrar: as abas, o campo e o botão moram num cartão de vidro */
+  .lg-glass-surface.cartao-de-entrada {
+    gap: 16px;
+    border-radius: 24px;
+    padding: 16px;
+  }
+  .cartao-de-entrada .lg-segmented,
+  .cartao-de-entrada .seg {
+    margin-top: 0;
+  }
+  /* o campo e o trilho das abas, a mesma receita translúcida: o tom elevado na mesma medida, com a borda da
+     biblioteca. O campo de fábrica parecia sólido ao lado das abas */
+  .ph[data-conteudo='vidro'] .lg-input.campo-de-vidro {
+    background: color-mix(in srgb, var(--fundo-elevado) 62%, transparent);
+  }
+  /* o botão principal, sem o brilho de gel: sai o reflexo que cruza o botão e a borda clara em degradê; ficam a cor
+     chapada, um fio de luz de 1 px em cima e um brilho macio para fora, da cor do botão. A cor do miolo não muda */
+  .lg-button.btn-de-vidro.lg-button--prominent > .lg-button__layers > .lg-button__distortion {
+    background: none;
+  }
+  .lg-button.btn-de-vidro.lg-button--prominent > .lg-button__layers > .lg-button__tint {
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.38), inset 0 0 0 1px rgb(var(--lg-prominent-shade) / 0.18);
+  }
+  .lg-button.btn-de-vidro.lg-button--prominent > .lg-button__layers > .lg-button__rim {
+    background: none;
+  }
+  .lg-button.btn-de-vidro.lg-button--prominent {
+    box-shadow: 0 8px 22px -8px color-mix(in srgb, var(--lg-prominent-fill) 62%, transparent), 0 1px 2px rgb(0 0 0 / 0.18);
+  }
+  /* no escuro, o vidro dos controles é neutro. O vidro da biblioteca satura o que passa atrás, e a luz roxa do fundo
+     tingiria o voltar, o "Perto de mim" e os chips. A saturação cai e o preenchimento sobe um pouco: o controle lê
+     como vidro, igual ao voltar sobre o mapa */
+  :is([data-tema='escuro'].ph, [data-tema='escuro'] .ph) .lg-button:not(.lg-button--prominent) {
+    --lg-glass-sat: 0.55;
+    --lg-lens-saturation: 0.55;
+    --lg-button-fill: rgb(255 255 255 / 0.1);
+    --lg-button-fill-hover: rgb(255 255 255 / 0.14);
+  }
+  /* o botão desligado: o texto e o fundo com a opacidade de desligado da biblioteca, nos dois temas */
+  .ph .lg-button.btn-de-vidro.dis {
+    --lg-disabled-opacity: 0.45;
+    --lg-ink: var(--tinta);
+    box-shadow: none;
+  }
+  /* o acento (lima no escuro, roxo no claro) fica só no botão principal, no ponto "ao vivo", no nó do ônibus e
+     na posição atual do mapa. Sai da linha do tempo, dos chips de papel, dos links e do ícone do "Confira o ônibus" */
+  .ph[data-conteudo='vidro'] .trilho .ln.ida,
+  .ph[data-conteudo='vidro'] .trilho .ln.volta {
+    background: color-mix(in srgb, var(--tinta-apagada) 70%, transparent);
+  }
+  /* o mesmo marcador, nas listas de escolha (o "Outro ponto hoje"): o anel neutro do trilho, e não o da rota */
+  .ph[data-conteudo='vidro'] .list .mini:not(.bus):not(.term):not(.pass):not(.dis),
+  .ph[data-conteudo='vidro'] .trilho .mini:not(.bus):not(.term):not(.pass):not(.dis) {
+    border-color: color-mix(in srgb, var(--tinta-apagada) 80%, transparent);
+    color: var(--tinta);
+  }
+  .ph[data-conteudo='vidro'] .trilho .mini.me {
+    border-color: var(--tinta);
+    color: var(--tinta);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--tinta) 14%, transparent);
+  }
+  .ph[data-conteudo='vidro'] .trilho .busl:not(.off) {
+    color: var(--tinta);
+  }
+  /* os chips de papel: "Seu ponto" e "Ponto de sempre" em neutro forte (a tinta, com a borda do vidro); "Destino" em
+     secundário. No claro eles estavam iguais */
+  .ph[data-conteudo='vidro'] .cp:not(.m) {
+    background: transparent;
+    color: var(--tinta);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tinta) 34%, transparent);
+  }
+  .ph[data-conteudo='vidro'] .cp[data-papel='Destino'] {
+    color: var(--tinta-apagada);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tinta) 16%, transparent);
+  }
+  /* os links: texto primário, sublinhado */
+  .ph[data-conteudo='vidro'] .lnk {
+    color: var(--tinta);
+  }
+  /* o ícone do "Confira o ônibus": um poço de vidro, com o glifo na tinta */
+  .ph[data-conteudo='vidro'] .placa .d {
+    background: var(--lg-control-surface);
+    box-shadow: inset 0 0 0 1px var(--lg-border), inset 0 1px 0 rgb(255 255 255 / 0.14);
+    color: var(--tinta);
+  }
+  /* o link solto alinha na margem do texto de cima: o recuo de 4 é só a área de toque */
+  .ph[data-conteudo='vidro'] .lnk:not(.centro):not(.da-barra) {
+    margin-left: -4px;
+  }
+  /* a lista: o painel é o cartão da lista */
+  .lg-glass-surface.conteudo-de-vidro.list {
+    padding: 0;
+  }
+
+  /* ── 4. O claro, com o conteúdo de vidro ─────────────────────────────────────────────────────────────────────
+     O claro não é o escuro invertido. No escuro o vidro aparece pela luz que passa; no claro ele aparece pela borda,
+     pelo brilho e pela sombra, sobre uma página quase branca. As regras abaixo valem só no claro e só com o conteúdo
+     de vidro, e vêm por último para valerem sobre as de cima */
+
+  /* a página: quase branca e neutra, com a luz roxa concentrada num ponto forte, em cima, e dois bem suaves. O texto
+     de apoio, que também mora direto sobre o fundo, fica um tom mais escuro: mais presença, e 4,5:1 sobre o ponto
+     mais forte da luz */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] {
+    --blob-1: 196 181 253; /* #c4b5fd, lavanda */
+    --blob-1-opacidade: 0.6;
+    --blob-2: 249 168 212; /* #f9a8d4, rosa */
+    --blob-2-opacidade: 0.45;
+    --blob-3: 165 180 252; /* #a5b4fc, azul lavanda */
+    --blob-3-opacidade: 0.5;
+  }
+  /* os cartões: vidro branco mais translúcido, que deixa a luz roxa aparecer onde ela passa (a saturação do que está
+     atrás sobe), com contorno nítido e uma sombra neutra, curta e firme. A sombra roxa larga fazia uma névoa lilás */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .lg-glass-surface.conteudo-de-vidro {
+    --lg-glass-sat: 2.1;
+    --lg-panel-elevation-shadow: 0 0 0 1px rgb(52 28 80 / 0.1), 0 1px 1px rgb(37 26 43 / 0.05), 0 8px 18px -10px rgb(37 26 43 / 0.2);
+  }
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .lg-glass-surface.conteudo-de-vidro::before {
+    background-color: color-mix(in srgb, var(--fundo-cartao) 56%, transparent);
+    background-image: linear-gradient(180deg, rgb(255 255 255 / 0.7), rgb(255 255 255 / 0) 38%);
+  }
+  /* o cartão que leva uma linha de perigo ("Sair da conta", "Excluir conta") fica mais firme no claro: sobre o ponto
+     rosa da luz, o vermelho media 4,4:1 com o preenchimento de 56 % */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .lg-glass-surface.conteudo-de-vidro:has(> .li.dg)::before {
+    background-color: color-mix(in srgb, var(--fundo-cartao) 72%, transparent);
+  }
+  /* o véu das folhas: um escurecido leve e neutro. Um véu arroxeado suja a tela de trás, e com desfoque ela fica
+     ilegível: por isso o véu é neutro e sem desfoque */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .scrim.leve {
+    background: rgb(37 26 43 / 0.16);
+  }
+  /* as abas: o trilho um tom mais escuro, para a opção escolhida, branca, se destacar */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .lg-segmented.seg-de-vidro::before {
+    background-color: color-mix(in srgb, var(--tinta) 8%, transparent);
+  }
+  /* os campos: um preenchimento só, branco, com contorno que se lê */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .lg-input.campo-de-vidro {
+    background: rgb(255 255 255 / 0.88);
+    border-color: color-mix(in srgb, var(--tinta) 24%, transparent);
+  }
+  /* o esqueleto de carregamento */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .sk {
+    background-color: color-mix(in srgb, var(--tinta) 9%, transparent);
+  }
+  /* o aviso de atenção: âmbar limpo sobre branco, no lugar do bege sobre lilás */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .bf.vidro.w::before {
+    background-color: rgb(254 244 222 / 0.94);
+  }
+  /* a linha escolhida numa lista: um lilás limpo, feito sobre o branco do cartão */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .conteudo-de-vidro .isel.on {
+    background: color-mix(in srgb, var(--vivo) 9%, var(--fundo-cartao));
+  }
+  /* a marca do Entrar: inteira no roxo da marca, mais leve que a figura quase preta */
+
+  /* ── 5. O vidro por nível ─────────────────────────────────────────────────────────────────────────────────────
+     O vidro só pega cor do que passa por trás dele. Dentro de outro vidro, o que está atrás já foi desfocado: um
+     segundo desfoque não pega cor nova, só pesa e embaça. Por isso toda peça translúcida cai num de três níveis:
+       · vidro de fundo: os cartões e as listas de primeiro nível, e o quadro da marca. Desfoque de verdade;
+       · vidro flutuante: o que fica por cima de conteúdo que se mexe (sobre o mapa: o voltar, o título, os controles
+         e o painel; nas listas: as bordas de rolagem). Desfoque forte, saturação alta, fio de luz marcado e borda;
+       · vidro de controle: qualquer controle dentro de outro vidro (os botões, os chips, as abas, o campo). Sem
+         desfoque: preenchimento translúcido, borda de 1 px e fio de luz em cima. Ele herda a cor que o vidro de
+         baixo já pegou.
+     A conferência vidro-em-vidro cobra zero desfoque dentro de desfoque, nas 145 referências e nos dois temas. */
+  .ph {
+    --vd-controle-fundo: rgb(255 255 255 / 0.08);
+    --vd-controle-fundo-forte: rgb(255 255 255 / 0.16);
+    --vd-controle-borda: rgb(255 255 255 / 0.14);
+    --vd-controle-brilho: rgb(255 255 255 / 0.22);
+    --vd-flutuante-desfoque: 30px;
+    --vd-flutuante-saturacao: 1.8;
+    --vd-flutuante-fio: inset 0 1px 0 rgb(255 255 255 / 0.36), inset 0 0 0 1px rgb(255 255 255 / 0.14);
+  }
+  [data-tema='claro'].ph,
+  [data-tema='claro'] .ph {
+    --vd-controle-fundo: rgb(255 255 255 / 0.5);
+    --vd-controle-fundo-forte: rgb(255 255 255 / 0.92);
+    --vd-controle-borda: rgb(37 26 43 / 0.1);
+    --vd-controle-brilho: rgb(255 255 255 / 0.9);
+    --vd-flutuante-fio: inset 0 1px 0 rgb(255 255 255 / 0.95), inset 0 0 0 1px rgb(37 26 43 / 0.1);
+  }
+
+  /* o vidro de controle · os botões e os chips dentro de outro vidro */
+  .ph .lg-glass-surface .lg-button > .lg-button__layers > .lg-button__distortion,
+  .ph .lg-sheet-content .lg-button > .lg-button__layers > .lg-button__distortion {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .ph .lg-glass-surface .lg-button:not(.lg-button--prominent, .lg-button--ghost) > .lg-button__layers > .lg-button__distortion,
+  .ph .lg-sheet-content .lg-button:not(.lg-button--prominent, .lg-button--ghost) > .lg-button__layers > .lg-button__distortion {
+    box-shadow: inset 0 1px 0 var(--vd-controle-brilho), inset 0 0 0 1px var(--vd-controle-borda);
+  }
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph) :is(.lg-glass-surface, .lg-sheet-content) .lg-button:not(.lg-button--prominent, .lg-button--ghost) {
+    --lg-button-fill: var(--vd-controle-fundo);
+  }
+  :is([data-tema='escuro'].ph, [data-tema='escuro'] .ph) :is(.lg-glass-surface, .lg-sheet-content) .lg-button:not(.lg-button--prominent, .lg-button--ghost) {
+    --lg-button-fill: var(--vd-controle-fundo);
+  }
+  /* o botão principal dentro de outro vidro: sem desfoque, ele é o preenchimento do token, como a biblioteca faz
+     quando o vidro sai. A cor é a mesma do botão que fica sobre o fundo de luz */
+  .ph .lg-glass-surface .lg-button--prominent > .lg-button__layers > .lg-button__distortion,
+  .ph .lg-sheet-content .lg-button--prominent > .lg-button__layers > .lg-button__distortion {
+    background: var(--lg-prominent-fill);
+  }
+  .ph .lg-glass-surface .lg-button--prominent > .lg-button__layers > .lg-button__light,
+  .ph .lg-sheet-content .lg-button--prominent > .lg-button__layers > .lg-button__light {
+    display: none;
+  }
+  /* as abas: o indicador é sempre um controle dentro do trilho; o trilho só é vidro de verdade fora de outro vidro */
+  .ph .lg-segmented .lg-segmented-indicator {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--vd-controle-fundo-forte);
+    box-shadow: inset 0 1px 0 var(--vd-controle-brilho), inset 0 0 0 1px var(--vd-controle-borda), 0 1px 3px rgb(0 0 0 / 0.14);
+  }
+  .ph[data-conteudo='vidro'] :is(.lg-glass-surface, .lg-sheet-content) .lg-segmented.seg-de-vidro::before,
+  .ph :is(.lg-glass-surface, .lg-sheet-content) .lg-glass-surface::before {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  /* o campo dentro de outro vidro */
+  .ph[data-conteudo='vidro'] :is(.lg-glass-surface, .lg-sheet-content) .lg-input.campo-de-vidro,
+  .ph :is(.lg-glass-surface, .lg-sheet-content) .lg-input {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: inset 0 1px 0 var(--vd-controle-brilho);
+  }
+
+  /* o vidro flutuante · sobre o mapa: o voltar, o título, os controles e o painel */
+  .ph .topo.sobre-o-mapa .lg-button.esfera,
+  .ph .lg-glass-surface.titulo-em-capsula {
+    --lg-surface-blur: var(--vd-flutuante-desfoque);
+    --lg-glass-sat: var(--vd-flutuante-saturacao);
+    --lg-lens-saturation: var(--vd-flutuante-saturacao);
+  }
+  .ph .topo.sobre-o-mapa .lg-button.esfera > .lg-button__layers > .lg-button__tint,
+  .ph .lg-glass-surface.titulo-em-capsula::before {
+    box-shadow: var(--vd-flutuante-fio);
+  }
+  .ph[data-conteudo='vidro'] .mgrp.vidro::before {
+    -webkit-backdrop-filter: blur(var(--vd-flutuante-desfoque)) brightness(0.5) saturate(var(--vd-flutuante-saturacao));
+    backdrop-filter: blur(var(--vd-flutuante-desfoque)) brightness(0.5) saturate(var(--vd-flutuante-saturacao));
+    box-shadow: var(--vd-flutuante-fio);
+  }
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'] .mgrp.vidro::before {
+    -webkit-backdrop-filter: blur(var(--vd-flutuante-desfoque)) brightness(1.1) saturate(var(--vd-flutuante-saturacao));
+    backdrop-filter: blur(var(--vd-flutuante-desfoque)) brightness(1.1) saturate(var(--vd-flutuante-saturacao));
+  }
+  .ph .lg-sheet-content.msheet.flutua {
+    --lg-slab-blur: 30;
+    --lg-glass-sat: var(--vd-flutuante-saturacao);
+  }
+  /* nas listas: as bordas de rolagem, por onde o conteúdo passa. Só o desfoque: com a saturação junto, a rolagem do
+     Início perdia quadros (p95 de 33 ms, medido), e numa faixa tão estreita ela quase não aparecia */
+  .ph .borda-de-rolagem {
+    -webkit-backdrop-filter: blur(var(--vd-flutuante-desfoque));
+    backdrop-filter: blur(var(--vd-flutuante-desfoque));
+  }
+
+  /* ── 6. A receita do Android: ?receita=android ───────────────────────────────────────────────────────────────
+     O Android não tem o Liquid Glass do sistema, e o desfoque do que está atrás só existe do Android 12 em diante, com
+     custo. A receita: o vidro de fundo (os cartões, as listas, o quadro da marca) perde o desfoque e fica só com o
+     tom translúcido, a borda e o fio de luz. Sobre o fundo de luz, que já é macio, a diferença quase não se vê. O
+     desfoque de verdade fica só no vidro flutuante (sobre o mapa, nas folhas e nas bordas de rolagem), que é onde
+     passa conteúdo nítido por trás. O vidro de controle já não tinha desfoque. Este modo existe para medir o
+     contraste e dar ao desenvolvimento um alvo visual; o padrão do protótipo não muda */
+  .ph[data-receita='android'] .lg-glass-surface.conteudo-de-vidro::before,
+  .ph[data-receita='android'] .tile-marca {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  /* no claro, sem o desfoque que clareia o que passa atrás, o cartão branco precisa de um tom mais cheio: com os 56 %
+     do vidro, o vermelho do "Sair da conta" media 4,4:1 sobre o ponto de luz azulado; com 70 %, passa */
+  :is([data-tema='claro'].ph, [data-tema='claro'] .ph)[data-conteudo='vidro'][data-receita='android'] .lg-glass-surface.conteudo-de-vidro::before {
+    background-color: color-mix(in srgb, var(--fundo-cartao) 70%, transparent);
+  }
+
+  /* ── 7. Aumentar contraste e cores forçadas: o vidro fica quase opaco e ganha contorno ───────────────────── */
+  @media (prefers-contrast: more) {
+    .vidro::before {
+      background-color: color-mix(in srgb, var(--fundo-cartao) 92%, transparent);
+    }
+    .vidro {
+      outline: 1px solid var(--borda);
+      outline-offset: -1px;
+    }
+  }
+  @media (forced-colors: active) {
+    .vidro::before {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background: Canvas;
+    }
+    .vidro {
+      outline: 1px solid CanvasText;
+      outline-offset: -1px;
+    }
+  }
+}
+
+/* ── Os tokens que o conteúdo de vidro redefine dentro da tela ────────────────────────────────────────────────────
+   Ficam fora da camada de propósito: os tokens são declarados fora de camada, no mesmo elemento da tela, e uma regra
+   de dentro de uma camada nunca vale sobre eles. Os arquivos de token não mudam; isto vale só com o conteúdo de vidro. */
+
+/* o mapa entra na família de cor do app */
+.ph[data-conteudo='vidro'] {
+  --mapa-terreno: #1f1128;
+  --mapa-quadra: #281733;
+  --mapa-rua: #352240;
+  --mapa-via: #432e52;
+  --mapa-agua: #2b1d4a;
+  --mapa-parque: #261832;
+  --mapa-agua-tinta: #a99bd2;
+  /* com a luz do fundo mais saturada, o texto de apoio fica um tom mais claro, no escuro: 4,5:1 sobre os pontos de luz */
+  --tinta-apagada: #bbaac5;
+  /* a base do fundo de luz: a página um tom mais funda */
+  --fundo-pagina: #120b1c;
+}
+[data-tema='claro'].ph[data-conteudo='vidro'],
+[data-tema='claro'] .ph[data-conteudo='vidro'] {
+  --mapa-terreno: #f3eff7;
+  --mapa-quadra: #eae3f1;
+  --mapa-rua: #ffffff;
+  --mapa-via: #ffffff;
+  --mapa-agua: #e3dbf6;
+  --mapa-parque: #ede6f3;
+  --mapa-agua-tinta: #5f4f98;
+  /* a página quase branca e o texto de apoio um tom mais escuro, no claro */
+  --fundo-pagina: #f6f3fb;
+  --tinta-apagada: #5b4c65;
+}
+
+/* ── O fundo anterior: ?fundo=anterior ────────────────────────────────────────────────────────────────────────────
+   O conjunto que foi o padrão até a 1.5, guardado para dar volta: roxo, magenta e um toque baixo de lima, com um lavado
+   por cima. São os mesmos tokens do fundo de luz com outros valores, e mais nada. Fica fora da camada porque a base é o
+   token da página, que é declarado fora de camada. */
+.ph[data-conteudo='vidro'][data-fundo='anterior'] {
+  --fundo-pagina: #1a0f20;
+  --blob-lavado: rgb(44 24 72);
+  --blob-1: 82 22 128;
+  --blob-1-opacidade: 1;
+  --blob-2: 104 16 82;
+  --blob-2-opacidade: 1;
+  --blob-3: 38 56 6;
+  --blob-3-opacidade: 1;
+}
+[data-tema='claro'].ph[data-conteudo='vidro'][data-fundo='anterior'],
+[data-tema='claro'] .ph[data-conteudo='vidro'][data-fundo='anterior'] {
+  --fundo-pagina: #faf9fc;
+  --blob-lavado: rgb(247 244 252);
+  --blob-1: 214 190 250;
+  --blob-2: 246 216 240;
+  --blob-3: 232 222 252;
+}

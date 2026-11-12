@@ -1,0 +1,36 @@
+/* O aparelho: o iPhone 14 dos quadros, em 100%. A tela de 390 × 844 com canto de 47,33, a borda preta de 15,
+   o aro de 6 e os botões do lado; sem o entalhe, para nada cobrir a tela. As medidas e as cores são as da folha F11.
+   É a carcaça do celular: as cores dela são as do metal e do vidro preto, não as do app. Nunca é vidro. */
+.pl-dev {
+  position: relative;
+  isolation: isolate;
+  padding: 6px;
+  border-radius: 68.33px;
+  background: linear-gradient(160deg, #454a56 0%, #23262e 22%, #15171c 50%, #23262e 78%, #3a3e49 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16), inset 0 0 0 2px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.6), 0 24px 48px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  flex: none;
+}
+.pl-gl {
+  position: relative;
+  padding: 15px;
+  border-radius: 62.33px;
+  background: #000;
+  box-sizing: border-box;
+}
+.pl-bt {
+  position: absolute;
+  width: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #2c2f38, #3d414c 50%, #23262e);
+}
+.pl-bt.l {
+  left: -3px;
+}
+.pl-bt.r {
+  right: -3px;
+}
+/* dentro da moldura, a tela ganha o canto de 47,33; por dentro ela continua reta */
+.pl-dev .pl-gl .ph {
+  border-radius: 47.33px;
+}

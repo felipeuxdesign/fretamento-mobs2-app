@@ -1,0 +1,59 @@
+/* O toast (F02): só confirmação leve, uma linha, tinta sobre fundo invertido. Fica 3,2 s. Nunca carrega erro.
+   A medida foi lida da folha F02; fica embaixo, dentro do aparelho. */
+@layer ds {
+  .toast-lugar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--pe-seguro) + 16px);
+    padding: 0 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 6;
+  }
+  .toast {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--tinta);
+    color: var(--fundo-pagina);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    box-sizing: border-box;
+    width: 100%;
+    pointer-events: auto;
+  }
+  .toast svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    color: var(--vivo);
+  }
+  /* toast (movimento 6): sobe 8 px em 200 ms */
+  .toast.entra {
+    animation: toast-sobe 200ms ease-out;
+  }
+  @keyframes toast-sobe {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .toast.entra {
+      animation: none;
+    }
+  }
+}
+
+@layer ds {
+  .toast-visto {
+    display: inline-flex;
+    flex: none;
+  }
+}

@@ -1,0 +1,578 @@
+[
+ {
+  "nome": "onibus",
+  "grupo": "Viagem e lugar",
+  "lucide": "bus",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 1 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M8 6v6\"/><path d=\"M15 6v6\"/><path d=\"M2 12h19.6\"/><path d=\"M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3\"/><circle cx=\"7\" cy=\"18\" r=\"2\"/><path d=\"M9 18h5\"/><circle cx=\"16\" cy=\"18\" r=\"2\"/>"
+ },
+ {
+  "nome": "ponto",
+  "grupo": "Viagem e lugar",
+  "lucide": "map-pin",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/>"
+ },
+ {
+  "nome": "terminal",
+  "grupo": "Viagem e lugar",
+  "lucide": "landmark",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<line x1=\"3\" y1=\"22\" x2=\"21\" y2=\"22\"/><line x1=\"6\" y1=\"18\" x2=\"6\" y2=\"11\"/><line x1=\"10\" y1=\"18\" x2=\"10\" y2=\"11\"/><line x1=\"14\" y1=\"18\" x2=\"14\" y2=\"11\"/><line x1=\"18\" y1=\"18\" x2=\"18\" y2=\"11\"/><polygon points=\"12 2 20 7 4 7\"/>"
+ },
+ {
+  "nome": "comercio",
+  "grupo": "Viagem e lugar",
+  "lucide": "store",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7\"/><path d=\"M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8\"/><path d=\"M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4\"/><path d=\"M2 7h20\"/><path d=\"M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7\"/>"
+ },
+ {
+  "nome": "fabrica",
+  "grupo": "Viagem e lugar",
+  "lucide": "factory",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z\"/><path d=\"M17 18h1\"/><path d=\"M12 18h1\"/><path d=\"M7 18h1\"/>"
+ },
+ {
+  "nome": "destino",
+  "grupo": "Viagem e lugar",
+  "lucide": "flag",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\"/><line x1=\"4\" y1=\"22\" x2=\"4\" y2=\"15\"/>"
+ },
+ {
+  "nome": "meu-ponto",
+  "grupo": "Viagem e lugar",
+  "lucide": "user",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/>"
+ },
+ {
+  "nome": "linha",
+  "grupo": "Viagem e lugar",
+  "lucide": "route",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<circle cx=\"6\" cy=\"19\" r=\"3\"/><path d=\"M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15\"/><circle cx=\"18\" cy=\"5\" r=\"3\"/>"
+ },
+ {
+  "nome": "mapa",
+  "grupo": "Viagem e lugar",
+  "lucide": "map",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\"/><path d=\"M15 5.764v15\"/><path d=\"M9 3.236v15\"/>"
+ },
+ {
+  "nome": "trocar-ponto",
+  "grupo": "Viagem e lugar",
+  "lucide": "arrow-left-right",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M8 3 4 7l4 4\"/><path d=\"M4 7h16\"/><path d=\"m16 21 4-4-4-4\"/><path d=\"M20 17H4\"/>"
+ },
+ {
+  "nome": "minha-posicao",
+  "grupo": "Viagem e lugar",
+  "lucide": "locate-fixed",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<line x1=\"2\" y1=\"12\" x2=\"5\" y2=\"12\"/><line x1=\"19\" y1=\"12\" x2=\"22\" y2=\"12\"/><line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"5\"/><line x1=\"12\" y1=\"19\" x2=\"12\" y2=\"22\"/><circle cx=\"12\" cy=\"12\" r=\"7\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>"
+ },
+ {
+  "nome": "localizacao",
+  "grupo": "Viagem e lugar",
+  "lucide": "locate",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M2 12h3\"/><path d=\"M19 12h3\"/><path d=\"M12 2v3\"/><path d=\"M12 19v3\"/><circle cx=\"12\" cy=\"12\" r=\"7\"/>"
+ },
+ {
+  "nome": "transportadora",
+  "grupo": "Viagem e lugar",
+  "lucide": "bus-front",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M4 6 2 7\"/><path d=\"M10 6h4\"/><path d=\"m22 7-2-1\"/><rect rx=\"2\" x=\"4\" y=\"3\" width=\"16\" height=\"16\"/><path d=\"M4 11h16\"/><path d=\"M8 15h.01\"/><path d=\"M16 15h.01\"/><path d=\"M6 19v2\"/><path d=\"M18 21v-2\"/>"
+ },
+ {
+  "nome": "empresa",
+  "grupo": "Viagem e lugar",
+  "lucide": "building-2",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z\"/><path d=\"M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2\"/><path d=\"M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2\"/><path d=\"M10 6h4\"/><path d=\"M10 10h4\"/><path d=\"M10 14h4\"/><path d=\"M10 18h4\"/>"
+ },
+ {
+  "nome": "ao-vivo",
+  "grupo": "O dado e o horário",
+  "lucide": "radio",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M4.9 19.1C1 15.2 1 8.8 4.9 4.9\"/><path d=\"M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/><path d=\"M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5\"/><path d=\"M19.1 4.9C23 8.8 23 15.1 19.1 19\"/>"
+ },
+ {
+  "nome": "aproximado",
+  "grupo": "O dado e o horário",
+  "lucide": "signal-medium",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M2 20h.01\"/><path d=\"M7 20v-4\"/><path d=\"M12 20v-8\"/>"
+ },
+ {
+  "nome": "sem-sinal",
+  "grupo": "O dado e o horário",
+  "lucide": "wifi-off",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M12 20h.01\"/><path d=\"M8.5 16.429a5 5 0 0 1 7 0\"/><path d=\"M5 12.859a10 10 0 0 1 5.17-2.69\"/><path d=\"M19 12.859a10 10 0 0 0-2.007-1.523\"/><path d=\"M2 8.82a15 15 0 0 1 4.177-2.643\"/><path d=\"M22 8.82a15 15 0 0 0-11.288-3.764\"/><path d=\"m2 2 20 20\"/>"
+ },
+ {
+  "nome": "sem-internet",
+  "grupo": "O dado e o horário",
+  "lucide": "cloud-off",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"m2 2 20 20\"/><path d=\"M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193\"/><path d=\"M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07\"/>"
+ },
+ {
+  "nome": "programado",
+  "grupo": "O dado e o horário",
+  "lucide": "calendar-clock",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5\"/><path d=\"M16 2v4\"/><path d=\"M8 2v4\"/><path d=\"M3 10h5\"/><path d=\"M17.5 17.5 16 16.3V14\"/><circle cx=\"16\" cy=\"16\" r=\"6\"/>"
+ },
+ {
+  "nome": "horario",
+  "grupo": "O dado e o horário",
+  "lucide": "clock-4",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12 6 12 12 16 14\"/>"
+ },
+ {
+  "nome": "atrasado",
+  "grupo": "O dado e o horário",
+  "lucide": "clock-alert",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M12 6v6l4 2\"/><path d=\"M16 21.16a10 10 0 1 1 5-13.516\"/><path d=\"M20 11.5v6\"/><path d=\"M20 21.5h.01\"/>"
+ },
+ {
+  "nome": "adiantado",
+  "grupo": "O dado e o horário",
+  "lucide": "clock-arrow-up",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M13.228 21.925A10 10 0 1 1 21.994 12.338\"/><path d=\"M12 6v6l1.562.781\"/><path d=\"m14 18 4-4 4 4\"/><path d=\"M18 22v-8\"/>"
+ },
+ {
+  "nome": "no-horario",
+  "grupo": "O dado e o horário",
+  "lucide": "circle-check",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m9 12 2 2 4-4\"/>"
+ },
+ {
+  "nome": "cancelada",
+  "grupo": "O dado e o horário",
+  "lucide": "circle-x",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m15 9-6 6\"/><path d=\"m9 9 6 6\"/>"
+ },
+ {
+  "nome": "onibus-trocado",
+  "grupo": "O dado e o horário",
+  "lucide": "repeat",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"m17 2 4 4-4 4\"/><path d=\"M3 11v-1a4 4 0 0 1 4-4h14\"/><path d=\"m7 22-4-4 4-4\"/><path d=\"M21 13v1a4 4 0 0 1-4 4H3\"/>"
+ },
+ {
+  "nome": "desvio",
+  "grupo": "O dado e o horário",
+  "lucide": "triangle-alert",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/>"
+ },
+ {
+  "nome": "embarquei",
+  "grupo": "O dado e o horário",
+  "lucide": "log-in",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4\"/><path d=\"m10 17 5-5-5-5\"/><path d=\"M15 12H3\"/>"
+ },
+ {
+  "nome": "cracha",
+  "grupo": "O dado e o horário",
+  "lucide": "id-card",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M16 10h2\"/><path d=\"M16 14h2\"/><path d=\"M6.17 15a3 3 0 0 1 5.66 0\"/><circle cx=\"9\" cy=\"11\" r=\"2\"/><rect rx=\"2\" x=\"2\" y=\"5\" width=\"20\" height=\"14\"/>"
+ },
+ {
+  "nome": "confirmado",
+  "grupo": "O dado e o horário",
+  "lucide": "check",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M20 6 9 17l-5-5\"/>"
+ },
+ {
+  "nome": "sem-viagem",
+  "grupo": "O dado e o horário",
+  "lucide": "calendar-x",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<rect rx=\"2\" x=\"3\" y=\"4\" width=\"18\" height=\"18\"/><path d=\"M16 2v4\"/><path d=\"M8 2v4\"/><path d=\"M3 10h18\"/><path d=\"m14 14-4 4\"/><path d=\"m10 14 4 4\"/>"
+ },
+ {
+  "nome": "sem-ponto",
+  "grupo": "O dado e o horário",
+  "lucide": "map-pin-off",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M12.75 7.09a3 3 0 0 1 2.16 2.16\"/><path d=\"M17.072 17.072c-1.634 2.17-3.527 3.912-4.471 4.727a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 1.432-4.568\"/><path d=\"m2 2 20 20\"/><path d=\"M8.475 2.818A8 8 0 0 1 20 10c0 1.183-.31 2.377-.81 3.533\"/><path d=\"M9.13 9.13a3 3 0 0 0 3.74 3.74\"/>"
+ },
+ {
+  "nome": "aviso",
+  "grupo": "Avisos",
+  "lucide": "bell",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9\"/><path d=\"M10.3 21a1.94 1.94 0 0 0 3.4 0\"/>"
+ },
+ {
+  "nome": "aviso-tocando",
+  "grupo": "Avisos",
+  "lucide": "bell-ring",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M10.268 21a2 2 0 0 0 3.464 0\"/><path d=\"M22 8c0-2.3-.8-4.3-2-6\"/><path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\"/><path d=\"M4 2C2.8 3.7 2 5.7 2 8\"/>"
+ },
+ {
+  "nome": "avisos-desligados",
+  "grupo": "Avisos",
+  "lucide": "bell-off",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M10.268 21a2 2 0 0 0 3.464 0\"/><path d=\"M17 17H4a1 1 0 0 1-.74-1.673C4.59 13.956 6 12.499 6 8a6 6 0 0 1 .258-1.742\"/><path d=\"m2 2 20 20\"/><path d=\"M8.668 3.01A6 6 0 0 1 18 8c0 2.687.77 4.653 1.707 6.05\"/>"
+ },
+ {
+  "nome": "preferencias",
+  "grupo": "Avisos",
+  "lucide": "sliders-horizontal",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<line x1=\"21\" y1=\"4\" x2=\"14\" y2=\"4\"/><line x1=\"10\" y1=\"4\" x2=\"3\" y2=\"4\"/><line x1=\"21\" y1=\"12\" x2=\"12\" y2=\"12\"/><line x1=\"8\" y1=\"12\" x2=\"3\" y2=\"12\"/><line x1=\"21\" y1=\"20\" x2=\"16\" y2=\"20\"/><line x1=\"12\" y1=\"20\" x2=\"3\" y2=\"20\"/><line x1=\"14\" y1=\"2\" x2=\"14\" y2=\"6\"/><line x1=\"8\" y1=\"10\" x2=\"8\" y2=\"14\"/><line x1=\"16\" y1=\"18\" x2=\"16\" y2=\"22\"/>"
+ },
+ {
+  "nome": "info",
+  "grupo": "Avisos",
+  "lucide": "info",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 16v-4\"/><path d=\"M12 8h.01\"/>"
+ },
+ {
+  "nome": "erro",
+  "grupo": "Avisos",
+  "lucide": "circle-alert",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 8v4\"/><path d=\"M12 16h.01\"/>"
+ },
+ {
+  "nome": "biometria",
+  "grupo": "Conta e segurança",
+  "lucide": "fingerprint",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4\"/><path d=\"M14 13.12c0 2.38 0 6.38-1 8.88\"/><path d=\"M17.29 21.02c.12-.6.43-2.3.5-3.02\"/><path d=\"M2 12a10 10 0 0 1 18-6\"/><path d=\"M2 16h.01\"/><path d=\"M21.8 16c.2-2 .131-5.354 0-6\"/><path d=\"M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2\"/><path d=\"M8.65 22c.21-.66.45-1.32.57-2\"/><path d=\"M9 6.8a6 6 0 0 1 9 5.2v2\"/>"
+ },
+ {
+  "nome": "bloqueio",
+  "grupo": "Conta e segurança",
+  "lucide": "lock",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<rect rx=\"2\" ry=\"2\" x=\"3\" y=\"11\" width=\"18\" height=\"11\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/>"
+ },
+ {
+  "nome": "desbloquear",
+  "grupo": "Conta e segurança",
+  "lucide": "lock-keyhole-open",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<rect rx=\"2\" x=\"3\" y=\"11\" width=\"18\" height=\"11\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/><circle cx=\"12\" cy=\"16.5\" r=\"1\"/>"
+ },
+ {
+  "nome": "sem-bloqueio",
+  "grupo": "Conta e segurança",
+  "lucide": "lock-open",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<rect rx=\"2\" ry=\"2\" x=\"3\" y=\"11\" width=\"18\" height=\"11\"/><path d=\"M7 11V7a5 5 0 0 1 9.9-1\"/>"
+ },
+ {
+  "nome": "privacidade",
+  "grupo": "Conta e segurança",
+  "lucide": "shield",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/>"
+ },
+ {
+  "nome": "seguranca-mudou",
+  "grupo": "Conta e segurança",
+  "lucide": "shield-alert",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/><path d=\"M12 8v4\"/><path d=\"M12 16h.01\"/>"
+ },
+ {
+  "nome": "pessoa",
+  "grupo": "Conta e segurança",
+  "lucide": "user",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/>"
+ },
+ {
+  "nome": "cadastro",
+  "grupo": "Conta e segurança",
+  "lucide": "user-pen",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M10 15H6a4 4 0 0 0-4 4v2\"/><path d=\"m14.305 16.53.923-.382\"/><path d=\"m15.228 13.852-.923-.383\"/><path d=\"m16.852 12.228-.383-.923\"/><path d=\"m16.852 17.772-.383.924\"/><path d=\"m19.148 12.228.383-.923\"/><path d=\"m19.53 18.696-.382-.924\"/><path d=\"m20.772 13.852.924-.383\"/><path d=\"m20.772 16.148.924.383\"/><circle cx=\"18\" cy=\"15\" r=\"3\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/>"
+ },
+ {
+  "nome": "sem-acesso",
+  "grupo": "Conta e segurança",
+  "lucide": "user-x",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><line x1=\"17\" y1=\"8\" x2=\"22\" y2=\"13\"/><line x1=\"22\" y1=\"8\" x2=\"17\" y2=\"13\"/>"
+ },
+ {
+  "nome": "email",
+  "grupo": "Conta e segurança",
+  "lucide": "mail",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<rect rx=\"2\" x=\"2\" y=\"4\" width=\"20\" height=\"16\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/>"
+ },
+ {
+  "nome": "celular",
+  "grupo": "Conta e segurança",
+  "lucide": "smartphone",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<rect rx=\"2\" ry=\"2\" x=\"5\" y=\"2\" width=\"14\" height=\"20\"/><path d=\"M12 18h.01\"/>"
+ },
+ {
+  "nome": "documento",
+  "grupo": "Conta e segurança",
+  "lucide": "file-text",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\"/><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"/><path d=\"M10 9H8\"/><path d=\"M16 13H8\"/><path d=\"M16 17H8\"/>"
+ },
+ {
+  "nome": "oculto",
+  "grupo": "Conta e segurança",
+  "lucide": "eye-off",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49\"/><path d=\"M14.084 14.158a3 3 0 0 1-4.242-4.242\"/><path d=\"M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143\"/><path d=\"m2 2 20 20\"/>"
+ },
+ {
+  "nome": "sem-localizacao",
+  "grupo": "Conta e segurança",
+  "lucide": "locate-off",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M12 19v3\"/><path d=\"M12 2v3\"/><path d=\"M18.89 13.24a7 7 0 0 0-8.13-8.13\"/><path d=\"M19 12h3\"/><path d=\"M2 12h3\"/><path d=\"m2 2 20 20\"/><path d=\"M7.05 7.05a7 7 0 0 0 9.9 9.9\"/>"
+ },
+ {
+  "nome": "ajuda",
+  "grupo": "Ajuda e navegação",
+  "lucide": "life-buoy",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m4.93 4.93 4.24 4.24\"/><path d=\"m14.83 9.17 4.24-4.24\"/><path d=\"m14.83 14.83 4.24 4.24\"/><path d=\"m9.17 14.83-4.24 4.24\"/><circle cx=\"12\" cy=\"12\" r=\"4\"/>"
+ },
+ {
+  "nome": "ligar",
+  "grupo": "Ajuda e navegação",
+  "lucide": "phone",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384\"/>"
+ },
+ {
+  "nome": "whatsapp",
+  "grupo": "Ajuda e navegação",
+  "lucide": "message-circle",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M7.9 20A9 9 0 1 0 4 16.1L2 22Z\"/>"
+ },
+ {
+  "nome": "marca-whatsapp",
+  "grupo": "Ajuda e navegação",
+  "lucide": null,
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": true,
+  "svg": "<path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.669.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413\"/>"
+ },
+ {
+  "nome": "voltar",
+  "grupo": "Ajuda e navegação",
+  "lucide": "chevron-left",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"m15 18-6-6 6-6\"/>"
+ },
+ {
+  "nome": "seguir-adiante",
+  "grupo": "Ajuda e navegação",
+  "lucide": "chevron-right",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"m9 18 6-6-6-6\"/>"
+ },
+ {
+  "nome": "abrir",
+  "grupo": "Ajuda e navegação",
+  "lucide": "chevron-down",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"m6 9 6 6 6-6\"/>"
+ },
+ {
+  "nome": "fechar",
+  "grupo": "Ajuda e navegação",
+  "lucide": "x",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/>"
+ },
+ {
+  "nome": "sair",
+  "grupo": "Ajuda e navegação",
+  "lucide": "log-out",
+  "tracadoIgualAoDaLucide": false,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"m16 17 5-5-5-5\"/><path d=\"M21 12H9\"/><path d=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4\"/>"
+ },
+ {
+  "nome": "excluir",
+  "grupo": "Ajuda e navegação",
+  "lucide": "trash-2",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M3 6h18\"/><path d=\"M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6\"/><path d=\"M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2\"/><line x1=\"10\" y1=\"11\" x2=\"10\" y2=\"17\"/><line x1=\"14\" y1=\"11\" x2=\"14\" y2=\"17\"/>"
+ },
+ {
+  "nome": "claro",
+  "grupo": "Aparência",
+  "lucide": "sun",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2\"/><path d=\"M12 20v2\"/><path d=\"m4.93 4.93 1.41 1.41\"/><path d=\"m17.66 17.66 1.41 1.41\"/><path d=\"M2 12h2\"/><path d=\"M20 12h2\"/><path d=\"m6.34 17.66-1.41 1.41\"/><path d=\"m19.07 4.93-1.41 1.41\"/>"
+ },
+ {
+  "nome": "escuro",
+  "grupo": "Aparência",
+  "lucide": "moon",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 0 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z\"/>"
+ },
+ {
+  "nome": "sistema",
+  "grupo": "Aparência",
+  "lucide": "monitor-smartphone",
+  "tracadoIgualAoDaLucide": true,
+  "viewBox": "0 1 24 24",
+  "cheio": false,
+  "svg": "<path d=\"M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8\"/><path d=\"M10 19v-3.96 3.15\"/><path d=\"M7 19h5\"/><rect rx=\"2\" x=\"16\" y=\"12\" width=\"6\" height=\"10\"/>"
+ }
+]

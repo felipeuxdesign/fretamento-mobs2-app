@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.vite/
+.claude/
+__pycache__/
+_execucao/
+06-prototipo/fotos/**/_*.html
+.vercel/

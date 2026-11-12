@@ -1,0 +1,94 @@
+/* O sheet, com alça e véu (F02).
+   As medidas foram lidas das referências; as cores são os tokens, pelo papel de cada peça. */
+@layer ds {
+  .scrim {
+    position: absolute;
+    inset: 0;
+    background: var(--scrim);
+  }
+  .sheet {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--fundo-cartao);
+    border-radius: 16px 16px 0 0;
+    box-shadow: var(--sombra-sheet);
+    padding: 8px 16px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sheet .hd {
+    width: 32px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--borda);
+    align-self: center;
+    margin-bottom: 8px;
+  }
+  .sheet h3 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .sheet p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+@layer ds {
+  .sheet {
+    padding-bottom: var(--pe-seguro);
+  }
+  .sheet .hd {
+    touch-action: none;
+    position: relative;
+  }
+  /* a alça é fina: o toque cresce para os lados e para cima */
+  .sheet .hd::after {
+    content: '';
+    position: absolute;
+    inset: -12px -60px -16px;
+  }
+  .sheet .apoio {
+    color: var(--tinta-apagada);
+  }
+  /* sheet e véu (movimento 4): o sheet sobe 40 px com fade em 250 ms; o véu em 200 ms */
+  .sheet.entra {
+    animation: sheet-sobe 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .scrim.entra {
+    animation: veu-entra 200ms ease-out;
+  }
+  @keyframes sheet-sobe {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+  }
+  /* de vidro, o sheet sobe sem o fade: a opacidade no próprio vidro apagaria o desfoque durante a entrada */
+  .sheet.vidro.entra {
+    animation-name: sheet-de-vidro-sobe;
+  }
+  @keyframes sheet-de-vidro-sobe {
+    from {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes veu-entra {
+    from {
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sheet.entra,
+    .scrim.entra {
+      animation: none;
+    }
+  }
+}

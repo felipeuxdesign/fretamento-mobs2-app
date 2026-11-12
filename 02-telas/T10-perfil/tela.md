@@ -1,0 +1,9 @@
+# T10 · Perfil
+
+Telas do app · T10 · Conta
+
+O centro de tudo o que é da pessoa e não da viagem: quem ela é (avatar, nome, empresa e transportadora, com a nota de que os dados vêm do cadastro), Minha conta (e-mail e celular, só leitura), Minhas linhas (a ida e a volta com o ponto de sempre e o horário habitual, ou as viagens de hoje quando o cadastro não tem horário habitual, com a nota de que mudar é com o RH), Ajustes (Avisos, Privacidade, Aparência em três opções e Preciso de ajuda) e, no fim, as duas ações destrutivas: Sair da conta e Excluir conta. Nada aqui se edita no app: o que é da empresa muda no cadastro, e o app só mostra. Abre pelo avatar do Início; daqui saem os Avisos (T11), a Privacidade (T12) e a Excluir conta (T13). O Preciso de ajuda fica nesta seção, como momento: os dois contatos humanos do app, cada um com o que resolve, o telefone ou WhatsApp e o horário, vindos do cadastro da empresa, com os botões de ligar e de abrir o WhatsApp, e embaixo as três perguntas de todo dia com a resposta de quem resolve; a mesma tela também abre pelo Início e pela viagem cancelada; na tela do código (T02), antes do login, a ajuda é o sheet genérico do Entrar, sem contato, porque o app ainda não sabe de que empresa é a pessoa. No exemplo, a Ana, com o desbloqueio ligado e o aviso de chegada em 10 min. Os momentos são abrir o Preciso de ajuda e sair da conta, que pede confirmação porque a volta exige um código novo. O pé da rolagem fecha com a assinatura "por mobs2", a mesma do Entrar, sem linha de versão: número fixo em mock envelhece e engana; se o suporte um dia precisar da versão, ela entra injetada pelo build, nunca escrita à mão.
+
+- Quadros: 4 (a tela e os momentos). Estados: 2.
+- As referências estão em `referencias/html/` e `referencias/png/`, uma por linha do `estados.md`.
+- Os textos exatos estão no `textos.md`; o movimento, no `animacao.md`.

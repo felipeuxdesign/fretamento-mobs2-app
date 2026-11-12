@@ -1,0 +1,1452 @@
+[
+ {
+  "ref": "T01-00",
+  "tela": "T01",
+  "tipo": "tela",
+  "nome": "primeiro acesso, e-mail",
+  "como": "a entrada do primeiro acesso, ou depois de sair da conta",
+  "caso": "sem sessão · e-mail selecionado",
+  "html": "02-telas/T01-entrar/referencias/html/00-tela.html",
+  "png": "02-telas/T01-entrar/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T01-01",
+  "tela": "T01",
+  "tipo": "momento",
+  "nome": "celular selecionado",
+  "como": "tocar \"Celular\" no segmentado",
+  "caso": "campo vira telefone com DDD",
+  "html": "02-telas/T01-entrar/referencias/html/01-momento-celular-selecionado.html",
+  "png": "02-telas/T01-entrar/referencias/png/01-momento-celular-selecionado.png"
+ },
+ {
+  "ref": "T01-02",
+  "tela": "T01",
+  "tipo": "momento",
+  "nome": "digitando, teclado aberto",
+  "como": "tocar no campo e digitar",
+  "caso": "ana@metalurgicaalfa.com.br · teclado aberto",
+  "html": "02-telas/T01-entrar/referencias/html/02-momento-digitando-teclado-aberto.html",
+  "png": "02-telas/T01-entrar/referencias/png/02-momento-digitando-teclado-aberto.png"
+ },
+ {
+  "ref": "T01-06",
+  "tela": "T01",
+  "tipo": "momento",
+  "nome": "\"Não recebi convite\"",
+  "como": "tocar \"Não recebi convite\"",
+  "caso": "sheet \"Como ganhar acesso\", sem nome nem contato: antes do código, o app não sabe de que empresa é a pessoa",
+  "html": "02-telas/T01-entrar/referencias/html/06-momento-nao-recebi-convite.html",
+  "png": "02-telas/T01-entrar/referencias/png/06-momento-nao-recebi-convite.png"
+ },
+ {
+  "ref": "T01-04",
+  "tela": "T01",
+  "tipo": "estado",
+  "nome": "e-mail incompleto",
+  "como": "enviar com o e-mail incompleto",
+  "caso": "ana@metalurgica · erro no lugar",
+  "html": "02-telas/T01-entrar/referencias/html/04-estado-e-mail-incompleto.html",
+  "png": "02-telas/T01-entrar/referencias/png/04-estado-e-mail-incompleto.png"
+ },
+ {
+  "ref": "T01-05",
+  "tela": "T01",
+  "tipo": "estado",
+  "nome": "sem internet",
+  "como": "o celular está sem internet",
+  "caso": "banner + botão desligado",
+  "html": "02-telas/T01-entrar/referencias/html/05-estado-sem-internet.html",
+  "png": "02-telas/T01-entrar/referencias/png/05-estado-sem-internet.png"
+ },
+ {
+  "ref": "T01-03",
+  "tela": "T01",
+  "tipo": "estado",
+  "nome": "enviando o código",
+  "como": "os 700 ms depois de tocar \"Receber código\"",
+  "caso": "botão carregando",
+  "html": "02-telas/T01-entrar/referencias/html/03-estado-enviando-o-codigo.html",
+  "png": "02-telas/T01-entrar/referencias/png/03-estado-enviando-o-codigo.png"
+ },
+ {
+  "ref": "T02-00",
+  "tela": "T02",
+  "tipo": "tela",
+  "nome": "código enviado",
+  "como": "depois de \"Receber código\" na T01",
+  "caso": "campo vazio · teclado aberto · contador 0:45 · o 6º dígito valida sozinho",
+  "html": "02-telas/T02-codigo/referencias/html/00-tela.html",
+  "png": "02-telas/T02-codigo/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T02-01",
+  "tela": "T02",
+  "tipo": "momento",
+  "nome": "digitando",
+  "como": "digitar os dígitos",
+  "caso": "1234 digitados · teclado numérico · ainda faltam 2 dígitos",
+  "html": "02-telas/T02-codigo/referencias/html/01-momento-digitando.html",
+  "png": "02-telas/T02-codigo/referencias/png/01-momento-digitando.png"
+ },
+ {
+  "ref": "T02-02",
+  "tela": "T02",
+  "tipo": "momento",
+  "nome": "60 s depois, nada chegou",
+  "como": "60 s depois sem digitar",
+  "caso": "reenviar liberado · dica do spam · \"Preciso de ajuda\" abre o sheet genérico da T01-06",
+  "html": "02-telas/T02-codigo/referencias/html/02-momento-60-s-depois-nada-chegou.html",
+  "png": "02-telas/T02-codigo/referencias/png/02-momento-60-s-depois-nada-chegou.png"
+ },
+ {
+  "ref": "T02-03",
+  "tela": "T02",
+  "tipo": "estado",
+  "nome": "código incorreto",
+  "como": "enviar um código diferente de 123456",
+  "caso": "incorreto · 4 tentativas restantes",
+  "html": "02-telas/T02-codigo/referencias/html/03-estado-codigo-incorreto.html",
+  "png": "02-telas/T02-codigo/referencias/png/03-estado-codigo-incorreto.png"
+ },
+ {
+  "ref": "T02-04",
+  "tela": "T02",
+  "tipo": "estado",
+  "nome": "código expirado",
+  "como": "enviar 000000",
+  "caso": "expirado · reenviar liberado na hora",
+  "html": "02-telas/T02-codigo/referencias/html/04-estado-codigo-expirado.html",
+  "png": "02-telas/T02-codigo/referencias/png/04-estado-codigo-expirado.png"
+ },
+ {
+  "ref": "T02-05",
+  "tela": "T02",
+  "tipo": "estado",
+  "nome": "bloqueado por 15 min",
+  "como": "o quinto erro",
+  "caso": "bloqueado até 06:39 · campo e botão desligados",
+  "html": "02-telas/T02-codigo/referencias/html/05-estado-bloqueado-por-15-min.html",
+  "png": "02-telas/T02-codigo/referencias/png/05-estado-bloqueado-por-15-min.png"
+ },
+ {
+  "ref": "T02-06",
+  "tela": "T02",
+  "tipo": "estado",
+  "nome": "validando",
+  "como": "os 700 ms depois do sexto dígito",
+  "caso": "validando · campo desligado · anel e \"Entrando\" abaixo do campo",
+  "html": "02-telas/T02-codigo/referencias/html/06-estado-validando.html",
+  "png": "02-telas/T02-codigo/referencias/png/06-estado-validando.png"
+ },
+ {
+  "ref": "T02-07",
+  "tela": "T02",
+  "tipo": "estado",
+  "nome": "acesso não liberado",
+  "como": "digitar o código certo, e o servidor nega o acesso",
+  "caso": "cadastro ainda não liberado · o contato do RH, do cadastro · Voltar leva ao Entrar",
+  "html": "02-telas/T02-codigo/referencias/html/07-estado-acesso-nao-liberado.html",
+  "png": "02-telas/T02-codigo/referencias/png/07-estado-acesso-nao-liberado.png"
+ },
+ {
+  "ref": "T03-00",
+  "tela": "T03",
+  "tipo": "tela",
+  "nome": "primeiro acesso, nada decidido",
+  "como": "depois do código válido, no primeiro acesso",
+  "caso": "termos ainda não aceitos · avisos ligados · proteção desligada",
+  "html": "02-telas/T03-preparar-o-app/referencias/html/00-tela.html",
+  "png": "02-telas/T03-preparar-o-app/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T03-01",
+  "tela": "T03",
+  "tipo": "momento",
+  "nome": "\"Começar\" com os avisos ligados: o celular pergunta",
+  "como": "tocar \"Começar\" com os avisos ligados",
+  "caso": "o celular pergunta; \"Permitir\" ou \"Não Permitir\", e o Início abre",
+  "html": "02-telas/T03-preparar-o-app/referencias/html/01-momento-comecar-com-os-avisos-ligados-o-celular-pergunta.html",
+  "png": "02-telas/T03-preparar-o-app/referencias/png/01-momento-comecar-com-os-avisos-ligados-o-celular-pergunta.png"
+ },
+ {
+  "ref": "T03-02",
+  "tela": "T03",
+  "tipo": "momento",
+  "nome": "ligar a proteção: o celular pede o Face ID",
+  "como": "ligar a proteção",
+  "caso": "o celular pede o Face ID; reconhecido, o switch fica ligado",
+  "html": "02-telas/T03-preparar-o-app/referencias/html/02-momento-ligar-a-protecao-o-celular-pede-a-digital.html",
+  "png": "02-telas/T03-preparar-o-app/referencias/png/02-momento-ligar-a-protecao-o-celular-pede-a-digital.png"
+ },
+ {
+  "ref": "T03-03",
+  "tela": "T03",
+  "tipo": "estado",
+  "nome": "celular sem bloqueio de tela",
+  "como": "o celular não tem bloqueio de tela",
+  "caso": "a proteção fica desligada, com o aviso e o atalho para os ajustes",
+  "html": "02-telas/T03-preparar-o-app/referencias/html/03-estado-celular-sem-bloqueio-de-tela.html",
+  "png": "02-telas/T03-preparar-o-app/referencias/png/03-estado-celular-sem-bloqueio-de-tela.png"
+ },
+ {
+  "ref": "T03-04",
+  "tela": "T03",
+  "tipo": "estado",
+  "nome": "não reconhecido",
+  "como": "o Face ID não foi reconhecido ou a pessoa cancelou",
+  "caso": "o switch volta a desligado, com o erro no lugar",
+  "html": "02-telas/T03-preparar-o-app/referencias/html/04-estado-nao-reconhecido.html",
+  "png": "02-telas/T03-preparar-o-app/referencias/png/04-estado-nao-reconhecido.png"
+ },
+ {
+  "ref": "T03-05",
+  "tela": "T03",
+  "tipo": "estado",
+  "nome": "avisos negados no celular",
+  "como": "tocar \"Não Permitir\" na pergunta do celular",
+  "caso": "os avisos ficam desligados, com o aviso de como ligar depois",
+  "html": "02-telas/T03-preparar-o-app/referencias/html/05-estado-avisos-negados-no-celular.html",
+  "png": "02-telas/T03-preparar-o-app/referencias/png/05-estado-avisos-negados-no-celular.png"
+ },
+ {
+  "ref": "T04-00",
+  "tela": "T04",
+  "tipo": "tela",
+  "nome": "reabertura",
+  "como": "ao abrir o app com o desbloqueio ligado",
+  "caso": "pede a confirmação; reconhecida, vai para a T05",
+  "html": "02-telas/T04-bloqueado/referencias/html/00-tela.html",
+  "png": "02-telas/T04-bloqueado/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T04-01",
+  "tela": "T04",
+  "tipo": "momento",
+  "nome": "o celular pede o Face ID",
+  "como": "tocar \"Desbloquear\" (ou sozinho, 300 ms depois de abrir)",
+  "caso": "o celular pede o Face ID",
+  "html": "02-telas/T04-bloqueado/referencias/html/01-momento-o-celular-pede-a-digital.html",
+  "png": "02-telas/T04-bloqueado/referencias/png/01-momento-o-celular-pede-a-digital.png"
+ },
+ {
+  "ref": "T04-02",
+  "tela": "T04",
+  "tipo": "estado",
+  "nome": "não reconhecido",
+  "como": "o Face ID não foi reconhecido ou a pessoa cancelou",
+  "caso": "erro no lugar; tentar de novo ou usar a senha do celular",
+  "html": "02-telas/T04-bloqueado/referencias/html/02-estado-nao-reconhecido.html",
+  "png": "02-telas/T04-bloqueado/referencias/png/02-estado-nao-reconhecido.png"
+ },
+ {
+  "ref": "T04-03",
+  "tela": "T04",
+  "tipo": "estado",
+  "nome": "Face ID travado pelo celular",
+  "como": "o celular travou a biometria depois de várias tentativas",
+  "caso": "só a senha do celular; o Face ID volta em 30 s",
+  "html": "02-telas/T04-bloqueado/referencias/html/03-estado-biometria-travada-pelo-celular.html",
+  "png": "02-telas/T04-bloqueado/referencias/png/03-estado-biometria-travada-pelo-celular.png"
+ },
+ {
+  "ref": "T04-04",
+  "tela": "T04",
+  "tipo": "estado",
+  "nome": "o Face ID do celular mudou",
+  "como": "o Face ID cadastrado no celular mudou desde o último acesso",
+  "caso": "por segurança, pede o código de novo → T02 → Início com o sheet para religar o desbloqueio (T05-30)",
+  "html": "02-telas/T04-bloqueado/referencias/html/04-estado-a-biometria-do-celular-mudou.html",
+  "png": "02-telas/T04-bloqueado/referencias/png/04-estado-a-biometria-do-celular-mudou.png"
+ },
+ {
+  "ref": "T04-05",
+  "tela": "T04",
+  "tipo": "estado",
+  "nome": "sessão expirada",
+  "como": "30 dias sem abrir o app",
+  "caso": "sessão expirada; pede o código de novo → T02",
+  "html": "02-telas/T04-bloqueado/referencias/html/05-estado-sessao-expirada.html",
+  "png": "02-telas/T04-bloqueado/referencias/png/05-estado-sessao-expirada.png"
+ },
+ {
+  "ref": "T04-06",
+  "tela": "T04",
+  "tipo": "estado",
+  "nome": "acesso encerrado pela empresa",
+  "como": "ao abrir o app, o servidor responde que a empresa ou a transportadora encerrou o cadastro",
+  "caso": "estado central · o contato do RH · Entendi leva ao Entrar e encerra a sessão",
+  "html": "02-telas/T04-bloqueado/referencias/html/06-estado-acesso-encerrado-pela-empresa.html",
+  "png": "02-telas/T04-bloqueado/referencias/png/06-estado-acesso-encerrado-pela-empresa.png"
+ },
+ {
+  "ref": "T05-00",
+  "tela": "T05",
+  "tipo": "tela",
+  "nome": "06:24 · em rota, no horário",
+  "como": "a entrada: o app abre aqui na viagem de sempre",
+  "caso": "semente · ida 06:05 · ônibus entre o Mercado de Casa Amarela e a Av. Norte",
+  "html": "02-telas/T05-inicio/referencias/html/00-tela.html",
+  "png": "02-telas/T05-inicio/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T05-05",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "06:24 · rolada até o fim",
+  "como": "rolar a tela até o fim",
+  "caso": "os atalhos (mapa, outro ponto) e as outras viagens do dia: ida 07:05 e volta 17:20",
+  "html": "02-telas/T05-inicio/referencias/html/05-momento-rolada-ate-o-fim.html",
+  "png": "02-telas/T05-inicio/referencias/png/05-momento-rolada-ate-o-fim.png"
+ },
+ {
+  "ref": "T05-01",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "06:41 · chegando",
+  "como": "menos de 2 min para o seu ponto",
+  "caso": "chegando · placa em destaque · Embarquei liberado (secundário ativo, com borda e tinta; não é o desligado)",
+  "html": "02-telas/T05-inicio/referencias/html/01-momento-chegando.html",
+  "png": "02-telas/T05-inicio/referencias/png/01-momento-chegando.png"
+ },
+ {
+  "ref": "T05-02",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "06:42 · no ponto",
+  "como": "o ônibus parado no seu ponto",
+  "caso": "no ponto · Embarquei vira primário: mesma ação, mesmo glifo de entrada; só a força muda",
+  "html": "02-telas/T05-inicio/referencias/html/02-momento-no-ponto.html",
+  "png": "02-telas/T05-inicio/referencias/png/02-momento-no-ponto.png"
+ },
+ {
+  "ref": "T05-03",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "06:44 · tocou \"Embarquei\"",
+  "como": "tocar Embarquei em chegando, no ponto ou passou",
+  "caso": "embarque pelo botão às 06:44",
+  "html": "02-telas/T05-inicio/referencias/html/03-momento-tocou-embarquei.html",
+  "png": "02-telas/T05-inicio/referencias/png/03-momento-tocou-embarquei.png"
+ },
+ {
+  "ref": "T05-04",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "07:17 · concluída",
+  "como": "o ônibus chegou ao destino",
+  "caso": "chegou às 07:16 · a volta é a próxima",
+  "html": "02-telas/T05-inicio/referencias/html/04-momento-concluida.html",
+  "png": "02-telas/T05-inicio/referencias/png/04-momento-concluida.png"
+ },
+ {
+  "ref": "T05-06",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "06:24 · tocou \"Outra ida hoje · 07:05\"",
+  "como": "tocar num cartão de outra viagem do dia",
+  "caso": "ida 07:05 · não é a prevista da Ana",
+  "html": "02-telas/T05-inicio/referencias/html/06-momento-tocou-outra-ida-hoje-07-05.html",
+  "png": "02-telas/T05-inicio/referencias/png/06-momento-tocou-outra-ida-hoje-07-05.png"
+ },
+ {
+  "ref": "T05-07",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "06:24 · troca de ponto ativa",
+  "como": "voltar da T08 depois de confirmar Av. Norte, 2800",
+  "caso": "troca para Av. Norte (06:31) · o de sempre continua Av. Abdias de Carvalho",
+  "html": "02-telas/T05-inicio/referencias/html/07-momento-troca-de-ponto-ativa.html",
+  "png": "02-telas/T05-inicio/referencias/png/07-momento-troca-de-ponto-ativa.png"
+ },
+ {
+  "ref": "T05-08",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "06:25 · tocou \"Voltar ao ponto de sempre\"",
+  "como": "tocar \"Voltar ao ponto de sempre\" com a troca ativa",
+  "caso": "sheet de confirmação · a transportadora fica sabendo · volta para a Av. Abdias de Carvalho, 06:42",
+  "html": "02-telas/T05-inicio/referencias/html/08-momento-tocou-voltar-ao-ponto-de-sempre.html",
+  "png": "02-telas/T05-inicio/referencias/png/08-momento-tocou-voltar-ao-ponto-de-sempre.png"
+ },
+ {
+  "ref": "T05-09",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "05:50 · programado, antes de sair",
+  "como": "o relógio antes das 06:05, dentro da janela",
+  "caso": "janela ao vivo aberta às 05:35; ônibus ainda na garagem",
+  "html": "02-telas/T05-inicio/referencias/html/09-estado-programado-antes-de-sair.html",
+  "png": "02-telas/T05-inicio/referencias/png/09-estado-programado-antes-de-sair.png"
+ },
+ {
+  "ref": "T05-12",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:30 · atrasado 8 min",
+  "como": "o ônibus além da tolerância de 3 min",
+  "caso": "atraso de 8 min · nova previsão 06:50",
+  "html": "02-telas/T05-inicio/referencias/html/12-estado-atrasado-8-min.html",
+  "png": "02-telas/T05-inicio/referencias/png/12-estado-atrasado-8-min.png"
+ },
+ {
+  "ref": "T05-13",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:26 · adiantado 4 min",
+  "como": "o ônibus na frente do horário",
+  "caso": "adiantado 4 min · passa às 06:38",
+  "html": "02-telas/T05-inicio/referencias/html/13-estado-adiantado-4-min.html",
+  "png": "02-telas/T05-inicio/referencias/png/13-estado-adiantado-4-min.png"
+ },
+ {
+  "ref": "T05-18",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:30 · aproximado (dado antigo)",
+  "como": "última posição entre 1,5 e 3 min atrás",
+  "caso": "posição de 06:28 · em desvio ou GPS lento",
+  "html": "02-telas/T05-inicio/referencias/html/18-estado-aproximado-dado-antigo.html",
+  "png": "02-telas/T05-inicio/referencias/png/18-estado-aproximado-dado-antigo.png"
+ },
+ {
+  "ref": "T05-19",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:28 · em desvio",
+  "como": "o ônibus saiu do trajeto previsto",
+  "caso": "fora do trajeto às 06:28 · previsão 06:44 com \"cerca de\" · banner de atenção",
+  "html": "02-telas/T05-inicio/referencias/html/19-estado-em-desvio.html",
+  "png": "02-telas/T05-inicio/referencias/png/19-estado-em-desvio.png"
+ },
+ {
+  "ref": "T05-14",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:45 · passou, sem embarque",
+  "como": "o ônibus passou do seu ponto sem registro de embarque",
+  "caso": "passou às 06:44 · pontos à frente disponíveis",
+  "html": "02-telas/T05-inicio/referencias/html/14-estado-passou-sem-embarque.html",
+  "png": "02-telas/T05-inicio/referencias/png/14-estado-passou-sem-embarque.png"
+ },
+ {
+  "ref": "T05-15",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:44 · embarcou pelo crachá",
+  "como": "o leitor do ônibus leu o crachá da Ana",
+  "caso": "crachá lido no 1234 às 06:44",
+  "html": "02-telas/T05-inicio/referencias/html/15-estado-embarcou-pelo-cracha.html",
+  "png": "02-telas/T05-inicio/referencias/png/15-estado-embarcou-pelo-cracha.png"
+ },
+ {
+  "ref": "T05-16",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "06:45 · tocou \"Não fui eu\"",
+  "como": "tocar \"Não fui eu\" no embarque pelo crachá",
+  "caso": "sheet de confirmação · Marcar deixa o embarque contestado e o toast confirma",
+  "html": "02-telas/T05-inicio/referencias/html/16-momento-tocou-nao-fui-eu.html",
+  "png": "02-telas/T05-inicio/referencias/png/16-momento-tocou-nao-fui-eu.png"
+ },
+ {
+  "ref": "T05-17",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "17:21 · volta, no ponto",
+  "como": "o ônibus da volta parado no seu embarque",
+  "caso": "volta 17:20, sai às 17:21 · da Fábrica até a Av. Abdias, 17:54",
+  "html": "02-telas/T05-inicio/referencias/html/17-estado-volta-no-ponto.html",
+  "png": "02-telas/T05-inicio/referencias/png/17-estado-volta-no-ponto.png"
+ },
+ {
+  "ref": "T05-20",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:30 · sem sinal do ônibus",
+  "como": "sem posição há mais de 3 min",
+  "caso": "último sinal às 06:21, 4 min atrasado",
+  "html": "02-telas/T05-inicio/referencias/html/20-estado-sem-sinal-do-onibus.html",
+  "png": "02-telas/T05-inicio/referencias/png/20-estado-sem-sinal-do-onibus.png"
+ },
+ {
+  "ref": "T05-21",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:36 · sem internet no celular",
+  "como": "o celular perdeu a conexão",
+  "caso": "dados congelados às 06:24 · troca indisponível",
+  "html": "02-telas/T05-inicio/referencias/html/21-estado-sem-internet-no-celular.html",
+  "png": "02-telas/T05-inicio/referencias/png/21-estado-sem-internet-no-celular.png"
+ },
+ {
+  "ref": "T05-26",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "05:40 · cancelada pela transportadora",
+  "como": "a transportadora cancelou a ida 06:05",
+  "caso": "cancelada · aviso: manutenção · a das 07:05 mantida",
+  "html": "02-telas/T05-inicio/referencias/html/26-estado-cancelada-pela-transportadora.html",
+  "png": "02-telas/T05-inicio/referencias/png/26-estado-cancelada-pela-transportadora.png"
+ },
+ {
+  "ref": "T05-10",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:07 · ônibus a definir",
+  "como": "a viagem abriu sem veículo vinculado",
+  "caso": "sem vínculo de ônibus às 06:07",
+  "html": "02-telas/T05-inicio/referencias/html/10-estado-onibus-a-definir.html",
+  "png": "02-telas/T05-inicio/referencias/png/10-estado-onibus-a-definir.png"
+ },
+ {
+  "ref": "T05-27",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:24 · recuo para o programado",
+  "como": "a operação passa a viagem para o horário programado",
+  "caso": "em rota, 5 min atrasado · só o programado, sem selo de pontualidade",
+  "html": "02-telas/T05-inicio/referencias/html/27-estado-recuo-para-o-programado.html",
+  "png": "02-telas/T05-inicio/referencias/png/27-estado-recuo-para-o-programado.png"
+ },
+ {
+  "ref": "T05-23",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:24 · ônibus trocado",
+  "como": "a transportadora trocou o veículo da viagem",
+  "caso": "hoje é o 1250 · DEF2G34",
+  "html": "02-telas/T05-inicio/referencias/html/23-estado-onibus-trocado.html",
+  "png": "02-telas/T05-inicio/referencias/png/23-estado-onibus-trocado.png"
+ },
+ {
+  "ref": "T05-24",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:24 · crachá lido em outro ônibus",
+  "como": "o crachá da Ana foi lido no 1250",
+  "caso": "leitura no 1250 às 06:24 · pendente de confirmação",
+  "html": "02-telas/T05-inicio/referencias/html/24-estado-cracha-lido-em-outro-onibus.html",
+  "png": "02-telas/T05-inicio/referencias/png/24-estado-cracha-lido-em-outro-onibus.png"
+ },
+ {
+  "ref": "T05-25",
+  "tela": "T05",
+  "tipo": "momento",
+  "nome": "06:24 · tocou \"Fui eu\"",
+  "como": "tocar \"Fui eu\" no aviso do crachá lido em outro ônibus",
+  "caso": "embarque no 1250 às 06:24 · a previsão do 1250 não aparece no app",
+  "html": "02-telas/T05-inicio/referencias/html/25-momento-tocou-fui-eu.html",
+  "png": "02-telas/T05-inicio/referencias/png/25-momento-tocou-fui-eu.png"
+ },
+ {
+  "ref": "T05-28",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:24 · avisos desligados",
+  "como": "a permissão de notificações do celular está negada",
+  "caso": "banner com \"Ativar\", que abre os ajustes do celular · a viagem segue igual",
+  "html": "02-telas/T05-inicio/referencias/html/28-estado-avisos-desligados.html",
+  "png": "02-telas/T05-inicio/referencias/png/28-estado-avisos-desligados.png"
+ },
+ {
+  "ref": "T05-29",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:24 · celular sem bloqueio de tela",
+  "como": "o celular não tem senha nem biometria",
+  "caso": "banner com \"Abrir ajustes\" e o X para fechar · a viagem segue igual",
+  "html": "02-telas/T05-inicio/referencias/html/29-estado-celular-sem-bloqueio-de-tela.html",
+  "png": "02-telas/T05-inicio/referencias/png/29-estado-celular-sem-bloqueio-de-tela.png"
+ },
+ {
+  "ref": "T05-30",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:24 · entrou de novo depois de a segurança mudar",
+  "como": "a segurança do celular mudou (T04-04) e a pessoa entrou com o código novo",
+  "caso": "o desbloqueio caiu · sheet \"Ligar o desbloqueio de novo?\" · Agora não fecha, e Perfil › Privacidade religa depois",
+  "html": "02-telas/T05-inicio/referencias/html/30-estado-entrou-de-novo-depois-de-a-seguranca-mudar.html",
+  "png": "02-telas/T05-inicio/referencias/png/30-estado-entrou-de-novo-depois-de-a-seguranca-mudar.png"
+ },
+ {
+  "ref": "T05-31",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "sáb 31/10 · sem viagem hoje",
+  "como": "dia sem viagem na escala",
+  "caso": "sábado · próxima segunda 02/11 06:05",
+  "html": "02-telas/T05-inicio/referencias/html/31-estado-sab-31-10-sem-viagem-hoje.html",
+  "png": "02-telas/T05-inicio/referencias/png/31-estado-sab-31-10-sem-viagem-hoje.png"
+ },
+ {
+  "ref": "T05-22",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:24 · erro ao carregar",
+  "como": "o app abriu sem conseguir buscar a viagem",
+  "caso": "sem cache · sem rede ao abrir",
+  "html": "02-telas/T05-inicio/referencias/html/22-estado-erro-ao-carregar.html",
+  "png": "02-telas/T05-inicio/referencias/png/22-estado-erro-ao-carregar.png"
+ },
+ {
+  "ref": "T05-11",
+  "tela": "T05",
+  "tipo": "estado",
+  "nome": "06:24 · carregando",
+  "como": "os 650 ms entre abrir e receber a viagem",
+  "caso": "skeleton com a forma do herói",
+  "html": "02-telas/T05-inicio/referencias/html/11-estado-carregando.html",
+  "png": "02-telas/T05-inicio/referencias/png/11-estado-carregando.png"
+ },
+ {
+  "ref": "T06-00",
+  "tela": "T06",
+  "tipo": "tela",
+  "nome": "em rota, 06:24",
+  "como": "tocar \"Ver todas\" no Início",
+  "caso": "ao vivo · ônibus indo para a Av. Norte, 2800",
+  "html": "02-telas/T06-paradas/referencias/html/00-tela.html",
+  "png": "02-telas/T06-paradas/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T06-01",
+  "tela": "T06",
+  "tipo": "momento",
+  "nome": "o ônibus chegando na parada, 06:30",
+  "como": "o ônibus se aproxima de uma parada",
+  "caso": "texto \"Chegando na Av. Norte, 2800\" · \"1 min\" junto da hora",
+  "html": "02-telas/T06-paradas/referencias/html/01-momento-o-onibus-chegando-na-parada-06-30.html",
+  "png": "02-telas/T06-paradas/referencias/png/01-momento-o-onibus-chegando-na-parada-06-30.png"
+ },
+ {
+  "ref": "T06-02",
+  "tela": "T06",
+  "tipo": "momento",
+  "nome": "o ônibus chega na parada, 06:31",
+  "como": "o ônibus chega numa parada e abre as portas",
+  "caso": "texto do ônibus vira \"Na Av. Norte, 2800\" · a parada ganha \"agora\" junto da hora · ao sair, vira passada",
+  "html": "02-telas/T06-paradas/referencias/html/02-momento-o-onibus-chega-na-parada-06-31.html",
+  "png": "02-telas/T06-paradas/referencias/png/02-momento-o-onibus-chega-na-parada-06-31.png"
+ },
+ {
+  "ref": "T06-03",
+  "tela": "T06",
+  "tipo": "momento",
+  "nome": "chegando no seu ponto, 06:41",
+  "como": "o ônibus a menos de 2 min do seu ponto",
+  "caso": "texto \"Chegando no seu ponto\" · \"1 min\" junto da hora · a Av. Norte passada",
+  "html": "02-telas/T06-paradas/referencias/html/03-momento-chegando-no-seu-ponto-06-41.html",
+  "png": "02-telas/T06-paradas/referencias/png/03-momento-chegando-no-seu-ponto-06-41.png"
+ },
+ {
+  "ref": "T06-04",
+  "tela": "T06",
+  "tipo": "momento",
+  "nome": "no seu ponto, 06:42",
+  "como": "o ônibus parado no seu ponto",
+  "caso": "texto \"No seu ponto\" · \"agora\" junto da hora",
+  "html": "02-telas/T06-paradas/referencias/html/04-momento-no-seu-ponto-06-42.html",
+  "png": "02-telas/T06-paradas/referencias/png/04-momento-no-seu-ponto-06-42.png"
+ },
+ {
+  "ref": "T06-05",
+  "tela": "T06",
+  "tipo": "momento",
+  "nome": "a bordo, 06:44",
+  "como": "tocar Embarquei no Início, ou o crachá lido no ônibus",
+  "caso": "o seu ponto passado · ônibus \"Indo para a Av. Recife, 4300\" · 31 min até a fábrica",
+  "html": "02-telas/T06-paradas/referencias/html/05-momento-a-bordo-06-44.html",
+  "png": "02-telas/T06-paradas/referencias/png/05-momento-a-bordo-06-44.png"
+ },
+ {
+  "ref": "T06-06",
+  "tela": "T06",
+  "tipo": "momento",
+  "nome": "chegou, 07:16",
+  "como": "o ônibus chega ao destino",
+  "caso": "todas as paradas passadas · \"Na Fábrica – Portaria 2\" · 07:16 com \"chegou\" · a linha de cima diz \"viagem concluída\"",
+  "html": "02-telas/T06-paradas/referencias/html/06-momento-chegou-07-16.html",
+  "png": "02-telas/T06-paradas/referencias/png/06-momento-chegou-07-16.png"
+ },
+ {
+  "ref": "T06-07",
+  "tela": "T06",
+  "tipo": "momento",
+  "nome": "tocar numa parada",
+  "como": "tocar em Av. Norte, 2800",
+  "caso": "sheet com a previsão, as pessoas e \"Embarcar aqui hoje\"",
+  "html": "02-telas/T06-paradas/referencias/html/07-momento-tocar-numa-parada.html",
+  "png": "02-telas/T06-paradas/referencias/png/07-momento-tocar-numa-parada.png"
+ },
+ {
+  "ref": "T06-08",
+  "tela": "T06",
+  "tipo": "momento",
+  "nome": "depois da troca de ponto",
+  "como": "voltar da T08 com a troca confirmada",
+  "caso": "\"Seu ponto hoje\" na Av. Norte · \"Ponto de sempre\" na Av. Abdias",
+  "html": "02-telas/T06-paradas/referencias/html/08-momento-depois-da-troca-de-ponto.html",
+  "png": "02-telas/T06-paradas/referencias/png/08-momento-depois-da-troca-de-ponto.png"
+ },
+ {
+  "ref": "T06-09",
+  "tela": "T06",
+  "tipo": "estado",
+  "nome": "antes da janela ao vivo, 05:20",
+  "como": "abrir mais de 30 min antes da saída",
+  "caso": "horários programados · sem ônibus no trilho",
+  "html": "02-telas/T06-paradas/referencias/html/09-estado-antes-da-janela-ao-vivo-05-20.html",
+  "png": "02-telas/T06-paradas/referencias/png/09-estado-antes-da-janela-ao-vivo-05-20.png"
+ },
+ {
+  "ref": "T06-10",
+  "tela": "T06",
+  "tipo": "estado",
+  "nome": "dado antigo, 06:26",
+  "como": "a posição parou de chegar há mais de 1,5 min",
+  "caso": "ônibus apagado no trilho · \"Última posição há 2 min\"",
+  "html": "02-telas/T06-paradas/referencias/html/10-estado-dado-antigo-06-26.html",
+  "png": "02-telas/T06-paradas/referencias/png/10-estado-dado-antigo-06-26.png"
+ },
+ {
+  "ref": "T06-11",
+  "tela": "T06",
+  "tipo": "estado",
+  "nome": "sem sinal, 06:28",
+  "como": "mais de 3 min sem posição",
+  "caso": "recua para o programado · o ônibus apagado na última posição, com \"Último sinal às 06:21\"",
+  "html": "02-telas/T06-paradas/referencias/html/11-estado-sem-sinal-06-28.html",
+  "png": "02-telas/T06-paradas/referencias/png/11-estado-sem-sinal-06-28.png"
+ },
+ {
+  "ref": "T06-12",
+  "tela": "T06",
+  "tipo": "estado",
+  "nome": "sem internet",
+  "como": "o celular perdeu a conexão",
+  "caso": "banner fixo · dados de 06:20",
+  "html": "02-telas/T06-paradas/referencias/html/12-estado-sem-internet.html",
+  "png": "02-telas/T06-paradas/referencias/png/12-estado-sem-internet.png"
+ },
+ {
+  "ref": "T06-13",
+  "tela": "T06",
+  "tipo": "estado",
+  "nome": "viagem cancelada",
+  "como": "a transportadora cancelou a viagem",
+  "caso": "cartão de perigo · horários programados, apagados",
+  "html": "02-telas/T06-paradas/referencias/html/13-estado-viagem-cancelada.html",
+  "png": "02-telas/T06-paradas/referencias/png/13-estado-viagem-cancelada.png"
+ },
+ {
+  "ref": "T06-14",
+  "tela": "T06",
+  "tipo": "estado",
+  "nome": "em desvio, 06:28",
+  "como": "o ônibus saiu do trajeto previsto",
+  "caso": "banner de atenção · o ônibus fora do trajeto no trilho · previsão de 06:28",
+  "html": "02-telas/T06-paradas/referencias/html/14-estado-em-desvio-06-28.html",
+  "png": "02-telas/T06-paradas/referencias/png/14-estado-em-desvio-06-28.png"
+ },
+ {
+  "ref": "T07-00",
+  "tela": "T07",
+  "tipo": "tela",
+  "nome": "em rota, 06:24 · painel recolhido",
+  "como": "tocar \"Ver no mapa\" no Início ou nas Paradas",
+  "caso": "ônibus entre o Mercado e a Av. Norte · herói compacto 18 min",
+  "html": "02-telas/T07-mapa/referencias/html/00-tela.html",
+  "png": "02-telas/T07-mapa/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T07-01",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "chegando no seu ponto, 06:41",
+  "como": "o ônibus a menos de 2 min do seu ponto",
+  "caso": "ônibus quase no seu ponto · herói \"Chegando · menos de 2 min\"",
+  "html": "02-telas/T07-mapa/referencias/html/01-momento-chegando-no-seu-ponto-06-41.html",
+  "png": "02-telas/T07-mapa/referencias/png/01-momento-chegando-no-seu-ponto-06-41.png"
+ },
+ {
+  "ref": "T07-02",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "no seu ponto, 06:42",
+  "como": "o ônibus parado no seu ponto",
+  "caso": "ônibus sobre o seu ponto · herói \"No ponto · agora\"",
+  "html": "02-telas/T07-mapa/referencias/html/02-momento-no-seu-ponto-06-42.html",
+  "png": "02-telas/T07-mapa/referencias/png/02-momento-no-seu-ponto-06-42.png"
+ },
+ {
+  "ref": "T07-03",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "a bordo, 06:44",
+  "como": "tocar Embarquei no Início, ou o crachá lido no ônibus",
+  "caso": "o seu ponto passado · herói \"31 min · às 07:15\" com \"Embarque registrado\"",
+  "html": "02-telas/T07-mapa/referencias/html/03-momento-a-bordo-06-44.html",
+  "png": "02-telas/T07-mapa/referencias/png/03-momento-a-bordo-06-44.png"
+ },
+ {
+  "ref": "T07-04",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "chegou, 07:16",
+  "como": "o ônibus chega ao destino",
+  "caso": "ônibus na fábrica · a rota toda percorrida · herói \"Chegou · às 07:16\" com \"Viagem concluída\"",
+  "html": "02-telas/T07-mapa/referencias/html/04-momento-chegou-07-16.html",
+  "png": "02-telas/T07-mapa/referencias/png/04-momento-chegou-07-16.png"
+ },
+ {
+  "ref": "T07-05",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "painel no meio: próximos pontos",
+  "como": "puxar a alça uma vez",
+  "caso": "os pontos entre o ônibus e o destino",
+  "html": "02-telas/T07-mapa/referencias/html/05-momento-painel-no-meio-proximos-pontos.html",
+  "png": "02-telas/T07-mapa/referencias/png/05-momento-painel-no-meio-proximos-pontos.png"
+ },
+ {
+  "ref": "T07-06",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "painel inteiro: todas as paradas",
+  "como": "puxar a alça de novo",
+  "caso": "a lista completa, como nas Paradas",
+  "html": "02-telas/T07-mapa/referencias/html/06-momento-painel-inteiro-todas-as-paradas.html",
+  "png": "02-telas/T07-mapa/referencias/png/06-momento-painel-inteiro-todas-as-paradas.png"
+ },
+ {
+  "ref": "T07-07",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "tocar numa parada",
+  "como": "tocar no marcador da Av. Norte, 2800",
+  "caso": "mapa centrado na parada · detalhe com \"Embarcar aqui hoje\"",
+  "html": "02-telas/T07-mapa/referencias/html/07-momento-tocar-numa-parada.html",
+  "png": "02-telas/T07-mapa/referencias/png/07-momento-tocar-numa-parada.png"
+ },
+ {
+  "ref": "T07-08",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "\"Seguir ônibus\"",
+  "como": "tocar o ônibus na barra",
+  "caso": "botão aceso · mapa centrado no ônibus e acompanhando",
+  "html": "02-telas/T07-mapa/referencias/html/08-momento-seguir-onibus.html",
+  "png": "02-telas/T07-mapa/referencias/png/08-momento-seguir-onibus.png"
+ },
+ {
+  "ref": "T07-09",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "\"Minha localização\"",
+  "como": "tocar a mira: o sheet de pré-permissão da T08-02 e depois o pedido do celular",
+  "caso": "permitido, o ponto azul perto do seu ponto",
+  "html": "02-telas/T07-mapa/referencias/html/09-momento-minha-localizacao.html",
+  "png": "02-telas/T07-mapa/referencias/png/09-momento-minha-localizacao.png"
+ },
+ {
+  "ref": "T07-10",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "tocar no ônibus",
+  "como": "tocar o disco do ônibus",
+  "caso": "balão com prefixo, placa e idade do dado",
+  "html": "02-telas/T07-mapa/referencias/html/10-momento-tocar-no-onibus.html",
+  "png": "02-telas/T07-mapa/referencias/png/10-momento-tocar-no-onibus.png"
+ },
+ {
+  "ref": "T07-11",
+  "tela": "T07",
+  "tipo": "momento",
+  "nome": "pinçar para afastar: a linha inteira, do terminal à fábrica",
+  "como": "pinçar para afastar",
+  "caso": "a linha inteira a 50% · 9 paradas · destino nomeado",
+  "html": "02-telas/T07-mapa/referencias/html/11-momento-pincar-para-afastar-a-linha-inteira-do-terminal-a-fabric.html",
+  "png": "02-telas/T07-mapa/referencias/png/11-momento-pincar-para-afastar-a-linha-inteira-do-terminal-a-fabric.png"
+ },
+ {
+  "ref": "T07-12",
+  "tela": "T07",
+  "tipo": "estado",
+  "nome": "antes da janela ao vivo, 05:20",
+  "como": "abrir mais de 30 min antes da saída",
+  "caso": "sem ônibus · herói programado · botão do ônibus desligado",
+  "html": "02-telas/T07-mapa/referencias/html/12-estado-antes-da-janela-ao-vivo-05-20.html",
+  "png": "02-telas/T07-mapa/referencias/png/12-estado-antes-da-janela-ao-vivo-05-20.png"
+ },
+ {
+  "ref": "T07-13",
+  "tela": "T07",
+  "tipo": "estado",
+  "nome": "dado antigo, 06:26",
+  "como": "a posição parou de chegar há mais de 1,5 min",
+  "caso": "ônibus apagado · selo dado antigo",
+  "html": "02-telas/T07-mapa/referencias/html/13-estado-dado-antigo-06-26.html",
+  "png": "02-telas/T07-mapa/referencias/png/13-estado-dado-antigo-06-26.png"
+ },
+ {
+  "ref": "T07-14",
+  "tela": "T07",
+  "tipo": "estado",
+  "nome": "sem sinal, 06:28",
+  "como": "mais de 3 min sem posição",
+  "caso": "ônibus apagado na última posição, \"Último sinal 06:21\" · recua para o programado",
+  "html": "02-telas/T07-mapa/referencias/html/14-estado-sem-sinal-06-28.html",
+  "png": "02-telas/T07-mapa/referencias/png/14-estado-sem-sinal-06-28.png"
+ },
+ {
+  "ref": "T07-15",
+  "tela": "T07",
+  "tipo": "estado",
+  "nome": "localização negada",
+  "como": "tocar \"Minha localização\" com a permissão negada",
+  "caso": "aviso com o atalho dos ajustes · mapa segue",
+  "html": "02-telas/T07-mapa/referencias/html/15-estado-localizacao-negada.html",
+  "png": "02-telas/T07-mapa/referencias/png/15-estado-localizacao-negada.png"
+ },
+ {
+  "ref": "T07-16",
+  "tela": "T07",
+  "tipo": "estado",
+  "nome": "viagem cancelada",
+  "como": "a transportadora cancelou a viagem",
+  "caso": "sem ônibus · rota apagada · cartão de perigo · botão do ônibus desligado",
+  "html": "02-telas/T07-mapa/referencias/html/16-estado-viagem-cancelada.html",
+  "png": "02-telas/T07-mapa/referencias/png/16-estado-viagem-cancelada.png"
+ },
+ {
+  "ref": "T07-17",
+  "tela": "T07",
+  "tipo": "estado",
+  "nome": "sem internet",
+  "como": "o celular perdeu a conexão",
+  "caso": "banner fixo · última posição conhecida",
+  "html": "02-telas/T07-mapa/referencias/html/17-estado-sem-internet.html",
+  "png": "02-telas/T07-mapa/referencias/png/17-estado-sem-internet.png"
+ },
+ {
+  "ref": "T07-18",
+  "tela": "T07",
+  "tipo": "estado",
+  "nome": "em desvio, 06:28 · painel recolhido",
+  "como": "o ônibus saiu do trajeto previsto",
+  "caso": "banner de atenção · o ônibus ao lado da rota, com o rastro · \"cerca de 16 min\"",
+  "html": "02-telas/T07-mapa/referencias/html/18-estado-em-desvio-06-28-painel-recolhido.html",
+  "png": "02-telas/T07-mapa/referencias/png/18-estado-em-desvio-06-28-painel-recolhido.png"
+ },
+ {
+  "ref": "T08-00",
+  "tela": "T08",
+  "tipo": "tela",
+  "nome": "06:24, nada escolhido",
+  "como": "tocar \"Outro ponto hoje\" na T05",
+  "caso": "06:24 · nada escolhido · botão desligado",
+  "html": "02-telas/T08-outro-ponto/referencias/html/00-tela.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T08-01",
+  "tela": "T08",
+  "tipo": "momento",
+  "nome": "Av. Norte escolhido",
+  "como": "tocar um ponto da lista",
+  "caso": "Av. Norte escolhido · botão aceso",
+  "html": "02-telas/T08-outro-ponto/referencias/html/01-momento-av-norte-escolhido.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/01-momento-av-norte-escolhido.png"
+ },
+ {
+  "ref": "T08-02",
+  "tela": "T08",
+  "tipo": "momento",
+  "nome": "\"Perto de mim\" sem permissão",
+  "como": "tocar \"Perto de mim\" sem permissão de localização",
+  "caso": "sheet de pré-permissão, antes do pedido do sistema",
+  "html": "02-telas/T08-outro-ponto/referencias/html/02-momento-perto-de-mim-sem-permissao.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/02-momento-perto-de-mim-sem-permissao.png"
+ },
+ {
+  "ref": "T08-03",
+  "tela": "T08",
+  "tipo": "momento",
+  "nome": "\"Perto de mim\" ligado",
+  "como": "\"Perto de mim\" ligado",
+  "caso": "lista por distância a pé · Av. Abdias de Carvalho a 3 min",
+  "html": "02-telas/T08-outro-ponto/referencias/html/03-momento-perto-de-mim-ligado.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/03-momento-perto-de-mim-ligado.png"
+ },
+ {
+  "ref": "T08-04",
+  "tela": "T08",
+  "tipo": "momento",
+  "nome": "\"já passou\" aberto",
+  "como": "abrir \"Pontos que o ônibus já passou\"",
+  "caso": "Terminal da Macaxeira 06:05 e Mercado de Casa Amarela 06:13",
+  "html": "02-telas/T08-outro-ponto/referencias/html/04-momento-ja-passou-aberto.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/04-momento-ja-passou-aberto.png"
+ },
+ {
+  "ref": "T08-05",
+  "tela": "T08",
+  "tipo": "momento",
+  "nome": "confirmar a troca",
+  "como": "tocar \"Embarcar neste ponto\"",
+  "caso": "sheet de confirmação · 11 min antes do de sempre",
+  "html": "02-telas/T08-outro-ponto/referencias/html/05-momento-confirmar-a-troca.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/05-momento-confirmar-a-troca.png"
+ },
+ {
+  "ref": "T08-06",
+  "tela": "T08",
+  "tipo": "estado",
+  "nome": "06:58, nenhum ponto disponível",
+  "como": "o ônibus já passou por todos, ou todos em cima da hora",
+  "caso": "06:58 · nenhum ponto disponível",
+  "html": "02-telas/T08-outro-ponto/referencias/html/06-estado-06-58-nenhum-ponto-disponivel.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/06-estado-06-58-nenhum-ponto-disponivel.png"
+ },
+ {
+  "ref": "T08-07",
+  "tela": "T08",
+  "tipo": "estado",
+  "nome": "sem internet",
+  "como": "o celular sem internet",
+  "caso": "lista visível · confirmar indisponível",
+  "html": "02-telas/T08-outro-ponto/referencias/html/07-estado-sem-internet.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/07-estado-sem-internet.png"
+ },
+ {
+  "ref": "T08-08",
+  "tela": "T08",
+  "tipo": "estado",
+  "nome": "o ônibus passou durante a confirmação",
+  "como": "o servidor responde que o ônibus passou durante a confirmação",
+  "caso": "resposta \"passou\" · escolher outro",
+  "html": "02-telas/T08-outro-ponto/referencias/html/08-estado-o-onibus-passou-durante-a-confirmacao.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/08-estado-o-onibus-passou-durante-a-confirmacao.png"
+ },
+ {
+  "ref": "T08-09",
+  "tela": "T08",
+  "tipo": "estado",
+  "nome": "a confirmação falhou",
+  "como": "tocar \"Confirmar\" e o servidor não responder",
+  "caso": "o sheet fica aberto com o erro no lugar · nada muda · Confirmar de novo",
+  "html": "02-telas/T08-outro-ponto/referencias/html/09-estado-a-confirmacao-falhou.html",
+  "png": "02-telas/T08-outro-ponto/referencias/png/09-estado-a-confirmacao-falhou.png"
+ },
+ {
+  "ref": "T09-00",
+  "tela": "T09",
+  "tipo": "tela",
+  "nome": "2 não lidas",
+  "como": "tocar o sino no Início",
+  "caso": "hoje: saiu, comunicado · ontem · anteriores",
+  "html": "02-telas/T09-notificacoes/referencias/html/00-tela.html",
+  "png": "02-telas/T09-notificacoes/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T09-01",
+  "tela": "T09",
+  "tipo": "momento",
+  "nome": "\"Marcar todas como lidas\"",
+  "como": "tocar o botão da barra",
+  "caso": "sem pontos · o botão some",
+  "html": "02-telas/T09-notificacoes/referencias/html/01-momento-marcar-todas-como-lidas.html",
+  "png": "02-telas/T09-notificacoes/referencias/png/01-momento-marcar-todas-como-lidas.png"
+ },
+ {
+  "ref": "T09-02",
+  "tela": "T09",
+  "tipo": "momento",
+  "nome": "tocar num aviso da transportadora",
+  "como": "tocar em \"Viagem das 17:20 cancelada\"",
+  "caso": "sheet com o aviso completo; avisos de viagem abrem o Início",
+  "html": "02-telas/T09-notificacoes/referencias/html/02-momento-tocar-num-aviso-da-transportadora.html",
+  "png": "02-telas/T09-notificacoes/referencias/png/02-momento-tocar-num-aviso-da-transportadora.png"
+ },
+ {
+  "ref": "T09-03",
+  "tela": "T09",
+  "tipo": "estado",
+  "nome": "vazio",
+  "como": "conta nova, sem avisos ainda",
+  "caso": "estado vazio com o sino e o atalho das preferências",
+  "html": "02-telas/T09-notificacoes/referencias/html/03-estado-vazio.html",
+  "png": "02-telas/T09-notificacoes/referencias/png/03-estado-vazio.png"
+ },
+ {
+  "ref": "T09-04",
+  "tela": "T09",
+  "tipo": "estado",
+  "nome": "avisos desligados no celular",
+  "como": "a permissão de notificações está negada",
+  "caso": "banner com \"Ativar\", que abre os ajustes do celular",
+  "html": "02-telas/T09-notificacoes/referencias/html/04-estado-avisos-desligados-no-celular.html",
+  "png": "02-telas/T09-notificacoes/referencias/png/04-estado-avisos-desligados-no-celular.png"
+ },
+ {
+  "ref": "T09-05",
+  "tela": "T09",
+  "tipo": "estado",
+  "nome": "sem internet",
+  "como": "o celular perdeu a conexão",
+  "caso": "banner · a lista que o app já tinha",
+  "html": "02-telas/T09-notificacoes/referencias/html/05-estado-sem-internet.html",
+  "png": "02-telas/T09-notificacoes/referencias/png/05-estado-sem-internet.png"
+ },
+ {
+  "ref": "T09-06",
+  "tela": "T09",
+  "tipo": "estado",
+  "nome": "push com o celular bloqueado",
+  "como": "o ônibus a 10 min do seu ponto, com o celular bloqueado",
+  "caso": "tela de bloqueio às 06:32 · chega em 10 min e o saiu das 06:07 · tocar abre o Início",
+  "html": "02-telas/T09-notificacoes/referencias/html/06-estado-push-com-o-celular-bloqueado.html",
+  "png": "02-telas/T09-notificacoes/referencias/png/06-estado-push-com-o-celular-bloqueado.png"
+ },
+ {
+  "ref": "T09-07",
+  "tela": "T09",
+  "tipo": "estado",
+  "nome": "push com o celular em uso",
+  "como": "o ônibus atrasa enquanto a pessoa usa o celular",
+  "caso": "banner no topo da tela inicial · \"Ônibus atrasado 8 min\" · some sozinho e fica na lista",
+  "html": "02-telas/T09-notificacoes/referencias/html/07-estado-push-com-o-celular-em-uso.html",
+  "png": "02-telas/T09-notificacoes/referencias/png/07-estado-push-com-o-celular-em-uso.png"
+ },
+ {
+  "ref": "T10-00",
+  "tela": "T10",
+  "tipo": "tela",
+  "nome": "o perfil da Ana",
+  "como": "tocar o avatar no Início",
+  "caso": "cabeçalho · Minha conta · Minhas linhas · Ajustes",
+  "html": "02-telas/T10-perfil/referencias/html/00-tela.html",
+  "png": "02-telas/T10-perfil/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T10-01",
+  "tela": "T10",
+  "tipo": "momento",
+  "nome": "Preciso de ajuda: RH e transportadora",
+  "como": "tocar \"Preciso de ajuda\" em Ajustes; também abre pelo Início e pela viagem cancelada",
+  "caso": "dois cartões de contato com horário · perguntas de todo dia",
+  "html": "02-telas/T10-perfil/referencias/html/01-momento-preciso-de-ajuda-rh-e-transportadora.html",
+  "png": "02-telas/T10-perfil/referencias/png/01-momento-preciso-de-ajuda-rh-e-transportadora.png"
+ },
+ {
+  "ref": "T10-02",
+  "tela": "T10",
+  "tipo": "momento",
+  "nome": "\"Sair da conta\"",
+  "como": "rolar até o fim e tocar \"Sair da conta\"",
+  "caso": "sheet de confirmação com o botão destrutivo",
+  "html": "02-telas/T10-perfil/referencias/html/02-momento-sair-da-conta.html",
+  "png": "02-telas/T10-perfil/referencias/png/02-momento-sair-da-conta.png"
+ },
+ {
+  "ref": "T10-03",
+  "tela": "T10",
+  "tipo": "momento",
+  "nome": "rolada até o fim: Aparência, ajuda, Sair e Excluir",
+  "como": "rolar até o fim",
+  "caso": "Aparência, Preciso de ajuda, Sair e Excluir ativos · por mobs2",
+  "html": "02-telas/T10-perfil/referencias/html/03-momento-rolada-ate-o-fim-aparencia-ajuda-sair-e-excluir.html",
+  "png": "02-telas/T10-perfil/referencias/png/03-momento-rolada-ate-o-fim-aparencia-ajuda-sair-e-excluir.png"
+ },
+ {
+  "ref": "T10-04",
+  "tela": "T10",
+  "tipo": "estado",
+  "nome": "sem internet",
+  "como": "o celular perdeu a conexão",
+  "caso": "banner · Sair e Excluir desligados",
+  "html": "02-telas/T10-perfil/referencias/html/04-estado-sem-internet.html",
+  "png": "02-telas/T10-perfil/referencias/png/04-estado-sem-internet.png"
+ },
+ {
+  "ref": "T10-05",
+  "tela": "T10",
+  "tipo": "estado",
+  "nome": "Preciso de ajuda sem transportadora no cadastro",
+  "como": "a empresa não cadastrou o contato da transportadora",
+  "caso": "só o cartão do RH · as respostas apontam para o RH",
+  "html": "02-telas/T10-perfil/referencias/html/05-estado-preciso-de-ajuda-sem-transportadora-no-cadastro.html",
+  "png": "02-telas/T10-perfil/referencias/png/05-estado-preciso-de-ajuda-sem-transportadora-no-cadastro.png"
+ },
+ {
+  "ref": "T11-00",
+  "tela": "T11",
+  "tipo": "tela",
+  "nome": "avisos ligados · 10 min",
+  "como": "tocar \"Preferências de avisos\" ou Perfil › Avisos",
+  "caso": "chegando 10 min · saiu ligado",
+  "html": "02-telas/T11-avisos/referencias/html/00-tela.html",
+  "png": "02-telas/T11-avisos/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T11-01",
+  "tela": "T11",
+  "tipo": "momento",
+  "nome": "desligar \"Ônibus chegando\"",
+  "como": "tocar o switch",
+  "caso": "os chips de minutos apagam",
+  "html": "02-telas/T11-avisos/referencias/html/01-momento-desligar-onibus-chegando.html",
+  "png": "02-telas/T11-avisos/referencias/png/01-momento-desligar-onibus-chegando.png"
+ },
+ {
+  "ref": "T11-02",
+  "tela": "T11",
+  "tipo": "estado",
+  "nome": "avisos desligados no celular",
+  "como": "a permissão de notificações está negada",
+  "caso": "banner com \"Ativar\" · switches apagados",
+  "html": "02-telas/T11-avisos/referencias/html/02-estado-avisos-desligados-no-celular.html",
+  "png": "02-telas/T11-avisos/referencias/png/02-estado-avisos-desligados-no-celular.png"
+ },
+ {
+  "ref": "T11-03",
+  "tela": "T11",
+  "tipo": "estado",
+  "nome": "sem internet",
+  "como": "mudar uma preferência sem conexão",
+  "caso": "banner · a mudança fica guardada e sobe depois",
+  "html": "02-telas/T11-avisos/referencias/html/03-estado-sem-internet.html",
+  "png": "02-telas/T11-avisos/referencias/png/03-estado-sem-internet.png"
+ },
+ {
+  "ref": "T12-00",
+  "tela": "T12",
+  "tipo": "tela",
+  "nome": "desbloqueio ligado",
+  "como": "Perfil › Privacidade",
+  "caso": "biometria · pedido ao abrir e depois de 5 min",
+  "html": "02-telas/T12-privacidade/referencias/html/00-tela.html",
+  "png": "02-telas/T12-privacidade/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T12-01",
+  "tela": "T12",
+  "tipo": "momento",
+  "nome": "desligar o desbloqueio",
+  "como": "tocar o switch ligado",
+  "caso": "sheet que explica o risco antes de desligar",
+  "html": "02-telas/T12-privacidade/referencias/html/01-momento-desligar-o-desbloqueio.html",
+  "png": "02-telas/T12-privacidade/referencias/png/01-momento-desligar-o-desbloqueio.png"
+ },
+ {
+  "ref": "T12-02",
+  "tela": "T12",
+  "tipo": "momento",
+  "nome": "ligar o desbloqueio",
+  "como": "tocar o switch desligado",
+  "caso": "o celular pede o Face ID antes de ligar",
+  "html": "02-telas/T12-privacidade/referencias/html/02-momento-ligar-o-desbloqueio.html",
+  "png": "02-telas/T12-privacidade/referencias/png/02-momento-ligar-o-desbloqueio.png"
+ },
+ {
+  "ref": "T12-03",
+  "tela": "T12",
+  "tipo": "momento",
+  "nome": "aviso de privacidade, por seções",
+  "como": "tocar \"Aviso de privacidade\", ou o link em Preparar o app",
+  "caso": "seis seções curtas · nomes da empresa e da transportadora vêm do cadastro",
+  "html": "02-telas/T12-privacidade/referencias/html/03-momento-aviso-de-privacidade-por-secoes.html",
+  "png": "02-telas/T12-privacidade/referencias/png/03-momento-aviso-de-privacidade-por-secoes.png"
+ },
+ {
+  "ref": "T12-04",
+  "tela": "T12",
+  "tipo": "momento",
+  "nome": "termos de uso, em cinco frases",
+  "como": "tocar \"Termos de uso\", ou o link em Preparar o app",
+  "caso": "texto corrido em corpo 15",
+  "html": "02-telas/T12-privacidade/referencias/html/04-momento-termos-de-uso-em-cinco-frases.html",
+  "png": "02-telas/T12-privacidade/referencias/png/04-momento-termos-de-uso-em-cinco-frases.png"
+ },
+ {
+  "ref": "T12-05",
+  "tela": "T12",
+  "tipo": "momento",
+  "nome": "meus dados: o caminho do pedido",
+  "como": "tocar \"Meus dados\", ou o link em Excluir conta",
+  "caso": "texto, prazo de 15 dias e o botão",
+  "html": "02-telas/T12-privacidade/referencias/html/05-momento-meus-dados-o-caminho-do-pedido.html",
+  "png": "02-telas/T12-privacidade/referencias/png/05-momento-meus-dados-o-caminho-do-pedido.png"
+ },
+ {
+  "ref": "T12-06",
+  "tela": "T12",
+  "tipo": "momento",
+  "nome": "fazer um pedido: tipo \"ver os dados\"",
+  "como": "tocar \"Fazer um pedido\" em Meus dados",
+  "caso": "três rádios · campo de texto · Enviar no rodapé",
+  "html": "02-telas/T12-privacidade/referencias/html/06-momento-fazer-um-pedido-tipo-ver-os-dados.html",
+  "png": "02-telas/T12-privacidade/referencias/png/06-momento-fazer-um-pedido-tipo-ver-os-dados.png"
+ },
+ {
+  "ref": "T12-07",
+  "tela": "T12",
+  "tipo": "momento",
+  "nome": "pedido: digitando",
+  "como": "tocar no campo e escrever",
+  "caso": "teclado do sistema · texto com o cursor",
+  "html": "02-telas/T12-privacidade/referencias/html/07-momento-pedido-digitando.html",
+  "png": "02-telas/T12-privacidade/referencias/png/07-momento-pedido-digitando.png"
+ },
+ {
+  "ref": "T12-08",
+  "tela": "T12",
+  "tipo": "momento",
+  "nome": "pedido: escolher \"Apagar meu cadastro\"",
+  "como": "tocar o terceiro rádio",
+  "caso": "nota de atenção com a consequência",
+  "html": "02-telas/T12-privacidade/referencias/html/08-momento-pedido-escolher-apagar-meu-cadastro.html",
+  "png": "02-telas/T12-privacidade/referencias/png/08-momento-pedido-escolher-apagar-meu-cadastro.png"
+ },
+ {
+  "ref": "T12-09",
+  "tela": "T12",
+  "tipo": "momento",
+  "nome": "pedido registrado: o protocolo",
+  "como": "tocar \"Enviar pedido\", e o servidor registra",
+  "caso": "estado central · protocolo tabular · Voltar ao início",
+  "html": "02-telas/T12-privacidade/referencias/html/09-momento-pedido-registrado-o-protocolo.html",
+  "png": "02-telas/T12-privacidade/referencias/png/09-momento-pedido-registrado-o-protocolo.png"
+ },
+ {
+  "ref": "T12-10",
+  "tela": "T12",
+  "tipo": "estado",
+  "nome": "celular sem bloqueio de tela",
+  "como": "o celular não tem senha nem biometria",
+  "caso": "switch desligado e travado · atalho dos ajustes",
+  "html": "02-telas/T12-privacidade/referencias/html/10-estado-celular-sem-bloqueio-de-tela.html",
+  "png": "02-telas/T12-privacidade/referencias/png/10-estado-celular-sem-bloqueio-de-tela.png"
+ },
+ {
+  "ref": "T12-11",
+  "tela": "T12",
+  "tipo": "estado",
+  "nome": "localização desligada",
+  "como": "a permissão de localização está negada",
+  "caso": "a linha diz \"Desligada no celular\"",
+  "html": "02-telas/T12-privacidade/referencias/html/11-estado-localizacao-desligada.html",
+  "png": "02-telas/T12-privacidade/referencias/png/11-estado-localizacao-desligada.png"
+ },
+ {
+  "ref": "T12-12",
+  "tela": "T12",
+  "tipo": "estado",
+  "nome": "meus dados: pedido em andamento",
+  "como": "voltar a Meus dados depois de registrar um pedido",
+  "caso": "cartão com o tipo, o protocolo e o prazo",
+  "html": "02-telas/T12-privacidade/referencias/html/12-estado-meus-dados-pedido-em-andamento.html",
+  "png": "02-telas/T12-privacidade/referencias/png/12-estado-meus-dados-pedido-em-andamento.png"
+ },
+ {
+  "ref": "T12-13",
+  "tela": "T12",
+  "tipo": "estado",
+  "nome": "meus dados: sem internet",
+  "como": "o celular perdeu a conexão em Meus dados",
+  "caso": "banner · botão desligado",
+  "html": "02-telas/T12-privacidade/referencias/html/13-estado-meus-dados-sem-internet.html",
+  "png": "02-telas/T12-privacidade/referencias/png/13-estado-meus-dados-sem-internet.png"
+ },
+ {
+  "ref": "T12-14",
+  "tela": "T12",
+  "tipo": "estado",
+  "nome": "pedido: enviando",
+  "como": "os 700 ms depois de \"Enviar pedido\"",
+  "caso": "botão carregando",
+  "html": "02-telas/T12-privacidade/referencias/html/14-estado-pedido-enviando.html",
+  "png": "02-telas/T12-privacidade/referencias/png/14-estado-pedido-enviando.png"
+ },
+ {
+  "ref": "T12-15",
+  "tela": "T12",
+  "tipo": "estado",
+  "nome": "pedido: falha de rede",
+  "como": "o servidor não respondeu ao pedido",
+  "caso": "erro no lugar da ação · o texto fica",
+  "html": "02-telas/T12-privacidade/referencias/html/15-estado-pedido-falha-de-rede.html",
+  "png": "02-telas/T12-privacidade/referencias/png/15-estado-pedido-falha-de-rede.png"
+ },
+ {
+  "ref": "T12-16",
+  "tela": "T12",
+  "tipo": "estado",
+  "nome": "pedido: sem internet",
+  "como": "o celular perdeu a conexão no pedido",
+  "caso": "banner · Enviar desligado",
+  "html": "02-telas/T12-privacidade/referencias/html/16-estado-pedido-sem-internet.html",
+  "png": "02-telas/T12-privacidade/referencias/png/16-estado-pedido-sem-internet.png"
+ },
+ {
+  "ref": "T13-00",
+  "tela": "T13",
+  "tipo": "tela",
+  "nome": "o que some e o que fica",
+  "como": "Perfil › Excluir conta",
+  "caso": "duas frases · link para Meus dados · botão destrutivo no rodapé",
+  "html": "02-telas/T13-excluir-conta/referencias/html/00-tela.html",
+  "png": "02-telas/T13-excluir-conta/referencias/png/00-tela.png"
+ },
+ {
+  "ref": "T13-01",
+  "tela": "T13",
+  "tipo": "momento",
+  "nome": "\"Excluir conta\"",
+  "como": "tocar o botão destrutivo",
+  "caso": "sheet de confirmação com o destrutivo em cima",
+  "html": "02-telas/T13-excluir-conta/referencias/html/01-momento-excluir-conta.html",
+  "png": "02-telas/T13-excluir-conta/referencias/png/01-momento-excluir-conta.png"
+ },
+ {
+  "ref": "T13-02",
+  "tela": "T13",
+  "tipo": "momento",
+  "nome": "conta excluída",
+  "como": "confirmar a exclusão no sheet",
+  "caso": "estado central · Voltar ao início leva ao Entrar",
+  "html": "02-telas/T13-excluir-conta/referencias/html/02-momento-conta-excluida.html",
+  "png": "02-telas/T13-excluir-conta/referencias/png/02-momento-conta-excluida.png"
+ },
+ {
+  "ref": "T13-03",
+  "tela": "T13",
+  "tipo": "estado",
+  "nome": "excluindo",
+  "como": "os 700 ms depois de confirmar",
+  "caso": "botão carregando",
+  "html": "02-telas/T13-excluir-conta/referencias/html/03-estado-excluindo.html",
+  "png": "02-telas/T13-excluir-conta/referencias/png/03-estado-excluindo.png"
+ },
+ {
+  "ref": "T13-04",
+  "tela": "T13",
+  "tipo": "estado",
+  "nome": "falha de rede",
+  "como": "o servidor não respondeu",
+  "caso": "erro no lugar da ação",
+  "html": "02-telas/T13-excluir-conta/referencias/html/04-estado-falha-de-rede.html",
+  "png": "02-telas/T13-excluir-conta/referencias/png/04-estado-falha-de-rede.png"
+ },
+ {
+  "ref": "T13-05",
+  "tela": "T13",
+  "tipo": "estado",
+  "nome": "sem internet",
+  "como": "o celular perdeu a conexão",
+  "caso": "banner · botão desligado",
+  "html": "02-telas/T13-excluir-conta/referencias/html/05-estado-sem-internet.html",
+  "png": "02-telas/T13-excluir-conta/referencias/png/05-estado-sem-internet.png"
+ }
+]

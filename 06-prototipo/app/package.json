@@ -1,0 +1,51 @@
+{
+  "name": "app-passageiro-fretamento-prototipo",
+  "private": true,
+  "version": "1.11.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173 --strictPort",
+    "tipos": "tsc --noEmit",
+    "conferir": "node conferencias/tudo.mjs",
+    "conferir:dado": "cd ../.. && node 04-dados/conferir.mjs",
+    "conferir:fidelidade": "node conferencias/fidelidade.mjs",
+    "conferir:textos": "node conferencias/textos.mjs",
+    "conferir:cores": "node conferencias/cores.mjs",
+    "conferir:tocaveis": "node conferencias/tocaveis.mjs",
+    "conferir:enderecos": "node conferencias/enderecos.mjs",
+    "conferir:vidro": "node conferencias/vidro.mjs",
+    "conferir:vidro-nas-telas": "node conferencias/vidro-nas-telas.mjs",
+    "conferir:fluxo": "node conferencias/fluxo.mjs",
+    "conferir:claro": "node conferencias/claro.mjs",
+    "conferir:fechamento": "node conferencias/fechamento.mjs",
+    "conferir:build": "node conferencias/build.mjs",
+    "fotos:claro": "node conferencias/claro.mjs",
+    "fotos:vidro": "node conferencias/fotos-vidro.mjs"
+  },
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.3.1",
+    "@radix-ui/react-dialog": "^1.3.1",
+    "@radix-ui/react-radio-group": "^1.5.1",
+    "@radix-ui/react-slot": "^1.5.0",
+    "@radix-ui/react-switch": "^1.4.1",
+    "clsx": "^2.1.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "gifenc": "^1.0.3",
+    "pixelmatch": "^8.0.0",
+    "playwright": "^1.65.0",
+    "pngjs": "^7.0.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.7"
+  }
+}
